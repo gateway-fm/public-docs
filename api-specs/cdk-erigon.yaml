@@ -1,0 +1,537 @@
+openapi: 3.0.0
+info:
+  title: Polygon zkEVM Node API
+  version: 1.0.0
+  description: This is an API for interacting with a zkEVM node.
+servers:
+- url: https://rpc.stavanger.gateway.fm
+paths:
+  /eth_blockNumber:
+    post:
+      tags:
+      - eth_blockNumber
+      summary: eth_blockNumber
+      operationId: eth_blockNumber
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Response for eth_blockNumber
+          content:
+            application/json:
+              schema:
+                type: object
+  /eth_call:
+    post:
+      tags:
+      - eth_call
+      summary: eth_call
+      operationId: eth_call
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Response for eth_call
+          content:
+            application/json:
+              schema:
+                type: object
+  /eth_chainId:
+    post:
+      tags:
+      - eth_chainId
+      summary: eth_chainId
+      operationId: eth_chainId
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Response for eth_chainId
+          content:
+            application/json:
+              schema:
+                type: object
+  /eth_estimateGas:
+    post:
+      tags:
+      - eth_estimateGas
+      summary: eth_estimateGas
+      operationId: eth_estimateGas
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Response for eth_estimateGas
+          content:
+            application/json:
+              schema:
+                type: object
+  /eth_gasPrice:
+    post:
+      tags:
+      - eth_gasPrice
+      summary: eth_gasPrice
+      operationId: eth_gasPrice
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Response for eth_gasPrice
+          content:
+            application/json:
+              schema:
+                type: object
+  /eth_getBalance:
+    post:
+      tags:
+      - eth_getBalance
+      summary: eth_getBalance
+      operationId: eth_getBalance
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Response for eth_getBalance
+          content:
+            application/json:
+              schema:
+                type: object
+  /eth_getBlockByHash:
+    post:
+      tags:
+      - eth_getBlockByHash
+      summary: eth_getBlockByHash
+      operationId: eth_getBlockByHash
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Response for eth_getBlockByHash
+          content:
+            application/json:
+              schema:
+                type: object
+  /eth_getBlockTransactionCountByHash:
+    post:
+      tags:
+      - eth_getBlockTransactionCountByHash
+      summary: eth_getBlockTransactionCountByHash
+      operationId: eth_getBlockTransactionCountByHash
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Response for eth_getBlockTransactionCountByHash
+          content:
+            application/json:
+              schema:
+                type: object
+  /eth_getBlockTransactionCountByNumber:
+    post:
+      tags:
+      - eth_getBlockTransactionCountByNumber
+      summary: eth_getBlockTransactionCountByNumber
+      operationId: eth_getBlockTransactionCountByNumber
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Response for eth_getBlockTransactionCountByNumber
+          content:
+            application/json:
+              schema:
+                type: object
+  /eth_getCode:
+    post:
+      tags:
+      - eth_getCode
+      summary: eth_getCode
+      operationId: eth_getCode
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Response for eth_getCode
+          content:
+            application/json:
+              schema:
+                type: object
+  /eth_getFilterChanges:
+    post:
+      tags:
+      - eth_getFilterChanges
+      summary: eth_getFilterChanges
+      operationId: eth_getFilterChanges
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Response for eth_getFilterChanges
+          content:
+            application/json:
+              schema:
+                type: object
+  /eth_getLogs:
+    post:
+      tags:
+      - eth_getLogs
+      summary: eth_getLogs
+      operationId: eth_getLogs
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Response for eth_getLogs
+          content:
+            application/json:
+              schema:
+                type: object
+  /eth_getStorageAt:
+    post:
+      tags:
+      - eth_getStorageAt
+      summary: eth_getStorageAt
+      operationId: eth_getStorageAt
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Response for eth_getStorageAt
+          content:
+            application/json:
+              schema:
+                type: object
+  /eth_getTransactionByBlockHashAndIndex:
+    post:
+      tags:
+      - eth_getTransactionByBlockHashAndIndex
+      summary: eth_getTransactionByBlockHashAndIndex
+      operationId: eth_getTransactionByBlockHashAndIndex
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Response for eth_getTransactionByBlockHashAndIndex
+          content:
+            application/json:
+              schema:
+                type: object
+  /eth_getTransactionByBlockNumberAndIndex:
+    post:
+      tags:
+      - eth_getTransactionByBlockNumberAndIndex
+      summary: eth_getTransactionByBlockNumberAndIndex
+      operationId: eth_getTransactionByBlockNumberAndIndex
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Response for eth_getTransactionByBlockNumberAndIndex
+          content:
+            application/json:
+              schema:
+                type: object
+  /eth_getTransactionByHash:
+    post:
+      tags:
+      - eth_getTransactionByHash
+      summary: eth_getTransactionByHash
+      operationId: eth_getTransactionByHash
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Response for eth_getTransactionByHash
+          content:
+            application/json:
+              schema:
+                type: object
+  /eth_getTransactionCount:
+    post:
+      tags:
+      - eth_getTransactionCount
+      summary: eth_getTransactionCount
+      operationId: eth_getTransactionCount
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Response for eth_getTransactionCount
+          content:
+            application/json:
+              schema:
+                type: object
+  /eth_getTransactionReceipt:
+    post:
+      tags:
+      - eth_getTransactionReceipt
+      summary: eth_getTransactionReceipt
+      operationId: eth_getTransactionReceipt
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Response for eth_getTransactionReceipt
+          content:
+            application/json:
+              schema:
+                type: object
+  /eth_newBlockFilter:
+    post:
+      tags:
+      - eth_newBlockFilter
+      summary: eth_newBlockFilter
+      operationId: eth_newBlockFilter
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Response for eth_newBlockFilter
+          content:
+            application/json:
+              schema:
+                type: object
+  /eth_newFilter:
+    post:
+      tags:
+      - eth_newFilter
+      summary: eth_newFilter
+      operationId: eth_newFilter
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Response for eth_newFilter
+          content:
+            application/json:
+              schema:
+                type: object
+  /eth_newPendingTransactionFilter:
+    post:
+      tags:
+      - eth_newPendingTransactionFilter
+      summary: eth_newPendingTransactionFilter
+      operationId: eth_newPendingTransactionFilter
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Response for eth_newPendingTransactionFilter
+          content:
+            application/json:
+              schema:
+                type: object
+  /eth_sendRawTransaction:
+    post:
+      tags:
+      - eth_sendRawTransaction
+      summary: eth_sendRawTransaction
+      operationId: eth_sendRawTransaction
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Response for eth_sendRawTransaction
+          content:
+            application/json:
+              schema:
+                type: object
+  /eth_syncing:
+    post:
+      tags:
+      - eth_syncing
+      summary: eth_syncing
+      operationId: eth_syncing
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Response for eth_syncing
+          content:
+            application/json:
+              schema:
+                type: object
+  /eth_uninstallFilter:
+    post:
+      tags:
+      - eth_uninstallFilter
+      summary: eth_uninstallFilter
+      operationId: eth_uninstallFilter
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Response for eth_uninstallFilter
+          content:
+            application/json:
+              schema:
+                type: object
+  /web3_clientVersion:
+    post:
+      tags:
+      - web3_clientVersion
+      summary: web3_clientVersion
+      operationId: web3_clientVersion
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Response for web3_clientVersion
+          content:
+            application/json:
+              schema:
+                type: object
+tags:
+- name: eth_blockNumber
+  description: Method for eth_blockNumber.
+- name: eth_call
+  description: Method for eth_call.
+- name: eth_chainId
+  description: Method for eth_chainId.
+- name: eth_estimateGas
+  description: Method for eth_estimateGas.
+- name: eth_gasPrice
+  description: Method for eth_gasPrice.
+- name: eth_getBalance
+  description: Method for eth_getBalance.
+- name: eth_getBlockByHash
+  description: Method for eth_getBlockByHash.
+- name: eth_getBlockTransactionCountByHash
+  description: Method for eth_getBlockTransactionCountByHash.
+- name: eth_getBlockTransactionCountByNumber
+  description: Method for eth_getBlockTransactionCountByNumber.
+- name: eth_getCode
+  description: Method for eth_getCode.
+- name: eth_getFilterChanges
+  description: Method for eth_getFilterChanges.
+- name: eth_getLogs
+  description: Method for eth_getLogs.
+- name: eth_getStorageAt
+  description: Method for eth_getStorageAt.
+- name: eth_getTransactionByBlockHashAndIndex
+  description: Method for eth_getTransactionByBlockHashAndIndex.
+- name: eth_getTransactionByBlockNumberAndIndex
+  description: Method for eth_getTransactionByBlockNumberAndIndex.
+- name: eth_getTransactionByHash
+  description: Method for eth_getTransactionByHash.
+- name: eth_getTransactionCount
+  description: Method for eth_getTransactionCount.
+- name: eth_getTransactionReceipt
+  description: Method for eth_getTransactionReceipt.
+- name: eth_newBlockFilter
+  description: Method for eth_newBlockFilter.
+- name: eth_newFilter
+  description: Method for eth_newFilter.
+- name: eth_newPendingTransactionFilter
+  description: Method for eth_newPendingTransactionFilter.
+- name: eth_sendRawTransaction
+  description: Method for eth_sendRawTransaction.
+- name: eth_syncing
+  description: Method for eth_syncing.
+- name: eth_uninstallFilter
+  description: Method for eth_uninstallFilter.
+- name: web3_clientVersion
+  description: Method for web3_clientVersion.
+x-readme:
+  explorer-enabled: true
+  proxy-enabled: true
