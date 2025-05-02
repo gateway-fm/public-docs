@@ -1,28 +1,34 @@
 ---
-slug: /
-title: Home
+title: Intro
+sidebar_position: 1
 ---
 
-Welcome to the home for all CDK Erigon Node API methods and [Polygon zkEVM-specific Node API](https://github.com/0xPolygonHermez/cdk-erigon?tab=readme-ov-file#zkevm-specific-api-support) methods, indicated with the `zkevm_` namespace.
+# Introduction to CDK-Erigon
 
-## What is Polygon CDK Erigon?
+CDK-Erigon is a high-performance, enterprise-grade node implementation specifically optimized for the Polygon zkEVM protocol networks. Built on the robust Erigon architecture and maintained by Gateway, it delivers unparalleled efficiency, reliability, and synchronization speeds.
 
-CDK Erigon is a fork of [Erigon](https://github.com/erigontech/erigon?tab=readme-ov-file#erigon), optimized for syncing with the Polygon zkEVM network.
+// TODO: perf claims
 
-Due to Erigon's high-performance as an Ethereum client, CDK Erigon nodes do not require advanced hardware or weeks to sync in _full archive node_ mode.
+## What is CDK-Erigon?
 
-CDK Erigon is therefore a highly configurable, modular node that can be implemented as a sequencer or RPC node in a ZK-rollup setting.
+[Learn more about CDK-Erigon](/CDK-Erigon/what-is-cdk-erigon)
 
-These nodes are essential infrastructure for building L2 scalability solutions for Ethereum.
+## Deploy Testnet
 
-Their major benefits are fast synchronisation times and reduced gas costs for users, without compromising decentralization and security.
+[Get started with testnet deployment](/CDK-Erigon/deploy-testnet)
 
-## What is Polygon CDK Erigon API?
+## Configuration Options
 
-Polygon CDK Erigon API is an easy and standardised way to access blockchain data pertaining to Polygon zkEVM network events.
+[Explore configuration options](/CDK-Erigon/configuration-options)
 
-Applications must connect to an RPC node in order to read data from the Polygon CDK Erigon API.
+## RPC Endpoints
 
-Polygon zkEVM node is compatible with the Ethereum RPC specification, and support most of the methods from Ethereum’s [JSON-RPC specification](https://ethereum.github.io/execution-apis/api-documentation/).
+[View available RPC endpoints](/CDK-Erigon/rpc-endpoints)
 
-Polygon zkEVM node implements a unique `zkevm_` namespace for accessing additional information relevant to the Layer 2 networking.
+## Roadmap
+
+[Explore our development roadmap](/CDK-Erigon/roadmap)
+
+## Releases
+
+[View latest releases and changelogs](/CDK-Erigon/releases)

@@ -1,0 +1,71 @@
+---
+id: zkevm-virtual-batch-number
+title: "zkevm_virtualBatchNumber"
+description: "zkevm_virtualBatchNumber"
+sidebar_label: "zkevm_virtualBatchNumber"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVE1TIjEQ/SupnBHQIze1PGjVKqXuXpDa6plpmEgmySY9IFL89+0OoIO1cto5wCTz+iPvvc5GE8yTHk30FVBZq1s387EBMt7paU/7gDEvbis90u8LXDa/lyZSCzbj79umwKh7OuKfFhNd+WqtR5u8NBE5iGKLPV16R+hIPkEI1pQ56eA1cRneS2WNDcgbrQNyJV+8YkmcN0RpgQwm+WqqDsZwynkuXuEMWsvZz7c9LTljKDvARNG4eRenL/pDzdgGqfbVaei3h+b4ABGa1ImHGGHdDZ9Mt/kRhlLwLu0OcjEcyl+FqYwmZLZH+hGpjS4pqlGVbYxMmNrXVUVWx+XKPbWqDa9qSKpAdAeQecdKGZfj3xc3v36ooiXlPKk1ciaMZmaw6uv/Jse3VPNx/ynVjoZMzNfc2wNPx5ycsNxBPB18yr0B1bwanAhJGJkGsftGt9EyuiYKaTQY8DH6iWAJjvvsz4FwBev+rNHb6c5Sj58Gv3mDJlg8GPK847lsrE5rJ3o5eGfiWmunwhiPXubFkCTXY2/Xc+/2Ut77CtXl+JYj5Qg7ds77w1zvmLOjwLMUsGThS3X39HB/9ji+lixq12FSPO1K1IlQEiunVoZqBfuajmv2X9xzjQk/ItgCS8O9QFliYrP6g9eyQ8FVn3bMrlLm80rpKbDWr6RQhUu0Yqb04jgHcQOL7FxWgdqk/Ez2XJK+eGyOfV3KILnU5m6kDe4yzyM7oYHsYQcNnhbgiLQPOxK+0SBYMDlhNslmb63J99nYJLW4kDGbTQEJf0a73co2uyau5R5g3SAaKETbiehdI1QcKl5cIEP09W4qz56lE4HbNt8pXyd02ztEXLIGgU5ipx03jh+enhlc7C/phuXl3QgrucD5d6S1XPmZ8HyLy95GWx6KFuaC3eWU5y99yDAJ
+sidebar_class_name: "post api-method"
+info_path: CDK-Erigon/JSON-RPC/zkevm/polygon-zkevm-node-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"zkevm_virtualBatchNumber"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/zkevm_virtualBatchNumber"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+zkevm_virtualBatchNumber
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"integer","default":1},"jsonrpc":{"type":"string","default":"2.0"},"method":{"type":"string","default":"zkevm_virtualBatchNumber"},"params":{"type":"array","default":[]}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Returns the current virtual batch number, which has been virtualized in the zkEVM but not yet verified.","content":{"application/json":{"schema":{"type":"object","properties":{"jsonrpc":{"type":"string"},"id":{"type":"integer"},"result":{"type":"object"}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

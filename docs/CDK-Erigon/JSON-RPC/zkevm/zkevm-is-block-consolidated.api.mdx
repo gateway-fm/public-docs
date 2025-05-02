@@ -1,0 +1,71 @@
+---
+id: zkevm-is-block-consolidated
+title: "zkevm_isBlockConsolidated"
+description: "zkevm_isBlockConsolidated"
+sidebar_label: "zkevm_isBlockConsolidated"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVU1T2zAQ/SsanUM+uDU3YDjQaSEDlEvIdDb2OhaxJVdaO4SM/3t35YQ6TEkvzSGxpae3b3ffKjtNsAp6OtdP6E1mEiDjrHogoDroxUC7Cn1cu0n1VL+tsSl/mnBZuGR95WxwhUmBMNUD7fFXjYEuXbrV0118NZ53puRrHOjEWUJLsgVVVewjjV6Cs7IWkhxLkCfaVsih3PIFE2LeyosGMhhk16Q9jGHKFXoGpZhBXTD7pB1o4fRV0gMG8sau+jh9PhxrxpZIuUtPQz/Pmgkq8FCGHgF4D1s+bwiP1vfEbY95rsev6fkX1Is2fqSIoeIAXa7n47H8pBgSbyopF9Nc5ZisgzKZohzVyjRo1VKEKRNU0hM3UJvcJLkqESzjSeUQ1BIZnhkLhXnDVHGrr5nGY12qb5Oh/m9t+rQFnONfW9jlHqvykbs9FOe4EKe8eOiqrlyI4oByfhudOhPQN+hlFna69gXDc6IqTEcjTmQYCBqwrHS4YvwGtsOs1O2iM9v9H+tfv0JZFXiw6qTnxmi5nrZTYg6umh/qtpDC2czF8hiSCHrmiu2KW/i2vn76rm5diupidsOnJY+uSJPhOAY9Lt3RwbNQYSKjr74+3N2e3c+uhEV1MoPKnFfSJA8JsRC1MZQr2Me0HHP4bB9zDPh+gp3QGNYCSYIhKHJ78BKI7Qg2VY3xVIsFu9tG8vJlfB4oKAq3kUApNliIp8KzZQ5iAevo+RAvJ+UyWbNBdDlxuI27XSwZBLShjmpEBquM08p+KCFa2UKJ/+jCUdXebUn4SqOqABMZo1V2e4fNT9CxV3JxI4N2uyUE/OGLtpVlNo/nO3POjw14A0vp7lw6niOkPBxiyTVuZfq78Tx7FCkCL+p453wc1XZwOHHBXajoJHbRM+Xs7uGRwcv9LV5yg3nVw0ZueP6eai1/CrHk8ZqXtZ0ueDZqWAm245TPb6CpOiY=
+sidebar_class_name: "post api-method"
+info_path: CDK-Erigon/JSON-RPC/zkevm/polygon-zkevm-node-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"zkevm_isBlockConsolidated"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/zkevm_isBlockConsolidated"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+zkevm_isBlockConsolidated
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"integer","default":1},"jsonrpc":{"type":"string","default":"2.0"},"method":{"type":"string","default":"zkevm_isBlockConsolidated"},"params":{"type":"array","items":{"type":"string"},"default":["0xd29e"]}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Checks if the given block is consolidated, which means it has been finalized on Ethereum L1.","content":{"application/json":{"schema":{"type":"object","properties":{"jsonrpc":{"type":"string"},"id":{"type":"integer"},"result":{"type":"object"}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

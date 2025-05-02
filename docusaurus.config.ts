@@ -8,22 +8,22 @@ import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'Gateway FM Documentation',
-  tagline: 'Documentation for Gateway FM',
-  favicon: 'img/favicon.ico',
+  title: 'Gateway.fm Documentation',
+  tagline: 'High-performance infrastructure for Polygon zkEVM',
+  favicon: 'img/favicon.svg',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://docs.gateway.fm',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'gateway-fm', // Usually your GitHub org/user name.
+  projectName: 'documentation', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
@@ -42,6 +42,13 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           routeBasePath: '/',
           docItemComponent: "@theme/ApiItem",
+          sidebarItemsGenerator: async function ({
+            defaultSidebarItemsGenerator,
+            ...args
+          }) {
+            const sidebarItems = await defaultSidebarItemsGenerator(args);
+            return sidebarItems;
+          },
         },
         blog: false,
         theme: {
@@ -59,9 +66,24 @@ const config: Config = {
         config: {
           petstore: {
             specPath: "api-specs/cdk-erigon.yaml",
-            outputDir: "docs/cdk",
+            outputDir: "docs/CDK-Erigon/JSON-RPC/eth",
             sidebarOptions: {
               groupPathsBy: "tag",
+            },
+          } satisfies OpenApiPlugin.Options,
+          zkevm: {
+            specPath: "api-specs/zkevm-methods.yaml",
+            outputDir: "docs/CDK-Erigon/JSON-RPC/zkevm",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          } satisfies OpenApiPlugin.Options,
+          txpool: {
+            specPath: "api-specs/txpool.yaml",
+            outputDir: "docs/CDK-Erigon/JSON-RPC/txpool",
+            sidebarOptions: {
+              // Comment out or remove the groupPathsBy to not group by tag
+              // groupPathsBy: "tag",
             },
           } satisfies OpenApiPlugin.Options,
         }
@@ -70,48 +92,98 @@ const config: Config = {
   ],
   themes: ["docusaurus-theme-openapi-docs"],
   themeConfig: {
-    // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/logo.svg',
     navbar: {
-      title: 'Gateway FM',
+      title: 'Gateway.fm',
       logo: {
-        alt: 'Logo',
+        alt: 'Gateway.fm Logo',
         src: 'img/logo.svg',
       },
       items: [
+        {
+          to: '/',
+          label: 'Home',
+          position: 'left',
+          activeBaseRegex: '^/$',
+        },
+        {
+          to: '/cdk-erigon',
+          label: 'CDK-Erigon',
+          position: 'left',
+        },
+
+        {
+          href: 'https://gateway.fm',
+          label: 'Website',
+          position: 'right',
+        },
+        {
+          href: 'https://github.com/gateway-fm',
+          label: 'GitHub',
+          position: 'right',
+        },
       ],
     },
     footer: {
       style: 'dark',
       links: [
         {
-          title: 'Community',
+          title: 'Documentation',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'CDK-Erigon',
+              to: '/CDK-Erigon/what-is-cdk-erigon',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              label: 'Ethereum JSON-RPC API',
+              to: '/CDK-Erigon/JSON-RPC/eth/ethereum-json-rpc-api',
             },
             {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
+              label: 'zkEVM API',
+              to: '/CDK-Erigon/JSON-RPC/zkevm/polygon-zkevm-node-api',
             },
           ],
         },
         {
-          title: 'More',
+          title: 'Products',
           items: [
             {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              label: 'Presto',
+              href: 'https://gateway.fm/',
+            },
+            {
+              label: 'RPC',
+              href: 'https://gateway.fm/',
+            },
+            {
+              label: 'Blueprints',
+              href: 'https://gateway.fm/',
+            },
+            {
+              label: 'Staking',
+              href: 'https://gateway.fm/',
+            },
+          ],
+        },
+        {
+          title: 'Community',
+          items: [
+            {
+              label: 'Twitter',
+              href: 'https://twitter.com/gateway_fm',
+            },
+            {
+              label: 'Discord',
+              href: 'https://discord.gg/gateway',
+            },
+            {
+              label: 'LinkedIn',
+              href: 'https://www.linkedin.com/company/gateway-fm',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Gateway.fm`,
     },
     prism: {
       theme: prismThemes.github,

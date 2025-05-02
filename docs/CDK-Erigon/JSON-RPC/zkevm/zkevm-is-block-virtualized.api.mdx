@@ -1,0 +1,71 @@
+---
+id: zkevm-is-block-virtualized
+title: "zkevm_isBlockVirtualized"
+description: "zkevm_isBlockVirtualized"
+sidebar_label: "zkevm_isBlockVirtualized"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVcFS20AM/ZWdPYeE0FtuwPRAZwoZoFxCpiPbSrzE3nV3ZYeQ8b9XWsfgMCWn+pA42ifprfSk7DXBOujZQj+hNyuTAhln1QMB1UEvR9pV6KPtJtMz/bbBpvxtwlXh0s2T8VRDYd4w0yPt8U+Nga5cttOzffxpPJ/MyNc40qmzhJbkCKqqOCSavARnxRbSHEuQN9pVyJlc8oIpcdzKCwUyGOTUZAOM4ZBr9AzKcAV1wdGn7UhLTF+lA2Agb+x6iNMX43PN2BIpd9lp6JeXZv8KPJRh4A/ew47dDeGR/RC3HQRe6Om3c370so2P1DBUzobuqhd8wl8ZhtSbSqrFYa5zTDdBmZWiHNXaNGhVIryUCar54DZS29ykuSoRLMNJ5RBUgozmeqYYAmbK2BjkbfP96Wfvq0pIc2NxrP9by75sB1/4n+3sChFL9Dl221fquConZNk3WFcuRG5AOf+anHAJ6Bv0MhR7XfuC0TlRFWaTCV9jHAgasMxzvAbCLezGq1K3y0529x9D8P0VyqrAXrTTgS6j+AbUTnDp9bXoi7aUqtmVi7UxJAn03BW7NU9t18lbl6G6nN+wt1yjq9B0fB5zHtftyPEsVJjKClA/Hu5uz+7n1xJFdSyDWjmvpEMeUmIiamsoV3DIaTnn+Nk+5hjw3YNl0BjmAqkITpE7gBMgVibY7EOw3daRe/kyvo8UFIXbSqIMGyxEUOHZcgxiApso3BCXlHIrsdkgvJyIfSjrVMbJhjr0umeWcW5ZDSVEHVso8XQTjor2LknCV5pUBZgYMAplf5DX4utoLJRclMiY/T6BgL980bZiZuV4Xp0Lfm3AG0iktwvpd46Q8VyIHje4ky3QTebZozAReFHH3fN5SttR73HJPajoJHY5UOT87uGRwclhmZfcXrZ62Mqi58+Z1vLXEAset73Y9rrgwahhLdgupjx/ARWAPLg=
+sidebar_class_name: "post api-method"
+info_path: CDK-Erigon/JSON-RPC/zkevm/polygon-zkevm-node-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"zkevm_isBlockVirtualized"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/zkevm_isBlockVirtualized"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+zkevm_isBlockVirtualized
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"integer","default":1},"jsonrpc":{"type":"string","default":"2.0"},"method":{"type":"string","default":"zkevm_isBlockVirtualized"},"params":{"type":"array","items":{"type":"string"},"default":["130000"]}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Checks if the given block is virtualized, which means it has been processed in the zkEVM virtual machine.","content":{"application/json":{"schema":{"type":"object","properties":{"jsonrpc":{"type":"string"},"id":{"type":"integer"},"result":{"type":"object"}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

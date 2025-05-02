@@ -1,0 +1,71 @@
+---
+id: zkevm-get-batch-by-number
+title: "zkevm_getBatchByNumber"
+description: "zkevm_getBatchByNumber"
+sidebar_label: "zkevm_getBatchByNumber"
+hide_title: true
+hide_table_of_contents: true
+api: eJytlE1T2zAQhv+KRueQD465AdPO0JlCBmgvIdPZ2BtbxJZUaR0IGf/37soJOLThVB8SS373+5F2mqCIejrXl0BZqa7tyoUayDirFwPtPIa0uM71VL+ucVP/KpCS9nJ709RLDHqgA/5uMNKly7d6uktLE5BNKDQ40JmzhJbkE3hfmSy5HD1FDsJ7MSuxBnmjrUeO45ZPmBH79UESIINRvpq8pzHsskjBc1xBU7H3STvQ4jP4rCeMFIwt+jp9Phxr1tZIpcs/l54oma09BKhjzxpCgC0bG8Kj/b3Xtud2rscvk69XY71o0yMdjN7Z2BV6Ph7LX44xC8anWUz1HVITbFTmfUIKlq4hBSp6zMzKZGqZhuhWigLYCJmoIu9GzBXrqcS9xKY6hvq/Dedk47m4fw6uKzq146Pv9tCV4w6cxO8wSO1dTJkBlbwanTSIGDYYBPudbkLF2pLIx+loxCUMI8EGLOc4LIDwGbbDVa3bRQfX3TvqX16g9hUe0Jz06EuI9RI7mcmBovmhXQvpF484dcWQuNczV20LHt/r+svP7+rG5aguZtdsLUV0vZkMxynicceODM/eKPl2f3tzdje7Ei+qyzEqpkrJbIJQYwv1bKhktLqYlmMOH+1DiRHfLBiAjeFcIMswRkVuL+4IA5urjQnUQGVeO1x76A4UVJV7lkA5brASlOKjZR9MbrZOpPIcqIl/0Ww6jrtYmRwaG5uUjaTBWabTySTUkAi2UONnIzhq2RuKhC808hWY5C5BstuDNT/lixEphUBW7HZy6H6Eqm1lm5kJfDXO+XUDwcBS5jqXWZcIOZsKiWtkib7qzuPZg+Qh8qpJt8vHs9kODhYX3H9Pn2oXPRZnt/cPLF7uL+uaR8u7AZ7lIuffqdZy8admp9tc9na64iPRQCHazqc8fwAiui5L
+sidebar_class_name: "post api-method"
+info_path: CDK-Erigon/JSON-RPC/zkevm/polygon-zkevm-node-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"zkevm_getBatchByNumber"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/zkevm_getBatchByNumber"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+zkevm_getBatchByNumber
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"integer","default":1},"jsonrpc":{"type":"string","default":"2.0"},"method":{"type":"string","default":"zkevm_getBatchByNumber"},"params":{"type":"array","items":{"type":"string"},"default":["0x1FC0"]}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Returns information about a specific batch of transactions based on the batch number.","content":{"application/json":{"schema":{"type":"object","properties":{"jsonrpc":{"type":"string"},"id":{"type":"integer"},"result":{"type":"object"}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

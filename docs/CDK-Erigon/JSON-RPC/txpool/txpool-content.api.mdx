@@ -1,0 +1,71 @@
+---
+id: txpool-content
+title: "txpool_content"
+description: "txpool_content"
+sidebar_label: "txpool_content"
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVU1z2jAQ/SsanQmQHLmlaQ5ppw2T0BNhOou9YCWypEprCMPw37srh8QQJumtPoAtv/3Qe2/lrSZYJj2a6kkEl6Ag450ae2/1rKd9wAiyclPqkabnwOu/C+8IHemejvinwURffLnRo21+NBEZSrHBnt4D+RWEYE2RUw0ek3eylooKa5A72gTk/H7+iIXkDVEKk8EkbwUfQ9EBJorGLRmIz1AHK0sX/aHe9XSNVPnyY+jRNjgqQIQ6daIgRthwkCHM67tO/HTGT6Zbw3CiJcZukfNdvoSiFLxL7U4uhkP5KzEV0QQhg6PvkJrokgJVIoGxWCprEnHXyi8UWKvoTZmkiiZGbttulHGKKlSyGf1fyP6chLz/xtLndQO6UsqcAB7S9QOC8PKCP+RmGX0TmL/5RkFZcukkbbJHGyz/OXML/zzx/jpO825K9p7Uwae8caCKnwbvgAnjCqMM41Y30TKmIgppNBiwIv1EsALHFPeXQLiGTX9R6x0PqUh29zaJ13v6O2JmxTqdvCu9n4DprJVVpDNu4TNrhrLqkxykvt3f/jy7G1+py/ENR0rH7cbP+8Nc5ZCOCVu0LScBilVfGUaotpekFj4q8U4UrlnQtaEq+7ojQPa4+P3q6/ez62iW3vUfHGdO+JqHB8WveYRWaMVXSZHniBRY6ZNm6SmeiOLpoAxTTA3Pau/BgStV40pORHIrDb2wlcQkpxrklvJhwirXkIfOQX3iwDli6NWWhM80CBZMTpMNsH0xy/Q4B8tUiZv4zXY7h4S/ot3tZJl9EDetkCuIBuavZ1aFwPvJ7npChuirNtnZROoL3Db58Ds+Pna9fcRlUWCgD7Gzjs3Gt/cTBs9fvg+1LyUmwlq+Hfw70lq+MVmP/AGRta22bPMGloJtc8r1F/eQVbo=
+sidebar_class_name: "post api-method"
+info_path: CDK-Erigon/JSON-RPC/txpool/txpool-json-rpc-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"txpool_content"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/txpool_content"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+txpool_content
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"jsonrpc":{"type":"string","example":"2.0"},"method":{"type":"string","example":"txpool_content"},"params":{"type":"array","items":{},"example":[]},"id":{"type":"integer","example":1}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Returns a detailed listing of all transactions currently in the pool","content":{"application/json":{"schema":{"type":"object","properties":{"jsonrpc":{"type":"string","example":"2.0"},"id":{"type":"integer","example":1},"result":{"type":"object","properties":{"pending":{"type":"object","description":"Map of pending transactions grouped by address"},"queued":{"type":"object","description":"Map of queued transactions grouped by address"}}}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

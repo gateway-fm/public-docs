@@ -2,6 +2,30 @@
 
 This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
+## Documentation Structure
+
+- [API Specifications](./api-specs/README.md) - OpenAPI specifications for JSON-RPC APIs and how to autogenerate documentation
+
+## Working with API Documentation
+
+This project uses OpenAPI specifications to generate API documentation. When adding new API specs:
+
+1. First, generate the API documentation:
+   ```
+   yarn openapi:generate:all            # Generate all API docs
+   # OR for specific namespaces
+   yarn docusaurus gen-api-docs petstore # Generate Ethereum API docs  
+   yarn docusaurus gen-api-docs zkevm    # Generate zkEVM API docs
+   yarn docusaurus gen-api-docs txpool   # Generate txpool API docs
+   ```
+
+2. Then start the development server:
+   ```
+   yarn start
+   ```
+
+This ensures all referenced documentation files exist before the server starts.
+
 ### Installation
 
 ```

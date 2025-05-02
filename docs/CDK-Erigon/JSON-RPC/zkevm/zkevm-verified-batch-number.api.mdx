@@ -1,0 +1,71 @@
+---
+id: zkevm-verified-batch-number
+title: "zkevm_verifiedBatchNumber"
+description: "zkevm_verifiedBatchNumber"
+sidebar_label: "zkevm_verifiedBatchNumber"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVE1z2jAQ/Ssanc1HcuSWZHJIZ5owSdoLYTqLvdgKsqRKMgQY//fuypCYTEMv5QBI2n27eu+t9jJCGeRkJq8h5pW4M0vra4jKGjnPpHXo0+KukBO5W+G6/rVGr5YKi5Rw39QL9DKTHn83GOK1LbZysk9L5ZGyom8wk7k1EU3kI3BOqzyhjl4D1aG9kFdYA/+LW4dUyi5eMY+E6zz3EBUGPlVFL0YRZJmKF7iERhP6RZtJxvQu7wWG6JUp+3HycjiWFFtjrGxxPvTrWxOAAw916AGA97Dt58/mbfowRcFZE7qbXI7H/FNgyL1yie+JfMTYeBNErFDkjffEmDgWFoskkEmlM7GpFK0qCCK3tdMYKWKH3g5Wxm40FiUKos4uD/kd30P535T4kmW66F9V6ghIlHzGbo8MnbJxzm5H4aSzITUHsaLV6FxOQE8HbPa9bLym8CpGFyajEV1kGCKswVCnwxIibmA7XNaynXd+evxw9+0bMN9HN170DJdc1evtXDNH48xMo/WcSaPJS9SoyOhyavW2tEbsVrc/v4t7W6C4mt5RJt+hI+hiOE4FT2k7SRwEhznrL749PdwPHqc3jCK6FoOgYRcskIc8knhio2Il4FDTUM3hi3muMOB7BrlgragXyHMM5FR7CO7cCaYQa+VjA1rtkrGE+nhRMgFa2w0XKnCNmv0UXgxhRGpglWxPMsQmCDIu7ZnAfdHMEEo67WrlPEUmNKkbboO6TMNIXqgh2dhAjf9Q4IS1d0tGfIsjp0ElxGST/cFdszNw5JOKnUhB+/0CAv7wum15m4zjt/wMkHLgFSxY3RkrXiEUlMp2XCGFyJtuNAfP3AqH6yY9KZ/HtM2OGVekgotnY+c9Q04fnp4peHF4pGsSmHY9bPgBp++JlPzmJ8rTK857e6lpLhooObbD5M8f7qkwxg==
+sidebar_class_name: "post api-method"
+info_path: CDK-Erigon/JSON-RPC/zkevm/polygon-zkevm-node-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"zkevm_verifiedBatchNumber"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/zkevm_verifiedBatchNumber"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+zkevm_verifiedBatchNumber
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"integer","default":1},"jsonrpc":{"type":"string","default":"2.0"},"method":{"type":"string","default":"zkevm_verifiedBatchNumber"},"params":{"type":"array","default":[]}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Returns the current verified batch number, which has completed zero-knowledge proof verification.","content":{"application/json":{"schema":{"type":"object","properties":{"jsonrpc":{"type":"string"},"id":{"type":"integer"},"result":{"type":"object"}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

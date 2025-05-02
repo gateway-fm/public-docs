@@ -6,25 +6,161 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #8950FA;
+  --ifm-color-primary-dark: #7742E6;
+  --ifm-color-primary-darker: #6634D2;
+  --ifm-color-primary-darkest: #5526BD;
+  --ifm-color-primary-light: #9B67FF;
+  --ifm-color-primary-lighter: #AD7FFF;
+  --ifm-color-primary-lightest: #BF97FF;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-heading-color: #1A1A1A;
+  --ifm-font-color-base: #1A1A1A;
+  --ifm-color-success: #7EE100;
+  --ifm-color-info: #FA50C1;
+  
+  /* Gateway.fm specific colors */
+  --gateway-green: #7EE100;
+  --gateway-pink: #FA50C1;
+  --gateway-dark-text: #1A1A1A;
+  --gateway-card-bg: #FFFFFF;
+  --gateway-bg-light: #F8F9FB;
+  
+  /* Typography */
+  --ifm-font-family-base: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --ifm-heading-font-weight: 700;
+  
+  /* Navbar */
+  --ifm-navbar-background-color: #FFFFFF;
+  --ifm-navbar-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+  --ifm-color-primary: #9B67FF;
+  --ifm-color-primary-dark: #8950FA;
+  --ifm-color-primary-darker: #7742E6;
+  --ifm-color-primary-darkest: #6634D2;
+  --ifm-color-primary-light: #AD7FFF;
+  --ifm-color-primary-lighter: #BF97FF;
+  --ifm-color-primary-lightest: #D1AFFF;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-heading-color: #ffffff;
+  --ifm-font-color-base: #f0f0f0;
+  --ifm-color-success: #7EE100;
+  --ifm-color-info: #FA50C1;
+  
+  /* Gateway.fm specific colors for dark mode */
+  --gateway-card-bg: #222327;
+  --gateway-bg-light: #16171A;
+  
+  /* Navbar dark mode */
+  --ifm-navbar-background-color: #16171A;
+  --ifm-navbar-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Navbar styles */
+.navbar__logo {
+  height: 2.5rem;
+  margin-right: 0.5rem;
+}
+
+.navbar__brand {
+  margin-right: 1.5rem;
+}
+
+.navbar {
+  padding: 0.75rem 1.5rem;
+}
+
+/* Hero section styles */
+.hero--primary {
+  background: linear-gradient(135deg, #8950FA 0%, #7041d7 100%);
+  color: white;
+  position: relative;
+}
+
+.hero__subtitle {
+  opacity: 0.9;
+}
+
+/* Button styles */
+.button--secondary {
+  background-color: #7EE100;
+  color: #1A1A1A;
+  border-color: #7EE100;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(126, 225, 0, 0.3);
+}
+
+.button--secondary:hover {
+  background-color: #72CE00;
+  color: #1A1A1A;
+  border-color: #72CE00;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(126, 225, 0, 0.35);
+}
+
+.button--outline {
+  border-width: 2px;
+  padding: 0.73rem 1.5rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.button--outline:hover {
+  transform: translateY(-2px);
+}
+
+/* Add modern styling for the content */
+article {
+  line-height: 1.7;
+}
+
+.markdown h1, 
+.markdown h2, 
+.markdown h3 {
+  font-weight: 700;
+}
+
+/* Improved link styles */
+a:not(.button) {
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+
+a:not(.button):hover {
+  text-decoration: none;
+}
+
+/* API Endpoints List Component */
+.api-endpoints-list h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.api-endpoints-list ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.api-endpoints-list li {
+  margin-bottom: 0.25rem;
+}
+
+.api-endpoints-list a {
+  font-family: monospace;
+  padding: 0.2rem 0.4rem;
+  background-color: var(--ifm-code-background);
+  border-radius: 0.25rem;
+}
+
+.api-endpoints-list a:hover {
+  text-decoration: none;
+  background-color: var(--ifm-color-primary-lightest);
 }

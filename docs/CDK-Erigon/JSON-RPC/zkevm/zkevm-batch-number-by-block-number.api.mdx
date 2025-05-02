@@ -1,0 +1,71 @@
+---
+id: zkevm-batch-number-by-block-number
+title: "zkevm_batchNumberByBlockNumber"
+description: "zkevm_batchNumberByBlockNumber"
+sidebar_label: "zkevm_batchNumberByBlockNumber"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVU1zGjEM/SsenwkfmWkP3EKaQzrThEnSXgjTEV7BOuzaru1dQpj975W8kCyZNvRQDrD2Sk9P0pPYyQirIMczOYGocnFtltaXELU1ct6T1qFPh+tMjuXLGuvy54INb6pygX6ynRRWrduD7EmPvyoMcWKzrRzv0lF7JNfoK+xJZU1EE/kVOFdolaAHT4GC0V1QOZbAT3HrkOLZxROqSLjOM5GoMfBbnXVsNEGuUvAMl1AVhD5qepIxvVMdwxC9NquunTzvDyXZlhhzm31seiJ1QnHgoQwdFPAetgSiIx7d79GbDvxMDp+/fP40kfMmfbiSwVkT2oTPh0P+yTAor13qzVjeYay8CSLmKBIvYRIXASFYpSFiJjY65slgpWs0YsGM92Z9+d/68ddaUx5/7FWbX8r8PXZzKMBxsieVd+ihdDYkhhBzOg1OOgb0NXqegJ2sfEE+eYwujAcDSqkfItRgiHN/RQXdwLa/LGUzb/V196b2q2coXYEHdY46Akwq6xA8yeggpNmhjHOuI81lqpaOHEZObbFdWSNe1lc/vokbm6G4mF6TNyfT1mzUH6bIx5U8cjwLDpVeaiW+3t/enN1NLxlFtFyDoFUguGceVCQirZxgH9NQzP6jecgx4KsHCaPWxAWUwkDatHvjVqBgMlFrHyso9EvSmtBv+6YnoCjshgNlWGPBEguPhjAiEVgnHVM/YhWEXfKdCcyLpoRQ0ts2luK5MaFKbJgGsUwDSsooISnbQIn/0oqj0r1KNeJzHLgCdIJNotntBTc7hUnSyVmhZLnbLSDgd180DV+TljxtzRk91uA1LLjPM+59jpCRKyt0jWQiL9u5PXtgPmxeVGnhvJ/hpnfwuKB+uPih7byj0ent/QMZL/Z7vKRW062HDe94+h5Lyf8Nqfhp0fPdThY0KhWs2LbF5M9vVXQ89A==
+sidebar_class_name: "post api-method"
+info_path: CDK-Erigon/JSON-RPC/zkevm/polygon-zkevm-node-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"zkevm_batchNumberByBlockNumber"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/zkevm_batchNumberByBlockNumber"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+zkevm_batchNumberByBlockNumber
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"integer","default":1},"jsonrpc":{"type":"string","default":"2.0"},"method":{"type":"string","default":"zkevm_batchNumberByBlockNumber"},"params":{"type":"array","items":{"type":"string"},"default":["0xD65B"]}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Returns the batch number associated with the given block number.","content":{"application/json":{"schema":{"type":"object","properties":{"jsonrpc":{"type":"string"},"id":{"type":"integer"},"result":{"type":"object"}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

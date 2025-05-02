@@ -1,15 +1,17 @@
 openapi: 3.0.0
 info:
-  title: Polygon zkEVM Node API
+  title: Ethereum JSON-RPC API
   version: 1.0.0
-  description: This is an API for interacting with a zkEVM node.
+  description: |
+    Standard Ethereum JSON-RPC API methods for interacting with the Ethereum blockchain.
+    These methods allow developers to query blockchain data, send transactions, and interact with smart contracts.
 servers:
 - url: https://rpc.stavanger.gateway.fm
 paths:
   /eth_blockNumber:
     post:
       tags:
-      - eth_blockNumber
+      - Chain State
       summary: eth_blockNumber
       operationId: eth_blockNumber
       requestBody:
@@ -20,7 +22,7 @@ paths:
               type: object
       responses:
         '200':
-          description: Response for eth_blockNumber
+          description: Returns the number of the most recent block
           content:
             application/json:
               schema:
@@ -28,7 +30,7 @@ paths:
   /eth_call:
     post:
       tags:
-      - eth_call
+      - State Queries
       summary: eth_call
       operationId: eth_call
       requestBody:
@@ -39,7 +41,7 @@ paths:
               type: object
       responses:
         '200':
-          description: Response for eth_call
+          description: Executes a new message call immediately without creating a transaction on the blockchain
           content:
             application/json:
               schema:
@@ -47,7 +49,7 @@ paths:
   /eth_chainId:
     post:
       tags:
-      - eth_chainId
+      - Chain State
       summary: eth_chainId
       operationId: eth_chainId
       requestBody:
@@ -58,7 +60,7 @@ paths:
               type: object
       responses:
         '200':
-          description: Response for eth_chainId
+          description: Returns the chain ID used for signing replay-protected transactions
           content:
             application/json:
               schema:
@@ -66,7 +68,7 @@ paths:
   /eth_estimateGas:
     post:
       tags:
-      - eth_estimateGas
+      - Transactions
       summary: eth_estimateGas
       operationId: eth_estimateGas
       requestBody:
@@ -77,7 +79,7 @@ paths:
               type: object
       responses:
         '200':
-          description: Response for eth_estimateGas
+          description: Returns an estimation of gas needed for a given transaction
           content:
             application/json:
               schema:
@@ -85,7 +87,7 @@ paths:
   /eth_gasPrice:
     post:
       tags:
-      - eth_gasPrice
+      - Transactions
       summary: eth_gasPrice
       operationId: eth_gasPrice
       requestBody:
@@ -96,7 +98,7 @@ paths:
               type: object
       responses:
         '200':
-          description: Response for eth_gasPrice
+          description: Returns the current gas price in wei
           content:
             application/json:
               schema:
@@ -104,7 +106,7 @@ paths:
   /eth_getBalance:
     post:
       tags:
-      - eth_getBalance
+      - State Queries
       summary: eth_getBalance
       operationId: eth_getBalance
       requestBody:
@@ -115,7 +117,7 @@ paths:
               type: object
       responses:
         '200':
-          description: Response for eth_getBalance
+          description: Returns the balance of the account at the specified address
           content:
             application/json:
               schema:
@@ -123,7 +125,7 @@ paths:
   /eth_getBlockByHash:
     post:
       tags:
-      - eth_getBlockByHash
+      - Block Information
       summary: eth_getBlockByHash
       operationId: eth_getBlockByHash
       requestBody:
@@ -134,7 +136,7 @@ paths:
               type: object
       responses:
         '200':
-          description: Response for eth_getBlockByHash
+          description: Returns information about a block by its hash
           content:
             application/json:
               schema:
@@ -142,7 +144,7 @@ paths:
   /eth_getBlockTransactionCountByHash:
     post:
       tags:
-      - eth_getBlockTransactionCountByHash
+      - Block Information
       summary: eth_getBlockTransactionCountByHash
       operationId: eth_getBlockTransactionCountByHash
       requestBody:
@@ -153,7 +155,7 @@ paths:
               type: object
       responses:
         '200':
-          description: Response for eth_getBlockTransactionCountByHash
+          description: Returns the number of transactions in a block matching the given block hash
           content:
             application/json:
               schema:
@@ -161,7 +163,7 @@ paths:
   /eth_getBlockTransactionCountByNumber:
     post:
       tags:
-      - eth_getBlockTransactionCountByNumber
+      - Block Information
       summary: eth_getBlockTransactionCountByNumber
       operationId: eth_getBlockTransactionCountByNumber
       requestBody:
@@ -172,7 +174,7 @@ paths:
               type: object
       responses:
         '200':
-          description: Response for eth_getBlockTransactionCountByNumber
+          description: Returns the number of transactions in a block matching the given block number
           content:
             application/json:
               schema:
@@ -180,7 +182,7 @@ paths:
   /eth_getCode:
     post:
       tags:
-      - eth_getCode
+      - State Queries
       summary: eth_getCode
       operationId: eth_getCode
       requestBody:
@@ -191,7 +193,7 @@ paths:
               type: object
       responses:
         '200':
-          description: Response for eth_getCode
+          description: Returns the compiled smart contract code at the specified address
           content:
             application/json:
               schema:
@@ -199,7 +201,7 @@ paths:
   /eth_getFilterChanges:
     post:
       tags:
-      - eth_getFilterChanges
+      - Filters
       summary: eth_getFilterChanges
       operationId: eth_getFilterChanges
       requestBody:
@@ -210,7 +212,7 @@ paths:
               type: object
       responses:
         '200':
-          description: Response for eth_getFilterChanges
+          description: Returns an array of logs which occurred since the last poll
           content:
             application/json:
               schema:
@@ -218,7 +220,7 @@ paths:
   /eth_getLogs:
     post:
       tags:
-      - eth_getLogs
+      - Filters
       summary: eth_getLogs
       operationId: eth_getLogs
       requestBody:
@@ -229,7 +231,7 @@ paths:
               type: object
       responses:
         '200':
-          description: Response for eth_getLogs
+          description: Returns an array of logs matching the given filter object
           content:
             application/json:
               schema:
@@ -237,7 +239,7 @@ paths:
   /eth_getStorageAt:
     post:
       tags:
-      - eth_getStorageAt
+      - State Queries
       summary: eth_getStorageAt
       operationId: eth_getStorageAt
       requestBody:
@@ -248,7 +250,7 @@ paths:
               type: object
       responses:
         '200':
-          description: Response for eth_getStorageAt
+          description: Returns the value from a storage position at a given address
           content:
             application/json:
               schema:
@@ -256,7 +258,7 @@ paths:
   /eth_getTransactionByBlockHashAndIndex:
     post:
       tags:
-      - eth_getTransactionByBlockHashAndIndex
+      - Transaction Information
       summary: eth_getTransactionByBlockHashAndIndex
       operationId: eth_getTransactionByBlockHashAndIndex
       requestBody:
@@ -267,7 +269,7 @@ paths:
               type: object
       responses:
         '200':
-          description: Response for eth_getTransactionByBlockHashAndIndex
+          description: Returns information about a transaction by block hash and transaction index position
           content:
             application/json:
               schema:
@@ -275,7 +277,7 @@ paths:
   /eth_getTransactionByBlockNumberAndIndex:
     post:
       tags:
-      - eth_getTransactionByBlockNumberAndIndex
+      - Transaction Information
       summary: eth_getTransactionByBlockNumberAndIndex
       operationId: eth_getTransactionByBlockNumberAndIndex
       requestBody:
@@ -286,7 +288,7 @@ paths:
               type: object
       responses:
         '200':
-          description: Response for eth_getTransactionByBlockNumberAndIndex
+          description: Returns information about a transaction by block number and transaction index position
           content:
             application/json:
               schema:
@@ -294,7 +296,7 @@ paths:
   /eth_getTransactionByHash:
     post:
       tags:
-      - eth_getTransactionByHash
+      - Transaction Information
       summary: eth_getTransactionByHash
       operationId: eth_getTransactionByHash
       requestBody:
@@ -305,7 +307,7 @@ paths:
               type: object
       responses:
         '200':
-          description: Response for eth_getTransactionByHash
+          description: Returns information about a transaction by transaction hash
           content:
             application/json:
               schema:
@@ -313,7 +315,7 @@ paths:
   /eth_getTransactionCount:
     post:
       tags:
-      - eth_getTransactionCount
+      - State Queries
       summary: eth_getTransactionCount
       operationId: eth_getTransactionCount
       requestBody:
@@ -324,7 +326,7 @@ paths:
               type: object
       responses:
         '200':
-          description: Response for eth_getTransactionCount
+          description: Returns the number of transactions sent from an address (nonce)
           content:
             application/json:
               schema:
@@ -332,7 +334,7 @@ paths:
   /eth_getTransactionReceipt:
     post:
       tags:
-      - eth_getTransactionReceipt
+      - Transaction Information
       summary: eth_getTransactionReceipt
       operationId: eth_getTransactionReceipt
       requestBody:
@@ -343,7 +345,7 @@ paths:
               type: object
       responses:
         '200':
-          description: Response for eth_getTransactionReceipt
+          description: Returns the receipt of a transaction by transaction hash
           content:
             application/json:
               schema:
@@ -351,7 +353,7 @@ paths:
   /eth_newBlockFilter:
     post:
       tags:
-      - eth_newBlockFilter
+      - Filters
       summary: eth_newBlockFilter
       operationId: eth_newBlockFilter
       requestBody:
@@ -362,7 +364,7 @@ paths:
               type: object
       responses:
         '200':
-          description: Response for eth_newBlockFilter
+          description: Creates a filter in the node to notify when a new block arrives
           content:
             application/json:
               schema:
@@ -370,7 +372,7 @@ paths:
   /eth_newFilter:
     post:
       tags:
-      - eth_newFilter
+      - Filters
       summary: eth_newFilter
       operationId: eth_newFilter
       requestBody:
@@ -381,7 +383,7 @@ paths:
               type: object
       responses:
         '200':
-          description: Response for eth_newFilter
+          description: Creates a filter object based on filter options to notify when state changes
           content:
             application/json:
               schema:
@@ -389,7 +391,7 @@ paths:
   /eth_newPendingTransactionFilter:
     post:
       tags:
-      - eth_newPendingTransactionFilter
+      - Filters
       summary: eth_newPendingTransactionFilter
       operationId: eth_newPendingTransactionFilter
       requestBody:
@@ -400,7 +402,7 @@ paths:
               type: object
       responses:
         '200':
-          description: Response for eth_newPendingTransactionFilter
+          description: Creates a filter to notify when new pending transactions arrive
           content:
             application/json:
               schema:
@@ -408,7 +410,7 @@ paths:
   /eth_sendRawTransaction:
     post:
       tags:
-      - eth_sendRawTransaction
+      - Transactions
       summary: eth_sendRawTransaction
       operationId: eth_sendRawTransaction
       requestBody:
@@ -419,7 +421,7 @@ paths:
               type: object
       responses:
         '200':
-          description: Response for eth_sendRawTransaction
+          description: Submits a pre-signed transaction for broadcast to the Ethereum network
           content:
             application/json:
               schema:
@@ -427,7 +429,7 @@ paths:
   /eth_syncing:
     post:
       tags:
-      - eth_syncing
+      - Chain State
       summary: eth_syncing
       operationId: eth_syncing
       requestBody:
@@ -438,7 +440,7 @@ paths:
               type: object
       responses:
         '200':
-          description: Response for eth_syncing
+          description: Returns an object with data about the sync status or false
           content:
             application/json:
               schema:
@@ -446,7 +448,7 @@ paths:
   /eth_uninstallFilter:
     post:
       tags:
-      - eth_uninstallFilter
+      - Filters
       summary: eth_uninstallFilter
       operationId: eth_uninstallFilter
       requestBody:
@@ -457,7 +459,7 @@ paths:
               type: object
       responses:
         '200':
-          description: Response for eth_uninstallFilter
+          description: Uninstalls a filter with the given ID
           content:
             application/json:
               schema:
@@ -465,7 +467,7 @@ paths:
   /web3_clientVersion:
     post:
       tags:
-      - web3_clientVersion
+      - Web3
       summary: web3_clientVersion
       operationId: web3_clientVersion
       requestBody:
@@ -476,62 +478,26 @@ paths:
               type: object
       responses:
         '200':
-          description: Response for web3_clientVersion
+          description: Returns the current client version of the node
           content:
             application/json:
               schema:
                 type: object
 tags:
-- name: eth_blockNumber
-  description: Method for eth_blockNumber.
-- name: eth_call
-  description: Method for eth_call.
-- name: eth_chainId
-  description: Method for eth_chainId.
-- name: eth_estimateGas
-  description: Method for eth_estimateGas.
-- name: eth_gasPrice
-  description: Method for eth_gasPrice.
-- name: eth_getBalance
-  description: Method for eth_getBalance.
-- name: eth_getBlockByHash
-  description: Method for eth_getBlockByHash.
-- name: eth_getBlockTransactionCountByHash
-  description: Method for eth_getBlockTransactionCountByHash.
-- name: eth_getBlockTransactionCountByNumber
-  description: Method for eth_getBlockTransactionCountByNumber.
-- name: eth_getCode
-  description: Method for eth_getCode.
-- name: eth_getFilterChanges
-  description: Method for eth_getFilterChanges.
-- name: eth_getLogs
-  description: Method for eth_getLogs.
-- name: eth_getStorageAt
-  description: Method for eth_getStorageAt.
-- name: eth_getTransactionByBlockHashAndIndex
-  description: Method for eth_getTransactionByBlockHashAndIndex.
-- name: eth_getTransactionByBlockNumberAndIndex
-  description: Method for eth_getTransactionByBlockNumberAndIndex.
-- name: eth_getTransactionByHash
-  description: Method for eth_getTransactionByHash.
-- name: eth_getTransactionCount
-  description: Method for eth_getTransactionCount.
-- name: eth_getTransactionReceipt
-  description: Method for eth_getTransactionReceipt.
-- name: eth_newBlockFilter
-  description: Method for eth_newBlockFilter.
-- name: eth_newFilter
-  description: Method for eth_newFilter.
-- name: eth_newPendingTransactionFilter
-  description: Method for eth_newPendingTransactionFilter.
-- name: eth_sendRawTransaction
-  description: Method for eth_sendRawTransaction.
-- name: eth_syncing
-  description: Method for eth_syncing.
-- name: eth_uninstallFilter
-  description: Method for eth_uninstallFilter.
-- name: web3_clientVersion
-  description: Method for web3_clientVersion.
+- name: Chain State
+  description: Methods related to the blockchain state and network information
+- name: State Queries
+  description: Methods for querying the state of accounts and contracts
+- name: Block Information
+  description: Methods for retrieving block data and block-related information
+- name: Transaction Information
+  description: Methods for retrieving transaction data and receipts
+- name: Transactions
+  description: Methods for creating and sending transactions
+- name: Filters
+  description: Methods for creating and managing event filters
+- name: Web3
+  description: Basic web3 utility methods
 x-readme:
   explorer-enabled: true
   proxy-enabled: true
