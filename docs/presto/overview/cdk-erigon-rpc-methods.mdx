@@ -1,0 +1,380 @@
+# 🛟 CDK Erigon RPC Methods
+
+## CDK-Erigon RPC Methods
+
+### Transaction Pool (`txpool`)
+
+<details>
+
+<summary><strong>txpool_content</strong></summary>
+
+#### Description:
+
+Returns details of all pending and queued transactions in the transaction pool.
+
+#### Parameters:
+
+_None_
+
+#### Response:
+
+Returns an object containing:
+
+* **pending** – A list of transactions waiting to be included in a block.
+* **queued** – A list of transactions that are queued due to nonce gaps.
+
+#### Example:
+
+```json
+{
+  "pending": { "0xSenderAddress": [ { "to": "0xReceiver", "value": "0x10" } ] },
+  "queued": { "0xSenderAddress": [ { "to": "0xReceiver", "value": "0x20" } ] }
+}
+```
+
+</details>
+
+<details>
+
+<summary><strong>txpool_contentFrom</strong></summary>
+
+#### Description:
+
+Fetches all pending and queued transactions from a specific sender.
+
+#### Parameters:
+
+* `address` _(string)_: The sender’s Ethereum address.
+
+#### Response:
+
+Returns the list of transactions originating from the specified sender.
+
+#### Example:
+
+```json
+{
+  "pending": [{ "to": "0xReceiver", "value": "0x10" }],
+  "queued": [{ "to": "0xReceiver", "value": "0x20" }]
+}
+```
+
+</details>
+
+<details>
+
+<summary><strong>txpool_limbo</strong></summary>
+
+#### Description:
+
+Returns transactions that are stuck in limbo due to missing dependencies or nonce gaps.
+
+#### Parameters:
+
+_None_
+
+#### Response:
+
+Returns an array of transactions that are unprocessable.
+
+#### Example:
+
+```json
+{
+  "limbo": [{ "from": "0xSender", "nonce": 5, "to": "0xReceiver" }]
+}
+```
+
+</details>
+
+### zkEVM Methods (`zkevm`)
+
+<details>
+
+<summary><strong>zkevm_batchNumber</strong></summary>
+
+#### Description:
+
+Returns the latest batch number finalized on L1.
+
+#### Parameters:
+
+_None_
+
+#### Response:
+
+* `batchNumber` _(integer)_: The latest verified batch.
+
+#### Example:
+
+```json
+{
+  "batchNumber": 10045
+}
+```
+
+</details>
+
+<details>
+
+<summary><strong>zkevm_batchNumberByBlockNumber</strong></summary>
+
+#### Description:
+
+Fetches the batch number corresponding to a specific block number.
+
+#### Parameters:
+
+* `blockNumber` _(integer)_: The L2 block number.
+
+#### Response:
+
+* `batchNumber` _(integer)_: The batch associated with the block.
+
+#### Example:
+
+```json
+{
+  "batchNumber": 9998
+}
+```
+
+</details>
+
+<details>
+
+<summary><strong>zkevm_consolidatedBlockNumber</strong></summary>
+
+#### Description:
+
+Retrieves the latest L2 block that has been consolidated.
+
+#### Parameters:
+
+_None_
+
+#### Response:
+
+* `blockNumber` _(integer)_: The latest consolidated L2 block.
+
+#### Example:
+
+```json
+{
+  "blockNumber": 105432
+}
+```
+
+</details>
+
+<details>
+
+<summary><strong>zkevm_estimateCounters</strong></summary>
+
+#### Description:
+
+Estimates the counter usage for a given transaction, similar to `estimateGas` but for zkEVM.
+
+#### Parameters:
+
+* `transaction` _(object)_: The transaction object to analyze.
+
+#### Response:
+
+* `counterEstimate` _(integer)_: Estimated zk-counter usage.
+
+#### Example:
+
+```json
+{
+  "counterEstimate": 25000
+}
+```
+
+</details>
+
+<details>
+
+<summary><strong>zkevm_getBatchByNumber</strong></summary>
+
+#### Description:
+
+Returns details about a specific batch by its number.
+
+#### Parameters:
+
+* `batchNumber` _(integer)_: The batch ID to fetch.
+
+#### Response:
+
+Batch details, including block range, state root, and L1 commitment status.
+
+#### Example:
+
+```json
+{
+  "batch": {
+    "batchNumber": 10045,
+    "blockRange": "100430-100450",
+    "stateRoot": "0xabcdef"
+  }
+}
+```
+
+</details>
+
+<details>
+
+<summary><strong>zkevm_getBatchCountersByNumber</strong></summary>
+
+#### Description:
+
+Retrieves the counter usage details of a specific batch.
+
+#### Parameters:
+
+* `batchNumber` _(integer)_: The batch ID.
+
+#### Response:
+
+A list of counter values for that batch.
+
+#### Example:
+
+```json
+{
+  "counters": {
+    "zkCountersUsed": 14000,
+    "gasUsed": 8000000
+  }
+}
+```
+
+</details>
+
+<details>
+
+<summary><strong>zkevm_getBatchWitness</strong></summary>
+
+#### Description:
+
+Returns the witness data used to generate a zk-proof for a batch.
+
+#### Parameters:
+
+* `batchNumber` _(integer)_: The batch ID.
+
+#### Response:
+
+A large witness dataset used in zk-proof computation.
+
+#### Example:
+
+```json
+{
+  "witnessData": "0xabcdef12345..."
+}
+```
+
+</details>
+
+<details>
+
+<summary><strong>zkevm_getExitRootTable</strong></summary>
+
+#### Description:
+
+Returns the global exit root table.
+
+#### Parameters:
+
+_None_
+
+#### Response:
+
+A mapping of all exit roots across different rollups.
+
+#### Example:
+
+```json
+{
+  "exitRoots": {
+    "rollup1": "0x123abc...",
+    "rollup2": "0x456def..."
+  }
+}
+```
+
+</details>
+
+<details>
+
+<summary><strong>zkevm_isBlockConsolidated</strong></summary>
+
+#### Description:
+
+Checks if an L2 block has been consolidated into a batch.
+
+#### Parameters:
+
+* `blockNumber` _(integer)_: The L2 block ID.
+
+#### Response:
+
+* `boolean` _(true/false)_: Whether the block is consolidated.
+
+#### Example:
+
+```json
+{
+  "isConsolidated": true
+}
+```
+
+</details>
+
+<details>
+
+<summary><strong>zkevm_verifiedBatchNumber</strong></summary>
+
+#### Description:
+
+Returns the last verified batch number on L1.
+
+#### Parameters:
+
+_None_
+
+#### Response:
+
+* `batchNumber` _(integer)_: The latest verified batch.
+
+#### Example:
+
+```json
+{
+  "batchNumber": 10432
+}
+```
+
+</details>
+
+### Other zkEVM Methods
+
+| Method                           | Description                                           |
+| -------------------------------- | ----------------------------------------------------- |
+| `zkevm_getForkById`              | Fetches details of a specific fork by its ID.         |
+| `zkevm_getForks`                 | Lists all available forks in the zkEVM environment.   |
+| `zkevm_getLatestDataStreamBlock` | Retrieves the latest block in the data stream.        |
+| `zkevm_getLatestGlobalExitRoot`  | Returns the latest exit root for rollup transactions. |
+| `zkevm_getRollupAddress`         | Fetches the rollup contract address.                  |
+| `zkevm_getRollupManagerAddress`  | Retrieves the address of the rollup manager contract. |
+| `zkevm_getVersionHistory`        | Returns a list of version upgrades and changes.       |
+
+### Notes on Usage
+
+* **State Verification:** Some calls return **trusted** vs. **verified** results, meaning finality may depend on L1 settlement.
+* **Performance Considerations:** Calls returning large datasets (e.g., `getWitness`) may take longer to execute.
+* **Gas Considerations:** `zkevm_estimateCounters` helps optimize transaction gas usage in zkEVM environments.
+
+For more details, refer to the **Polygon zkEVM API Documentation**: [Polygon zkEVM Docs](https://docs.polygon.technology/zkEVM/architecture/protocol/etrog-upgrade/#supported-opcodes).

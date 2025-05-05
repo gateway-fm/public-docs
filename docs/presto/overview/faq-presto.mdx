@@ -1,0 +1,394 @@
+---
+description: Here you can find answers to commons questions about Presto.
+---
+
+# 🛟 FAQ Presto
+
+***
+
+## Performance & Scalability
+
+<details>
+
+<summary>Is WebSocket (WS) support available for Erigon devnet rollups?</summary>
+
+Yes is available for all deployed rollups.
+
+</details>
+
+<details>
+
+<summary>Can WebSocket support be enabled for a paid public testnet rollup?</summary>
+
+Yes is available for all deployed rollups.
+
+</details>
+
+***
+
+## Maintenance
+
+<details>
+
+<summary>Is the downtime during the Erigon migration a "hard" downtime?</summary>
+
+Yes, during the migration, the sequencer and all the services will be completely shut down.
+
+</details>
+
+<details>
+
+<summary>Why does Blockscout show only 19K wallet addresses when the actual count is 150K?</summary>
+
+Blockscout counts all addresses that have either originated or received a transaction. In contrast, the 150K figure refers to entries within the projects custom smart contract. Which Blockscout doesn’t natively index or display. To show the true number of active users from the custom contract, Blockscout would need to be customized.
+
+To display active users from contract, a possible solution is to:
+
+1. Query the custom smart contract to define "active users."
+2. Create a custom indexer that tracks this data and exposes an API.
+3. Fork the Blockscout frontend to query the custom indexer API instead of Blockscout’s API.
+
+</details>
+
+<details>
+
+<summary>Why are <code>eth_getLogs</code> requests not returning results and how can this be resolved?</summary>
+
+The issue may arise due to the rollup's batch sealing process. Logs are typically indexed after the batch is sealed, meaning that until the batch is closed, `eth_getLogs` requests might not return results. This delay can be caused by the batch timing configuration, which determines how frequently batches are closed and logs are indexed.
+
+</details>
+
+<details>
+
+<summary>What versions of Erigon should be used for different CDK-Erigon forks and are beta26 and beta27 compatible?</summary>
+
+For CDK-Erigon deployments:
+
+* Forkid.11 and below should use Erigon 2.0.0 (beta27).
+* Forkid.12 requires Erigon 2.1.0.
+* The upcoming Erigon release, 2.60.0, will support forkid.13 and include performance fixes for real provers.
+
+If you’re using beta26, it’s recommended to upgrade to beta27 for 2.0.0 compatibility, as the difference is minor and easily applied.
+
+</details>
+
+<details>
+
+<summary>What is the upgrade path for forkid support in CDK-Erigon, and what improvements does forkid.13 introduce?</summary>
+
+Forkid.13, which includes **EIP-7212**, significantly reduces gas usage and counters for some signature verifications and is prioritized for use with the OKX pay product.
+
+The supported upgrade path for CDK-Erigon deployments is as follows:
+
+* Current tested paths: **9 -> 11 -> 12**
+* In testing: **9 -> 12**
+* Planned: **12 -> 13**
+
+The recommended sequence for customer upgrades will be **9 -> 12 -> 13** to ensure compatibility and optimal performance.
+
+</details>
+
+***
+
+## Use Cases & Considerations
+
+<details>
+
+<summary>Is a Private zkRollup a viable solution for my use case compared to public networks like Polygon or BNB?</summary>
+
+**Question:**
+
+How many transactions per month do I need for a Private zkRollup to be a viable solution? For example, if I have 10 million transactions per month on Polygon or BNB, should I consider using a private zkRollup instead?
+
+**Answer:**
+
+* **Break-even point**: You should have more than **1 000 transaction per hour** for a Private zkRollup to be cost-effective. If your transaction volume is lower than this, L1 may offer similar costs.
+* **Customization**: One of the key selling points (KSP) of private zkRollups is customization. For instance, you can have **zero transaction fees** or redistribute collected fees as rewards within your community.
+* **Transaction speed**: L1 transaction confirmation takes minutes, while on L2 like private zkRollups, confirmation occurs in milliseconds. However, private zkRollups may not match the transaction speed of public chains like BNB or Polygon, but you won’t be competing with other users for network space.
+* **Cost comparison**: **BNB and Polygon** are generally cheaper than private zkRollups for now.
+* **Settlement**: Transactions on private zkRollups are settled on a **root L1 chain** ensuring security and finality.
+* **Flexible fees**: In a private zkRollup, the **owners pay the fees** instead of the users and the fee structure can be highly flexible.
+* **Low confirmation time**: The average transaction confirmation time on a private zkRollup is very low.
+* **Use case for small games**: Private zkRollups can handle transactions with **database-like speed** (e.g., token minting or sending tokens in 100ms).
+* **Custom tokens**: You can build your own token on a private zkRollup using tools like **OpenZeppelin**, similar to how tokens are created on Ethereum.
+* **Use Cases**: Ideal for **bonus points**, **cashback programs** or digital currency for **in-app purchases** and mobile app top-ups.
+
+</details>
+
+<details>
+
+<summary>What are the benefits of using ZK rollups compared to Optimistic rollups like Arbitrum? How do their costs and use cases compare?</summary>
+
+**ZK Roll-ups Benefits:**
+
+1. **ZK Rollups can run OP node without a prover**: Just like Optimistic Rollups, ZK Rollups can initially run without a prover and you can connect the prover later for enhanced security. The prover ensures secure bridging and semi-permissionless operations, making it more secure and ideal for audits.
+2. **Better security**: ZK Rollups provide a higher level of security since transactions are verified cryptographically, unlike OP Rollups, which rely on fraud proofs and have a longer dispute period.
+3. **L1 fallback**: If something goes wrong on a ZK Rollup, you can fall back to L1 and recover funds or make transactions. This option provides added security compared to other solutions.
+4. **Decentralization support**: If the L1 blockchain is decentralized, your private rollup will benefit from that decentralization adding another layer of security.
+5. **Faster finality**: With ZK Rollups, transaction finality is quicker compared to OP Rollups since there is no waiting period for fraud proof disputes.
+
+**Use Cases:**
+
+* ZK Rollups are ideal for applications that require high security, auditability and faster finalit. Such as financial applications, enterprise solutions and private chains.
+
+**Costs:**
+
+* ZK Rollups generally have higher initial setup costs due to the complexity of zero-knowledge proofs. However, they can become more cost-effective at higher transaction volumes compared to OP Rollups, which may have lower upfront costs but longer transaction finality due to the challenge period.
+
+**Drawbacks of ZK Rollups:**
+
+* **Decentralized Sequencers**: If using a decentralized sequencer, it may slow down transaction processing. However, this trade-off improves security and resilience.
+
+</details>
+
+<details>
+
+<summary>Do I need to use bridges?</summary>
+
+Yes, **bridges are essential** for interoperability between different blockchain networks. Here’s why:
+
+1. **NFT Interoperability**: If you mint an NFT on your private rollup and want to sell it on an NFT marketplace (like one on Ethereum), you need a bridge to connect the two networks.
+2. **DeFi Participation**: If you want your token to participate in DeFi, such as bridging a stablecoin (e.g., USDT) to your private rollup, a bridge is necessary.
+3. **Cross-chain Settlements**: Bridges enable transactions or settlements across different chains, like Ethereum or other EVM-compatible chains.
+4. **Two-Step Settlement Process**: The settlement process includes:
+   * **Data Availability (DA)**: Ensuring that the necessary transaction data is available.
+   * **Proof**: Verifying the transaction through a proof mechanism.
+
+Bridges facilitate these interactions, making them critical for rollup functionality and cross-chain transactions.
+
+In summary, to use assets like NFTs or tokens across multiple networks, such as Palm, Ethereum, or Polygon, a bridge is needed to facilitate inter-chain transfers and ensure settlement.
+
+</details>
+
+<details>
+
+<summary>How does Presto differ from other platforms that offer roll-up creation or similar services?</summary>
+
+1. **Fast Deployment with ZK-EVM Technology:**
+   * Presto offers quick and easy deployment using zkEVM technology, providing a complete package with 35+ third-party integrations, a shared sequencer and customization options. It supports decentralized and on-premise deployments.
+2. **Types of Similar Services:**
+   * **Fully Automated Services:** Presto offer fully automated roll-up creation. This is seamless and fast, requiring minimal user input.
+3. **Mass Adoption with Good UI/UX:**
+   * Presto’s main advantage is its focus on mass adoption through a user-friendly interface and solid user experience (UI/UX). It is designed to be accessible even for non-experts.
+4. **Evolution Towards Mobile SDK:**
+   * Presto is moving towards offering a mobile SDK, similar to what Firebase does. This will further streamline development for mobile platforms and enhance ease of use.
+5. **Simple, Click-Based Setup:**
+   * With just a few clicks, users can deploy their own roll-up. While it's not entirely no-code, Presto provides templates and tools to simplify smart contract deployment for non-technical users.
+
+In summary, Presto stands out for its fast, automated deployment process, focus on user experience and future evolution towards mobile SDKs, differentiating it from more manual or incomplete solutions in the market.
+
+</details>
+
+<details>
+
+<summary>Does a private rollup support smart contracts? If so, in what languages?</summary>
+
+Yes, private rollups support smart contracts, just like any EVM (Ethereum Virtual Machine) chain. The primary language for writing these smart contracts is **Solidity**.
+
+</details>
+
+<details>
+
+<summary>How often do we need to release updates for private roll up? Who will take care of it?</summary>
+
+It will be up to date. Gateway will handle this.
+
+</details>
+
+***
+
+## Security & Monitoring
+
+<details>
+
+<summary>What measures did you take to ensure the security of the cloud deployment?</summary>
+
+* Regularly backup data and test the restoration process
+* ACL and limitation access for users
+* 2FA is mandatory
+* Monitoring updates and patches for all software and applications
+* Encrypted EBS
+* Implement network security measures such as firewalls
+* Bounty programs (white hat)
+
+</details>
+
+<details>
+
+<summary>How would you do a software upgrade?</summary>
+
+* Use redundant nodes to ensure high availability during the software upgrade process.
+* Implement a canary approach, where a small portion of the system is upgraded first and monitored closely before rolling out the upgrade to the entire system.
+  * for CDK and Presto — first test on free tier users, then enterprise users gets that
+  * for backend software, use canary deployment
+
+</details>
+
+<details>
+
+<summary>Who controls the keys in a L2 Rollup? Is this an industry standard and does it pose any risks to customers?</summary>
+
+**Key Ownership:**
+
+* **Admin Key**: We currently control the admin key. This key is primarily used for upgrades and system-wide changes. A safe multisig implementation for the admin account is planned for the future to improve security.
+* **Sequencer Key**: The sequencer key is controlled by the entity running the sequencer, which organizes transactions and sets the order in which they are executed. This key also allows control over receiving L2 gas fees. But a proof-of-concept is in progress to potentially allow customers to receive gas fees directly to their accounts.
+* **Aggregator Key**: Similar to the sequencer, the aggregator key is managed by the party running the aggregator. This key is responsible for bundling and submitting batches of transactions to the L1 blockchain.
+* **ClaimTxManager Key**: This key is also controlled by the party operating the system and manages transaction claims related to deposits and withdrawals on the L2 rollup.
+
+**Is this industry standard?** Yes, it is standard practice that the entity running the rollup possesses the private keys for components like the sequencer, aggregator and claimtxmanager. This is necessary for operating the system effectively.
+
+**Risks to customers:** There is a potential risk associated with key management since the party holding the keys controls essential parts of the rollup, including receiving gas fees and managing transaction order. However, the planned multisig admin account will mitigate some of these risks by adding a layer of security for upgrades and key actions.
+
+**Ideal Solution:** The long-term goal is to offer more flexibility and security, such as allowing customers to receive gas fees directly and reducing the dependency on centralized keyholders through multisig solutions.
+
+</details>
+
+<details>
+
+<summary>What happens if Presto experiences downtime or other issues?</summary>
+
+* **Running Your Own Node:** If you have your own node, you can continue operations independently even if Presto is down.
+* **Centralized Sequencer Issues:** If the centralized sequencer experiences downtime, no transactions can be processed until it's recovered. During this period, there's nothing you can do on the network.
+* **Prover Downtime:** If the prover goes down, the network will still function, but certain operations like **bridging** will be affected until the prover is back online.
+
+**Recommendation:** To minimize risk, it’s advisable to run your own node for added resilience during downtime.
+
+</details>
+
+<details>
+
+<summary>Is there a recovery plan in case of network data loss or progress disruption?</summary>
+
+Yes, Gateway has implemented a disaster recovery plan. The **CDK-Erigon architecture** allows any node to be quickly promoted to sequencer status if the active sequencer fails, ensuring continuity and minimizing downtime.
+
+</details>
+
+***
+
+## Tech Details
+
+<details>
+
+<summary>Has the EVM been modified in any way, such as new opcodes or precompiles?</summary>
+
+**Question:**
+
+Have you made any modifications to the EVM, such as:
+
+* Added new opcodes (e.g., to support EIP-3074)?
+* Changed gas costs of opcodes?
+* Modified context variables?
+* Does the chain use native EVM, or is bytecode/solidity transpiled into a different language?
+
+**Answer:**
+
+Yes, the EVM has been modified.
+
+**Details:**
+
+zkEVM is a standard EVM implementation with some zk-specific tweaks. These modifications allow the system to integrate with zero-knowledge technology while maintaining compatibility with the Ethereum Virtual Machine (EVM). More details on the specific modifications can be found here: [zkEVM Architecture Overview](https://docs.polygon.technology/zkEVM/architecture/protocol/etrog-upgrade/#zkevm-is-almost-type-2).
+
+</details>
+
+<details>
+
+<summary>Does your EVM support deploying existing compiled contracts with an EVM version of ‘Paris’ or later, without additional code modifications?</summary>
+
+Yes. Latest supported HF for zkEVM is Berlin + PUSH0 opcode.
+
+EIP-3198 is not supported
+
+EIP-3529 is not supported
+
+EIP-4399 is set to 0
+
+Other EIPs from Paris are supported on zkEVM
+
+</details>
+
+<details>
+
+<summary>Do you support the <code>ecrecover</code> precompile at address(1)?</summary>
+
+Yes.
+
+</details>
+
+<details>
+
+<summary>Are <a href="https://geth.ethereum.org/docs/interacting-with-geth/rpc/ns-eth#eth-call">stateOverrides</a> supported in <code>eth_call</code>?</summary>
+
+Yes.
+
+</details>
+
+<details>
+
+<summary>Are <a href="https://geth.ethereum.org/docs/developers/evm-tracing/custom-tracer">custom call tracers</a> supported in the <code>debug_traceCall</code> API?</summary>
+
+Yes.
+
+</details>
+
+<details>
+
+<summary>Can a rollup be modified to include custom gas fee management after it has already been deployed?</summary>
+
+No, once a rollup is deployed, the gas token can’t be changed. To implement custom gas fee management, such as using a custom gas token or burning part of the fees, a new rollup must be deployed. After that, a custom gas-handling contract can be applied to manage the gas fees.
+
+</details>
+
+<details>
+
+<summary>What customization options are available for a Block Explorer?</summary>
+
+Blockscout offers limited out-of-the-box customizations that includes:
+
+* Branding options, such as a logo (SVG), background for the faucet (JPG/PNG) and a favicon (ICO).
+* Additional customizations, such as a hero plate background, may be possible.
+
+However, more advanced customizations, like interactive elements, custom color schemes or charts on the homepage require a custom build of Blockscout. Along with new front-end development, which would involve ongoing maintenance and rebuilds for each version update.
+
+</details>
+
+<details>
+
+<summary>Can existing chains be added to AggLayer?</summary>
+
+Existing chain cannot be added to agglayer, a restart from genesis is required
+
+</details>
+
+<details>
+
+<summary>Can custom chain id <code>l2_chain_id</code> be set for testnet deployments, or is it restricted to mainnet only?</summary>
+
+Custom `l2_chain_id` settings are generally restricted to mainnet to maintain consistency, with autogenerated IDs recommended for testnet. If a specific chain ID is required for testnet please contact us.
+
+</details>
+
+<details>
+
+<summary>Should I use an autogenerated or requested chain ID for testnet?</summary>
+
+Autogenerated IDs are preferred for testnet. However, if there’s a specific requirement, custom chain IDs can be used as long as they’re approved.
+
+</details>
+
+<details>
+
+<summary>Why am I getting an error with dynamic fee-type transactions?</summary>
+
+Dynamic fee-type transactions (EIP-1559) are currently unsupported. Only legacy transactions are compatible with this setup. Use legacy transactions to avoid the error.
+
+</details>
+
+<details>
+
+<summary>Do we currently support EIP-2718 (Typed Transaction Envelope) in legacy <code>vdk-validium-node</code> and <code>cdk-erigon</code>?</summary>
+
+No, as of now, EIP-2718 support is not available. While `cdk-erigon` technically supports envelopes, they are currently disabled for the active fork configuration. With future Proverless Protocol (PP) testing features may expand. Allowing potential support for vanilla clients.
+
+***
+
+</details>

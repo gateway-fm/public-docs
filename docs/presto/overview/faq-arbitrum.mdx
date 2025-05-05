@@ -1,0 +1,121 @@
+# 🛟 FAQ Arbitrum
+
+## Arbitrum Documentation/FAQ
+
+<details>
+
+<summary><strong>What is Arbitrum?</strong></summary>
+
+Arbitrum is a Layer 2 and Layer 3 scaling solution on Ethereum designed to make dApps faster and cost-effective, by offloading computation and storage from the Ethereum main chain. Providing higher throughput and lower fees.
+
+</details>
+
+<details>
+
+<summary><strong>Arbitrum Chains Ecosystem</strong></summary>
+
+Arbitrum provides different types of rollups and execution environments tailored for various use cases:
+
+#### **Arbitrum One**
+
+* **Description:** The main Arbitrum L2 rollup with full Ethereum compatibility.
+* **Best For:** DeFi, NFTs, general dApps.
+
+#### **Arbitrum Nova**
+
+* **Description:** Optimized for **high-throughput and low-cost** transactions using AnyTrust technology.
+* **Best For:** Gaming, social apps, microtransactions.
+
+#### **Arbitrum AnyTrust**
+
+* **Description:** Uses **off-chain data availability** with a local DA, 3rd party DA for efficiency.
+* **Features:**
+  * Custom gas token support.
+  * Validium-based solution.
+* **Best For:** Enterprise solutions L2.
+
+#### **Arbitrum Orbit**
+
+* **Description:** Allows developers to launch **custom L2 or L3 rollups** with tailored settings.
+* **Best For:** Application-specific rollups, custom gas tokens, ecosystem chains.
+
+</details>
+
+<details>
+
+<summary><strong>Setup &#x26; Configuration</strong></summary>
+
+<img src="../.gitbook/assets/arbitrum flowchart (1).jpg" alt="" data-size="original">
+
+* **Sequencer (with ArbOS):** Orders transactions and executes state transitions but does not submit rollup data to L1.
+* **Coordinator:** Aggregates L2 transactions into compressed batches before posting them to L1 Ethereum.
+* **Node Provider / RPC Interface:** Allows dApps and users to interact with the Arbitrum network.
+* **Fraud Proof System:** Handles fraud-proof verification and dispute resolution.
+* **Finalized Transactions:** Transactions validated through the fraud-proof mechanism.
+
+</details>
+
+<details>
+
+<summary><strong>Configuration Parameters</strong></summary>
+
+* **`max_gas_limit_per_block`**: Determines the maximum gas allowed in each Arbitrum block.
+
+_(Applies to Arbitrum One & Orbit but differs for Nova & AnyTrust)_
+
+</details>
+
+<details>
+
+<summary><strong>Why is my bridge withdrawal taking so long?</strong></summary>
+
+Arbitrum has a 7-day challenge period for fraud-proof verification.
+
+* During the 7-day challenge period, anyone can submit fraud proofs if they detect an invalid state transition.
+* If no fraud is detected, the transaction is finalized, and funds become available on Ethereum L1.
+* This mechanism ensures that Arbitrum remains secure without needing real-time computation on L1.
+
+#### Faster Withdrawal Alternatives
+
+A faster alternative is to use liquidity providers like Hop Protocol or Across Protocol. Waiting 7 days can be inconvenient, users can use third-party liquidity providers that offer fast exits by fronting the withdrawn funds.
+
+* **Hop Protocol** – Bridges assets instantly by using a network of liquidity providers.
+* **Across Protocol** – Provides rapid transfers across chains using bonded relayers.
+
+</details>
+
+<details>
+
+<summary><strong>Does Arbitrum support EIP-1559?</strong></summary>
+
+Yes, Arbitrum does support EIP-1559.
+
+#### **What Does This Mean for Developers?**
+
+* **Gas estimation must be adjusted** – Arbitrum does use a "base fee" + "priority tip" structure.
+* **Wallets may display fees differently** compared to Ethereum mainnet.
+
+</details>
+
+<details>
+
+<summary><strong>What happens if the Arbitrum Sequencer goes offline?</strong></summary>
+
+* **Failsafe Mode:** Users can submit transactions directly to Ethereum L1.
+* **Censorship Resistance:** If the sequencer fails to include a transaction, users can force inclusion after **24 hours**.
+* **Multiple Sequencer Support:** A new sequencer can be activated if the primary one is down.
+
+</details>
+
+<details>
+
+<summary><strong>Validators &#x26; Security Model</strong></summary>
+
+Arbitrum uses a **three-tier validator model** to maintain security and detect fraud:
+
+#### **Security Mechanism:**
+
+* **Punishment for Fraud:** Malicious validators lose their stake.
+* **Observers Earn Rewards:** If they catch fraudulent activity.
+
+</details>
