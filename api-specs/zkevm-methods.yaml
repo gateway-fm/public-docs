@@ -7,12 +7,12 @@ info:
     These methods provide access to zkEVM batch and virtualization information, allowing developers
     to track the status of transactions in the zkEVM consensus process.
 servers:
-- url: https://rpc.stavanger.gateway.fm
+  - url: https://rpc.stavanger.gateway.fm
 paths:
   /zkevm_batchNumber:
     post:
       tags:
-      - Batch Information
+        - Batch Information
       summary: zkevm_batchNumber
       operationId: zkevm_batchNumber
       requestBody:
@@ -27,7 +27,7 @@ paths:
                   default: 1
                 jsonrpc:
                   type: string
-                  default: '2.0'
+                  default: "2.0"
                 method:
                   type: string
                   default: zkevm_batchNumber
@@ -35,7 +35,7 @@ paths:
                   type: array
                   default: []
       responses:
-        '200':
+        "200":
           description: Returns the current batch number.
           content:
             application/json:
@@ -51,7 +51,7 @@ paths:
   /zkevm_batchNumberByBlockNumber:
     post:
       tags:
-      - Batch Information
+        - Batch Information
       summary: zkevm_batchNumberByBlockNumber
       operationId: zkevm_batchNumberByBlockNumber
       requestBody:
@@ -66,7 +66,7 @@ paths:
                   default: 1
                 jsonrpc:
                   type: string
-                  default: '2.0'
+                  default: "2.0"
                 method:
                   type: string
                   default: zkevm_batchNumberByBlockNumber
@@ -75,9 +75,9 @@ paths:
                   items:
                     type: string
                   default:
-                  - '0xD65B'
+                    - "0xD65B"
       responses:
-        '200':
+        "200":
           description: Returns the batch number associated with the given block number.
           content:
             application/json:
@@ -93,7 +93,7 @@ paths:
   /zkevm_consolidatedBlockNumber:
     post:
       tags:
-      - Verification Status
+        - Verification Status
       summary: zkevm_consolidatedBlockNumber
       operationId: zkevm_consolidatedBlockNumber
       requestBody:
@@ -108,7 +108,7 @@ paths:
                   default: 1
                 jsonrpc:
                   type: string
-                  default: '2.0'
+                  default: "2.0"
                 method:
                   type: string
                   default: zkevm_consolidatedBlockNumber
@@ -116,7 +116,7 @@ paths:
                   type: array
                   default: []
       responses:
-        '200':
+        "200":
           description: The latest consolidated block number.
           content:
             application/json:
@@ -132,7 +132,7 @@ paths:
   /zkevm_getBatchByNumber:
     post:
       tags:
-      - Batch Information
+        - Batch Information
       summary: zkevm_getBatchByNumber
       operationId: zkevm_getBatchByNumber
       requestBody:
@@ -147,7 +147,7 @@ paths:
                   default: 1
                 jsonrpc:
                   type: string
-                  default: '2.0'
+                  default: "2.0"
                 method:
                   type: string
                   default: zkevm_getBatchByNumber
@@ -156,9 +156,9 @@ paths:
                   items:
                     type: string
                   default:
-                  - '0x1FC0'
+                    - "0x1FC0"
       responses:
-        '200':
+        "200":
           description: Returns information about a specific batch of transactions based on the batch number.
           content:
             application/json:
@@ -174,7 +174,7 @@ paths:
   /zkevm_isBlockConsolidated:
     post:
       tags:
-      - Verification Status
+        - Verification Status
       summary: zkevm_isBlockConsolidated
       operationId: zkevm_isBlockConsolidated
       requestBody:
@@ -189,7 +189,7 @@ paths:
                   default: 1
                 jsonrpc:
                   type: string
-                  default: '2.0'
+                  default: "2.0"
                 method:
                   type: string
                   default: zkevm_isBlockConsolidated
@@ -198,9 +198,9 @@ paths:
                   items:
                     type: string
                   default:
-                  - '0xd29e'
+                    - "0xd29e"
       responses:
-        '200':
+        "200":
           description: Checks if the given block is consolidated, which means it has been finalized on Ethereum L1.
           content:
             application/json:
@@ -216,7 +216,7 @@ paths:
   /zkevm_isBlockVirtualized:
     post:
       tags:
-      - Verification Status
+        - Verification Status
       summary: zkevm_isBlockVirtualized
       operationId: zkevm_isBlockVirtualized
       requestBody:
@@ -231,7 +231,7 @@ paths:
                   default: 1
                 jsonrpc:
                   type: string
-                  default: '2.0'
+                  default: "2.0"
                 method:
                   type: string
                   default: zkevm_isBlockVirtualized
@@ -240,9 +240,9 @@ paths:
                   items:
                     type: string
                   default:
-                  - '130000'
+                    - "130000"
       responses:
-        '200':
+        "200":
           description: Checks if the given block is virtualized, which means it has been processed in the zkEVM virtual machine.
           content:
             application/json:
@@ -258,7 +258,7 @@ paths:
   /zkevm_verifiedBatchNumber:
     post:
       tags:
-      - Batch Information
+        - Batch Information
       summary: zkevm_verifiedBatchNumber
       operationId: zkevm_verifiedBatchNumber
       requestBody:
@@ -273,7 +273,7 @@ paths:
                   default: 1
                 jsonrpc:
                   type: string
-                  default: '2.0'
+                  default: "2.0"
                 method:
                   type: string
                   default: zkevm_verifiedBatchNumber
@@ -281,7 +281,7 @@ paths:
                   type: array
                   default: []
       responses:
-        '200':
+        "200":
           description: Returns the current verified batch number, which has completed zero-knowledge proof verification.
           content:
             application/json:
@@ -297,7 +297,7 @@ paths:
   /zkevm_virtualBatchNumber:
     post:
       tags:
-      - Batch Information
+        - Batch Information
       summary: zkevm_virtualBatchNumber
       operationId: zkevm_virtualBatchNumber
       requestBody:
@@ -312,7 +312,7 @@ paths:
                   default: 1
                 jsonrpc:
                   type: string
-                  default: '2.0'
+                  default: "2.0"
                 method:
                   type: string
                   default: zkevm_virtualBatchNumber
@@ -320,7 +320,7 @@ paths:
                   type: array
                   default: []
       responses:
-        '200':
+        "200":
           description: Returns the current virtual batch number, which has been virtualized in the zkEVM but not yet verified.
           content:
             application/json:
@@ -334,10 +334,10 @@ paths:
                   result:
                     type: object
 tags:
-- name: Batch Information
-  description: Methods related to zkEVM batch numbers and batch data retrieval
-- name: Verification Status
-  description: Methods for checking the verification and consolidation status of blocks in the zkEVM
+  - name: Batch Information
+    description: Methods related to zkEVM batch numbers and batch data retrieval
+  - name: Verification Status
+    description: Methods for checking the verification and consolidation status of blocks in the zkEVM
 x-readme:
   explorer-enabled: true
   proxy-enabled: true

@@ -6,12 +6,12 @@ info:
     Standard Ethereum JSON-RPC API methods for interacting with the Ethereum blockchain.
     These methods allow developers to query blockchain data, send transactions, and interact with smart contracts.
 servers:
-- url: https://rpc.stavanger.gateway.fm
+  - url: https://rpc.stavanger.gateway.fm
 paths:
   /eth_blockNumber:
     post:
       tags:
-      - Chain State
+        - Chain State
       summary: eth_blockNumber
       operationId: eth_blockNumber
       requestBody:
@@ -35,7 +35,7 @@ paths:
                   type: integer
                   example: 1
       responses:
-        '200':
+        "200":
           description: Returns the number of the most recent block
           content:
             application/json:
@@ -44,7 +44,7 @@ paths:
   /eth_call:
     post:
       tags:
-      - State Queries
+        - State Queries
       summary: eth_call
       operationId: eth_call
       requestBody:
@@ -63,16 +63,20 @@ paths:
                 params:
                   type: array
                   items: {}
-                  example: [{
-                    "from": "0x0000000000000000000000000000000000000000",
-                    "to": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                    "data": "0x70a08231000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
-                  }, "latest"]
+                  example:
+                    [
+                      {
+                        "from": "0x0000000000000000000000000000000000000000",
+                        "to": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+                        "data": "0x70a08231000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                      },
+                      "latest",
+                    ]
                 id:
                   type: integer
                   example: 1
       responses:
-        '200':
+        "200":
           description: Executes a new message call immediately without creating a transaction on the blockchain
           content:
             application/json:
@@ -81,7 +85,7 @@ paths:
   /eth_chainId:
     post:
       tags:
-      - Chain State
+        - Chain State
       summary: eth_chainId
       operationId: eth_chainId
       requestBody:
@@ -105,7 +109,7 @@ paths:
                   type: integer
                   example: 1
       responses:
-        '200':
+        "200":
           description: Returns the chain ID used for signing replay-protected transactions
           content:
             application/json:
@@ -114,7 +118,7 @@ paths:
   /eth_estimateGas:
     post:
       tags:
-      - Transactions
+        - Transactions
       summary: eth_estimateGas
       operationId: eth_estimateGas
       requestBody:
@@ -133,16 +137,19 @@ paths:
                 params:
                   type: array
                   items: {}
-                  example: [{
-                    "from": "0x0000000000000000000000000000000000000000",
-                    "to": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
-                    "data": "0x70a08231000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
-                  }]
+                  example:
+                    [
+                      {
+                        "from": "0x0000000000000000000000000000000000000000",
+                        "to": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+                        "data": "0x70a08231000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                      },
+                    ]
                 id:
                   type: integer
                   example: 1
       responses:
-        '200':
+        "200":
           description: Returns an estimation of gas needed for a given transaction
           content:
             application/json:
@@ -151,7 +158,7 @@ paths:
   /eth_feeHistory:
     post:
       tags:
-      - Transactions
+        - Transactions
       summary: eth_feeHistory
       operationId: eth_feeHistory
       requestBody:
@@ -175,7 +182,7 @@ paths:
                   type: integer
                   example: 1
       responses:
-        '200':
+        "200":
           description: Returns a collection of historical gas information
           content:
             application/json:
@@ -184,7 +191,7 @@ paths:
   /eth_gasPrice:
     post:
       tags:
-      - Transactions
+        - Transactions
       summary: eth_gasPrice
       operationId: eth_gasPrice
       requestBody:
@@ -208,7 +215,7 @@ paths:
                   type: integer
                   example: 1
       responses:
-        '200':
+        "200":
           description: Returns the current gas price in wei
           content:
             application/json:
@@ -217,7 +224,7 @@ paths:
   /eth_getBalance:
     post:
       tags:
-      - State Queries
+        - State Queries
       summary: eth_getBalance
       operationId: eth_getBalance
       requestBody:
@@ -241,7 +248,7 @@ paths:
                   type: integer
                   example: 1
       responses:
-        '200':
+        "200":
           description: Returns the balance of the account at the specified address
           content:
             application/json:
@@ -250,7 +257,7 @@ paths:
   /eth_getBlockByHash:
     post:
       tags:
-      - Block Information
+        - Block Information
       summary: eth_getBlockByHash
       operationId: eth_getBlockByHash
       requestBody:
@@ -269,12 +276,13 @@ paths:
                 params:
                   type: array
                   items: {}
-                  example: ["0xb3b20624f8f0f86eb50dd04688409e5cea4bd02d700bf6e79e9384d47d6a5a35", false]
+                  example:
+                    ["0xb3b20624f8f0f86eb50dd04688409e5cea4bd02d700bf6e79e9384d47d6a5a35", false]
                 id:
                   type: integer
                   example: 1
       responses:
-        '200':
+        "200":
           description: Returns information about a block by its hash
           content:
             application/json:
@@ -283,7 +291,7 @@ paths:
   /eth_getBlockByNumber:
     post:
       tags:
-      - Block Information
+        - Block Information
       summary: eth_getBlockByNumber
       operationId: eth_getBlockByNumber
       requestBody:
@@ -307,7 +315,7 @@ paths:
                   type: integer
                   example: 1
       responses:
-        '200':
+        "200":
           description: Returns information about a block by its number
           content:
             application/json:
@@ -316,7 +324,7 @@ paths:
   /eth_getBlockTransactionCountByHash:
     post:
       tags:
-      - Block Information
+        - Block Information
       summary: eth_getBlockTransactionCountByHash
       operationId: eth_getBlockTransactionCountByHash
       requestBody:
@@ -340,7 +348,7 @@ paths:
                   type: integer
                   example: 1
       responses:
-        '200':
+        "200":
           description: Returns the number of transactions in a block matching the given block hash
           content:
             application/json:
@@ -349,7 +357,7 @@ paths:
   /eth_getBlockTransactionCountByNumber:
     post:
       tags:
-      - Block Information
+        - Block Information
       summary: eth_getBlockTransactionCountByNumber
       operationId: eth_getBlockTransactionCountByNumber
       requestBody:
@@ -373,7 +381,7 @@ paths:
                   type: integer
                   example: 1
       responses:
-        '200':
+        "200":
           description: Returns the number of transactions in a block matching the given block number
           content:
             application/json:
@@ -382,7 +390,7 @@ paths:
   /eth_getCode:
     post:
       tags:
-      - State Queries
+        - State Queries
       summary: eth_getCode
       operationId: eth_getCode
       requestBody:
@@ -406,7 +414,7 @@ paths:
                   type: integer
                   example: 1
       responses:
-        '200':
+        "200":
           description: Returns the compiled smart contract code at the specified address
           content:
             application/json:
@@ -415,7 +423,7 @@ paths:
   /eth_getFilterChanges:
     post:
       tags:
-      - Filters
+        - Filters
       summary: eth_getFilterChanges
       operationId: eth_getFilterChanges
       requestBody:
@@ -439,7 +447,7 @@ paths:
                   type: integer
                   example: 1
       responses:
-        '200':
+        "200":
           description: Returns an array of logs which occurred since the last poll
           content:
             application/json:
@@ -448,7 +456,7 @@ paths:
   /eth_getLogs:
     post:
       tags:
-      - Filters
+        - Filters
       summary: eth_getLogs
       operationId: eth_getLogs
       requestBody:
@@ -467,17 +475,21 @@ paths:
                 params:
                   type: array
                   items: {}
-                  example: [{
-                    "fromBlock": "0x1",
-                    "toBlock": "0x2",
-                    "address": "0x8888f1f195afa192cfee860698584c030f4c9db1",
-                    "topics": ["0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b"]
-                  }]
+                  example:
+                    [
+                      {
+                        "fromBlock": "0x1",
+                        "toBlock": "0x2",
+                        "address": "0x8888f1f195afa192cfee860698584c030f4c9db1",
+                        "topics":
+                          ["0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b"],
+                      },
+                    ]
                 id:
                   type: integer
                   example: 1
       responses:
-        '200':
+        "200":
           description: Returns an array of logs matching the given filter object
           content:
             application/json:
@@ -486,7 +498,7 @@ paths:
   /eth_getStorageAt:
     post:
       tags:
-      - State Queries
+        - State Queries
       summary: eth_getStorageAt
       operationId: eth_getStorageAt
       requestBody:
@@ -510,7 +522,7 @@ paths:
                   type: integer
                   example: 1
       responses:
-        '200':
+        "200":
           description: Returns the value from a storage position at a given address
           content:
             application/json:
@@ -519,7 +531,7 @@ paths:
   /eth_getTransactionByBlockHashAndIndex:
     post:
       tags:
-      - Transaction Information
+        - Transaction Information
       summary: eth_getTransactionByBlockHashAndIndex
       operationId: eth_getTransactionByBlockHashAndIndex
       requestBody:
@@ -538,12 +550,13 @@ paths:
                 params:
                   type: array
                   items: {}
-                  example: ["0xb3b20624f8f0f86eb50dd04688409e5cea4bd02d700bf6e79e9384d47d6a5a35", "0x0"]
+                  example:
+                    ["0xb3b20624f8f0f86eb50dd04688409e5cea4bd02d700bf6e79e9384d47d6a5a35", "0x0"]
                 id:
                   type: integer
                   example: 1
       responses:
-        '200':
+        "200":
           description: Returns information about a transaction by block hash and transaction index position
           content:
             application/json:
@@ -552,7 +565,7 @@ paths:
   /eth_getTransactionByBlockNumberAndIndex:
     post:
       tags:
-      - Transaction Information
+        - Transaction Information
       summary: eth_getTransactionByBlockNumberAndIndex
       operationId: eth_getTransactionByBlockNumberAndIndex
       requestBody:
@@ -576,7 +589,7 @@ paths:
                   type: integer
                   example: 1
       responses:
-        '200':
+        "200":
           description: Returns information about a transaction by block number and transaction index position
           content:
             application/json:
@@ -585,7 +598,7 @@ paths:
   /eth_getTransactionByHash:
     post:
       tags:
-      - Transaction Information
+        - Transaction Information
       summary: eth_getTransactionByHash
       operationId: eth_getTransactionByHash
       requestBody:
@@ -609,7 +622,7 @@ paths:
                   type: integer
                   example: 1
       responses:
-        '200':
+        "200":
           description: Returns information about a transaction by transaction hash
           content:
             application/json:
@@ -618,7 +631,7 @@ paths:
   /eth_getTransactionCount:
     post:
       tags:
-      - State Queries
+        - State Queries
       summary: eth_getTransactionCount
       operationId: eth_getTransactionCount
       requestBody:
@@ -642,7 +655,7 @@ paths:
                   type: integer
                   example: 1
       responses:
-        '200':
+        "200":
           description: Returns the number of transactions sent from an address (nonce)
           content:
             application/json:
@@ -651,7 +664,7 @@ paths:
   /eth_getTransactionReceipt:
     post:
       tags:
-      - Transaction Information
+        - Transaction Information
       summary: eth_getTransactionReceipt
       operationId: eth_getTransactionReceipt
       requestBody:
@@ -675,7 +688,7 @@ paths:
                   type: integer
                   example: 1
       responses:
-        '200':
+        "200":
           description: Returns the receipt of a transaction by transaction hash
           content:
             application/json:
@@ -684,7 +697,7 @@ paths:
   /eth_maxPriorityFeePerGas:
     post:
       tags:
-      - Transactions
+        - Transactions
       summary: eth_maxPriorityFeePerGas
       operationId: eth_maxPriorityFeePerGas
       requestBody:
@@ -708,7 +721,7 @@ paths:
                   type: integer
                   example: 1
       responses:
-        '200':
+        "200":
           description: Returns an estimate of the max priority fee per gas
           content:
             application/json:
@@ -717,7 +730,7 @@ paths:
   /eth_newBlockFilter:
     post:
       tags:
-      - Filters
+        - Filters
       summary: eth_newBlockFilter
       operationId: eth_newBlockFilter
       requestBody:
@@ -741,7 +754,7 @@ paths:
                   type: integer
                   example: 1
       responses:
-        '200':
+        "200":
           description: Creates a filter in the node to notify when a new block arrives
           content:
             application/json:
@@ -750,7 +763,7 @@ paths:
   /eth_newFilter:
     post:
       tags:
-      - Filters
+        - Filters
       summary: eth_newFilter
       operationId: eth_newFilter
       requestBody:
@@ -769,17 +782,21 @@ paths:
                 params:
                   type: array
                   items: {}
-                  example: [{
-                    "fromBlock": "0x1",
-                    "toBlock": "0x2",
-                    "address": "0x8888f1f195afa192cfee860698584c030f4c9db1",
-                    "topics": ["0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b"]
-                  }]
+                  example:
+                    [
+                      {
+                        "fromBlock": "0x1",
+                        "toBlock": "0x2",
+                        "address": "0x8888f1f195afa192cfee860698584c030f4c9db1",
+                        "topics":
+                          ["0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b"],
+                      },
+                    ]
                 id:
                   type: integer
                   example: 1
       responses:
-        '200':
+        "200":
           description: Creates a filter object based on filter options to notify when state changes
           content:
             application/json:
@@ -788,7 +805,7 @@ paths:
   /eth_newPendingTransactionFilter:
     post:
       tags:
-      - Filters
+        - Filters
       summary: eth_newPendingTransactionFilter
       operationId: eth_newPendingTransactionFilter
       requestBody:
@@ -812,7 +829,7 @@ paths:
                   type: integer
                   example: 1
       responses:
-        '200':
+        "200":
           description: Creates a filter to notify when new pending transactions arrive
           content:
             application/json:
@@ -821,7 +838,7 @@ paths:
   /eth_sendRawTransaction:
     post:
       tags:
-      - Transactions
+        - Transactions
       summary: eth_sendRawTransaction
       operationId: eth_sendRawTransaction
       requestBody:
@@ -840,12 +857,15 @@ paths:
                 params:
                   type: array
                   items: {}
-                  example: ["0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675"]
+                  example:
+                    [
+                      "0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675",
+                    ]
                 id:
                   type: integer
                   example: 1
       responses:
-        '200':
+        "200":
           description: Submits a pre-signed transaction for broadcast to the Ethereum network
           content:
             application/json:
@@ -854,7 +874,7 @@ paths:
   /eth_syncing:
     post:
       tags:
-      - Chain State
+        - Chain State
       summary: eth_syncing
       operationId: eth_syncing
       requestBody:
@@ -878,7 +898,7 @@ paths:
                   type: integer
                   example: 1
       responses:
-        '200':
+        "200":
           description: Returns an object with data about the sync status or false
           content:
             application/json:
@@ -887,7 +907,7 @@ paths:
   /eth_uninstallFilter:
     post:
       tags:
-      - Filters
+        - Filters
       summary: eth_uninstallFilter
       operationId: eth_uninstallFilter
       requestBody:
@@ -911,7 +931,7 @@ paths:
                   type: integer
                   example: 1
       responses:
-        '200':
+        "200":
           description: Uninstalls a filter with the given ID
           content:
             application/json:
@@ -920,7 +940,7 @@ paths:
   /web3_clientVersion:
     post:
       tags:
-      - Web3
+        - Web3
       summary: web3_clientVersion
       operationId: web3_clientVersion
       requestBody:
@@ -944,27 +964,27 @@ paths:
                   type: integer
                   example: 1
       responses:
-        '200':
+        "200":
           description: Returns the current client version of the node
           content:
             application/json:
               schema:
                 type: object
 tags:
-- name: Chain State
-  description: Methods related to the blockchain state and network information
-- name: State Queries
-  description: Methods for querying the state of accounts and contracts
-- name: Block Information
-  description: Methods for retrieving block data and block-related information
-- name: Transaction Information
-  description: Methods for retrieving transaction data and receipts
-- name: Transactions
-  description: Methods for creating and sending transactions
-- name: Filters
-  description: Methods for creating and managing event filters
-- name: Web3
-  description: Basic web3 utility methods
+  - name: Chain State
+    description: Methods related to the blockchain state and network information
+  - name: State Queries
+    description: Methods for querying the state of accounts and contracts
+  - name: Block Information
+    description: Methods for retrieving block data and block-related information
+  - name: Transaction Information
+    description: Methods for retrieving transaction data and receipts
+  - name: Transactions
+    description: Methods for creating and sending transactions
+  - name: Filters
+    description: Methods for creating and managing event filters
+  - name: Web3
+    description: Basic web3 utility methods
 x-readme:
   explorer-enabled: true
   proxy-enabled: true

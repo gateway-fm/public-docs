@@ -8,7 +8,7 @@ This directory contains OpenAPI specifications for the various JSON-RPC APIs sup
 - `zkevm-methods.yaml`: Polygon zkEVM-specific JSON-RPC API methods
 - `txpool.yaml`: Transaction pool API methods
 
-## Autogenerating Documentation
+## Auto generating Documentation
 
 The documentation for these APIs is automatically generated using the [docusaurus-plugin-openapi-docs](https://github.com/PaloAltoNetworks/docusaurus-openapi) plugin. When you add or modify an API specification, the documentation will be regenerated when the site is built.
 
@@ -19,7 +19,7 @@ When adding a new API namespace, you must follow this sequence:
 1. Create the OpenAPI specification file
 2. Update Docusaurus configuration
 3. **Generate the API documentation** using the appropriate npm script
-4. Create and update the sidebar configurations 
+4. Create and update the sidebar configurations
 5. Start the development server
 
 If you reference documentation files in the sidebar before generating them, you will encounter errors when starting the development server.
@@ -27,14 +27,16 @@ If you reference documentation files in the sidebar before generating them, you 
 ### How to Add a New API Namespace
 
 1. **Create a new OpenAPI specification file**:
+
    - Create a YAML file in the `api-specs` directory (e.g., `new-namespace.yaml`)
    - Define your API endpoints following the OpenAPI 3.0 format
    - Use consistent tagging to group related methods
 
 2. **Update the Docusaurus configuration**:
+
    - Open `docusaurus.config.ts`
    - Add a new entry to the `plugins` section under `docusaurus-plugin-openapi-docs`:
-   
+
    ```typescript
    newNamespace: {
      specPath: "api-specs/new-namespace.yaml",
@@ -46,12 +48,13 @@ If you reference documentation files in the sidebar before generating them, you 
    ```
 
 3. **Create a sidebar file**:
+
    - Create a new file at `docs/CDK-Erigon/JSON-RPC/new-namespace/sidebar.ts`
    - Define the sidebar structure following the pattern in other sidebars
-   
+
    ```typescript
    import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
-   
+
    const sidebar: SidebarsConfig = {
      apisidebar: [
        {
@@ -61,15 +64,16 @@ If you reference documentation files in the sidebar before generating them, you 
        // Add categories for the API methods grouped by tag
      ],
    };
-   
+
    export default sidebar.apisidebar;
    ```
 
 4. **Update the main sidebar**:
+
    - Open `sidebars.ts` in the root directory
    - Import your new sidebar:
      ```typescript
-     import newNamespaceSidebar from './docs/CDK-Erigon/JSON-RPC/new-namespace/sidebar';
+     import newNamespaceSidebar from "./docs/CDK-Erigon/JSON-RPC/new-namespace/sidebar";
      ```
    - Add it to the JSON-RPC section:
      ```typescript
@@ -107,12 +111,12 @@ info:
   version: 1.0.0
   description: Description of your API
 servers:
-- url: https://example.com
+  - url: https://example.com
 paths:
   /method_name:
     post:
       tags:
-      - Method Category
+        - Method Category
       summary: method_name
       operationId: method_name
       requestBody:
@@ -123,7 +127,7 @@ paths:
               type: object
               # Define request parameters
       responses:
-        '200':
+        "200":
           description: Description of the response
           content:
             application/json:
@@ -131,8 +135,8 @@ paths:
                 type: object
                 # Define response structure
 tags:
-- name: Method Category
-  description: Description of this category of methods
+  - name: Method Category
+    description: Description of this category of methods
 ```
 
 ### Tips for Writing Good API Specs
@@ -141,4 +145,4 @@ tags:
 2. **Group related methods with tags** for better organization
 3. **Include detailed descriptions** for each method, parameter, and response
 4. **Provide examples** where helpful to demonstrate usage
-5. **Be consistent across namespaces** for a unified documentation experience 
+5. **Be consistent across namespaces** for a unified documentation experience

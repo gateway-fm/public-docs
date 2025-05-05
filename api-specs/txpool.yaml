@@ -7,12 +7,12 @@ info:
     These methods allow developers to inspect pending transactions, check transaction statuses,
     and understand the contents of the transaction pool.
 servers:
-- url: https://rpc.stavanger.gateway.fm
+  - url: https://rpc.stavanger.gateway.fm
 paths:
   /txpool_content:
     post:
       tags:
-      - Transaction Pool
+        - Transaction Pool
       summary: txpool_content
       operationId: txpool_content
       requestBody:
@@ -36,7 +36,7 @@ paths:
                   type: integer
                   example: 1
       responses:
-        '200':
+        "200":
           description: Returns a detailed listing of all transactions currently in the pool
           content:
             application/json:
@@ -61,7 +61,7 @@ paths:
   /txpool_inspect:
     post:
       tags:
-      - Transaction Pool
+        - Transaction Pool
       summary: txpool_inspect
       operationId: txpool_inspect
       requestBody:
@@ -85,7 +85,7 @@ paths:
                   type: integer
                   example: 1
       responses:
-        '200':
+        "200":
           description: Returns a human-readable overview of transaction pool contents
           content:
             application/json:
@@ -110,7 +110,7 @@ paths:
   /txpool_status:
     post:
       tags:
-      - Transaction Pool
+        - Transaction Pool
       summary: txpool_status
       operationId: txpool_status
       requestBody:
@@ -134,7 +134,7 @@ paths:
                   type: integer
                   example: 1
       responses:
-        '200':
+        "200":
           description: Returns the number of transactions currently in the transaction pool
           content:
             application/json:
@@ -159,5 +159,5 @@ paths:
                         description: Number of queued transactions in hexadecimal
                         example: "0x13"
 tags:
-- name: Transaction Pool
-  description: Methods for interacting with the transaction pool 
+  - name: Transaction Pool
+    description: Methods for interacting with the transaction pool
