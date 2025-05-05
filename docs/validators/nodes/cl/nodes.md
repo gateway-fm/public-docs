@@ -1,11 +1,16 @@
+---
+title: CL Nodes
+sidebar_label: CL Nodes
+---
+
 # CL Nodes
 
-* Lighthouse
+- Lighthouse
 
-* Lodestar
+- Lodestar
 
-* Nimbus
+- Nimbus
 
-* Prysm
+- Prysm
 
-* Teku
+- Teku

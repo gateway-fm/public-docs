@@ -21,7 +21,7 @@ function HomepageHeader() {
           Ethereum staking and Gateway.FM validator service.
         </p>
         <div className={styles.buttons}>
-          <Link className="button button--secondary button--lg" to="/validators/intro">
+          <Link className="button button--secondary button--lg" to="/category/validators/">
             Get Started
           </Link>
         </div>

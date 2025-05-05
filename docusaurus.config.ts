@@ -141,7 +141,7 @@ const config: Config = {
             },
             {
               label: 'Validators',
-              to: '/validators/intro',
+              to: '/catalog/validators',
             },
             {
               label: 'CDK-Erigon',
@@ -149,7 +149,7 @@ const config: Config = {
             },
             {
               label: 'CDK-Erigon',
-              to: '/CDK-Erigon/intro',
+              to: '/CDK-Erigon',
             },
             {
               label: 'Deployment Guide',

@@ -1,3 +1,8 @@
+---
+title: MEV & PBS
+sidebar_label: MEV & PBS
+---
+
 # MEV & PBS
 
 PBS means "proposal-builder separation", that means that you allow a 3rd party
@@ -23,9 +28,8 @@ any influence on what goes into your block.
 
 You can read more about MEV-Boost and how to set it up there:
 
-* [MEV Boost in a Nutshell / Flashbots](https://boost.flashbots.net)
+- [MEV Boost in a Nutshell / Flashbots](https://boost.flashbots.net)
 
-* [What is MEV Boost?](https://www.alchemy.com/overviews/mev-boost)
+- [What is MEV Boost?](https://www.alchemy.com/overviews/mev-boost)
 
-
-**MEV-Boost** depends on relayers to build blocks. Relayers are not only controlled and hosted by Flashbots, there are also 3rd party providers. Relayers code is open source. 
+**MEV-Boost** depends on relayers to build blocks. Relayers are not only controlled and hosted by Flashbots, there are also 3rd party providers. Relayers code is open source.

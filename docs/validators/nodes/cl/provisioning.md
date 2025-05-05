@@ -1,3 +1,8 @@
+---
+title: Provisioning Consensus Layer
+sidebar_label: Provisioning Consensus Layer
+---
+
 # Provisioning Consensus Layer (Checkpoint Sync)
 
 First, it is important to note that provisioning consensus layer via snapshots
@@ -10,12 +15,11 @@ Good news, is that all CL nodes have a cross-compatible way of syncing quickly:
 another node (or a file) and applies it w/o doing all the necessary checks.
 **Only use trusted source nodes for Checkpoint sync!**.
 
-* Lighthouse: [https://lighthouse-book.sigmaprime.io/checkpoint-sync.html](https://lighthouse-book.sigmaprime.io/checkpoint-sync.html)
-* Lodestar: (use `--checkpointSyncUrl`, see [https://chainsafe.github.io/lodestar/reference/cli/)](https://chainsafe.github.io/lodestar/reference/cli/))
-* Nimbus: [https://nimbus.guide/trusted-node-sync.html](https://nimbus.guide/trusted-node-sync.html)
-* Prysm: [https://docs.prylabs.network/docs/prysm-usage/checkpoint-sync](https://docs.prylabs.network/docs/prysm-usage/checkpoint-sync)
-* Teku: [https://docs.teku.consensys.net/en/latest/HowTo/Get-Started/Checkpoint-Start/](https://docs.teku.consensys.net/en/latest/HowTo/Get-Started/Checkpoint-Start/)
-
+- Lighthouse: [https://lighthouse-book.sigmaprime.io/checkpoint-sync.html](https://lighthouse-book.sigmaprime.io/checkpoint-sync.html)
+- Lodestar: (use `--checkpointSyncUrl`, see [https://chainsafe.github.io/lodestar/reference/cli/)](https://chainsafe.github.io/lodestar/reference/cli/))
+- Nimbus: [https://nimbus.guide/trusted-node-sync.html](https://nimbus.guide/trusted-node-sync.html)
+- Prysm: [https://docs.prylabs.network/docs/prysm-usage/checkpoint-sync](https://docs.prylabs.network/docs/prysm-usage/checkpoint-sync)
+- Teku: [https://docs.teku.consensys.net/en/latest/HowTo/Get-Started/Checkpoint-Start/](https://docs.teku.consensys.net/en/latest/HowTo/Get-Started/Checkpoint-Start/)
 
 **Your Own Checkpoint Sync**
 
@@ -43,4 +47,3 @@ Most of the nodes require both the latest finalized state and the block correspo
 A good practice is to keep these files upgraded once every week.
 
 How to create these files, you can read here: [“Sync from checkpoint files” in Nimbus Guide](https://nimbus.guide/trusted-node-sync.html#sync-from-checkpoint-files). The files obtained there are cross-node compatible.
-

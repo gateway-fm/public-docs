@@ -1,28 +1,33 @@
+---
+title: Nodes Health
+sidebar_label: Nodes Health
+---
+
 # Nodes Health
 
-How can you know a node is healthy? Most importantly how can you check it programatically? It is one of the criterias to monitor validator service at scale. 
+How can you know a node is healthy? Most importantly how can you check it programmatically? It is one of the criterias to monitor validator service at scale.
 
 ## Basic health check from the node
+
 Most of the node clients have implemented the healthcheck API endpoint. For example, Lighthouse has an endpoint called "/lighthouse/health". It should return "HTTP 200 OK" when everything is setup correctly, all other responses mean the node software is having issue.
 
 It is usually the most basic check and only tells you that software is up and running. So one shouldn't rely on it solely.
 
 ## Different health symptoms
 
-Here are a few common symtoms and their causes.
+Here are a few common symptoms and their causes.
 
-
-Some of the following symtoms are urgent, which means it has been fixed immediately. Some will only show that the system is degrading but it will 
+Some of the following symptoms are urgent, which means it has been fixed immediately. Some will only show that the system is degrading but it will
 It's important to be able to check a node health
 How to check if a node is healthy
 To serve as a validator, both CL and EL need to be up to date with the
 network. There are a couple of techniques of how to check that.
 
-All this healthchecks data should lead to a [monitoring tool](../ha/monitoring.md) of your choice.
+All this health checks data should lead to a [monitoring tool](../ha/monitoring.md) of your choice.
 
-### Internal healthchecks
+### Internal health checks
 
-Most of the nodes have exposed healthchecks APIs, that return `HTTP 5xx` if the node
+Most of the nodes have exposed health checks APIs, that return `HTTP 5xx` if the node
 is not syncing properly, and `HTTP 200 OK` if everything is okay. That is the most simple
 and most basic version of the healthcheck.
 
@@ -37,8 +42,7 @@ possible to see how "old" is the current block of the node.
 
 Since sometimes the block proposals could be missed, it doesn't make sense to
 keep this threshold too tight, but if it is > 5 minutes old, it makes sense to
-mark the node as "unhealthy" and notify your [monitoring
-system](monitoring.md).
+mark the node as "unhealthy" and notify your [monitoring system](../ha/monitoring.md).
 
 ### Source Of Truth Checks (Forks)
 

@@ -6,7 +6,7 @@ sidebar_label: Deposits
 
 # Onboarding Users
 
-Creating a Validators means [linking keys together](keys.md) via a transaction.
+Creating a Validators means [linking keys together](../security/keys.md) via a transaction.
 
 ## Non-Custodial Staking
 

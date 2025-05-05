@@ -1,9 +1,14 @@
+---
+title: EL Nodes
+sidebar_label: EL Nodes
+---
+
 # EL Nodes
 
-* Besu
+- Besu
 
-* Erigon
+- Erigon
 
-* Geth
+- Geth
 
-* Nethermind
+- Nethermind
