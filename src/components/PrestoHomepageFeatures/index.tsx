@@ -18,6 +18,36 @@ const FeatureList: FeatureItem[] = [
     link: "/category/fundamentals/",
     linkText: "Learn More",
   },
+  {
+    title: "Overview of Presto",
+    description: <>.</>,
+    link: "/category/overview/",
+    linkText: "Learn More",
+  },
+  {
+    title: "For Developers",
+    description: <>.</>,
+    link: "/category/features-for-developers/",
+    linkText: "Learn More",
+  },
+  {
+    title: "For Enterprise Customers",
+    description: <>.</>,
+    link: "/category/for-enterprise-customers/",
+    linkText: "Learn More",
+  },
+  {
+    title: "Pricing and Trials",
+    description: <>.</>,
+    link: "/category/pricing-and-trial/",
+    linkText: "Check it out",
+  },
+  {
+    title: "Stavanger Testnet",
+    description: <>.</>,
+    link: "/category/stavanger-testnet/",
+    linkText: "Try it out",
+  },
 ];
 
 function Feature({ title, description, link, linkText }: FeatureItem) {
