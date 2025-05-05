@@ -1,27 +1,23 @@
-import type {ReactNode} from 'react';
-import clsx from 'clsx';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Layout from '@theme/Layout';
-import Heading from '@theme/Heading';
+import type { ReactNode } from "react";
+import clsx from "clsx";
+import Link from "@docusaurus/Link";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import Layout from "@theme/Layout";
+import Heading from "@theme/Heading";
 
-import styles from './index.module.css';
+import styles from "./index.module.css";
 
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
+    <header className={clsx("hero hero--primary", styles.heroBanner)}>
       <div className="container">
         <Heading as="h1" className="hero__title">
           Gateway.fm Documentation
         </Heading>
-        <p className="hero__subtitle">
-          High-performance blockchain infrastructure
-        </p>
+        <p className="hero__subtitle">High-performance blockchain infrastructure</p>
         <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/cdk-erigon">
+          <Link className="button button--secondary button--lg" to="/cdk-erigon">
             CDK-Erigon Documentation
           </Link>
         </div>
@@ -39,9 +35,7 @@ function ProductCard({ title, description, link, linkText, icon }) {
         <Heading as="h3">{title}</Heading>
         <p>{description}</p>
         <div className={styles.productCardLink}>
-          <Link
-            className="button button--secondary button--sm"
-            to={link}>
+          <Link className="button button--secondary button--sm" to={link}>
             {linkText}
           </Link>
         </div>
@@ -51,11 +45,12 @@ function ProductCard({ title, description, link, linkText, icon }) {
 }
 
 export default function Home(): ReactNode {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
       title={`Gateway.fm Documentation`}
-      description="Technical documentation for Gateway.fm products and services">
+      description="Technical documentation for Gateway.fm products and services"
+    >
       <HomepageHeader />
       <main>
         <div className={styles.introSection}>
@@ -66,15 +61,15 @@ export default function Home(): ReactNode {
                   Blockchain Infrastructure Solutions
                 </Heading>
                 <p className={styles.sectionDescription}>
-                  Gateway.fm provides high-performance blockchain infrastructure solutions for developers, 
-                  validators and enterprises. Our documentation covers installation, configuration, 
-                  and API details for all our products.
+                  Gateway.fm provides high-performance blockchain infrastructure solutions for
+                  developers, validators and enterprises. Our documentation covers installation,
+                  configuration, and API details for all our products.
                 </p>
               </div>
             </div>
           </div>
         </div>
-        
+
         <section className={styles.products}>
           <div className="container">
             <div className="row">
@@ -82,6 +77,14 @@ export default function Home(): ReactNode {
                 title="CDK-Erigon"
                 description="High-performance node implementation optimized for the Polygon zkEVM protocol networks."
                 link="/cdk-erigon"
+                linkText="Documentation"
+                icon="⚡"
+              />
+              <ProductCard
+                title="Validators"
+                description="Welcome to the Ethereum Validator Knowledge Base, where you can find resources
+about Ethereum staking and Gateway.FM validator service."
+                link="/validators"
                 linkText="Documentation"
                 icon="⚡"
               />

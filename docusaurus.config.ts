@@ -1,7 +1,6 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
-import type * as Plugin from "@docusaurus/types/src/plugin";
 import type * as OpenApiPlugin from "docusaurus-plugin-openapi-docs";
 
 
@@ -113,7 +112,11 @@ const config: Config = {
           label: 'CDK-Erigon',
           position: 'left',
         },
-
+        {
+          to: '/validators',
+          label: 'Validators',
+          position: 'left',
+        },
         {
           href: 'https://gateway.fm',
           label: 'Website',
@@ -135,6 +138,14 @@ const config: Config = {
             {
               label: 'Home',
               to: '/',
+            },
+            {
+              label: 'Validators',
+              to: '/validators/intro',
+            },
+            {
+              label: 'CDK-Erigon',
+              to: '/CDK-Erigon/what-is-cdk-erigon',
             },
             {
               label: 'CDK-Erigon',
@@ -160,6 +171,10 @@ const config: Config = {
             {
               label: 'RPC',
               href: 'https://gateway.fm/rpc',
+            },
+            {
+              label: 'Blueprints',
+              href: 'https://gateway.fm/presto/#blueprints',
             },
             {
               label: 'Staking',

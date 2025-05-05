@@ -14,27 +14,14 @@ import Heading from "@theme/Heading";
 import SchemaTabs from "@theme/SchemaTabs";
 import TabItem from "@theme/TabItem";
 import Export from "@theme/ApiExplorer/Export";
-import ApiEndpointsList from "@site/src/components/ApiEndpointsList";
 
 <span
   className={"theme-doc-version-badge badge badge--secondary"}
   children={"Version: 1.0.0"}
->
-</span>
+></span>
 
-<Heading
-  as={"h1"}
-  className={"openapi__heading"}
-  children={"Txpool JSON-RPC API"}
->
-</Heading>
+<Heading as={"h1"} className={"openapi__heading"} children={"Txpool JSON-RPC API"}></Heading>
 
 The txpool API provides methods for interacting with the transaction pool in CDK-Erigon.
 These methods allow developers to inspect pending transactions, check transaction statuses,
 and understand the contents of the transaction pool.
-
-<ApiEndpointsList sidebarPath="txpool" />
-
-
-
-      
