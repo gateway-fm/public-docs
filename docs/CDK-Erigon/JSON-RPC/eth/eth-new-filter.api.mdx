@@ -5,7 +5,7 @@ description: "eth_newFilter"
 sidebar_label: "eth_newFilter"
 hide_title: true
 hide_table_of_contents: true
-api: eJylVMFu2zAM/RVCZ9fJdvStKzqgO6xBk52yYmBsJlZrS5pExw2M/PtIu0vbtNhlPtgSxUc+8lEeDOMumWJtvtqGKSZznxkfKCJb724qUxji+pejfjo3mYn0u6PEX3x1MMUwbm0k8eTYUWZK75gc6xGG0NhyjDR7SN6pLZU1tagrPgSS8H7zQCWbozwaOwXvEiV1+Dyf66eiVEYbNIq4X0VCpgQI25EQTHjYYKIKvDuZR0AC9uA82+0B+pocJBY0lDW6nST5L7ZC9y2180a1YvDaweATyz4g17KbnfslinvtfLEeTBcbcamZQypmsxjKXBjvlW3Md0K9x0O+bc1RVFKOdy9aXD9hGxrhOAgx67Z+ZG1ZTeaaa4rUtfBtefv94m5xBZeLG0mteSfyn/J5PjfnJS0ZXYWxgg8DwFRhgq2PYKWREUu2bge95RoE8QLbNL58lLZbl/90q5oSncDYNL6HivbU6OCNkklV8fAKBBUyZpDIVcARXdJEIm8Gwu+UesqbWowMKqzakuQz0hHVoMVRVIctfSDXm8pPgjM98Sw0wkGjjPIMz0quz0KIJrUqLQfDoPP4IzbHo5rHcsQuyz1GixsVZX0vAWvCSqAq/SMddL6ngbxYaXp1bzql8W44j9lfxGVZUuB/+t6/GsbF7XIlzpvn69v6SjERe73a8i6M0T/A2N7xfqttMI3MYIc79Z1i6vMHCTp8iw==
+api: eJzVVUtv2zAM/iuCzmnivB+3tuiA7rAWa3fqgoGW6ditLXmS8kLg/z5SblI323rYbTokFsWPpMiP1EF6WDm5eJKf8sKjdXLZkaZCCz43+jaRC4k++6Fx25zLjrT4c43OX5lkLxeHsM0tkqa3a+xIZbRH7fkIqqrIVbDUe3ZGs8ypDEvgL7+vkMyb+BmVJ7uVZb8+R8enrG8r1VJ03uZ6RYq4g7IqWDToRrLuyJJCNMnHqu9vQaAKLJSuBQJrYU+Y3GOQ1y3400Gm1pRXhVEvpBrt+qTozdt+QHtIEovOhf2MVtpP+/MxpNCfD1SKOJtEk/lsPBupaBilIzVP4sZMlatQgmgX/WXBfJSOh9NRqnCMSaxmOIDZZD5V/fFw2J9MpzjBOI1iuayXFHfeTkZO9ViFyp2u06/D4lq6ymjXpHwQRfyXoFM2r7hqhL62CB6dAJGG1ImmXiIGh4kw+iQOACe8Edr4PN2LbYZaOE9ooTLQK3Lyz+x4Dfd9aOfEPNJAVsYFQoHPaNc713NoN8x0ruraFqSSeV+5Ra9HhOtSxBuO1nZXFPoW9t20lDV1Bcf49Y37N8dktrgaCNkK5NzzkXP/E50aNvWZVTo1oTS5Dy114zO0uC7F54e7Lxdf76/F5f0tRcDJbSpE6QgJeV+3Bw86AZuIPxoQTfacSI0VzF0LylM3i23uM0GIN1jM+SJu5br7XT9m6PAEhqIwW5HgBgueKoGXVDq7b4FEAh46wqFOhLegHTsiDncExXdy3fh1JVgvmL0sc+QvzBAiWgmBuRrK38fM2c1PrPa4872qoBjYSuDg4ZWuT2cmKP8Z05kODgduum+2qGsWh+uQnD43YHOIw6Di9s8QEoIyzV5wz03cdN3FI7tn9WIdJt55B9adI+JSKaz8h7rLFtHv7x4eSTl+fRNKkzDGwpbfC/pdSMnPSkhveDRYdpAFNdoaVqzb2OT1C9v5L9U=
 sidebar_class_name: "post api-method"
 info_path: CDK-Erigon/JSON-RPC/eth/ethereum-json-rpc-api
 custom_edit_url: null
@@ -54,7 +54,7 @@ eth_newFilter
 
 <RequestSchema
   title={"Body"}
-  body={{"required":true,"content":{"application/json":{"schema":{"type":"object"}}}}}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"jsonrpc":{"type":"string","example":"2.0"},"method":{"type":"string","example":"eth_newFilter"},"params":{"type":"array","items":{},"example":[{"fromBlock":"0x1","toBlock":"0x2","address":"0x8888f1f195afa192cfee860698584c030f4c9db1","topics":["0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b"]}]},"id":{"type":"integer","example":1}}}}}}}
 >
   
 </RequestSchema>

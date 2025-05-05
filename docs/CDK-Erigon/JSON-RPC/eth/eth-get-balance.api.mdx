@@ -5,7 +5,7 @@ description: "eth_getBalance"
 sidebar_label: "eth_getBalance"
 hide_title: true
 hide_table_of_contents: true
-api: eJylU7Fy2zAM/RUeZ0V2O3pLchnSoXFtd3J9PZiEJSYSyZKQHZ/O/15ASt0kznWpBluEHh4e8MBeE1RZz9Z6SUCovnWYHGa9KXSImIBc8PdWzzRS/bNCuoEGvEFd6IS/Osx0E+xRz/rh6BIylFKHhTbBE3qSTxBj48xANXnMwUssmxpbkDc6RmT+sH1EQ/rEj3DnGHxmHQz4PJ3Kn8VskovCwvAFUpd8VlSj2o6aVNgNRzAmdJ4U0HDMEY3bObQKrGXirP9LHKt7q+RiMC1Hgowshkx8jkA1nyYXwIxpj0mG3+suNYypiWKeTSYpmjIT7MFXmMqKjTnAsdy1+sS+iMrF3+HfPUMbG1bZszTnd2HQ7UhC+o4nkLBr1Zflw9erxfxWXc/vubTUHeV/KqflVL9vipfBW0hWfUigxhaz2oWkHI8ygSHnK3VwVA9DP6dtm2CeTA3Olz/8qsaM52RomnBQFvfYyKqxl0FxV+n4KklZIChURm8VJfBZCvFmFIr1nUuPdXMLiZRYK7HM9TRPRExoYbDVQ4sfGfam9bPnhM80iQ2LEJrBn/7Fy/V7DnalFrP5S99vIeP31JxOEh4a4ji/7iE52Iot6w0z1ggW02D+EzJE345LebWS+gJvOtFxsaCn4k/GtTEY6Z/Yzat9nD8sVwzevtzYNljJSXCQ28y/M63l1g8DHq60xHrNLVYdVIIdOeX5DfV2eUk=
+api: eJydVE1T2zAQ/SsanU1iKIVJbsCQGXooFOiJMp2NtIkNtuRK64RMJv+9uzJJTehwwIfEWr/9evtWa00wj3r8oO8ICNWPFkOJUT9m2jcYgErvrqwea6Ti9xzpHCpwBnWmA/5pMdK5tys9XqdjGZChFFrMtPGO0JF8gqapSpNCDZ+id2KLpsAa5I1WDXJ8P31CQxy3CZKYpAj+KvjQmB4wUijdnIH4AnVTielokOtNpmuu0duPoXttsFcDAerY84IQYMVOJWGyb3r+Dzp/MaPj09M8z0+tha/HZjI6yvPR+WSS28tRbvKTyUn+BfLRjENUTGkk/cghyn5hJXMzx9Cv7HCTHuE1Nt7Frn0OLX8WowllIwyy9y1SG1xUVKCado0oP0tHMMa3jhRQOsYGTTkr0SqwlgNH/enBvFb3tpJ3otiOQDc+pmECFXwavgNGDAsMIry1bkPFmIKoiePhkKc9iAQLcMzQYM4MLmE1mNV6w5qUKm//Ce9yy15PKEkNvUrepd4O/JOz7EZ5KCN1M5+IKilp65IpD9jW6tvd9feD25sLdXZzxZ7SaMcXl5aKe8sib56zEKz6bwDVdRLVzAclwglgiGWtliUVaco7t2nlzbMpoHSDX+6+wIg7Z6gqv1QWF1jJerF4vGIaw6rnpCwQZCqis4oCuCiJWIqZ4vp2qbu8sYZASrQktsj50i7x1GtIOnJQ/2ff9lrfiYzwhYZNxUVImCSI9at4HvZj8AQKURd/Wa+nEPFnqDYbMaeG2M6vCwglTNPKyvYVCJb3TdT2jAzRF90WHNxLfoFXbdr9/Y3YZFuPM2OwoQ+xjz3Z3Vzf3TN4+no91t6KT4ClXJ38O9ZarthEcLo/xbZmlbl5C3PBdjHl+Qse5utS
 sidebar_class_name: "post api-method"
 info_path: CDK-Erigon/JSON-RPC/eth/ethereum-json-rpc-api
 custom_edit_url: null
@@ -54,7 +54,7 @@ eth_getBalance
 
 <RequestSchema
   title={"Body"}
-  body={{"required":true,"content":{"application/json":{"schema":{"type":"object"}}}}}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"jsonrpc":{"type":"string","example":"2.0"},"method":{"type":"string","example":"eth_getBalance"},"params":{"type":"array","items":{},"example":["0xc94770007dda54cF92009BFF0dE90c06F603a09f","latest"]},"id":{"type":"integer","example":1}}}}}}}
 >
   
 </RequestSchema>

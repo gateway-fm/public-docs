@@ -5,7 +5,7 @@ description: "eth_blockNumber"
 sidebar_label: "eth_blockNumber"
 hide_title: true
 hide_table_of_contents: true
-api: eJylU8Fy2kAM/ZWdPRNDe+SWMjmkh4QBeqJMR14L7MTe3WplCOPh3ystKU1Kppf6AF75Se9JTztYhl2y07Wd1dB4s2RgtJuRDREJuAn+vrJTi1z/KNvgnh/6rkSyI0v4s8fEX0J1tNMhHxtCwTL1OLIueEbP+glibBuXa42fUvAaS67GDvSNjxGFIJRP6Nie5NHaKQafMCng82SifxUmR03UKgJfIPfkk+Eajc+STNjmUxcSG0In5CYrtv8lRtS8Z76eRCehoEOKQi3nCFzLaXyNTEh7JJ32YHtqBVQzxzQdjym6IjHswe+Qip14cIBjse3sSaxQnYs/4757gS62onMQcY3fhqy8YQ3ZO5kBYd+Zr8vHh5vFfGZu5/dCrbznBj4Vk2Ji/25LfPcVUGU+LGDOPSazDWQaGSaB48bvzKHhOo/9kpY7drpLxXe/qjHhJRnaNhxMhXtsdbvEvWCkKzq+STIVMIxMQl8ZJvBJiWQXRkb0XajPvKkDYqPmaiwJn5WJqAsdZGM9dPihZe96v9jO+MLj2IoKrZMNGl7dXF8VEV9q9Vs+DUMJCb9RezppOLckcXndAzVQqjHrjZSsESpJVfufUSB2dl7Mm5UKUHjbq5CrJT2NfmfcOoeR/4ndvFnJ+eNyJeDy9ZZ2odIcgoPeYPmdWqtXPY84X2ONDbaVPexhp9hzTX1+AZtIdVE=
+api: eJydVMFS4zAM/RWPz6EFjr2xDAc4AAPsqdvZURO1CSS2V1ZaOpn8+0oO7YaW4bA5tLHzpCfpPbuzDOtoZ3N7XULlzDMDo11k1gck4Mq728LOLHL5e1n7/O2+bZZINrOEf1qM/MMXOzvr0rIiFCxTi5nNvWN0rJ8ghLrKU67pa/RO92JeYgP6xruAQuCXr5iz5A2kzFxh1K+Kp5CPgJGpcmsB4js0odaty8m57TPbSJG++B563IeEBSBo4igMiGAnURVj2u9HCeYLWVVjkkr6XKeJHEAXfXp0RjF4F4dWLs/P9a/AmFMVdBoS/YTckouGSzQulWT8Kq0aH9kQ5jJEkyq2/z3Uj2o+M58qup+fDUKtSgCXspqeIiPSBkld09mWagGVzCHOplPRahIZNuBkJpO1eGkLu8mqsb1YSut8+mebm/28RjInLUelnHLv5ZovBiEuVBC38qntipPKNzJAwrYxd88P92dPj9fm6vFWYrXooXuhSUSfZyLmdwVQYb5MYIaqoll5Mio7Qc5iMLOtuEyaHcJSybkeqMkv91JixEMw1LXfmgI3WKvRRXpvZCS0GwWZAhgyE9EVhglcVCIxUmakvgP1wBsbIDbqDN2LwpdMLRI2kFzhoPnK+Ue9HzzD+M7TUEsVmiep231YYX6SRDQo1SzyqeuWEPEn1X2v26mlQaUNUAXLw+kpEQoJVe+8oUDs9eDqsxctQOF1m47hscP7bB9xlecY+FvsYmSix4fnFwEvP66qxhcaQ7DVa0x+Z9bqfZdGnO4y3etsLSZuYa3YIac+fwELDcxM
 sidebar_class_name: "post api-method"
 info_path: CDK-Erigon/JSON-RPC/eth/ethereum-json-rpc-api
 custom_edit_url: null
@@ -54,7 +54,7 @@ eth_blockNumber
 
 <RequestSchema
   title={"Body"}
-  body={{"required":true,"content":{"application/json":{"schema":{"type":"object"}}}}}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"jsonrpc":{"type":"string","example":"2.0"},"method":{"type":"string","example":"eth_blockNumber"},"params":{"type":"array","items":{},"example":[]},"id":{"type":"integer","example":1}}}}}}}
 >
   
 </RequestSchema>

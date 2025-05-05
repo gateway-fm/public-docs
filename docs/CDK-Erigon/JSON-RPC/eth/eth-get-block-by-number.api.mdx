@@ -1,0 +1,71 @@
+---
+id: eth-get-block-by-number
+title: "eth_getBlockByNumber"
+description: "eth_getBlockByNumber"
+sidebar_label: "eth_getBlockByNumber"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVD1T4zAQ/Ssa1SYBynTAUEABDHAVx9ys7Y0tsCWdtE7wePzfb1cmwTCE4lwk9mo/33urQRNUUa+e9Hnjild1ZdcutEDGWf2caecxpI+rUq80Uv2nQkqe5/1N1+YYdKYD/u0w0rkre70a0qcJyAEUOsx04SyhJTkC7xtTpITLl8gl2BaLGluQN+o9chWXv2BBnNcHKU8Go5yKf/DFzDFSMLZiR3yD1jdiOl0c6zHTLXfqyp9dvx2GYz0EaOMsFkKAnkMNYbKPsyxPugHi2XW2hibiM5+ZeV3Do1cJpH3IyZgegS16Z+M03enxsfyVGItgfIJ/pe+RumCjMh+kKMhdRwpUnujKe2UoKruj4j+xfu/oc/UDbO+w1d7FxBJQzV/LA+4RwwaDKGzQXWjYsybycbVcMpmLSLABywgtKsZxC/1i3eqRhScd33/o6nKH3kwHiexZPwca2PH5laqJqRNhjOFNmBhKyrikGgN2rbp+uL05ur+7UGd3V5xJ5pig4cqp9mfAHghsCaFU3yZQU6NRMZdKdBGgIBal2hqqFUd8hCVuixqMXfy2jzVG3AdD07itKnGDjSxHVOQUoxT6WZAqgSBTEW2pKICNUoiVlinub196qhtbCKRENmKLXC/tAFPbQpKMhfbgtnwBYK8qwjda+oZbkWSJ9eFdJ0/fZ2I2apETnw9DDhF/hWYcxZyGYzu/biAYyNPayaLVCCWHirBekV30xST+o0fpQtybLu3v10UYs13EWVGgpx99n2cKu7t9eGTn/P2ia10pMQG2cgny70pruTIT2OkmFNvAurNVB5X4Tjnl+Qevy+eY
+sidebar_class_name: "post api-method"
+info_path: CDK-Erigon/JSON-RPC/eth/ethereum-json-rpc-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"eth_getBlockByNumber"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/eth_getBlockByNumber"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+eth_getBlockByNumber
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"jsonrpc":{"type":"string","example":"2.0"},"method":{"type":"string","example":"eth_getBlockByNumber"},"params":{"type":"array","items":{},"example":["latest",false]},"id":{"type":"integer","example":1}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Returns information about a block by its number","content":{"application/json":{"schema":{"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

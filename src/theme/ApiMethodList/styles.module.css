@@ -1,0 +1,34 @@
+.apiMethodList {
+  margin: 2rem 0;
+}
+
+.categorySection {
+  margin-bottom: 1.5rem;
+}
+
+.categoryTitle {
+  font-size: 1.2rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.methodList {
+  list-style-type: none;
+  padding-left: 0.5rem;
+  margin: 0;
+}
+
+.methodItem {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.methodLink {
+  font-family: monospace;
+  font-weight: 600;
+}
+
+.methodDescription {
+  color: var(--ifm-color-emphasis-700);
+} 

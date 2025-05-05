@@ -65,18 +65,18 @@ const config: Config = {
         id: "api",
         docsPluginId: "classic", // configured for preset-classic
         config: {
-          petstore: {
+          eth: {
             specPath: "api-specs/cdk-erigon.yaml",
             outputDir: "docs/CDK-Erigon/JSON-RPC/eth",
             sidebarOptions: {
-              groupPathsBy: "tag",
+              // groupPathsBy: "tag",
             },
           } satisfies OpenApiPlugin.Options,
           zkevm: {
             specPath: "api-specs/zkevm-methods.yaml",
             outputDir: "docs/CDK-Erigon/JSON-RPC/zkevm",
             sidebarOptions: {
-              groupPathsBy: "tag",
+              // groupPathsBy: "tag",
             },
           } satisfies OpenApiPlugin.Options,
           txpool: {
@@ -115,6 +115,11 @@ const config: Config = {
         {
           to: '/validators',
           label: 'Validators',
+          position: 'left',
+        },
+        {
+          to: '/rpc',
+          label: 'RPC',
           position: 'left',
         },
         {

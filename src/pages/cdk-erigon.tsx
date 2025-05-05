@@ -37,7 +37,7 @@ function HomepageHeader() {
   );
 }
 
-export default function CdkErigonPage(): ReactNode {
+export default function Page(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout

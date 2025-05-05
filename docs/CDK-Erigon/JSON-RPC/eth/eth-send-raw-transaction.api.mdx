@@ -5,7 +5,7 @@ description: "eth_sendRawTransaction"
 sidebar_label: "eth_sendRawTransaction"
 hide_title: true
 hide_table_of_contents: true
-api: eJylVLFy2zAM/RUeZ1l2O2pLcxnSofHZ7uT6ehAFS4olkiUhKz6d/72AnDp2WmepBkoEH4AHPFCDJiijztZ6FcBGMFQ7G/Um0c5jANk9FjrTSNXPiLZYQH8B1IkO+KvDSF9ccdDZMG7rgOxCocNEG2cJLckReN/UZgw5fY7szLZoKmxBvujgkfO4/BkN6SM/Ejt6ZoNRAJ9nM3kVGE2o/Zg908sub2uKCpQPOIl1abFQ9EZQbV1QeXBQGIikyCmqUD3wErBrlUXqXdjp/+LJRK9J3exVyydOuuldJN57oIp305sOEcMeg8gz6C40jK2IfMym0+BNGgn2YEsMaQmEPRzSbauPLJ2wXrzp8vACrW+Y9cBUa7t1Yx01iUmfe/F1+fRtspjfq7v5I6eWvKdyPqWzdKbfF7kksAWEQv0zgDqVGsf+19zaIDXZUvU1Vdca5I0zO1NBbdMfdlVhxLMzNI3rVYF7bGQao+jHVYXDhZMqgCBR0r5L4WOimN859SlvbCGQEqnFFjmf5o6IGC2MMlto8SMBr1pwngXCF5r6hslIuFGn4VXb9a1YrFIlQ8CIYcgh4vfQHI9iHgtkO3/uIdSQi0zrDUeuEAoM4zDskCH6/jS0k5XwEHjTCZ+/BviY/PG4MwY9fYjdXMzp/Gm5YnD+erlbV4hPgF4uPq+Z1vKjOP0z5PaLbdANT2UHpWBPMeX5DQvKjyU=
+api: eJy1lFFT2zAMgP+Kz8+lDR2lrG+M44E9bBx0T4zbKbHaBBLbs9WWXq//fZJDS+itPOxueUhsRZIl+ZM2mmAe9eRBTwPYCAVVzkb92NPOYwDZ3Rg90Ujlr4jW3MGqo6h7OuDvBUb64sxaTzZpWwVkEwoL7OnCWUJL8gu8r6siuRw8RTZmWSxKbEBWtPbI57j8CQtivz5IAFRhlL+iH3zRUYwUKjtnRXyBxtciGvYzve3phmN15mPVI+mwtYcATexYQwiwZuOKMMm3HT8POnsxZ+d4Ycz5uBiZT8Oc14eCbHSR5xeYfx5nF+Nslo2HZ2ej8/HomFw/8hlVN4OKizjH0E3hdJseuYDo+craOg2zTD4GYxEqn3Ka6PtF3lQUFSgf8CRWc4tG0VvaauaCyoMDU0AkRU5RieqaXwEXjbJIKxee9T9f5mug74M6CtTu+rR3MYEAVPJucNQgYlhiEIY3ehFq1i2JfJwMBkxMPxIswXLx+nMgXMG6P2v0lvmWqO/e4L3eFbYDWyKqE9HREHbQ/C8eWhxOBQs7c6nCFSWQ97f09f77t5O72yt1eXvDEUlF2kJzDimLAyYIrIFg1F8dqDblmMgQ+IKkaudqVVH5no68dsVzUUJl+z/ttMSIe2Ooa7dSBpdYSy9HIYvrHdYdI2WAoKekql0kY09xfPuj23NjA4GUQCiyyOelhmVMGkgAWmg+aO6DEuwpJXyhga85GHGXCNq8UvdwzBffSCl4ssZmk0PEH6HebkWcEmQ5L5cQKsjTnJCOLhEM97Bg+oysoq/adjqZShyiXi/SwDlsrW1vZ3FZFOjpQ93HDq+33++nrJy/zubGGbEJsJK5ze+J1jLn25Evw1tkG11zvyxgLrqtT3n+ALPAGUc=
 sidebar_class_name: "post api-method"
 info_path: CDK-Erigon/JSON-RPC/eth/ethereum-json-rpc-api
 custom_edit_url: null
@@ -54,7 +54,7 @@ eth_sendRawTransaction
 
 <RequestSchema
   title={"Body"}
-  body={{"required":true,"content":{"application/json":{"schema":{"type":"object"}}}}}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"jsonrpc":{"type":"string","example":"2.0"},"method":{"type":"string","example":"eth_sendRawTransaction"},"params":{"type":"array","items":{},"example":["0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675"]},"id":{"type":"integer","example":1}}}}}}}
 >
   
 </RequestSchema>

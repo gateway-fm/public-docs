@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: Polygon zkEVM Node API
-  version: 1.0.0
+  version: 2.0.0
   description: |
     Polygon zkEVM-specific JSON-RPC API methods for interacting with a zkEVM node.
     These methods provide access to zkEVM batch and virtualization information, allowing developers

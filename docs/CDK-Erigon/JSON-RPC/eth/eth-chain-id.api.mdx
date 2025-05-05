@@ -5,7 +5,7 @@ description: "eth_chainId"
 sidebar_label: "eth_chainId"
 hide_title: true
 hide_table_of_contents: true
-api: eJylU8GS2jAM/RWPzyHQHrlt6R7oocsAPVGmIxKReDexXVuBZTL8eyVny266nV6aA8TK89OTntRrgirq+U4vajBWbQgI9T7TzmMAMs4uSz3XSPWPQgB8ynTAnx1G+uTKi5736WgCMo5Ch5kunCW0JJ/A+8YUiWf6GJ2VWCxqbEHe6OKRyd3hEQvSV36EO3pnI0YBfJzN5K/EWATjhYXha6Qu2KioRpU0qeVn1UUs1dEFFU1lja1UQN/AZeKDIybnjxTARiiEJOr/Eskqx4rG3Wn56KRp3kXisweq+TQdoyKGEwbpfK+70DCgJvJxPp0GX+SR4AS2wpBX7McZLvmx1Ve2RfStX9t//wytb1hfz6KMPbqk2JCE9D13KGDXqi+bh6+T9Wqh7lZLTi15B+Ef8lk+03+WwzNgSwil+iuBGuqLqduGmxikqdzxs6E6mXK7dmhc8ZRKzr/bbY0Rb5ehadxZlXjCRiaN3XSKqwqXN5dUCQSZimjH7mWK9d1SD3ljC4GUmCqxyPk0d0QcaCEZaqHFd1aN6r5ZTfhMU54ekziSOf2Li7sRAftRi8cc7vsDRPwWmutVwqkUjvPrCYKBgxiy2zNdjVBiSLY/IUP0YhjEyVaSC7zpRMS7obxmv2/cFQV6+id2/2YMVw+bLYMPL9vaulLuBDjLJvPvXGtZ92ExZJ0l1uuG56+DSrADpzy/AOWddcM=
+api: eJydVE1T2zAQ/SsanUMCHHOjlAM9FAboKc10NvYSC2xJXa0TMh7/9+7KJLWZDof6kFjrt5/vrTrLsE12ubLXFThvHhkY7XpmQ0QCdsHflnZpkatfhQLkNLOEv1tM/CWUB7vs8tERCo6pxZktgmf0rJ8gxtoVOc7iJQWvtlRU2IC+8SGiBA+bFyxY4kbSrOww6VfFUyxGwMTk/FaA+AZNrNV0OT+3/cw2UmAoP4eOexCXCARNGrkAERzEwzFmez9yXq3l5MYJnPS4RRpnuOjzo/NJMfg0tHF5fq5/JaaCXNRJiPcDcks+Ga7Q5JrM7VfTJizNcyCT3NZL9YYw1nA4k7GwDEg+MoFPUGiQZP970O9VTiuaMnycp40hZWaAKzktpqiEtENS9XS2pVoAFXNMy8VCeJsnhh14mdF8K5raw2H+3NhepKX1PfyV0M1xfiPKM6+jMqZ5j9St1gMpF0qOfw65VceZ7RsZLWHbmG+Pd9/PHu6vzdX9rfhqwUPHkiInmc5BFsCXQKX5ZwAzVJQyTSoBUjaEqr3jKrN5ctvUoXjNNc9/+qcKE56coa7D3pS4w1oFLzIIRsZBh5GTKYFhZhL6Ke0zI/WdUg95UwPERtWgtiT5ssCFugayEjw0HzfgQ98njTC+8UJk53KMzGr3Tv9qEkBmX6k4xNx1G0j4g+q+V3NuZWBnB+Rgc9qgCqGUnVG9vKJA7PWg4LMnTa7wus2r+FHN/ezocVUUGPlT7HoknPu7xycBb96vqiaU6kOw12tMfpfW6l03bJTeZWrrbC3CbWGr2CGmPn8Ac/LJNg==
 sidebar_class_name: "post api-method"
 info_path: CDK-Erigon/JSON-RPC/eth/ethereum-json-rpc-api
 custom_edit_url: null
@@ -54,7 +54,7 @@ eth_chainId
 
 <RequestSchema
   title={"Body"}
-  body={{"required":true,"content":{"application/json":{"schema":{"type":"object"}}}}}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"jsonrpc":{"type":"string","example":"2.0"},"method":{"type":"string","example":"eth_chainId"},"params":{"type":"array","items":{},"example":[]},"id":{"type":"integer","example":1}}}}}}}
 >
   
 </RequestSchema>

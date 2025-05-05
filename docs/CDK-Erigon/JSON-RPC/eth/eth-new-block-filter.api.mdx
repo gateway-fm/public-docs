@@ -5,7 +5,7 @@ description: "eth_newBlockFilter"
 sidebar_label: "eth_newBlockFilter"
 hide_title: true
 hide_table_of_contents: true
-api: eJylVMFu2zAM/RVBZ9fJdvStLTqgPaxBk52yYGBsJlYrS5pExzWM/PtIu0vbLetlPlgW9Ug+8lEeNME+6WKtvxhLGJPeZNoHjEDGu9tKFxqp/uGwu7K+fJpAOtMRf7aY6MpXvS6GcWsiMpxii5kuvSN0JEcQgjXlGG72mLwTWyprbEC+qA/IOfz2EUvSR34kdgreJUwC+Dyfy1JhKqMJEoXh1xGBMClQu5GQMk5Rjcr5ChV5XsnsetXV6BjD5NVW2CuI0Rw47n8RZIbv2ZxtUMNWL+0LPhHvA1DNu9lZcMJ4kN4X60G30TKuJgqpmM1iKPNEcAC3x5jvueoO+nzX6CPrJGwfXoW4eYYmWGY7MEXjdn7kb0hM+ob7E7Ft1N3y/uvFw+JaXS5uObXkncr4lM/zuf6zuCWBqyBW6mwANZWZ1M6LCFwNlGTcXnWG6lGSk9uoQFmDcfl3t6ox4ckZrPWdqvCAVkYviYRcVezfOKkKCDKV0FWKIrgkiXhKMsX8TqmnvKmBSEokFlvifJo7IkI0MMrroMF/Cfeu/JP+hM80C5aJSKhRo+FF0/W5OKxOLcLz6TBsIeG3aI9HMY+FsZ0/DxANbEWe9Yaj1ggVu8oQPGEvYz4N6cVKOAjctsLlr4E9Zr89LssSA32I3byZzcX9csXg7cstbvj6sDVCJzec34XW8jcYGz1ec7EN2vI0trAX7BRTnl8kUYCz
+api: eJydVMFy2jAQ/RWNzg6QHLklmXQmPTRMoCfKdBZ7wUpsSZUWiMfjf++uDMTJ0BzqA0by2923+57UaoJt1NOl/mYqwhD1KtPOYwAyzj4WeqqRyt8WD3eVy197kM50wD87jHTnikZP27Q0ARlOYYeZzp0ltCSfwPvK5Cnd+CU6K3sxL7EG+UeNR67h1i+YE+f1QYqTwShfBR98PgBGCsZuGYhvUPtKtm5GE91lumaervgaeqEVjvQQoI6DSAgBGg40hGm/G+RYrnhlhnUMt7pNQzmDrrv0yJiidzb23dxMJvIqMObBeBkIR98HBMKoQG0SIWWsohKVdQUqcvwms2nUoUTLGCav1sJeMUez57z/Pesjw49sLmp9mqz2LiaNgEpejS+CI4a92Gi6bPUuVIwriXycjscs5CgS7MHytEZb7voAzWhT644tJ2yf3z31cJrkwANJ6AGbi+VPWi5XvUrXopbduNS/oeSCB55vwF2tvs+fflw9z+7V7eyRY4V3PwaulGp9HM6cwBYQCnUxgeqJRbVxIiLTgZzYgOpgqEySnsOSgnkJxo5+2UWJEc/BUFXuoArcYyUHIYoFeCqhGQSpAggyFdEWigLYKIXYZZlifufSfd1YQyAlFpG9yPWS41nIGpI9LNT/OBmf2j/7h/CNxr5iIpIqadwePbG8lIeVKMU4/LVt1xDxZ6i6TrZTY71WewgG1ucDViIUHComesVGjklv8quFcBB4tUsn9bPhu+wUcZvn6OlL7GrgptnTfMHg9fFCq/n48W6Ag1x2/DvVWi7GNOh048leqyt28w62gu1zyvMXgwLZ/A==
 sidebar_class_name: "post api-method"
 info_path: CDK-Erigon/JSON-RPC/eth/ethereum-json-rpc-api
 custom_edit_url: null
@@ -54,7 +54,7 @@ eth_newBlockFilter
 
 <RequestSchema
   title={"Body"}
-  body={{"required":true,"content":{"application/json":{"schema":{"type":"object"}}}}}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"jsonrpc":{"type":"string","example":"2.0"},"method":{"type":"string","example":"eth_newBlockFilter"},"params":{"type":"array","items":{},"example":[]},"id":{"type":"integer","example":1}}}}}}}
 >
   
 </RequestSchema>

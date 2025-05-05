@@ -5,7 +5,7 @@ description: "eth_newPendingTransactionFilter"
 sidebar_label: "eth_newPendingTransactionFilter"
 hide_title: true
 hide_table_of_contents: true
-api: eJylVMFu2zAM/RVBZ9fJdvStKzqgO6xBk52yYGBsJlYrS5pExzWM/PtIu2uabVgGTAfbovjIRz5agybYJ12s9UdjCWPSm0z7gBHIeHdX6UIj1d8cdgt0lXH7VQSXoJTTCaEzHfF7i4k++KrXxTBuTUTGUmwx06V3hI7kCEKwphxjzx6Td2JLZY0NyBf1ATmh3z5iSfrIS2Kn4F3CJA7v53N5VZjKaIJEYfebiECYFKjdSEiRV86T2fWqq9Ep5q7CRF7RiT0DYjQH1P9FkBmes7ncrYZdvDQ2+ES8D0A172aXkQnjQSQq1oNuo2VQTRRSMZvFUOaJ4ABujzHfcz866PNdo48sp9TxcJLo9hmaYLmOgckbt/NjZYbEpG+pxohtoz4t7z9fPSxu1PXijlNL3qnAd/k8n+tfy14SuApipf4YQE01J7XzURludpTKWI/OUK0YcYJtrS+fyhqMy7+6VY0JX8Fgre9UhQe0MqFJhOaqYv8GpCogyFTiJp6JnSnm95p6ypsaiKREfLElzqe5I6JKA6PwDhr8J0nPevE6JoTPNAuWWUncUbDhRe31xaCsWy3zwa7DsIWEX6I9HsU8lsx2/jxANLAV4dYbTlEjVAyV8XjCXn6NabCvVkJI3G0rxH4b8mP2E3Fdlhjor76bNyO8uF+u2Hn78uc3vhJMhE5uBX4WWst1MkowXg1iG7TlOW1hL75TTFk/AGpdnJQ=
+api: eJydVMFu2zAM/RVBZzdpe8ytKzqgO6xBk52yYGBsJlZrS5rEJDUM//tIuUmcYmiG+ZBYMh/59PioVhNsop4s9FdTEYaol5l2HgOQcfax0BONVP6yuJ+iLYzdzAPYCLl87RE60wF/bzHSF1c0etKmpQnIWApbzHTuLKEl+QTeVyZPuccv0VnZi3mJNcgbNR65oFu9YE6c1wdhQgajfJX44PNBYKTAjDgQ36D2lWzdjq51l+maSbvi89BL5+I0HgLUcZAGQoCGsxjCtN8NEi6WvDLDoobPvUkKHYNuuvSIZtE7G/uj3V5fy1+BMQ/GCwdG3wcEwqhArRMhRU5ZR2bdqH2JVjF35Xvyik7sGRCC2aH+b+HfGZ6zueyCg+bau5i6B1TyanwZGTHsxHqTRau3oWJQSeTjZDzmfo8iwQ4s6zjasB57aEbrWndsUznH88l6DweNB1ZJfhhQu8zl0PLFsm/mjTTVrl2SyVByzgOVGHBbq2+zp+9Xz9N7dTd9ZKwcoleLy6bC5xrOCGwBoVB/TaB6llGtXVBinSDUuLl7Q6VixAm2qlz+mpdg7OinnZcY8QiGqnJ7VeAOKxmeKK5hiUIzAKkCCDIVWYUz52SK+R1L93VjDYGUOEn2ItdLg8EtriG5yEL9L9P0QYuj5wjfaOwrZiV5U/fbd+ssLiblHpViNg5t2xVE/BGqrpPtdOS+izsIBlbHCS0RCoaK116xkTnrp+RqLoQkvNqmUf84MV12QNzlOXr6NHY5MN30aTbn4NX79Vi7QjAB9nJ18u9Ea7lzUwvS/Sl7ra7Y9FvYSGyfU54/8JsArA==
 sidebar_class_name: "post api-method"
 info_path: CDK-Erigon/JSON-RPC/eth/ethereum-json-rpc-api
 custom_edit_url: null
@@ -54,7 +54,7 @@ eth_newPendingTransactionFilter
 
 <RequestSchema
   title={"Body"}
-  body={{"required":true,"content":{"application/json":{"schema":{"type":"object"}}}}}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"jsonrpc":{"type":"string","example":"2.0"},"method":{"type":"string","example":"eth_newPendingTransactionFilter"},"params":{"type":"array","items":{},"example":[]},"id":{"type":"integer","example":1}}}}}}}
 >
   
 </RequestSchema>

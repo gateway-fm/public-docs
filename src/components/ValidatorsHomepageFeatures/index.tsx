@@ -58,7 +58,7 @@ function Feature({ title, description, link, linkText }: FeatureItem) {
   );
 }
 
-export default function ValidatorsHomepageFeatures(): ReactNode {
+export default function HomepageFeatures(): ReactNode {
   return (
     <section className={styles.features}>
       <div className="container">

@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: Txpool JSON-RPC API
-  version: 1.0.0
+  version: 2.0.0
   description: |
     The txpool API provides methods for interacting with the transaction pool in CDK-Erigon.
     These methods allow developers to inspect pending transactions, check transaction statuses,

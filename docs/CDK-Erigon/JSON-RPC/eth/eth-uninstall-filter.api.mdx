@@ -5,7 +5,7 @@ description: "eth_uninstallFilter"
 sidebar_label: "eth_uninstallFilter"
 hide_title: true
 hide_table_of_contents: true
-api: eJylU8Fu2zAM/RVBZ9dJd/St6zogO6xBk56yYGBsxlYrS5pEJw2M/PtIu03bLdulPiQW/Ug+vkf1mqBOuljpr8YSxqTXmfYBI5DxblbpQiM1PztnXCKwdkTpTEf81WGiz7466KIfjiYi4yl2mOnSO0JH8glCsKYc6k0ekncSS2WDLcgbHQJyE795wJL0kR+pnYJ3CZMAPk2n8ldhKqMJUoXh9y98kgK1HTipvaFGUYOqNjt0avZFf4gG83jf87wOLYe9yBR8Ij4HoIZPk/PohHEnIherXnfRMrAhCqmYTGIoc8buwNUY8xoI93DIt60+siHC9+5V8JsnaINlvj2TNG7rhwkMSUjfsAQRu1Z9W9x+v7ibX6ur+YxbS99xkMt8mk/1n+MtCFwFsVJnC6hxzqS2PirDokYoybj6VfVT2sb68rFswLj8h1s2mPCUzFL4vapwh1Z2LCnyiqeKhzdJqgKCTCV0laIILkkj3oZMMb9T67FvaiGSEpMllrifZkXEiRYGgx20+E/r3s1/WgHCJ5oEy0yk1mBS/+zq6mwh9qcR7/lz328g4X20x6OEh9E4zq87iAY2YtBqzWUbhIpTZQ0ekSH6elzUi6WQELjthMxfS3vMXjKuyhID/Re7frOe89vFksGb5/va+kpyIuzlLvNvobVc/EHq4UJLrNeW97GDWrBjTXl+A7O+epc=
+api: eJydVMlu2zAQ/RWCZ8VLDj34lqYp4B4aI8vJDYqxNLaYSCRLjrxA0L93hoodJXBzqA62NHyz8L1HtppgE/Vsqb+bijBE/ZRp5zEAGWfnhZ5ppPJ3Y42NBFXVo3SmA/5pMNJXVxz0rE2fJiDjKTSY6dxZQkuyBN5XJk/1xs/RWYnFvMQa5I0OHrmJWz1jTlzXB+lOBqOsCj74fACMFIzdMBD3UPtKQpejie4yXfOgrvgcem4vnOohQB0HqRACHDjTEKZ4Nyiy1JP99It+4pgZtjO8403i5gSddukRtqJ3NvabupxM5K/AmAfjhRfOfjxOFRWodZpM7QyVikpUG7NFq+bf9H8T+zrH+57nlT3yqL2LSRGgkr/G59ERw1ZsM1u2ugkVA0siH2fjMes2YuwWLLMy2gDhDg6jda07tpjMe/dmoZsjYwPJk66Dcc73P0p3VKUXZSri2LVLRBhK2t8wkwGbWv24v/15cbe4VleLOVeQ8Xs+uGFq+Z6lewJbQCjU2QKqny+qtQtKLBAgJ7bdm3intFXl8pe8BGNHv+xDiRFPybwjt1MFbrES+0dFTjE54TBIUgUQZCqiLRQFsFEasakyxfOdWvd9Yw2BlHhFYpH7JZuzoDUkn1io/3UePuz/5CTCPY19xZNIraR1+2qO5dlCrEUpFuLltl1BxMdQdZ2E09Y4zq9bCAZW6VzJiSoRCk4VN70gQ/R17/eLBxlC4FWTDuhH73fZMeMqz9HTp9inga0Wt/cPDF69XmS1KyQnwE4uOf6daS03YqI63XQSa3XFtm5gI9i+pjx/AcdR19A=
 sidebar_class_name: "post api-method"
 info_path: CDK-Erigon/JSON-RPC/eth/ethereum-json-rpc-api
 custom_edit_url: null
@@ -54,7 +54,7 @@ eth_uninstallFilter
 
 <RequestSchema
   title={"Body"}
-  body={{"required":true,"content":{"application/json":{"schema":{"type":"object"}}}}}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"jsonrpc":{"type":"string","example":"2.0"},"method":{"type":"string","example":"eth_uninstallFilter"},"params":{"type":"array","items":{},"example":["0x16"]},"id":{"type":"integer","example":1}}}}}}}
 >
   
 </RequestSchema>

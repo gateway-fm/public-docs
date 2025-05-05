@@ -5,7 +5,7 @@ description: "web3_clientVersion"
 sidebar_label: "web3_clientVersion"
 hide_title: true
 hide_table_of_contents: true
-api: eJylU7Fy2zAM/RUeZ0V2201bmsuQDo3PdtvB9fVgCraYUCRLQnZ8Ov97ASl1k9btUg2SCD4AD3hArwl2WVcr/QU37/S60CFiArLB39W60ge2fjPOoqfPmDKbdaETfu8w0/tQH3XVD0ebkOGUOiy0CZ4YL1cQo7NmCDd5yOzMtmwabEH+6BiRc4TNAxrSJ34kdo7BZ8wCeDudyqfGbJKNEoXhc6Qu+ayoQWW6lDiVGhmq/UhRhe1w60ON+r/4MKHXyS/2o0VqgnQrhkx8jkANnyYXwRmT0OSW97pLjnENUczVZJKiKTPBHvwOU7kDwgMcy22rTyyLsJ3/6vvtE7TRMdueKVq/DQN/S2LSt1x8wq5VHxb3H6/msxt1Pbvj1M/tYcSbclpO9e/FLQh8DalWFwOoscystiEpyy1NYMj6nTpYaoZ+n902LphH04D15Ve/bDDj2RmcCwdV4x6dTBrLGBRXlY4vnFQNBIXK6GtFCXyWRDwUhWJ+59Rj3txCYv1ZYrFlzqe5IyJEC4O8Hlr8m3Cvyj/rT/hEk+iYiIQaNOqfNV1disPqNCI83/b9BjJ+Su50EvNQGNv5dw/JwkbkWa05aoNQYxqG4BEZom/GIb1aCgeBu064/DGwp+Knx7UxGOmf2PWL2ZzdL5YM3jwvbSu7UekEB1loflday/IPjR62Wmy9djyNHewEO8aU5wfAkHmZ
+api: eJydVLFy2zAM/RUeZ8VO0s1bmsuQDk0uSdvB9fVgCbaUSCQLQnZ8Ov17Acp2lZyboRpsCXzAA/Ee2VmGdbSzuf2By092kVkfkIAr724LO7Nbif7K6wodf0eKEraZJfzdYuTPvtjZWZc+K0KBM7WY2dw7FrwuQQh1lady0+coyRKLeYkN6BvvAgqHXz5jzlI3kJJzhVFXFU8hHwEjU+XWAsRXaEKtocvJue0z2yCXvvgYemIrkhmAoImjTCCCnSRWjCnej2rMF/JVjXkq2eoaaUx00adHxxSDd3HYzeX5uf4VGHOqgg5Esh+QW3LRcIkmb4mkNTN0aDZDi8av0qrzBdr/Hu2+obfkJ6U9DNIGH5MkwKV8TU+CI5K2KXPpbEu14ErmEGfTqeg2iQwbcDKcyRoYt7CbrBrbi8O024e/Fro5DG4kedJ11M1J+oN088UgyoWK41Y+7b/iJPqNDI+wbcyXx7uvZw/31+bq/lZy9+MdmBLX2+E8MrgCqDAnC5ihsWhWnoxagCBn8ZvZVlwmvY5py9rnL3kJlZv8dE8lRjwmQ137rSlwg7X6XmzgjUyFdqMkUwBDZiK6wjCBi0okpsqM9HekHnhjAyT+EYtoLApfMrgI2UCyh4PmHwfh3faP/mF85WmopREtlTTu9p6Yn6ojSpRqHFntuiVE/EZ132s4bWzQagNUwfJ4nkqEQk6QmugFBWKvB5OfPWkPCq/bdDDfG77PDhlXeY6BP8QuRm66v3t8EvByf381erZmlmCrd5v8zqzVezANOl1wGutsLW5uYa3YoaY+fwBik9LW
 sidebar_class_name: "post api-method"
 info_path: CDK-Erigon/JSON-RPC/eth/ethereum-json-rpc-api
 custom_edit_url: null
@@ -54,7 +54,7 @@ web3_clientVersion
 
 <RequestSchema
   title={"Body"}
-  body={{"required":true,"content":{"application/json":{"schema":{"type":"object"}}}}}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"jsonrpc":{"type":"string","example":"2.0"},"method":{"type":"string","example":"web3_clientVersion"},"params":{"type":"array","items":{},"example":[]},"id":{"type":"integer","example":1}}}}}}}
 >
   
 </RequestSchema>

@@ -5,7 +5,6 @@ description: "The txpool API provides methods for interacting with the transacti
 sidebar_label: Introduction
 sidebar_position: 0
 hide_title: true
-pagination_next: CDK-Erigon/JSON-RPC/txpool/txpool-content
 custom_edit_url: null
 ---
 
@@ -14,14 +13,24 @@ import Heading from "@theme/Heading";
 import SchemaTabs from "@theme/SchemaTabs";
 import TabItem from "@theme/TabItem";
 import Export from "@theme/ApiExplorer/Export";
+import ApiMethodList from "@theme/ApiMethodList";
+
 
 <span
   className={"theme-doc-version-badge badge badge--secondary"}
-  children={"Version: 1.0.0"}
-></span>
+  children={"Version: 2.0.0"}
+>
+</span>
 
-<Heading as={"h1"} className={"openapi__heading"} children={"Txpool JSON-RPC API"}></Heading>
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Txpool JSON-RPC API"}
+>
+</Heading>
 
 The txpool API provides methods for interacting with the transaction pool in CDK-Erigon.
 These methods allow developers to inspect pending transactions, check transaction statuses,
 and understand the contents of the transaction pool.
+
+<ApiMethodList apiName="txpool" />

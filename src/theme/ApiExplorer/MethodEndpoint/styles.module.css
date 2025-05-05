@@ -1,0 +1,33 @@
+.methodEndpoint {
+  display: flex;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: var(--ifm-code-font-size);
+  margin-bottom: 1rem;
+}
+
+.method {
+  margin-right: 8px;
+  background-color: var(--openapi-code-blue);
+  color: white;
+  padding: 4px 8px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.path {
+  background-color: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-800);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  word-break: break-all;
+}
+
+.operation .method {
+  font-size: 0.8rem;
+}
+
+.operation .path {
+  font-size: 0.8rem;
+} 
