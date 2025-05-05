@@ -1,0 +1,8 @@
+{
+  "label": "Presto UI Dashboards",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "UI Dashboards"
+  }
+}
