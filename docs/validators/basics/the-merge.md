@@ -30,4 +30,4 @@ recommended.
 
 See also:
 
-- [Nodes](nodes/)
+- [Nodes](/category/validator-nodes/)

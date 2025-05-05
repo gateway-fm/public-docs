@@ -1,17 +1,26 @@
+---
+title: Consensus Layer Updates
+sidebar_label: Consensus Layer Updates
+---
+
 # Consensus Layer Updates
 
-* Prysm
-    * Twitter: [https://twitter.com/prylabs](https://twitter.com/prylabs)
+- Prysm
 
-* Lighthouse
-    * Twitter: [https://twitter.com/sigp_io](https://twitter.com/sigp_io)
+  - Twitter: [https://twitter.com/prylabs](https://twitter.com/prylabs)
 
-* Lodestar
-    * Twitter: [https://twitter.com/lodestar_eth](https://twitter.com/lodestar_eth)
+- Lighthouse
 
-* Teku
-    * Twitter: [https://twitter.com/Teku_ConsenSys](https://twitter.com/Teku_ConsenSys)
+  - Twitter: [https://twitter.com/sigp_io](https://twitter.com/sigp_io)
 
-* Nimbus 
-    * Twitter: [https://twitter.com/ethnimbus](https://twitter.com/ethnimbus)
-    * Newsletter: [https://subscribe.nimbus.guide/ ](https://subscribe.nimbus.guide/ )
+- Lodestar
+
+  - Twitter: [https://twitter.com/lodestar_eth](https://twitter.com/lodestar_eth)
+
+- Teku
+
+  - Twitter: [https://twitter.com/Teku_ConsenSys](https://twitter.com/Teku_ConsenSys)
+
+- Nimbus
+  - Twitter: [https://twitter.com/ethnimbus](https://twitter.com/ethnimbus)
+  - Newsletter: [https://subscribe.nimbus.guide/ ](https://subscribe.nimbus.guide/)

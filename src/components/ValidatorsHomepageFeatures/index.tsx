@@ -15,7 +15,7 @@ const FeatureList: FeatureItem[] = [
   {
     title: "Basics",
     description: <>Basics of the validators and staking.</>,
-    link: "/validators/intro",
+    link: "/category/validators/",
     linkText: "Learn More",
   },
   {

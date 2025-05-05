@@ -24,9 +24,9 @@ Most often, slashing happens when > 1 Validator client shares the same key set.
 
 To avoid that, but still set up the redundancy, see the following chapters:
 
-- [High Availability](ha.md)
+- [High Availability](/category/high-availability/)
 
-- [Validator Clients](validator-clients.md)
+- [Validator Clients](/category/validator-clients/)
 
 ## Inactivity Penalties
 
@@ -47,9 +47,9 @@ The inactivity penalties include:
 To prevent inactivity penalties, setup monitoring and alerting properly and
 keep your nodes up to date. You can read more in the following chapters:
 
-- [Monitoring And Alerting](monitoring.md)
+- [Monitoring And Alerting](/validators/ha/monitoring)
 
-- [Keep node up-to-date](reference/nodes/updates-releases.md)
+- [Keep node up-to-date](/validators/nodes/updates-releases)
 
 ## Further Reading
 

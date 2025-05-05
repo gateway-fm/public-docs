@@ -12,9 +12,8 @@ slasheable blocks to avoid attesting.
 
 ## Read More
 
-* [Slashing And Penalties](../basics/slashings-and-penalties.md)
+- [Slashing And Penalties](../../basics/slashing-and-penalties.md)
 
-* [Eth 2.0 Annotated Spec: Validator Duties, Rewards & Penalties](https://github.com/ethereum/annotated-spec/blob/master/altair/beacon-chain.md#aside-validator-duties-rewards-and-penalties)
+- [Eth 2.0 Annotated Spec: Validator Duties, Rewards & Penalties](https://github.com/ethereum/annotated-spec/blob/master/altair/beacon-chain.md#aside-validator-duties-rewards-and-penalties)
 
-* [Eth 2.0 Annotated Spec](https://benjaminion.xyz/eth2-annotated-spec/)
-
+- [Eth 2.0 Annotated Spec](https://benjaminion.xyz/eth2-annotated-spec/)

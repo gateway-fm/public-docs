@@ -1,12 +1,19 @@
+---
+title: Execution Layer Update Sources
+sidebar_label: Execution Layer Update Sources
+---
+
 # Execution Layer Update Sources
 
-* Go-Ethereum (Geth)
-    * Twitter: [https://twitter.com/go_ethereum](https://twitter.com/go_ethereum)
+- Go-Ethereum (Geth)
 
-* Erigon 
-    * Twitter: [https://twitter.com/erigoneth](https://twitter.com/erigoneth)
-    * Newsletter: [https://erigon.substack.com](https://erigon.substack.com)
+  - Twitter: [https://twitter.com/go_ethereum](https://twitter.com/go_ethereum)
 
-* Nethermind
-    * Twitter: [https://twitter.com/nethermindeth](https://twitter.com/nethermindeth)
-    * Blog: [https://medium.com/nethermind-eth](https://medium.com/nethermind-eth)
+- Erigon
+
+  - Twitter: [https://twitter.com/erigoneth](https://twitter.com/erigoneth)
+  - Newsletter: [https://erigon.substack.com](https://erigon.substack.com)
+
+- Nethermind
+  - Twitter: [https://twitter.com/nethermindeth](https://twitter.com/nethermindeth)
+  - Blog: [https://medium.com/nethermind-eth](https://medium.com/nethermind-eth)
