@@ -13,30 +13,34 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: "Basics",
-    description: <>Basics of the validators and staking.</>,
-    link: "/category/validators/",
+    title: "Ethereum",
+    description: <>Ethereum RPC</>,
+    link: "/category/rpc/",
     linkText: "Learn More",
   },
   {
-    title: "High Availability",
-    description: <>How to deploy and manage your validators in high availability mode.</>,
-    link: "/validators/high-availability",
+    title: "Fantom",
+    description: <>Fantom RPC.</>,
+    link: "/rpc/fantom",
     linkText: "Deployment Guide",
   },
   {
-    title: "Nodes",
-    description: <>Learn about diversity of the clients.</>,
-    link: "/validators/nodes",
-    linkText: "View Options",
+    title: "Gnosis",
+    description: <>Gnosis.</>,
+    link: "/rpc/gnosis",
+    linkText: "Gnosis",
   },
   {
-    title: "Security",
-    description: (
-      <>How to mange your validator nodes securely and how to protect your private keys.</>
-    ),
-    link: "/validators/security",
-    linkText: "Best Practices",
+    title: "Lukso",
+    description: <>Lukso .</>,
+    link: "/rpc/lukso",
+    linkText: "Lukso",
+  },
+  {
+    title: "Soroban",
+    description: <>Soroban.</>,
+    link: "/rpc/soroban",
+    linkText: "Soroban",
   },
 ];
 

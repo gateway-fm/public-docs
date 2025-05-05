@@ -88,6 +88,13 @@ about Ethereum staking and Gateway.FM validator service."
                 linkText="Documentation"
                 icon="⚡"
               />
+              <ProductCard
+                title="RPC"
+                description="High-performance RPC service for Ethereum and Polygon zkEVM networks."
+                link="/rpc"
+                linkText="Documentation"
+                icon="⚡"
+              />
               {/* Additional product cards can be added here as they become available */}
             </div>
           </div>

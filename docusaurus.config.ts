@@ -118,6 +118,11 @@ const config: Config = {
           position: 'left',
         },
         {
+          to: '/rpc',
+          label: 'RPC',
+          position: 'left',
+        },
+        {
           href: 'https://gateway.fm',
           label: 'Website',
           position: 'right',

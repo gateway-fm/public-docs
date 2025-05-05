@@ -3,7 +3,7 @@ import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
-import HomepageFeatures from "@site/src/components/HomepageFeatures";
+import HomepageFeatures from "@site/src/components/RpcHomepageFeatures";
 import Heading from "@theme/Heading";
 
 import styles from "./index.module.css";
@@ -14,14 +14,11 @@ function HomepageHeader() {
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
       <div className="container">
         <Heading as="h1" className="hero__title">
-          Validators Knowledge Base
+          RPC Knowledge Base
         </Heading>
-        <p className="hero__subtitle">
-          Welcome to the Ethereum Validator Knowledge Base, where you can find resources about
-          Ethereum staking and Gateway.FM validator service.
-        </p>
+        <p className="hero__subtitle"></p>
         <div className={styles.buttons}>
-          <Link className="button button--secondary button--lg" to="/category/validators/">
+          <Link className="button button--secondary button--lg" to="/category/rpc/">
             Get Started
           </Link>
         </div>
@@ -35,9 +32,8 @@ export default function Page(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`Validators Documentation | Gateway.fm`}
-      description="Ethereum Validator Knowledge Base, where you can find resources about
-          Ethereum staking and Gateway.FM validator service"
+      title={`RPC Documentation | Gateway.fm`}
+      description="Knowledge base for Hight Performant RPC API"
     >
       <HomepageHeader />
       <main>
