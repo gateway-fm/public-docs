@@ -136,20 +136,12 @@ const config: Config = {
           title: 'Documentation',
           items: [
             {
-              label: 'Home',
-              to: '/',
-            },
-            {
               label: 'Validators',
               to: '/catalog/validators',
             },
             {
               label: 'CDK-Erigon',
               to: '/CDK-Erigon/what-is-cdk-erigon',
-            },
-            {
-              label: 'CDK-Erigon',
-              to: '/CDK-Erigon',
             },
             {
               label: 'Deployment Guide',
