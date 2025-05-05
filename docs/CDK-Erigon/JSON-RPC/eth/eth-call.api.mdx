@@ -5,7 +5,7 @@ description: "eth_call"
 sidebar_label: "eth_call"
 hide_title: true
 hide_table_of_contents: true
-api: eJylU8lu2zAQ/RWCZ0d2e/QtDXxID40buyfXKMbU2GLCreTICwT/e2fk1Eta9FJBkMjhLG/eG3aaYFP0eKFnBITqa4vZYtHLgY4JM5CN4bHWY43U/DDgnB7ojD9bLPQp1gc97vqtzchOlFscaBMDYSA5gpScNX2S4UuJQWzFNOhBVnRIyJnj6gUN6SM/krukGAojYIePo5H8aiwm2yRZ2H2yR9MSFgUq4E55LAU2qASbst5jbbkPd1A7S01sSZmMDCBs2J8yhAJGEil+qUG1ctG8mgZs0P+FnKHfwrziy/M6CocpFuJ9Amp4N7xyKZi3mEWHTrfZ8WlDlMp4OMzJVIVgC2GDudpwbzs4VGuvjyyRIHu+qDHZg0+OkXUMx4Z17LFaEpOecLsZW68+z56+3D1PH9T99JFLS90T5A/VqBrp943wXIQacq3+mkCdmitqHbOyTF8Wfpltob9n+Bx2obr6HuYNFjwHMwlxp2rcopOpK4qi4q7y4SpI1UAwUAVDfS1kGSjGdy59qls8ZFae5RRb4XqaGRH6PfRSBvB4K9JN02eFCfc0TE7GgxP0ynRv+i0u0axEI9KyretWUPBbdsejmPsm2M7LLWQLK5FiseRcDUKNuRf8FdlFP5yG724ulcXdtYLgj0E8Dn5H3BuDif7pu7yavunTbM7Oq7dr62MtMRl2cqX5O9ZaLn1Pan+vxdZpx5PX8g3j81NOeX4BF6d5LA==
+api: eJzdld9v2jAQx/8Vy88UQmgp8MYolbqHtVu7p66aLs5B0iZ2Zjv8EMr/vjtTaJi2atrjIgTh/L07++5jeyc9LJ2cPMp7Dx7F5xptjk4+daSp0ILPjb5J5USiz74rKArZkRZ/1Oj8B5Nu5WQX/uYWSeRtjR2pjPaoPQ9BVRW5CkF6z85otjmVYQn85rcVUmSTPKPyFLeynNJzehplva1US+i8zfWShLiBsirYFHcj2XRkSbMz6fvS4wJIX4GF0rX0YC1sSZ57DPam5fm4kwtrSlJFm+gvHwrlTfCYRTHAdDBO4nhwPR9dRdMIL2bn1/ElTq/G0Wgwu7wYzlRMHil4CD6XEUSjeND/U3SIktFwPO6rYdwfJYOh6qf9cXoOMY4xiRQOhtEQk/MRL7Wgrjovn+g1b1copyYt0bZL1G/Cww12ldFu34eYVkM/KTpl84pbSd7zDaqaAgsQGteiROdgiYLrK/KyxDSntMVWrHNqTO2FskgU6CXpvQXtQHEgQR+foUgKo15UBrmW/4zP69RPp9mC9oCIrIwLsIHP6F+vJXFoV2hd6HhtCxrNvK/cpNcjDrvOwwo0lay7pLWtYdtdlLKhfcIz+/K2JeaHcrYQDpy25tBKekDx/6BsD1mfYdMLE7qU+7D95tRoi3UpPt7ffjr7cjcT07sbmg5XfN8sqlGo0mkL6VjSKdhU/DaA2JfUiYWxgpG2TBZxxuAFto5ub5B1v+mHDB0enakTZi1SXGHBJ5AT3gjqp922nATXrSMc6rSNsOsImt8x9T6vK8ES8wQy2xzlC4cOgVdCgFhDiacYnCz6yLbHje9VBW8MChCY3L2S+/jmTVXPGGqy7XYJOPxqi6Zhc1gE2el1BTaHJJxnfBZkCCntfsbuBUkiZ/ttd/bAmVle1OFg/HULNp2Dx1QprPy72qcW83e39w8kTl5vjdKk7GNhzTcKfU+k5DsnFDVcK2zbEVl6WdPZQuP7mPz8BHW4KUg=
 sidebar_class_name: "post api-method"
 info_path: CDK-Erigon/JSON-RPC/eth/ethereum-json-rpc-api
 custom_edit_url: null
@@ -54,7 +54,7 @@ eth_call
 
 <RequestSchema
   title={"Body"}
-  body={{"required":true,"content":{"application/json":{"schema":{"type":"object"}}}}}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"jsonrpc":{"type":"string","example":"2.0"},"method":{"type":"string","example":"eth_call"},"params":{"type":"array","items":{},"example":[{"from":"0x0000000000000000000000000000000000000000","to":"0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2","data":"0x70a08231000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"},"latest"]},"id":{"type":"integer","example":1}}}}}}}
 >
   
 </RequestSchema>

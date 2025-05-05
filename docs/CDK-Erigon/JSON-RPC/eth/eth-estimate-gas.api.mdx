@@ -5,7 +5,7 @@ description: "eth_estimateGas"
 sidebar_label: "eth_estimateGas"
 hide_title: true
 hide_table_of_contents: true
-api: eJylVMFu2zAM/RVBZzfJdsytK4qhO6xBkp2yYGAsxnZrS5pIJw2M/PtIO2vSpthlPtgS9Ug+8lHuLENBdrqyywSeIOcqeLLrzIaICXT34OzUIpe/kLhqgPErkM1swt+tWL4Ed7DTrt9WCQXLqcXM5sEzetYjiLGu8j7W+ImCVxvlJTagKz5ElARh84Q526M8Gpui0EBSwOfJRD8OKU9V1CgCnyO3yZMBb060xG7C1hRAxiM6dGYbkgFTVDv0hs/V2f8iJ+zeMrnuTCOmoE2LgVj2EbiU3fgaSZh2mLT9nW1TLaCSOdJ0PE4xHxHDDnyBaVSIxx4Oo21jjyKN8pyf23//Ak2shWcn5Cq/DT3zitVk77nEhG1jvi0ev9/MZ3fmdvYgqTXvUMCn0WQ0se/LWjB4B8mZDwOYoUbqe1xJM5P21hdmX3FpxOPstqlD/pyXUPnRT78skfDVGeo67I3DHdY6bWQ4GKkqHS6cjAOGzBB6dykiZSK9e0095KUGEhsVV20k+ax0RFVooBfWQ4MfSvam9lfZGV94HGthoXF6gbqTmqurIKJLqXrLUddtgPBHqo9HNfcliV2WO0gVbFSY1VpClggOUy//MwrE3g2DebNUAgqvWyVyNaTH7K/HbZ5j5H9i1xcjOXtcLAW8Od3aJjj1SbDXGy3vqbV69Ye/gF5rtXW2ljlsoVDsEFOfP5rNfE4=
+api: eJzVlcFS2zAQhl9Fo3NIHAdCklsaoEMPLQPpiTKdtbWxDbbkSkogk8m7d1dOwBDKdHqrD4m13n+12v0kbaSHzMnJrZxb0A5SXxjt5F1Hmhot8OhSyYlEn/9E54sKPH4GJzvS4q8lWT4ZtZaTTRgWFsnX2yV2ZGq0R+35E9R1WaQhVu/eGc02l+ZYAb/5dY00gUnuMfUUt7Y8sy/Q8Vf2t3XacnTeFjojR3yCqi7ZFHcjue3IipI06mPXt+sgWQ0WKteSgbWwJlXhMdi3rQC3G7mwpiKv6Cn6y4dCeRMUsygGmA7GSRwPLs5HZ9E0wpPZ8UV8itOzcTQazE5PhrM0JoUCD0FzGkE0igf9P0WHKBkNx+N+Ooz7o2QwTPuqP1bHEOMYkyjFwTAaYnI8kts7WkjRrk9BLcrQtgvU34aH2+tqIqHpQkyLoD+FLrVFzY0k9TX6pdVOgBa7ipJdmIXIwAmNqFCJhbECRFasUAv/Apj8Zz522b3O5BDOPQqyNi5ABT6nUe/Q06FdoXWhs0tbklPufe0mvR5h13UeVqCpRt2MFI+w7i4qKmQncHn9sgPO9/VrERuwbKVyOPeevP8aqoapPrOlFyZ0rPBhr537HC0uK/Hl5tvXo+urmZheXVIWXO+mcVShUKPX7bzxoBVYJd4NIJqCusAWE2yZKZ2Jx8LnghQvsqQ06UOaQ6G7P/Q8R4fPYihL8ygUrrDk48YJbwR1065bIsHl6giHWrXhdR1CXj1P3czrKrBeMNRsczRfOFqIvgoC0Bqq986fN2t/xt3jk+/VJWXBcQKYmx3FtwdBqAc5c06fNpsEHH635XbL5rAkstPrCmwBSTjD+CDIERRtfWbvAclFzpoNeTTnBNi9XIbD8O3m3Hb2immaYu0/9L1r8X/17WZOzsnuwqiMYo2FR75M6HciJd86zQXENwrbNrKk/beEjH2bmPz8Bu/pLCY=
 sidebar_class_name: "post api-method"
 info_path: CDK-Erigon/JSON-RPC/eth/ethereum-json-rpc-api
 custom_edit_url: null
@@ -54,7 +54,7 @@ eth_estimateGas
 
 <RequestSchema
   title={"Body"}
-  body={{"required":true,"content":{"application/json":{"schema":{"type":"object"}}}}}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"jsonrpc":{"type":"string","example":"2.0"},"method":{"type":"string","example":"eth_estimateGas"},"params":{"type":"array","items":{},"example":[{"from":"0x0000000000000000000000000000000000000000","to":"0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2","data":"0x70a08231000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"}]},"id":{"type":"integer","example":1}}}}}}}
 >
   
 </RequestSchema>

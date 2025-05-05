@@ -5,7 +5,7 @@ description: "eth_getTransactionByBlockNumberAndIndex"
 sidebar_label: "eth_getTransactionByBlockNumberAndIndex"
 hide_title: true
 hide_table_of_contents: true
-api: eJylVE1v2zAM/SuCzq6T7ehbUvSQHdogyU5ZMNA2a7u1JU2i8wEj/32k0jbJNgwZ5oMtUfx6fM8aNEEVdLbWKw8mQEGNNWpmnq3vQNZ6k2jr0MfNrNSZRqq/V0gX/tPDtLXF62Pf5egnppyZEvc60R5/9BhoasuDzoa4bTxyDvI9JrqwhtCQHIFzbVPEGqOXwFXZFooaO5AVHRxyYZu/YEH6yI/kDs6agEEcPo/H8ikxFL5xse1ML5B6b4JqzmAU5LYnBYouwOYHlUv7ysT+FZjy6rwRNMrZ0MTE/9U3N37d5O3D7NjVyvy5E+K9A6p5N7o9Q0C/RS9kD7r3LQfXRC5ko5F3RRoItmAq9GkFhDs4pM+dPjL7gmtxZvJhD51rGdfAYGS2EWlDYtIPVKPHvlNflk+Pd4v5vZrMZ1xa6p4Af0rH6Vj/OoYl8dTBl+qPCdQJe1BMJNNBrEYGaiq1a6hWHHEOi0wWNTQm/WZWNQb8CIa2tTtV4hZbEXRQZBWj8oeLIFUCQaICXmsgJFEV76VPdUMHnpSIQWyB62meiLDTQRSCgQ7/ieKrmXzIh3BPI9dyd5I/Eje8sb++OTnzWItuOGQYcgj41bfHo5jjCNjOyy34BnIhcr3hUjVCiT7K5RXZRd+fhH+3ksbEve2lwd9+gmPyHjEpCnT0V9/NhbTnT8sVO+dvF0ZnS4nxsJPLhN+Z1nIbRUrijSK2Qbes2x4q8T3llOcnV5S6gw==
+api: eJydVMFS4zAM/RWPz6Et3LY3YDh0D8BA98QyO0oiEkNiZ22lbSaTf1/JoTRldpju5tDasvT8JD251wRF0MsnvfZgA2RknFUr++J8DbLWz4l2Dfq4WeV6qZHKXwXSxP+qu6pc9nbb1in6S5uvbI47nWiPv1sMdOXyTi/7uDUeGYN8i4nOnCW0JEfQNJXJ4h3z18C3si1kJdYgK+oa5Itd+ooZMW7jhREZDHIq/r7JJo6BvLEFO+IO6qYS08VsoYdE10ze5V+7npofwzXgoQ4TOPAeOkYzhNE+TICf9GJ38S3j08VuoZ/5yEyZGC5GgX5K5XyInxQyNM6GMd+LxUL+cgyZN03s0VI/ILXeBmUOnVOQupYUKJp0Nu1UKrkoG5NRYPOjcyOpqcYFE4H/u0nvxI9Jnq6cfZ80M4kdByp5Nz8dIaDfoBdl97r1FQeXRE1YzueslVkg2IDlcs8KINxCN3up9cBSl7weDrK92bdiIrOopQnF0znt5fJJCaMQzkUQ3L1YS0NRijdUose2Vt8f727PHu6v1eX9isMks7GkzCWyOS70I3FfwefqrwBqpB4US0WJ7LzQtoXaGioVRxzColayEoyd/bTrEgN+BENVua3KcYOVTGNQ5BTXzXeTIJUDQaICHqssJFF3+6vHe0MNnpTITWyB74sTxv2vIUrNQv0v4/mpJh8CJdzRvKmYneBHafTv+no6GZx7VooyOaTvUwj4w1fDIOZYArbzcgPeQBpHX6a9RMh5vkWQb8gu+nocrbO1EBP3qo1vyOcxG5J9xGWWYUNf+j5PlHl/97hm5/T9/a1dLjEetvI28+9Sa3ncY0viAy22Xlc8GS0U4jtiyvcH5n8qaQ==
 sidebar_class_name: "post api-method"
 info_path: CDK-Erigon/JSON-RPC/eth/ethereum-json-rpc-api
 custom_edit_url: null
@@ -54,7 +54,7 @@ eth_getTransactionByBlockNumberAndIndex
 
 <RequestSchema
   title={"Body"}
-  body={{"required":true,"content":{"application/json":{"schema":{"type":"object"}}}}}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"jsonrpc":{"type":"string","example":"2.0"},"method":{"type":"string","example":"eth_getTransactionByBlockNumberAndIndex"},"params":{"type":"array","items":{},"example":["0x29c","0x0"]},"id":{"type":"integer","example":1}}}}}}}
 >
   
 </RequestSchema>

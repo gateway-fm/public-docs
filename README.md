@@ -14,7 +14,7 @@ This project uses OpenAPI specifications to generate API documentation. When add
    ```
    yarn openapi:generate:all            # Generate all API docs
    # OR for specific namespaces
-   yarn docusaurus gen-api-docs petstore # Generate Ethereum API docs  
+   yarn docusaurus gen-api-docs eth # Generate Ethereum API docs  
    yarn docusaurus gen-api-docs zkevm    # Generate zkEVM API docs
    yarn docusaurus gen-api-docs txpool   # Generate txpool API docs
    ```

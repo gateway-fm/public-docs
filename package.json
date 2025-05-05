@@ -14,9 +14,9 @@
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc",
     "openapi": "docusaurus openapi-docs",
-    "openapi:generate:eth": "docusaurus gen-api-docs petstore",
-    "openapi:generate:zkevm": "docusaurus gen-api-docs zkevm",
-    "openapi:generate:txpool": "docusaurus gen-api-docs txpool",
+    "openapi:generate:eth": "docusaurus gen-api-docs eth && node scripts/inject-api-method-list.js",
+    "openapi:generate:zkevm": "docusaurus gen-api-docs zkevm && node scripts/inject-api-method-list.js",
+    "openapi:generate:txpool": "docusaurus gen-api-docs txpool && node scripts/inject-api-method-list.js",
     "openapi:generate:all": "yarn openapi:generate:eth && yarn openapi:generate:zkevm && yarn openapi:generate:txpool",
     "openapi:clean": "docusaurus clean-api-docs"
   },

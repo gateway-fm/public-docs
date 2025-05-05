@@ -1,0 +1,158 @@
+.sendButtonContainer {
+  margin: 1rem 0;
+  position: relative;
+  z-index: 1;
+  will-change: transform; /* Helps with performance and stacking context */
+  contain: layout; /* Helps contain the layout impact */
+}
+
+.sendButton {
+  background-color: var(--ifm-color-primary);
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.sendButton:hover {
+  background-color: var(--ifm-color-primary-dark);
+}
+
+.sendButton.success {
+  background-color: #4caf50;
+}
+
+.sendButton.error {
+  background-color: #f44336;
+}
+
+.requestInfoContainer {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: var(--ifm-pre-background);
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  max-height: 250px;
+  overflow: auto;
+}
+
+.requestMethod {
+  margin: 0.5rem 0;
+}
+
+.requestContent {
+  margin: 0.5rem 0;
+  padding: 0.75rem;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  overflow: auto;
+  max-height: 200px;
+}
+
+/* Fixed overlay for response */
+.responseOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.responseContainer {
+  background-color: var(--ifm-background-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  width: 90%;
+  max-width: 1200px;
+  height: 90vh;
+  max-height: 900px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+.responseHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.responseControls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.responseSize {
+  font-size: 0.875rem;
+  color: var(--ifm-color-secondary-darkest);
+  font-family: var(--ifm-font-family-monospace);
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.25rem;
+  color: var(--ifm-color-emphasis-600);
+  padding: 0.25rem;
+  border-radius: 4px;
+  line-height: 1;
+}
+
+.closeButton:hover {
+  background-color: var(--ifm-color-emphasis-200);
+}
+
+.responseContent {
+  padding: 1rem;
+  overflow: auto;
+  flex: 1;
+  font-family: var(--ifm-font-family-monospace);
+  white-space: pre-wrap;
+  word-break: break-word;
+  background-color: var(--ifm-pre-background);
+  margin: 1rem;
+  border-radius: 4px;
+  height: calc(100% - 4rem); /* Ensure it takes up available space */
+  box-sizing: border-box;
+  min-height: 200px;
+}
+
+/* Small response that shows inline */
+.inlineResponse {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: var(--ifm-pre-background);
+  border-radius: 4px;
+  max-height: min(60vh, 500px);
+  overflow: auto;
+  position: relative;
+  z-index: 1;
+  /* Prevent pushing footer down */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.inlineResponseContent {
+  margin: 0;
+  padding: 0.75rem;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  overflow: auto;
+  max-height: calc(60vh - 100px);
+  font-family: var(--ifm-font-family-monospace);
+  height: auto;
+} 

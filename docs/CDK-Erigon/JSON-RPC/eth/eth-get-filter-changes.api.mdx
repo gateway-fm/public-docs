@@ -5,7 +5,7 @@ description: "eth_getFilterChanges"
 sidebar_label: "eth_getFilterChanges"
 hide_title: true
 hide_table_of_contents: true
-api: eJylVMFSGzEM/RWPzyFJe8yNMnSGHgoD9JQyHcWrrA1e25W1CZmd/HulDQ3QQi/dw64tP0lPevIOlqGtdrG0n0NkpGrvJjYXJOCQ00VjFxbZ/2iRD+dnHlKL1U4s4c8eK3/Kzc4uhnEbCMWBqceJdTkxJtYjKCUGNwac3dec1Fadxw50xbuCkiWv7tGx3cujsWvJqUoeAXycz/XTYHUUikYR+DVyT6kaSAaIYGfy2sTcVrP1wXmTnetJ2JgakkPDHk2EyqbkGO1/kRN2r5m8055O7FnbV3Jl2RdgL7vZO/CKtNHuL5aD7SkK0jOXupjNqLhpZdgokqYtMG5hN113di9KKePrZyHOH6ErURgPQjOkdR5rCKwmey5dIOw78+Xm8uvJ9dWZOb26kNSa91DKh+l8Ord/FnjDkBqgxrwZwBwKrWadyQRpK4HjkFqzDezHxh/dVjG7B+chpOn3dOux4tEZYsxb0+AGow5fNZyNVEW7F06mAYaJqZgawwSpaiKZkokMQXNMfchbOyA2KrPaquSz0hGVooNR4gQdvi/eqwYcp4DxkWclChUNNqo0POm6fDuSKORVfjkfhhVU/EZxv1fzWJzYZbkBCrBSiZZ3EtcjNEjjIDygQOzZYVhPbpWFwmOvbP4a3P3kt8epc1j4n9i7FxN6dXlzK+DV003ucqM+BFu95fJeWKv/hLHZ41VX22Cj1NhDq9hDTH1+AZOag44=
+api: eJydVE1PGzEQ/SuWzyEfHHrIjSIq0UNBQE8pqibeya7Ba7v2bEIU5b93xkvSBREO3UOyO37z9eaNd5qgznq+0N+sI0xZP450iJiAbPDXlZ5rpOZ3jdSfXzbga8x6pBP+6TDT11Bt9XxXPm1CdqDU4Uib4Ak9yRHE6KwpASdPOXixZdNgC/JG24icJSyf0BDHjUnSk+UkfCr4FM0AmClZXzMQX6CNTkzn46nej3TLlYbqc+iHzbBvhARtHvhCSrBlV0tY7PtBlIWevsy+6Ee22WE+yy3XmIYJZ/vyCF05Bp/7rs6nU/mrMJtkoxDD3ndIXfJZgVcluQor5UKd1aaxplHBmC4xwSpbb1BRg8pBJhWDc/q/+X6t7m0lJyZ+4FfHkMukgBr+mpyAZ0xrEdR8sdNdcoxsiGKeTyY80HEmWAsyjWsg3MB2vGr1nsUnFd/909bVgcmBFsrAB/WcKOAw08O4+mnNZGp+FQoXlooqrpjNhF2rvt/f/Di7u71UF7fXHEHq7ynhjCXnW6LuCXwFqVIfBlB9gVmtQlKijQSGWJBqY6kpAzy6LV0wz6YB68e//EODGY/O4FzYqArX6GQxsqKgmJ20HTipCghGKqOvFCXwWRKx2kYspuqYus+bW0ikRC5iy5yv6J9H2kKRiof25Ka8I+CoJsIXmkTHpUiwMu3dqz4WH0fiaTQiIz7f7ZaQ8Wdy+72YS3Ns59c1JAvLsnKybA1CxeslgnpGhujLXvRnD1KFwF1Xdvf9AuxHB48LYzDSp9jHgbJub+4fGLx8veTaUIlPgo1cgPw711quy0J2uQXFttOOe+ygFmwfU56/tFThBQ==
 sidebar_class_name: "post api-method"
 info_path: CDK-Erigon/JSON-RPC/eth/ethereum-json-rpc-api
 custom_edit_url: null
@@ -54,7 +54,7 @@ eth_getFilterChanges
 
 <RequestSchema
   title={"Body"}
-  body={{"required":true,"content":{"application/json":{"schema":{"type":"object"}}}}}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"jsonrpc":{"type":"string","example":"2.0"},"method":{"type":"string","example":"eth_getFilterChanges"},"params":{"type":"array","items":{},"example":["0x16"]},"id":{"type":"integer","example":1}}}}}}}
 >
   
 </RequestSchema>

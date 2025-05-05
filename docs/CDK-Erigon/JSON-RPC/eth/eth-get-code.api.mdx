@@ -5,7 +5,7 @@ description: "eth_getCode"
 sidebar_label: "eth_getCode"
 hide_title: true
 hide_table_of_contents: true
-api: eJylU7Fy2zAM/RUeZ0d2O2pLfRnSoXFtd3J9PZiEJSYSyZKQHZ/O/15ATp2o6XWpBomEHh8e8MBeE1RZlxu9IiBUXztMDrPeTnSImIBc8PdWlxqp/lEhzYNFPdEJf3aY6VOwJ132w9YlZBylDifaBE/oSX5BjI0zA8/0MQcvsWxqbEFWdIrI5GH3iIb0mR/hzjH4zCIY8HE2k4/FbJKLwsLwJVKXfFZUozKhja5Bq3ILiZRkTmBkYVEBDZgc0bi9YxBYy/RZ/5dE1jjWM+5Ny9sgLYshE+8jUM276RiVMR0wSed73aWGATVRzOV0mqIpMsEBfIWpqNiVI5yKfavPbIroW742/+4Z2tiwvp5FOb8Pg2JHEtJ3XHvCrlWfVw9fbpaLubpd3HNqyXsR/qGYFTP9Zzk8Cd5CsuqvBOpSX1b7kJTjJkq7na/U0VE9tPt6bNcE82RqcL747tc1ZrwehqYJR2XxgI3MGXsZFFeVTm8OKQsEE5XRW8Wm+iyJeDImivVdU1/yjt3PnE9zR8SBFgZDPbT4zqpR3VerCZ9pGhtWIByDOf2Li5sRAftRi8cc7vsdZPyWmvNZwkMpHOflAZKDnRiy2TJdjWAxDbY/IUP0/DKIN2tJLvCmExHvhvI8+X3i1hiM9E/s9s0YLh5WawbvXu5qK8pLneAo95jfpdZy2YfWDpdZYr1ueP46qAR74ZTnFxQ2dhY=
+api: eJydVEtT2zAQ/isanUNePAK5UYYDPRQK9ARMZy1tYoEtqZKcx2Ty37srk9RhOhzwIZHX376+/VYbmWAe5fRJPiRIKH42GAxG+dKTzmOAZJy90XIqMZW/55iunEbZkwH/NBjTN6fXcrrJryYg4VJosCeVswlt4k/gfWVUjjN4jc6yLaoSa+BTWnuk4K54RZUorg+cNXEF9JXxwasOMKZg7JyAuILaV2wa94dy25M1Fej059BuD+TiIUAdOy4QAqzJwyTM9m3H+UkOV3BxMjs9npzMFJ6iLtQ5juH87GKiRqfHx6OzyQTPsJgNCwoxXI3lC/mbbkmGWJlj6NY02uaHGY3e2dg2Ph4O+U9jVMF45o687zE1wUaRShTK1d5UqEWsISTBfAdQfNAoIGVM9KjMzBAItKbwUX55MO81HtZzqIgd/9K7mCcJqaS3wSEqYlhgYL1tZBMqApQp+TgdDGjO/ZhgAZYY6s9Ji0tY92e13JIUub77f5K73rHXkUjWQaeMw7y7UX9liu0QRzxMO3OZHJOynq6J5oBNLb4/3P44ur+7Epd3N+TGLbYcUVG5rEPmaNWshqDFfwOItocoZi4IlgxPlqQsliaVebJ7t6Jy6k2VYGz/2T6WGHHvDFXllkLjAiteKZKNE0RgWHechIYEPRHRakH6sZETkQh7gurbp27zHgotUr68QjTsGrJ2LNQfd+xD33tVJVylga+oAo6RdbB5F8zTQQDivmQ5kXmzKSDir1Btt2zOrZCdjgsIBoq8o7xxJYKmHWOFvSFB5FWr+aNHTs7wqsnL/lH/297O41Ip9OlT7EtHane3D48ELt4vw5orn8oAS74o6XcqJd+mmdp8W7JtIyuSegNzxrYx+fkLA+Pk0w==
 sidebar_class_name: "post api-method"
 info_path: CDK-Erigon/JSON-RPC/eth/ethereum-json-rpc-api
 custom_edit_url: null
@@ -54,7 +54,7 @@ eth_getCode
 
 <RequestSchema
   title={"Body"}
-  body={{"required":true,"content":{"application/json":{"schema":{"type":"object"}}}}}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"jsonrpc":{"type":"string","example":"2.0"},"method":{"type":"string","example":"eth_getCode"},"params":{"type":"array","items":{},"example":["0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b","0x2"]},"id":{"type":"integer","example":1}}}}}}}
 >
   
 </RequestSchema>

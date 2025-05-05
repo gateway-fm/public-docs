@@ -5,7 +5,7 @@ description: "eth_gasPrice"
 sidebar_label: "eth_gasPrice"
 hide_title: true
 hide_table_of_contents: true
-api: eJylU8Fy2kAM/ZWdPTuG9sgtzeSQHBoG6IlmOmItbCf27lYrQxgP/17JTimQTi/1wVjiSXrSk3rLUCY7W9sVgU/guA4+2efMhogEaj0UdmaRqx8lpDnVDm1mCX92mPhLKA521g9mTShApg4z64Jn9Kx/QYxN7YZEk5cUvPqSq7AF/eJDRMkeNi/o2B7l0dwpCgdMCvg8nepPgclRHTWLwBfIHflkuELjOiIpZYScicrO1N7ssbb/xUJoXJa86r8VO+hcYkgsdgSuxJpcwRLSDknH29uOGkFUzDHNJhOKLk8MO/AlUl4C4x4O+ba1Rxm9Mlz8mfD9G7SxEYa90Kr9Ngyca1aXvZchEHateVw+fb1ZzO/M7fxBSmvdkfqnfJpP7XVDSwZfABXmrwnM2GAy20AyUJZVkM3wpdnXXA1zP4VtmuBeXQW1z7/7VYUJT8HQNGFvCtxho9skggUjXdHhLMgUwJCZhL4wfLaCmRF+p9Jj3dQCsVFZ1ZeknpWJqAQtDJJ6aPGjWBeNn9RmfONJbISCJhnU6d91XF9mEEUqlVn8fb+BhN+oOR7VPTQjfvncAdWwUUnWz5KvQiiQBuFfUSD2blzGm5VWV3jTKYsPi3nMfkfcOoeR/4l9PtvE+dNyJeDN+0m2odAYgr2eq7xn1upRj/etN6u+3jaygR2Uih1z6vMLXdFtRw==
+api: eJydVE1z2jAQ/SsanR1IcuSWZnJIDw2T0BNlOou92EpsWV2tIYyH/95dOVBDOznUB7DW+/neW/WWoYx2trQLAh8hZ9f6aFeZbQMS6OmxsDOLXP0sIc7J5WgzS/irw8hf2mJvZ306OkJxZOows3nrGT3rJwihdnlKNH2NrVdbzCtsQN94H1Cyt+tXzFnyBtKy7DDqV/WnkI8cI5PzpTjiOzShVtPt5NoeMttIh23xuevZEBITgKCJoxgggr2EOMZkP4yilys5uXEFJ0OWSOMSN4f0KEAxCJDDHLfX1/pXYMzJBYVCop+RO/LRcIUm74gELyPNmaDdGefNDp39byg/2jgveUHiETIb2pjAB67kNL1wi0hbJNVIbzuqxaNiDnE2nQo3k8iwBS8wTEpg3MF+smnsQfSjHT7/kcnDEaIRrYm7UR8XhY/0LFcD8DdKgN+0aVrHidIHgY+wa8zXl6dvV8/ze3M3f5RY7XgYWmqkKudQvDD4Aqgw/0xghpai2bRklGbSxfCl2TmuEmOnsHXd5m95Bc5PfvhFhRFPwVDX7c4UuMVaVS1Ut0bwoP0oyBTAkJmIvjA82sDMSH+n0kPd2ACxUUGoLUq9JGIhr4EkBg/NXzK/GPykE8Z3noZaWtAkidf+QwHL8wyCfqUCEXvfryHid6oPBzWnYQZ+tkAO1qc9qRAK2QyVzBuKi70fZHy10OrqXndp4S4lfciOEXd5joE/9V2NtDN/elmI8/rjRmraQmMIdnpbye/MWr3ThutNryy19bYW7XZQqu+QU5/fm1DBtg==
 sidebar_class_name: "post api-method"
 info_path: CDK-Erigon/JSON-RPC/eth/ethereum-json-rpc-api
 custom_edit_url: null
@@ -54,7 +54,7 @@ eth_gasPrice
 
 <RequestSchema
   title={"Body"}
-  body={{"required":true,"content":{"application/json":{"schema":{"type":"object"}}}}}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"jsonrpc":{"type":"string","example":"2.0"},"method":{"type":"string","example":"eth_gasPrice"},"params":{"type":"array","items":{},"example":[]},"id":{"type":"integer","example":1}}}}}}}
 >
   
 </RequestSchema>

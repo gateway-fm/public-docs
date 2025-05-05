@@ -5,7 +5,7 @@ description: "eth_getBlockByHash"
 sidebar_label: "eth_getBlockByHash"
 hide_title: true
 hide_table_of_contents: true
-api: eJylU8Fu2zAM/RVBZ9fJdvStKQosO6xBkp2yYKBt1nZrS5pEJzWM/PtIuUvaLdtlPiQW/cj3yEeNmqAKOtvpRWuLZ7U0j9Z3QI01ep9o69DHw7LUmUaqv1dIEbkYPkGodaI9/ugx0MKWg87GeGw8Mpx8j4kurCE0JJ/AubYpYrnZU2ACjoWixg7kjQaHzGHzJyxIn/iR2sFZEzAI4ON8Ln8lhsI3LirM9Bqp9yao5qJbQW57UqDy2FE+qIaCqie1/yGH9bznvjqOjqNWhuVsID47oJpPs6vggP6AXsY/6t63jKuJXMhmM++KNBAcwFTo0woIjzCkj50+sSuidn0Z+/0LdK5ltSNLlEFE/Q1JSN9TjR77Tn3ePHy5Wa/u1O1qydTCO7XxIZ2nc/17cxsCU4Iv1dUCamozKJ46z554SwpqTKWODdWKMy5p0YWihsak38y2xoDnZGhbe1QlHrCVRQuKrOKu/PAmSZVAkKiAplTkwQQh4p1IFOs7U0+8oQNPSiyWWGA+zRMRIzqI9hro8G/GvWv/7D/hC81cy0KkVPRofPV0d60Ou1OL8fx1HHMI+NW3p5OEY2Mc59cD+AZysWe356o1Qok+LsEzMkTfTUt6sxUNAm970fLHwp6SXxm3RYGO/ondv9nN1cNmy+D89c52tpQcD0e5z/ybaS13Pw46XmqJjbrlbeyhEuxUU56f14h9eQ==
+api: eJytVE1P4zAQ/SuWz6ENpS2lN0BIyx4WBOwJ0GoSTxtDvtaetERV//vOOBQC6nJYbQ5JPH7z4XlvvNEES6/n9/osr9JndVkuKlcA2arUj5GuanRhcWn0XCNlv5ZIAXnWfgOf6Ug7/N2gp7PKtHq+CUvrkOHkGox0WpWEJckW1HVu0xBu+OQ5Adt8mmEB8kdtjZyjSp4wJY5bO0lOFr3sCt7VaQ/oydlyyUB8gaLOxTQaxHob6YLrrMzX0D1HYc8aHBS+5wnOQcuOljDYt70Y9zp+SY6SUTwdjRezRbyYTTGZxMbE4+lsNo5PcJIijBMTj8xxHCeLKR6f4MnRbGzGx2YKEzia6GgBucdHjmv7FVtu2hJdv+TDbXik4b6uSt/1ZRTH8jHoU2frQNtc3yA1rvTKvpOpIKkaUqCSQHPSKkteZR2F/8jRaz0fc+/VyI4RXVc+cAuU8Wq4F+zRrdCJJje6cTnjMqLaz4dDFsDAE6yg5N4MlkC4hnawKPSWpSrV3rxr8WLXt552gkB61exNv9PA/6S3Y/dQWGZKQictBR1eUIYOm0J9v736cXBzfa5Ory+5CulA11CuOVT9sc23BKUBZ9TeAKo7olfMvxItOUiJR0CtLWWKPd7dgh7SDGw5eCjvMvT45gx5Xq2VwRXmMopeUaW4v67tOSkDBJHyWBpFDkoviVidkeL63lJ3eX0BjpSITWye84WZY0kUEIRWQvGX2fx0/DclEr7QsM65EAkV1LJ5Vdf9vjjMRCYS5N3NJgGPP12+3Yo5HIzt/LsCZyEJIy6DmSEYHkWR4zMyRJ9343JwJzUIPG/CXfF5dLbRzuM0TbGmL7GPPV1eX93eMTh5vVKLyoiPg7Vct/yeay1Xc2h0uHPFttE5z0UDS8F2MeX5A+ki/7o=
 sidebar_class_name: "post api-method"
 info_path: CDK-Erigon/JSON-RPC/eth/ethereum-json-rpc-api
 custom_edit_url: null
@@ -54,7 +54,7 @@ eth_getBlockByHash
 
 <RequestSchema
   title={"Body"}
-  body={{"required":true,"content":{"application/json":{"schema":{"type":"object"}}}}}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"jsonrpc":{"type":"string","example":"2.0"},"method":{"type":"string","example":"eth_getBlockByHash"},"params":{"type":"array","items":{},"example":["0xb3b20624f8f0f86eb50dd04688409e5cea4bd02d700bf6e79e9384d47d6a5a35",false]},"id":{"type":"integer","example":1}}}}}}}
 >
   
 </RequestSchema>

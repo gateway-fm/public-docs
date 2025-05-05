@@ -5,7 +5,7 @@ description: "eth_getStorageAt"
 sidebar_label: "eth_getStorageAt"
 hide_title: true
 hide_table_of_contents: true
-api: eJylVLFy2zAM/RUeZ0d2O3pzcxnSoXFtd3J9PViCJSYSyYKQHJ/O/15ASt2k8XWpBokEH4AHPFC9ZSiTnW/tmoHRfG2RHCa7m9gQkYBd8PeFnVvk6keJvOZAUOKC7cQS/mwx8adQnOy8H7aOUMBMLU5sHjyjZz2CGGuXD8Gmjyl4taW8wgZ0xaeIkiHsHzFne5ZHY6cYfBImAvg4m+mnwJSTixpF4CvklnwyXKHpoG7RHCg0BkwaKZoYklOsARZr6TqUZVFI5GT/i53Qe0vlSm8asQXtm7DQfQSuZDe9Ak1IHZJq0NuWakFVzDHNp1OKeZYYOvAlUlaKPkc4ZYfGnkUeZbr6o8DdMzSxFqa90HP+EAbujtVk76RJhG1jPq8fvtyslrdmsbyX1Jp3LOFDNstm9u/CZCZ8AVSYqwHMWGQyh0DGSTsJcna+NEfH1aDLxW1fh/wpr8D57LvfVJjw4gx1HY6mwA5rnTgRNBipik6vnEwBDBOT0BeGCXzSRDIeEyP8LqnHvKkBYqPyqi1JPisdURkaGKT10OB10d4Uf1Ge8ZmnsRYaGmhQqH/Rc/s+iihTqeRy1vd7SPiN6vNZzUNRYpdlB+Rgr9JsdxKzQiiQhgF4QoHY23E4bzbKQOEy3mJ+N6jnyW+PRZ5j5H9id6+mcvmw3gh4/3J1m1CoD8FRr7W859bqD2Bo8nC31dbbWiaxlTrlfIypzy805n49
+api: eJylVEtT2zAQ/isanUPegZIbZTjQQ6GEnoDpbKyNbbAlV1rnMZn89+7KJDWQ4dDm4NirfXz77bfaaoI06OmDnhEQqh81+hyDfupoV6EHyp29NnqqkbJfKdKMnIcUL0h3tMffNQb66sxGT7fxM/fIzuRr7OjEWUJLcgRVVeRJTNZ7Ds6KLSQZliBvtKmQK7j5MyaSt/JSmgQGn4q/r5KWYyCf25QdcQ1lVYhp2O3rXUeXjNKZz10/NMJxFXgoQysOvIcNh+WE0b5rZXjQ/fXwfAJn/fnQ4ARH55PRaDKGU/gyGo/xdHCKZjQYm7PhZMAp+us+PwsmN5B+4kR5G2DOHKXo2wgHu/gTfkPlbGhoGPb78mcwJD6vhEmOvkOqvQ2KMlRLKGpUC+9KBSo03anKhVx8FRBb03yJ/GoMZw76nyf0Cu8tlCP62E9DM4o4V6CMv3pHXAP6JXrR4VbXvmCvjKgK016PR98NBEuwTFM3ZRpXsOkuSr1jiQrSu78qvNpT2FJNlEYLy5Hi++n/12CbuQ5kvnbhImk5RcFd8XQ81qX6Nrv5fnJ3e6kubq85UhpuuGOIEeRbRnkhrQFv1NEEqukoqIXzSlTkISHWulrllEVBHMLmhUtekgxy23209xkGPARDUbiVMrjEQnaOleQU0+k3rSBlgKCjAlqjyIMNUoh12VGM71C6qRtK8KREV2ILXC+uF8+/hKgpC+XRJXzX/EFyhGvqVQXDkERRGttXIT18zMJTyERrfLbdziHgT1/sdmKOTbGdX5fgc5jHTZZ1zBAML6Ao7wXZRV82W3FyLwjEnfdKroT3G7Lr7CMukgQr+tT3qSXB25vZPTvPX+/N0hmJ8bCSO5WfU63l9o0kx4tVbFtWmk1r7pPPm5zy+wOZvfSm
 sidebar_class_name: "post api-method"
 info_path: CDK-Erigon/JSON-RPC/eth/ethereum-json-rpc-api
 custom_edit_url: null
@@ -54,7 +54,7 @@ eth_getStorageAt
 
 <RequestSchema
   title={"Body"}
-  body={{"required":true,"content":{"application/json":{"schema":{"type":"object"}}}}}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"jsonrpc":{"type":"string","example":"2.0"},"method":{"type":"string","example":"eth_getStorageAt"},"params":{"type":"array","items":{},"example":["0x295a70b2de5e3953354a6a8344e616ed314d7251","0x0","latest"]},"id":{"type":"integer","example":1}}}}}}}
 >
   
 </RequestSchema>

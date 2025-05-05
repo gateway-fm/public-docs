@@ -5,7 +5,7 @@ description: "eth_getBlockTransactionCountByHash"
 sidebar_label: "eth_getBlockTransactionCountByHash"
 hide_title: true
 hide_table_of_contents: true
-api: eJylVE2P2jAQ/SuWz2ygPea2oJVKD10E9ERRNUmGOLuJ7doTWBTx3ztjKLvbVhVSc0ji8ZuP5/fkQRPUUecbPW1d+azmdudCB9Q4q7cj7TyGtJhXOtdI5nuNlJDrADZCKXsz11uaHj9BNHqkA/7oMdLUVUedD2nZBOR0Cj2OdOksoSXZAu/bpkzlx0+RG3IslgY7kD86euSernjCkvSJH6kdvbMRowA+TibyqTCWofFp4lwvkfpgoyKDyvZdgUG5naLXYaNqrAJVJLZMtDSNrRO8bvZoLxvmzOU/huVp30920+F1jHJy1N5F4rUHMrwa35QcMewxiJiD7kPLeYbIx3w8Dr7MIsEebI0hq4HwAMds1+kTayxslq+iPbxA51tmMzCFhu2Q+DUkIf3ABxWw79Tn1eOXu+Vipu4Xc24tfc80P2STbKJ/J78isBWESv21gDrTjoq9x/IQe47psSyHhkzS5pqW5CkNNDb7ZtcGI16ToW3dQVW4x1Zsyx5wilmF45skVQHBSEW01TtTjBTPd2197hs7CKTEAhKL3E/ziYgwHST5LXR4q7DvjuPqF8IXGvuWB5PSSbPhovnmlrqsnhGjMHoYCoj4NbSnk4QTcY7z7x5CA4XIt9lyF4NQYUgmeUaG6NnZ5HdrmUngbS+z/WH40+hXxn1Zoqd/YrdvvLx4XK0ZXFxuhM5VkhPgILcFv3Ot5aZJQqQrQ2KDbtmtPdSCPdeU5ycU0ak3
+api: eJytlVFv4jAMgP9KlGcGHQPGeNumSbd7uJs27mk3ndzG0Gxt0ktSGEL972enwLrpNKHT9QEax3Yc+7O7lQGWXs4e5VVhsxdxaxbWlRC0NfKpJ22FLi5ulZxJDPmvJYaoOXdgPGS8d21rE642X8Dnsicd/q7RhyurNnK2jUvtkMyDq7EnM2sCmsBbUFWFzqL7wbOnA0nmsxxL4LewqZDOtOkzZoH8Vo6DCRo977K+q7KOog9OmyUp4iuUVcGiYT+RTU+WFLdVn6secTXyVIGD0nc8gXOwIUc6YJQ3HZ+PMnlNz9JhMhmOFtNFsphOMB0nSiWjyXQ6Si5wnCGMUpUM1XmSpIsJnl/gxdl0pEbnagJjOBvLJ/Kou7FrSt8SXTf40yY+nHpfWePbDA2ThP8U+szpKhZ0Ju8x1M54EXIUpi5TdMIuRHi7sBfaCBBphIE4yHLKVFRf6hWa3Ubelvofa7mL9n1kR7G1r6SsrI9MQMhpNTjK2KNboWPWt7J2BdnlIVR+NhgQSH0fYAWGMttfQsA1bPqLUjbUAnyb+zemb/ZZ7zAYQetEd1Q4e5b+DyYtJadMC3VwzLkOkewbKp7DuhRfH75/O7m/uxaXd7d0PueiTT1FH+N/X5CHAEaBU+KvDkR7WS9oXAhm0vEdCZW1Dnnk5WAWkcly0Kb/08xz9HgwhqKwa6FwhQU3N3FpBWXabTpGQkGAnvBo1DtQe4LiOxzdnutLcEEwlizzdF7sWoKlhIikgfLIbv+QjgPDAV/DoCooMHYdOdruOHw8xi9VKmd4SXu7TcHjD1c0DYvjxUlOrytwGtI4RHgA5AiKWp7BfUFSkddt453MOSZWL+o4jT42YdPbW1xmGVbhU92nDsF33x/mpJzuhnhpFds4WPOAp9+ZlPxxiIWIU55lW1lQB9WwZN3WJz9/AGTJNDc=
 sidebar_class_name: "post api-method"
 info_path: CDK-Erigon/JSON-RPC/eth/ethereum-json-rpc-api
 custom_edit_url: null
@@ -54,7 +54,7 @@ eth_getBlockTransactionCountByHash
 
 <RequestSchema
   title={"Body"}
-  body={{"required":true,"content":{"application/json":{"schema":{"type":"object"}}}}}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"jsonrpc":{"type":"string","example":"2.0"},"method":{"type":"string","example":"eth_getBlockTransactionCountByHash"},"params":{"type":"array","items":{},"example":["0xb3b20624f8f0f86eb50dd04688409e5cea4bd02d700bf6e79e9384d47d6a5a35"]},"id":{"type":"integer","example":1}}}}}}}
 >
   
 </RequestSchema>

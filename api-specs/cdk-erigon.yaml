@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: Ethereum JSON-RPC API
-  version: 1.0.0
+  version: 2.0.0
   description: |
     Standard Ethereum JSON-RPC API methods for interacting with the Ethereum blockchain.
     These methods allow developers to query blockchain data, send transactions, and interact with smart contracts.
@@ -20,6 +20,20 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                jsonrpc:
+                  type: string
+                  example: "2.0"
+                method:
+                  type: string
+                  example: "eth_blockNumber"
+                params:
+                  type: array
+                  items: {}
+                  example: []
+                id:
+                  type: integer
+                  example: 1
       responses:
         '200':
           description: Returns the number of the most recent block
@@ -39,6 +53,24 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                jsonrpc:
+                  type: string
+                  example: "2.0"
+                method:
+                  type: string
+                  example: "eth_call"
+                params:
+                  type: array
+                  items: {}
+                  example: [{
+                    "from": "0x0000000000000000000000000000000000000000",
+                    "to": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+                    "data": "0x70a08231000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+                  }, "latest"]
+                id:
+                  type: integer
+                  example: 1
       responses:
         '200':
           description: Executes a new message call immediately without creating a transaction on the blockchain
@@ -58,6 +90,20 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                jsonrpc:
+                  type: string
+                  example: "2.0"
+                method:
+                  type: string
+                  example: "eth_chainId"
+                params:
+                  type: array
+                  items: {}
+                  example: []
+                id:
+                  type: integer
+                  example: 1
       responses:
         '200':
           description: Returns the chain ID used for signing replay-protected transactions
@@ -77,9 +123,60 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                jsonrpc:
+                  type: string
+                  example: "2.0"
+                method:
+                  type: string
+                  example: "eth_estimateGas"
+                params:
+                  type: array
+                  items: {}
+                  example: [{
+                    "from": "0x0000000000000000000000000000000000000000",
+                    "to": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+                    "data": "0x70a08231000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+                  }]
+                id:
+                  type: integer
+                  example: 1
       responses:
         '200':
           description: Returns an estimation of gas needed for a given transaction
+          content:
+            application/json:
+              schema:
+                type: object
+  /eth_feeHistory:
+    post:
+      tags:
+      - Transactions
+      summary: eth_feeHistory
+      operationId: eth_feeHistory
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                jsonrpc:
+                  type: string
+                  example: "2.0"
+                method:
+                  type: string
+                  example: "eth_feeHistory"
+                params:
+                  type: array
+                  items: {}
+                  example: ["0x4", "latest", [25, 75]]
+                id:
+                  type: integer
+                  example: 1
+      responses:
+        '200':
+          description: Returns a collection of historical gas information
           content:
             application/json:
               schema:
@@ -96,6 +193,20 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                jsonrpc:
+                  type: string
+                  example: "2.0"
+                method:
+                  type: string
+                  example: "eth_gasPrice"
+                params:
+                  type: array
+                  items: {}
+                  example: []
+                id:
+                  type: integer
+                  example: 1
       responses:
         '200':
           description: Returns the current gas price in wei
@@ -115,6 +226,20 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                jsonrpc:
+                  type: string
+                  example: "2.0"
+                method:
+                  type: string
+                  example: "eth_getBalance"
+                params:
+                  type: array
+                  items: {}
+                  example: ["0xc94770007dda54cF92009BFF0dE90c06F603a09f", "latest"]
+                id:
+                  type: integer
+                  example: 1
       responses:
         '200':
           description: Returns the balance of the account at the specified address
@@ -134,9 +259,56 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                jsonrpc:
+                  type: string
+                  example: "2.0"
+                method:
+                  type: string
+                  example: "eth_getBlockByHash"
+                params:
+                  type: array
+                  items: {}
+                  example: ["0xb3b20624f8f0f86eb50dd04688409e5cea4bd02d700bf6e79e9384d47d6a5a35", false]
+                id:
+                  type: integer
+                  example: 1
       responses:
         '200':
           description: Returns information about a block by its hash
+          content:
+            application/json:
+              schema:
+                type: object
+  /eth_getBlockByNumber:
+    post:
+      tags:
+      - Block Information
+      summary: eth_getBlockByNumber
+      operationId: eth_getBlockByNumber
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                jsonrpc:
+                  type: string
+                  example: "2.0"
+                method:
+                  type: string
+                  example: "eth_getBlockByNumber"
+                params:
+                  type: array
+                  items: {}
+                  example: ["latest", false]
+                id:
+                  type: integer
+                  example: 1
+      responses:
+        '200':
+          description: Returns information about a block by its number
           content:
             application/json:
               schema:
@@ -153,6 +325,20 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                jsonrpc:
+                  type: string
+                  example: "2.0"
+                method:
+                  type: string
+                  example: "eth_getBlockTransactionCountByHash"
+                params:
+                  type: array
+                  items: {}
+                  example: ["0xb3b20624f8f0f86eb50dd04688409e5cea4bd02d700bf6e79e9384d47d6a5a35"]
+                id:
+                  type: integer
+                  example: 1
       responses:
         '200':
           description: Returns the number of transactions in a block matching the given block hash
@@ -172,6 +358,20 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                jsonrpc:
+                  type: string
+                  example: "2.0"
+                method:
+                  type: string
+                  example: "eth_getBlockTransactionCountByNumber"
+                params:
+                  type: array
+                  items: {}
+                  example: ["0x1b4"]
+                id:
+                  type: integer
+                  example: 1
       responses:
         '200':
           description: Returns the number of transactions in a block matching the given block number
@@ -191,6 +391,20 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                jsonrpc:
+                  type: string
+                  example: "2.0"
+                method:
+                  type: string
+                  example: "eth_getCode"
+                params:
+                  type: array
+                  items: {}
+                  example: ["0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b", "0x2"]
+                id:
+                  type: integer
+                  example: 1
       responses:
         '200':
           description: Returns the compiled smart contract code at the specified address
@@ -210,6 +424,20 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                jsonrpc:
+                  type: string
+                  example: "2.0"
+                method:
+                  type: string
+                  example: "eth_getFilterChanges"
+                params:
+                  type: array
+                  items: {}
+                  example: ["0x16"]
+                id:
+                  type: integer
+                  example: 1
       responses:
         '200':
           description: Returns an array of logs which occurred since the last poll
@@ -229,6 +457,25 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                jsonrpc:
+                  type: string
+                  example: "2.0"
+                method:
+                  type: string
+                  example: "eth_getLogs"
+                params:
+                  type: array
+                  items: {}
+                  example: [{
+                    "fromBlock": "0x1",
+                    "toBlock": "0x2",
+                    "address": "0x8888f1f195afa192cfee860698584c030f4c9db1",
+                    "topics": ["0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b"]
+                  }]
+                id:
+                  type: integer
+                  example: 1
       responses:
         '200':
           description: Returns an array of logs matching the given filter object
@@ -248,6 +495,20 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                jsonrpc:
+                  type: string
+                  example: "2.0"
+                method:
+                  type: string
+                  example: "eth_getStorageAt"
+                params:
+                  type: array
+                  items: {}
+                  example: ["0x295a70b2de5e3953354a6a8344e616ed314d7251", "0x0", "latest"]
+                id:
+                  type: integer
+                  example: 1
       responses:
         '200':
           description: Returns the value from a storage position at a given address
@@ -267,6 +528,20 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                jsonrpc:
+                  type: string
+                  example: "2.0"
+                method:
+                  type: string
+                  example: "eth_getTransactionByBlockHashAndIndex"
+                params:
+                  type: array
+                  items: {}
+                  example: ["0xb3b20624f8f0f86eb50dd04688409e5cea4bd02d700bf6e79e9384d47d6a5a35", "0x0"]
+                id:
+                  type: integer
+                  example: 1
       responses:
         '200':
           description: Returns information about a transaction by block hash and transaction index position
@@ -286,6 +561,20 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                jsonrpc:
+                  type: string
+                  example: "2.0"
+                method:
+                  type: string
+                  example: "eth_getTransactionByBlockNumberAndIndex"
+                params:
+                  type: array
+                  items: {}
+                  example: ["0x29c", "0x0"]
+                id:
+                  type: integer
+                  example: 1
       responses:
         '200':
           description: Returns information about a transaction by block number and transaction index position
@@ -305,6 +594,20 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                jsonrpc:
+                  type: string
+                  example: "2.0"
+                method:
+                  type: string
+                  example: "eth_getTransactionByHash"
+                params:
+                  type: array
+                  items: {}
+                  example: ["0x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b"]
+                id:
+                  type: integer
+                  example: 1
       responses:
         '200':
           description: Returns information about a transaction by transaction hash
@@ -324,6 +627,20 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                jsonrpc:
+                  type: string
+                  example: "2.0"
+                method:
+                  type: string
+                  example: "eth_getTransactionCount"
+                params:
+                  type: array
+                  items: {}
+                  example: ["0xc94770007dda54cF92009BFF0dE90c06F603a09f", "latest"]
+                id:
+                  type: integer
+                  example: 1
       responses:
         '200':
           description: Returns the number of transactions sent from an address (nonce)
@@ -343,9 +660,56 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                jsonrpc:
+                  type: string
+                  example: "2.0"
+                method:
+                  type: string
+                  example: "eth_getTransactionReceipt"
+                params:
+                  type: array
+                  items: {}
+                  example: ["0x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b"]
+                id:
+                  type: integer
+                  example: 1
       responses:
         '200':
           description: Returns the receipt of a transaction by transaction hash
+          content:
+            application/json:
+              schema:
+                type: object
+  /eth_maxPriorityFeePerGas:
+    post:
+      tags:
+      - Transactions
+      summary: eth_maxPriorityFeePerGas
+      operationId: eth_maxPriorityFeePerGas
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                jsonrpc:
+                  type: string
+                  example: "2.0"
+                method:
+                  type: string
+                  example: "eth_maxPriorityFeePerGas"
+                params:
+                  type: array
+                  items: {}
+                  example: []
+                id:
+                  type: integer
+                  example: 1
+      responses:
+        '200':
+          description: Returns an estimate of the max priority fee per gas
           content:
             application/json:
               schema:
@@ -362,6 +726,20 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                jsonrpc:
+                  type: string
+                  example: "2.0"
+                method:
+                  type: string
+                  example: "eth_newBlockFilter"
+                params:
+                  type: array
+                  items: {}
+                  example: []
+                id:
+                  type: integer
+                  example: 1
       responses:
         '200':
           description: Creates a filter in the node to notify when a new block arrives
@@ -381,6 +759,25 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                jsonrpc:
+                  type: string
+                  example: "2.0"
+                method:
+                  type: string
+                  example: "eth_newFilter"
+                params:
+                  type: array
+                  items: {}
+                  example: [{
+                    "fromBlock": "0x1",
+                    "toBlock": "0x2",
+                    "address": "0x8888f1f195afa192cfee860698584c030f4c9db1",
+                    "topics": ["0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b"]
+                  }]
+                id:
+                  type: integer
+                  example: 1
       responses:
         '200':
           description: Creates a filter object based on filter options to notify when state changes
@@ -400,6 +797,20 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                jsonrpc:
+                  type: string
+                  example: "2.0"
+                method:
+                  type: string
+                  example: "eth_newPendingTransactionFilter"
+                params:
+                  type: array
+                  items: {}
+                  example: []
+                id:
+                  type: integer
+                  example: 1
       responses:
         '200':
           description: Creates a filter to notify when new pending transactions arrive
@@ -419,6 +830,20 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                jsonrpc:
+                  type: string
+                  example: "2.0"
+                method:
+                  type: string
+                  example: "eth_sendRawTransaction"
+                params:
+                  type: array
+                  items: {}
+                  example: ["0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675"]
+                id:
+                  type: integer
+                  example: 1
       responses:
         '200':
           description: Submits a pre-signed transaction for broadcast to the Ethereum network
@@ -438,6 +863,20 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                jsonrpc:
+                  type: string
+                  example: "2.0"
+                method:
+                  type: string
+                  example: "eth_syncing"
+                params:
+                  type: array
+                  items: {}
+                  example: []
+                id:
+                  type: integer
+                  example: 1
       responses:
         '200':
           description: Returns an object with data about the sync status or false
@@ -457,6 +896,20 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                jsonrpc:
+                  type: string
+                  example: "2.0"
+                method:
+                  type: string
+                  example: "eth_uninstallFilter"
+                params:
+                  type: array
+                  items: {}
+                  example: ["0x16"]
+                id:
+                  type: integer
+                  example: 1
       responses:
         '200':
           description: Uninstalls a filter with the given ID
@@ -476,6 +929,20 @@ paths:
           application/json:
             schema:
               type: object
+              properties:
+                jsonrpc:
+                  type: string
+                  example: "2.0"
+                method:
+                  type: string
+                  example: "web3_clientVersion"
+                params:
+                  type: array
+                  items: {}
+                  example: []
+                id:
+                  type: integer
+                  example: 1
       responses:
         '200':
           description: Returns the current client version of the node
