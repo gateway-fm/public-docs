@@ -123,6 +123,11 @@ const config: Config = {
           position: 'left',
         },
         {
+          to: '/presto',
+          label: 'Presto',
+          position: 'left',
+        },
+        {
           href: 'https://gateway.fm',
           label: 'Website',
           position: 'right',

@@ -13,9 +13,9 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: "Basics",
-    description: <>Basics of the validators and staking.</>,
-    link: "/category/validators/",
+    title: "Fundamentals",
+    description: <>Basics about Presto product.</>,
+    link: "/category/fundamentals/",
     linkText: "Learn More",
   },
 ];
