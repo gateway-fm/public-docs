@@ -22,7 +22,7 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/CDK-Erigon/what-is-cdk-erigon">
+            to="/intro">
             Get Started
           </Link>
           <Link

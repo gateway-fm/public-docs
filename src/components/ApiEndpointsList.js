@@ -54,7 +54,7 @@ export default function ApiEndpointsList({ sidebarPath }) {
             <ul>
               {category.items.map((endpoint, endpointIndex) => (
                 <li key={endpointIndex}>
-                  <Link to={`./${endpoint.id.split('/').pop()}`}>
+                  <Link to={`/CDK-Erigon/JSON-RPC/${sidebarPath}/${endpoint.id.split('/').pop()}`}>
                     {endpoint.label}
                   </Link>
                 </li>
@@ -69,7 +69,7 @@ export default function ApiEndpointsList({ sidebarPath }) {
         <ul>
           {endpoints.map((endpoint, endpointIndex) => (
             <li key={endpointIndex}>
-              <Link to={`./${endpoint.id.split('/').pop()}`}>
+              <Link to={`/CDK-Erigon/JSON-RPC/${sidebarPath}/${endpoint.id.split('/').pop()}`}>
                 {endpoint.label}
               </Link>
             </li>

@@ -133,17 +133,21 @@ const config: Config = {
           title: 'Documentation',
           items: [
             {
+              label: 'Home',
+              to: '/',
+            },
+            {
               label: 'CDK-Erigon',
-              to: '/CDK-Erigon/what-is-cdk-erigon',
+              to: '/CDK-Erigon/intro',
             },
             {
-              label: 'Ethereum JSON-RPC API',
-              to: '/CDK-Erigon/JSON-RPC/eth/ethereum-json-rpc-api',
+              label: 'Deployment Guide',
+              to: '/CDK-Erigon/deploy-testnet',
             },
             {
-              label: 'zkEVM API',
-              to: '/CDK-Erigon/JSON-RPC/zkevm/polygon-zkevm-node-api',
-            },
+              label: 'Configuration',
+              to: '/CDK-Erigon/configuration-options',
+            }
           ],
         },
         {
@@ -151,19 +155,15 @@ const config: Config = {
           items: [
             {
               label: 'Presto',
-              href: 'https://gateway.fm/',
+              href: 'https://gateway.fm/presto',
             },
             {
               label: 'RPC',
-              href: 'https://gateway.fm/',
-            },
-            {
-              label: 'Blueprints',
-              href: 'https://gateway.fm/',
+              href: 'https://gateway.fm/rpc',
             },
             {
               label: 'Staking',
-              href: 'https://gateway.fm/',
+              href: 'https://gateway.fm/staking',
             },
           ],
         },
@@ -172,15 +172,15 @@ const config: Config = {
           items: [
             {
               label: 'Twitter',
-              href: 'https://twitter.com/gateway_fm',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discord.gg/gateway',
+              href: 'https://x.com/gateway_eth',
             },
             {
               label: 'LinkedIn',
               href: 'https://www.linkedin.com/company/gateway-fm',
+            },
+            {
+              label: 'GitHub',
+              href: 'https://github.com/gateway-fm',
             },
           ],
         },
