@@ -1,34 +1,34 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 
 // Root component that wraps the entire app
 export default function Root({ children }) {
   useEffect(() => {
     // Only run this code in the browser
-    if (typeof window !== 'undefined') {
-      console.log('Root component mounted, initializing JSON-RPC URL fix');
-      
+    if (typeof window !== "undefined") {
+      console.log("Root component mounted, initializing JSON-RPC URL fix");
+
       // Create a script element to inject our URL fixing code
-      const script = document.createElement('script');
-      script.id = 'json-rpc-global-fix';
-      
+      const script = document.createElement("script");
+      script.id = "json-rpc-global-fix";
+
       // Only add this script once
-      if (!document.getElementById('json-rpc-global-fix')) {
+      if (!document.getElementById("json-rpc-global-fix")) {
         script.textContent = `
           (function() {
             console.log('JSON-RPC global URL fix active');
-            
+
             // The main goal: prevent URLs with JSON-RPC method names in the path
             // we need to intercept at multiple levels to ensure it works
-            
+
             // --- LEVEL 1: Override the URL constructor ---
             const OriginalURL = window.URL;
             window.URL = function(url, base) {
               // Check if this is a JSON-RPC URL with method in path
               if (typeof url === 'string' && (
-                url.includes('/eth_') || 
-                url.includes('/web3_') || 
-                url.includes('/net_') || 
-                url.includes('/zkevm_') || 
+                url.includes('/eth_') ||
+                url.includes('/web3_') ||
+                url.includes('/net_') ||
+                url.includes('/zkevm_') ||
                 url.includes('/txpool_')
               )) {
                 console.log('JSON-RPC URL constructor intercepted:', url);
@@ -43,11 +43,11 @@ export default function Root({ children }) {
                   console.error('Failed to fix JSON-RPC URL:', url, e);
                 }
               }
-              
+
               // For non-JSON-RPC URLs or if fixing failed, proceed normally
               return new OriginalURL(url, base);
             };
-            
+
             // Copy all properties and prototype from original URL
             for (const prop in OriginalURL) {
               if (OriginalURL.hasOwnProperty(prop)) {
@@ -55,15 +55,15 @@ export default function Root({ children }) {
               }
             }
             window.URL.prototype = OriginalURL.prototype;
-            
+
             // --- LEVEL 2: Override XMLHttpRequest ---
             const originalOpen = XMLHttpRequest.prototype.open;
             XMLHttpRequest.prototype.open = function(method, url, ...args) {
               if (typeof url === 'string' && (
-                url.includes('/eth_') || 
-                url.includes('/web3_') || 
-                url.includes('/net_') || 
-                url.includes('/zkevm_') || 
+                url.includes('/eth_') ||
+                url.includes('/web3_') ||
+                url.includes('/net_') ||
+                url.includes('/zkevm_') ||
                 url.includes('/txpool_')
               )) {
                 console.log('JSON-RPC XHR intercepted:', url);
@@ -77,15 +77,15 @@ export default function Root({ children }) {
               }
               return originalOpen.call(this, method, url, ...args);
             };
-            
+
             // --- LEVEL 3: Override fetch ---
             const originalFetch = window.fetch;
             window.fetch = function(input, init) {
               if (typeof input === 'string' && (
-                input.includes('/eth_') || 
-                input.includes('/web3_') || 
-                input.includes('/net_') || 
-                input.includes('/zkevm_') || 
+                input.includes('/eth_') ||
+                input.includes('/web3_') ||
+                input.includes('/net_') ||
+                input.includes('/zkevm_') ||
                 input.includes('/txpool_')
               )) {
                 console.log('JSON-RPC fetch intercepted:', input);
@@ -99,7 +99,7 @@ export default function Root({ children }) {
               }
               return originalFetch.call(this, input, init);
             };
-            
+
             // --- LEVEL 4: Look for axios and other HTTP clients ---
             const patchInterval = setInterval(() => {
               // Check for axios global
@@ -108,10 +108,10 @@ export default function Root({ children }) {
                 const originalRequest = window.axios.request;
                 window.axios.request = function(config) {
                   if (config.url && (
-                    config.url.includes('/eth_') || 
-                    config.url.includes('/web3_') || 
-                    config.url.includes('/net_') || 
-                    config.url.includes('/zkevm_') || 
+                    config.url.includes('/eth_') ||
+                    config.url.includes('/web3_') ||
+                    config.url.includes('/net_') ||
+                    config.url.includes('/zkevm_') ||
                     config.url.includes('/txpool_')
                   )) {
                     console.log('JSON-RPC axios request intercepted:', config.url);
@@ -127,7 +127,7 @@ export default function Root({ children }) {
                 };
                 window.axios._jsonRpcPatched = true;
               }
-              
+
               // Scan for any buttons or forms that might trigger API requests
               const sendButtons = document.querySelectorAll('button');
               for (const button of sendButtons) {
@@ -142,20 +142,20 @@ export default function Root({ children }) {
                 }
               }
             }, 1000);
-            
+
             // Clean up on page unload
             window.addEventListener('beforeunload', () => {
               clearInterval(patchInterval);
             });
           })();
         `;
-        
+
         // Add the script to the head to ensure it runs early
         document.head.appendChild(script);
       }
     }
   }, []);
-  
+
   // Just render the children
   return <>{children}</>;
-} 
+}
