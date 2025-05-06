@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 6
 title: RPC Endpoints
 ---
 
@@ -30,17 +30,12 @@ When connecting to cdk-erigon, you can use the following default endpoints:
 
 ### Gateway Public Endpoints
 
-Gateway also provides managed public endpoints for the zkEVM networks:
+Gateway also provides a managed public testnet:
 
-#### Mainnet
+#### Stavanger Testnet
 
-- HTTP: `https://zkevm.gateway.fm/v1/mainnet`
-- WebSocket: `wss://zkevm.gateway.fm/ws/v1/mainnet`
-
-#### Testnet
-
-- HTTP: `https://zkevm.gateway.fm/v1/testnet`
-- WebSocket: `wss://zkevm.gateway.fm/ws/v1/testnet`
+- HTTP: `https://rpc.stavanger.gateway.fm`
+- WebSocket: `wss://rpc.stavanger.gateway.fm/ws`
 
 ## Security Recommendations
 
