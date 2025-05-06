@@ -3,10 +3,6 @@ title: Security
 sidebar_label: Security
 ---
 
-# Security
-
-## Backlog
-
 - Good inventory management hygiene: No unknown servers on infra
 - MFA on servers
 - Use SSH private keys instead of passwords
