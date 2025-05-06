@@ -1,0 +1,68 @@
+---
+id: eth-gas-price
+title: "eth_gasPrice"
+description: "eth_gasPrice"
+sidebar_label: "eth_gasPrice"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVE1z2jAQ/SsanR1IcuSWZnJIDw2T0BNlOou92EpsWV2tIYyH/95dOVBDOznUB7DW+/neW/WWoYx2trQLAh8hZ9f6aFeZbQMS6OmxsDOLXP0sIc7J5WgzS/irw8hf2mJvZ306OkJxZOows3nrGT3rJwihdnlKNH2NrVdbzCtsQN94H1Cyt+tXzFnyBtKy7DDqV/WnkI8cI5PzpTjiOzShVtPt5NoeMttIh23xuevZEBITgKCJoxgggr2EOMZkP4yilys5uXEFJ0OWSOMSN4f0KEAxCJDDHLfX1/pXYMzJBYVCop+RO/LRcIUm74gELyPNmaDdGefNDp39byg/2jgveUHiETIb2pjAB67kNL1wi0hbJNVIbzuqxaNiDnE2nQo3k8iwBS8wTEpg3MF+smnsQfSjHT7/kcnDEaIRrYm7UR8XhY/0LFcD8DdKgN+0aVrHidIHgY+wa8zXl6dvV8/ze3M3f5RY7XgYWmqkKudQvDD4Aqgw/0xghpai2bRklGbSxfCl2TmuEmOnsHXd5m95Bc5PfvhFhRFPwVDX7c4UuMVaVS1Ut0bwoP0oyBTAkJmIvjA82sDMSH+n0kPd2ACxUUGoLUq9JGIhr4EkBg/NXzK/GPykE8Z3noZaWtAkidf+QwHL8wyCfqUCEXvfryHid6oPBzWnYQZ+tkAO1qc9qRAK2QyVzBuKi70fZHy10OrqXndp4S4lfciOEXd5joE/9V2NtDN/elmI8/rjRmraQmMIdnpbye/MWr3ThutNryy19bYW7XZQqu+QU5/fm1DBtg==
+sidebar_class_name: "post api-method"
+info_path: cdk-erigon/json-rpc/eth/ethereum-json-rpc-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"eth_gasPrice"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/eth_gasPrice"}
+  context={"endpoint"}
+>
+
+</MethodEndpoint>
+
+
+
+eth_gasPrice
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"jsonrpc":{"type":"string","example":"2.0"},"method":{"type":"string","example":"eth_gasPrice"},"params":{"type":"array","items":{},"example":[]},"id":{"type":"integer","example":1}}}}}}}
+>
+
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Returns the current gas price in wei","content":{"application/json":{"schema":{"type":"object"}}}}}}
+>
+
+</StatusCodes>

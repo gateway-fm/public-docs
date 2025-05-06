@@ -14,19 +14,19 @@ function HomepageHeader() {
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
       <div className="container">
         <Heading as="h1" className="hero__title">
-          CDK-Erigon Documentation
+          cdk-erigon Documentation
         </Heading>
         <p className="hero__subtitle">
           Welcome to the Ethereum Validator Knowledge Base, where you can find resources about
           Ethereum staking and Gateway.FM validator service.
         </p>
         <div className={styles.buttons}>
-          <Link className="button button--secondary button--lg" to="/CDK-Erigon/what-is-cdk-erigon">
+          <Link className="button button--secondary button--lg" to="/cdk-erigon/what-is-cdk-erigon">
             Get Started
           </Link>
           <Link
             className={clsx("button button--outline button--lg", styles.buttonLight)}
-            to="/CDK-Erigon/JSON-RPC/eth/ethereum-json-rpc-api"
+            to="/cdk-erigon/json-rpc/eth/ethereum-json-rpc-api"
           >
             API Reference
           </Link>
@@ -41,7 +41,7 @@ export default function Page(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`CDK-Erigon Documentation | Gateway.fm`}
+      title={`cdk-erigon Documentation | Gateway.fm`}
       description="High-performance node implementation for Polygon zkEVM protocol networks"
     >
       <HomepageHeader />
@@ -54,7 +54,7 @@ export default function Page(): ReactNode {
                   Built for Performance and Reliability
                 </Heading>
                 <p className={styles.sectionDescription}>
-                  CDK-Erigon is a high-performance, enterprise-grade node implementation
+                  cdk-erigon is a high-performance, enterprise-grade node implementation
                   specifically optimized for the Polygon zkEVM protocol networks. Built on the
                   robust Erigon architecture and maintained by Gateway.fm, it delivers unparalleled
                   efficiency, reliability, and synchronization speeds for your blockchain

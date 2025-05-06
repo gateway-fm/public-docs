@@ -67,21 +67,21 @@ const config: Config = {
         config: {
           eth: {
             specPath: "api-specs/cdk-erigon.yaml",
-            outputDir: "docs/CDK-Erigon/JSON-RPC/eth",
+            outputDir: "docs/cdk-erigon/json-rpc/eth",
             sidebarOptions: {
               // groupPathsBy: "tag",
             },
           } satisfies OpenApiPlugin.Options,
           zkevm: {
             specPath: "api-specs/zkevm-methods.yaml",
-            outputDir: "docs/CDK-Erigon/JSON-RPC/zkevm",
+            outputDir: "docs/cdk-erigon/json-rpc/zkevm",
             sidebarOptions: {
               // groupPathsBy: "tag",
             },
           } satisfies OpenApiPlugin.Options,
           txpool: {
             specPath: "api-specs/txpool.yaml",
-            outputDir: "docs/CDK-Erigon/JSON-RPC/txpool",
+            outputDir: "docs/cdk-erigon/json-rpc/txpool",
             sidebarOptions: {
               // Comment out or remove the groupPathsBy to not group by tag
               // groupPathsBy: "tag",
@@ -109,7 +109,7 @@ const config: Config = {
         },
         {
           to: '/cdk-erigon',
-          label: 'CDK-Erigon',
+          label: 'cdk-erigon',
           position: 'left',
         },
         {
@@ -150,16 +150,16 @@ const config: Config = {
               to: '/catalog/validators',
             },
             {
-              label: 'CDK-Erigon',
-              to: '/CDK-Erigon/what-is-cdk-erigon',
+              label: 'cdk-erigon',
+              to: '/cdk-erigon/what-is-cdk-erigon',
             },
             {
               label: 'Deployment Guide',
-              to: '/CDK-Erigon/deploy-testnet',
+              to: '/cdk-erigon/deploy-testnet',
             },
             {
               label: 'Configuration',
-              to: '/CDK-Erigon/configuration-options',
+              to: '/cdk-erigon/configuration-options',
             }
           ],
         },

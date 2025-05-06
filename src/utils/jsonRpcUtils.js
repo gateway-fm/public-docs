@@ -1,5 +1,5 @@
 /**
- * Utility functions for handling JSON-RPC URLs and requests
+ * Utility functions for handling json-rpc URLs and requests
  */
 
 /**
@@ -33,7 +33,7 @@ export const getBaseUrl = (url) => {
 };
 
 /**
- * Extract the method name from a JSON-RPC path
+ * Extract the method name from a json-rpc path
  * @param {string} path - The path to extract from (e.g., "/eth_call")
  * @returns {string} The method name (e.g., "eth_call")
  */
@@ -54,10 +54,10 @@ export const getMethodFromPath = (path) => {
 };
 
 /**
- * Create a JSON-RPC request body from a method name
+ * Create a json-rpc request body from a method name
  * @param {string} method - The method name (e.g., "eth_call")
  * @param {Array} params - The parameters for the method
- * @returns {Object} A JSON-RPC request body
+ * @returns {Object} A json-rpc request body
  */
 export const createJsonRpcRequest = (method, params = []) => {
   return {
@@ -69,9 +69,9 @@ export const createJsonRpcRequest = (method, params = []) => {
 };
 
 /**
- * Determine if a URL is a JSON-RPC method URL
+ * Determine if a URL is a json-rpc method URL
  * @param {string} url - The URL to check
- * @returns {boolean} True if it's a JSON-RPC method URL
+ * @returns {boolean} True if it's a json-rpc method URL
  */
 export const isJsonRpcMethodUrl = (url) => {
   if (!url) return false;

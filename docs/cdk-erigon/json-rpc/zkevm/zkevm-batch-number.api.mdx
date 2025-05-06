@@ -1,0 +1,68 @@
+---
+id: zkevm-batch-number
+title: "zkevm_batchNumber"
+description: "zkevm_batchNumber"
+sidebar_label: "zkevm_batchNumber"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVMFS4zAM/RWPz6UFjr0BwwFmFjrA7qV0dlRHbUwd22s7LSWTf1/JaSFlC6fNoU3sJ+n56cmNTLCMcjyVl5BUKW7swoUKknZWzgbSeQz546aQY/m2wnX1e87Au7qaY5ADGfBPjTFdumIrx03+1AEJnUKNA6mcTWgTb4H3RqucbfQSKT+tRVViBfyWth6phJu/oEqU1weunTRG3tVFD6Mp5TIXL3ABtaHsZ+1Acs7gVQ8YU9B22cfJ8+GpJGyFqXTF99B/T0uBHgJUsRcIIcC2HzedtflhaaJ3NnYnOD895b8CowraZ33H8gFTHWwUqUSh6hBIKZELCpsrDuV/U/BLdYjoUXW7A+Qjfc7d7k94eJpj9tgLLb2LmRSkkr5Gx7ARwxoDm7GRdTAEK1PycTwaEfFhTLAGS8yGS0i4ge1wUcl21vX94cOF169QeYN715z1jJG73+N0jMS+wVNbGzNjcWgisgQ6cVY5cWa7dFa8ra5//RB3rkBxMbmhSObeCUFlcqFDeQ4CT6JHpRdaidvH+7uTh8kVZxEdtShoCAU3IoBK1CSx0akUsKtpqebw2T6VGPE9grq91sQFlMJIjnI7cGcnsIVY65BqMPotG0joj0kfCDDGbbhQgWs07Jv4bClHIgKrbE+SP9VRuAWv2ci8yNuUJe92tRS73cY6s2EaxDIPDfW+gmxXCxV+ofyBWu+WS/iaRt6AzpmyLZqdi6ZH0pAfSnYabTbNHCL+DKZteZkMErY8ntQpCBrm3M0pd7hEKCiUbbdCgsirbuROnpgCw02dR/3z+LWDfcQFqe7Tt9hZz3iT+8cnAs93l2ZFDaXVABu+UOl3LCXfvVnifKvyWiMN+b+GJWO7nPz8BVoaAkk=
+sidebar_class_name: "post api-method"
+info_path: cdk-erigon/json-rpc/zkevm/polygon-zkevm-node-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"zkevm_batchNumber"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/zkevm_batchNumber"}
+  context={"endpoint"}
+>
+
+</MethodEndpoint>
+
+
+
+zkevm_batchNumber
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"integer","default":1},"jsonrpc":{"type":"string","default":"2.0"},"method":{"type":"string","default":"zkevm_batchNumber"},"params":{"type":"array","default":[]}}}}}}}
+>
+
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Returns the current batch number.","content":{"application/json":{"schema":{"type":"object","properties":{"jsonrpc":{"type":"string"},"id":{"type":"integer"},"result":{"type":"object"}}}}}}}}
+>
+
+</StatusCodes>

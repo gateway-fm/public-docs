@@ -5,7 +5,7 @@ export default function Root({ children }) {
   useEffect(() => {
     // Only run this code in the browser
     if (typeof window !== "undefined") {
-      console.log("Root component mounted, initializing JSON-RPC URL fix");
+      console.log("Root component mounted, initializing json-rpc URL fix");
 
       // Create a script element to inject our URL fixing code
       const script = document.createElement("script");
@@ -15,15 +15,15 @@ export default function Root({ children }) {
       if (!document.getElementById("json-rpc-global-fix")) {
         script.textContent = `
           (function() {
-            console.log('JSON-RPC global URL fix active');
+            console.log('json-rpc global URL fix active');
 
-            // The main goal: prevent URLs with JSON-RPC method names in the path
+            // The main goal: prevent URLs with json-rpc method names in the path
             // we need to intercept at multiple levels to ensure it works
 
             // --- LEVEL 1: Override the URL constructor ---
             const OriginalURL = window.URL;
             window.URL = function(url, base) {
-              // Check if this is a JSON-RPC URL with method in path
+              // Check if this is a json-rpc URL with method in path
               if (typeof url === 'string' && (
                 url.includes('/eth_') ||
                 url.includes('/web3_') ||
@@ -31,20 +31,20 @@ export default function Root({ children }) {
                 url.includes('/zkevm_') ||
                 url.includes('/txpool_')
               )) {
-                console.log('JSON-RPC URL constructor intercepted:', url);
+                console.log('json-rpc URL constructor intercepted:', url);
                 try {
                   // Parse the URL
                   const urlObj = new OriginalURL(url, base);
                   // Create a new URL with just the origin
                   const fixedUrl = urlObj.origin;
-                  console.log('Fixed JSON-RPC URL:', fixedUrl);
+                  console.log('Fixed json-rpc URL:', fixedUrl);
                   return new OriginalURL(fixedUrl, base);
                 } catch (e) {
-                  console.error('Failed to fix JSON-RPC URL:', url, e);
+                  console.error('Failed to fix json-rpc URL:', url, e);
                 }
               }
 
-              // For non-JSON-RPC URLs or if fixing failed, proceed normally
+              // For non-json-rpc URLs or if fixing failed, proceed normally
               return new OriginalURL(url, base);
             };
 
@@ -66,13 +66,13 @@ export default function Root({ children }) {
                 url.includes('/zkevm_') ||
                 url.includes('/txpool_')
               )) {
-                console.log('JSON-RPC XHR intercepted:', url);
+                console.log('json-rpc XHR intercepted:', url);
                 try {
                   const urlObj = new OriginalURL(url);
                   url = urlObj.origin;
-                  console.log('Fixed JSON-RPC XHR URL:', url);
+                  console.log('Fixed json-rpc XHR URL:', url);
                 } catch (e) {
-                  console.error('Failed to fix JSON-RPC XHR URL:', url, e);
+                  console.error('Failed to fix json-rpc XHR URL:', url, e);
                 }
               }
               return originalOpen.call(this, method, url, ...args);
@@ -88,13 +88,13 @@ export default function Root({ children }) {
                 input.includes('/zkevm_') ||
                 input.includes('/txpool_')
               )) {
-                console.log('JSON-RPC fetch intercepted:', input);
+                console.log('json-rpc fetch intercepted:', input);
                 try {
                   const urlObj = new OriginalURL(input);
                   input = urlObj.origin;
-                  console.log('Fixed JSON-RPC fetch URL:', input);
+                  console.log('Fixed json-rpc fetch URL:', input);
                 } catch (e) {
-                  console.error('Failed to fix JSON-RPC fetch URL:', input, e);
+                  console.error('Failed to fix json-rpc fetch URL:', input, e);
                 }
               }
               return originalFetch.call(this, input, init);
@@ -114,13 +114,13 @@ export default function Root({ children }) {
                     config.url.includes('/zkevm_') ||
                     config.url.includes('/txpool_')
                   )) {
-                    console.log('JSON-RPC axios request intercepted:', config.url);
+                    console.log('json-rpc axios request intercepted:', config.url);
                     try {
                       const urlObj = new OriginalURL(config.url);
                       config.url = urlObj.origin;
-                      console.log('Fixed JSON-RPC axios URL:', config.url);
+                      console.log('Fixed json-rpc axios URL:', config.url);
                     } catch (e) {
-                      console.error('Failed to fix JSON-RPC axios URL:', config.url, e);
+                      console.error('Failed to fix json-rpc axios URL:', config.url, e);
                     }
                   }
                   return originalRequest.call(this, config);

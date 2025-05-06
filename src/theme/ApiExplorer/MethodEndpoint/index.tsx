@@ -5,7 +5,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 import styles from "./styles.module.css";
 
-// Utility functions for JSON-RPC
+// Utility functions for json-rpc
 const getBaseUrl = (url: string) => {
   if (!url) return "https://rpc.stavanger.gateway.fm";
 

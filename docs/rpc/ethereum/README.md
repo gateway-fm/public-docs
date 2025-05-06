@@ -1,6 +1,6 @@
 ---
 description: >-
-  Below you will find the api documentation for the standard Ethereum JSON-RPC
+  Below you will find the api documentation for the standard Ethereum json-rpc
   calls that Gateway supports.
 ---
 

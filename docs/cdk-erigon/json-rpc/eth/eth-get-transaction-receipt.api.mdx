@@ -1,0 +1,68 @@
+---
+id: eth-get-transaction-receipt
+title: "eth_getTransactionReceipt"
+description: "eth_getTransactionReceipt"
+sidebar_label: "eth_getTransactionReceipt"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVE1zm0AM/Ss7eyY2tuMPfEszOaSHJuO4pzTTESA+Eljo7mLHw/DfKy2xSzKND51ysFnxJL2VntRKC6mR60e51aAMRDavlLhVSaVL4Hf55MmqRu0Ot7FcS7TZzxTtAL/BCPPaSk9q/NWgsV+q+CDXrTvmGsnL6gY9GVXKorL8Ceq6yCMXdfxsKA/ZTJRhCfxmDzVSqip8xojj1po52BwNf2W8rqMB0Fidq5SA+AplXbBpOvJl58mS6FbxeejnN6IANWgozSAAaA0H8s8tOns3CPUo/dfVKk78yeJyGixWQeQvg2QWTpMFxLMgAX8+nc+m0XyxDObhcjaLYbmCYIIhLmA5mQWXl6F8ooj5kHJOVUtRDzlPOvdwxU1dKdMXZur7/BejiTTR5/at5QZto5URNkOh+3uJKhEg7KDj4eHdMQOTyX/u1xu19zTOyebYJFlXxrUbbEan8Tkfg3qHmqXbykYXBM+src16PCZpjIyFHSgq2igFi3s4jJJSdqRl5r75o9KbY0EHqnLSGZA6x+Kojv/T+L7vE+4/TaArbG6dRG+oexqbUnx9uPt2sbm/Flf3t5SfS9DXl0g72u+r/mBBxaBj8dcAor+jETTuglWm+X4qFfvcZk4wJ7ewqKKXKINcjX6obYYGT85QFNVexLjDgqeUlFYJKrA+DJxEDBY8YVDFQ6EZTxC/U+o+rylBW8HaY5uhfG4OSRolON0pKM+P7YcqnPRp8dWO64L4cESnmvZNbI9nwlFfMhYmgdo2BIPfddF1bHbXJDu97kDnELolwAOcIcQ0sqzOFySIvO5n6WLLVBheNG6bfJyrzjt6XEURust8jn0ayPT+7mFL4PBt95ZVzD4a9ryX6XctJa9yV3a3nNnWyoLGpIGUsX1Mfn4DiZwXCA==
+sidebar_class_name: "post api-method"
+info_path: cdk-erigon/json-rpc/eth/ethereum-json-rpc-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"eth_getTransactionReceipt"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/eth_getTransactionReceipt"}
+  context={"endpoint"}
+>
+
+</MethodEndpoint>
+
+
+
+eth_getTransactionReceipt
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"jsonrpc":{"type":"string","example":"2.0"},"method":{"type":"string","example":"eth_getTransactionReceipt"},"params":{"type":"array","items":{},"example":["0x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b"]},"id":{"type":"integer","example":1}}}}}}}
+>
+
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Returns the receipt of a transaction by transaction hash","content":{"application/json":{"schema":{"type":"object"}}}}}}
+>
+
+</StatusCodes>

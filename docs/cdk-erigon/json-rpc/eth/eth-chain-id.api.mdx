@@ -1,0 +1,68 @@
+---
+id: eth-chain-id
+title: "eth_chainId"
+description: "eth_chainId"
+sidebar_label: "eth_chainId"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVE1T2zAQ/SsanUMCHHOjlAM9FAboKc10NvYSC2xJXa0TMh7/9+7KJLWZDof6kFjrt5/vrTrLsE12ubLXFThvHhkY7XpmQ0QCdsHflnZpkatfhQLkNLOEv1tM/CWUB7vs8tERCo6pxZktgmf0rJ8gxtoVOc7iJQWvtlRU2IC+8SGiBA+bFyxY4kbSrOww6VfFUyxGwMTk/FaA+AZNrNV0OT+3/cw2UmAoP4eOexCXCARNGrkAERzEwzFmez9yXq3l5MYJnPS4RRpnuOjzo/NJMfg0tHF5fq5/JaaCXNRJiPcDcks+Ga7Q5JrM7VfTJizNcyCT3NZL9YYw1nA4k7GwDEg+MoFPUGiQZP970O9VTiuaMnycp40hZWaAKzktpqiEtENS9XS2pVoAFXNMy8VCeJsnhh14mdF8K5raw2H+3NhepKX1PfyV0M1xfiPKM6+jMqZ5j9St1gMpF0qOfw65VceZ7RsZLWHbmG+Pd9/PHu6vzdX9rfhqwUPHkiInmc5BFsCXQKX5ZwAzVJQyTSoBUjaEqr3jKrN5ctvUoXjNNc9/+qcKE56coa7D3pS4w1oFLzIIRsZBh5GTKYFhZhL6Ke0zI/WdUg95UwPERtWgtiT5ssCFugayEjw0HzfgQ98njTC+8UJk53KMzGr3Tv9qEkBmX6k4xNx1G0j4g+q+V3NuZWBnB+Rgc9qgCqGUnVG9vKJA7PWg4LMnTa7wus2r+FHN/ezocVUUGPlT7HoknPu7xycBb96vqiaU6kOw12tMfpfW6l03bJTeZWrrbC3CbWGr2CGmPn8Ac/LJNg==
+sidebar_class_name: "post api-method"
+info_path: cdk-erigon/json-rpc/eth/ethereum-json-rpc-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"eth_chainId"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/eth_chainId"}
+  context={"endpoint"}
+>
+
+</MethodEndpoint>
+
+
+
+eth_chainId
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"jsonrpc":{"type":"string","example":"2.0"},"method":{"type":"string","example":"eth_chainId"},"params":{"type":"array","items":{},"example":[]},"id":{"type":"integer","example":1}}}}}}}
+>
+
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Returns the chain ID used for signing replay-protected transactions","content":{"application/json":{"schema":{"type":"object"}}}}}}
+>
+
+</StatusCodes>

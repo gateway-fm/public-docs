@@ -1,9 +1,9 @@
 openapi: 3.0.0
 info:
-  title: Ethereum JSON-RPC API
+  title: Ethereum json-rpc API
   version: 2.0.0
   description: |
-    Standard Ethereum JSON-RPC API methods for interacting with the Ethereum blockchain.
+    Standard Ethereum json-rpc API methods for interacting with the Ethereum blockchain.
     These methods allow developers to query blockchain data, send transactions, and interact with smart contracts.
 servers:
   - url: https://rpc.stavanger.gateway.fm

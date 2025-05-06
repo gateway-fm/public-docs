@@ -13,71 +13,68 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'CDK-Erigon',
+    title: "cdk-erigon",
     description: (
       <>
-        A high-performance, enterprise-grade node implementation optimized
-        for the Polygon zkEVM protocol networks.
+        A high-performance, enterprise-grade node implementation optimized for the Polygon zkEVM
+        protocol networks.
       </>
     ),
-    link: '/CDK-Erigon/what-is-cdk-erigon',
-    linkText: 'Learn More',
+    link: "/cdk-erigon/what-is-cdk-erigon",
+    linkText: "Learn More",
   },
   {
-    title: 'Deploy Testnet',
+    title: "Deploy Testnet",
     description: (
       <>
-        Get started with testnet deployment and configure your CDK-Erigon
-        node to connect to the network.
+        Get started with testnet deployment and configure your cdk-erigon node to connect to the
+        network.
       </>
     ),
-    link: '/CDK-Erigon/deploy-testnet',
-    linkText: 'Deployment Guide',
+    link: "/cdk-erigon/deploy-testnet",
+    linkText: "Deployment Guide",
   },
   {
-    title: 'Configuration Options',
+    title: "Configuration Options",
     description: (
-      <>
-        Explore the various configuration options available for
-        customizing your CDK-Erigon node.
-      </>
+      <>Explore the various configuration options available for customizing your cdk-erigon node.</>
     ),
-    link: '/CDK-Erigon/configuration-options',
-    linkText: 'View Options',
+    link: "/cdk-erigon/configuration-options",
+    linkText: "View Options",
   },
   {
-    title: 'Ethereum JSON-RPC API',
+    title: "Ethereum json-rpc API",
     description: (
       <>
-        Standard Ethereum JSON-RPC API methods for interacting with the 
-        Ethereum blockchain through your CDK-Erigon node.
+        Standard Ethereum json-rpc API methods for interacting with the Ethereum blockchain through
+        your cdk-erigon node.
       </>
     ),
-    link: '/CDK-Erigon/JSON-RPC/eth/ethereum-json-rpc-api',
-    linkText: 'API Reference',
+    link: "/cdk-erigon/json-rpc/eth/ethereum-json-rpc-api",
+    linkText: "API Reference",
   },
   {
-    title: 'zkEVM JSON-RPC API',
+    title: "zkEVM json-rpc API",
     description: (
       <>
-        Polygon zkEVM-specific JSON-RPC API methods for tracking the status 
-        of transactions in the zkEVM consensus process.
+        Polygon zkEVM-specific json-rpc API methods for tracking the status of transactions in the
+        zkEVM consensus process.
       </>
     ),
-    link: '/CDK-Erigon/JSON-RPC/zkevm/polygon-zkevm-node-api',
-    linkText: 'API Reference',
+    link: "/cdk-erigon/json-rpc/zkevm/polygon-zkevm-node-api",
+    linkText: "API Reference",
   },
   {
-    title: 'RPC Endpoints',
+    title: "RPC Endpoints",
     description: (
       <>
-        Connect to Gateway's infrastructure using our high-performance
-        RPC endpoints for Polygon zkEVM networks.
+        Connect to Gateway's infrastructure using our high-performance RPC endpoints for Polygon
+        zkEVM networks.
       </>
     ),
-    link: '/CDK-Erigon/rpc-endpoints',
-    linkText: 'View Endpoints',
-  }
+    link: "/cdk-erigon/rpc-endpoints",
+    linkText: "View Endpoints",
+  },
 ];
 
 function Feature({ title, description, link, linkText }: FeatureItem) {
@@ -88,9 +85,7 @@ function Feature({ title, description, link, linkText }: FeatureItem) {
           <Heading as="h3">{title}</Heading>
           <p>{description}</p>
           <div className={styles.featureCardLink}>
-            <Link
-              className="button button--secondary button--sm"
-              to={link}>
+            <Link className="button button--secondary button--sm" to={link}>
               {linkText}
             </Link>
           </div>

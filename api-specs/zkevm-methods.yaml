@@ -3,7 +3,7 @@ info:
   title: Polygon zkEVM Node API
   version: 2.0.0
   description: |
-    Polygon zkEVM-specific JSON-RPC API methods for interacting with a zkEVM node.
+    Polygon zkEVM-specific json-rpc API methods for interacting with a zkEVM node.
     These methods provide access to zkEVM batch and virtualization information, allowing developers
     to track the status of transactions in the zkEVM consensus process.
 servers:

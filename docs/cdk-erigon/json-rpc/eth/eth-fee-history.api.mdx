@@ -1,0 +1,68 @@
+---
+id: eth-fee-history
+title: "eth_feeHistory"
+description: "eth_feeHistory"
+sidebar_label: "eth_feeHistory"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVE1P20AQ/SurPZskoKJKubUIqfRQEKSnNKom9sReWO+6u+OEyPJ/78yagAmUQ31I7Nk3X2/ebKcJyqjnS70I4CLkZLyLepVp32AA+boq9FwjVb83iN9MJB/2OtMB/7QY6asv9nrepU8TkKEUWsx07h2hIzmCprEmT6Gm99E7scW8whrkjfYNcny/vsecOG4TJDEZjHIq+NDkI2CkYFzJQHyEurFiOpvMdJ/pmmv0xcfQozbYq4EAdRx5QQggDRrCZO9H/ks9e/zEZxaIe9fZ8uw8+3y+WjHGjDMbbr7EME592qdHiIsNUzz0dzabyV+BMQ+mEYrY+xapDS4qULm3FtNIlN+oKlXNVFpVQlTGbXyoE6/6vwl/Kup1AW+GfaBWNz6mIQFV/DV9A4wYthhET51ug2VMRdTE+XTKU5xEgi04JmZSMoE72E82te5Za1Ll7YugLg+kjQSQpjyq5E3qwyD/NaNhRKcyKiYuMWEoieKSKgzY1ur73fWPk9ubC/Xl5oojSCcDIZw7ZX9N0x2BKyAU6t0Aaig1Kp6SEkEEWS5Xqp2hSrHHi9va+vwhr8C4yS+3qDDiszNY63eqwC1a2YuoyCvmKexHTqoAgkxFdIWi0RZniut7Tj3kjTUEUiIWsUXOl5aAx1pDEoqD+p1FOWr9WUWEjzRtLBchYdLEuyd1LI9j8AQqkQ+fdN0aIv4Mtu/FnBpiO79uIRhYp12TraoQCt4jkdMDMkRfDDI/WUh+gds2Le2x5Pvs4PElz7GhD7Grka5uru8WDF4/3Wu1L8QnwE7uPP6day1343BNysUnto7V5soWSsEOMeX5Cwhf2ik=
+sidebar_class_name: "post api-method"
+info_path: cdk-erigon/json-rpc/eth/ethereum-json-rpc-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"eth_feeHistory"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/eth_feeHistory"}
+  context={"endpoint"}
+>
+
+</MethodEndpoint>
+
+
+
+eth_feeHistory
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"jsonrpc":{"type":"string","example":"2.0"},"method":{"type":"string","example":"eth_feeHistory"},"params":{"type":"array","items":{},"example":["0x4","latest",[25,75]]},"id":{"type":"integer","example":1}}}}}}}
+>
+
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Returns a collection of historical gas information","content":{"application/json":{"schema":{"type":"object"}}}}}}
+>
+
+</StatusCodes>

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 /**
- * This is a sneaky component that injects a script to fix JSON-RPC URLs.
+ * This is a sneaky component that injects a script to fix json-rpc URLs.
  * We're doing this because the OpenAPI plugin might be using different methods
  * to make HTTP requests that we can't easily override.
  */
@@ -15,12 +15,12 @@ export default function ApiDemoPanel(props) {
     if (!document.getElementById("json-rpc-url-fix")) {
       script.textContent = `
         (function() {
-          console.log('JSON-RPC URL fix script initialized');
+          console.log('json-rpc URL fix script initialized');
 
           // Override URL class
           const OriginalURL = window.URL;
           window.URL = function(url, base) {
-            // Check if this is a JSON-RPC URL with method in path
+            // Check if this is a json-rpc URL with method in path
             if (typeof url === 'string' && (
               url.includes('/eth_') ||
               url.includes('/web3_') ||
@@ -28,7 +28,7 @@ export default function ApiDemoPanel(props) {
               url.includes('/zkevm_') ||
               url.includes('/txpool_')
             )) {
-              console.log('JSON-RPC URL intercepted:', url);
+              console.log('json-rpc URL intercepted:', url);
               try {
                 // Parse the URL
                 const urlObj = new OriginalURL(url, base);
@@ -40,17 +40,17 @@ export default function ApiDemoPanel(props) {
 
                   // Create a new URL with just the origin
                   const fixedUrl = urlObj.origin;
-                  console.log('Fixed JSON-RPC URL:', fixedUrl);
+                  console.log('Fixed json-rpc URL:', fixedUrl);
 
                   // Pass to original constructor
                   return new OriginalURL(fixedUrl, base);
                 }
               } catch (e) {
-                console.error('Failed to fix JSON-RPC URL:', url, e);
+                console.error('Failed to fix json-rpc URL:', url, e);
               }
             }
 
-            // For non-JSON-RPC URLs or if fixing failed, proceed normally
+            // For non-json-rpc URLs or if fixing failed, proceed normally
             return new OriginalURL(url, base);
           };
 

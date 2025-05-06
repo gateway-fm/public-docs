@@ -1,6 +1,6 @@
 ---
 description: >-
-  Below you will find the api documentation for the standard Gnosis JSON-RPC
+  Below you will find the api documentation for the standard Gnosis json-rpc
   calls that Gateway supports.
 ---
 

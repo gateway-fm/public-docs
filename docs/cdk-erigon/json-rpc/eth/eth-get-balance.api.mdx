@@ -1,0 +1,68 @@
+---
+id: eth-get-balance
+title: "eth_getBalance"
+description: "eth_getBalance"
+sidebar_label: "eth_getBalance"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVE1T2zAQ/SsanU1iKIVJbsCQGXooFOiJMp2NtIkNtuRK64RMJv+9uzJJTehwwIfEWr/9evtWa00wj3r8oO8ICNWPFkOJUT9m2jcYgErvrqwea6Ti9xzpHCpwBnWmA/5pMdK5tys9XqdjGZChFFrMtPGO0JF8gqapSpNCDZ+id2KLpsAa5I1WDXJ8P31CQxy3CZKYpAj+KvjQmB4wUijdnIH4AnVTielokOtNpmuu0duPoXttsFcDAerY84IQYMVOJWGyb3r+Dzp/MaPj09M8z0+tha/HZjI6yvPR+WSS28tRbvKTyUn+BfLRjENUTGkk/cghyn5hJXMzx9Cv7HCTHuE1Nt7Frn0OLX8WowllIwyy9y1SG1xUVKCado0oP0tHMMa3jhRQOsYGTTkr0SqwlgNH/enBvFb3tpJ3otiOQDc+pmECFXwavgNGDAsMIry1bkPFmIKoiePhkKc9iAQLcMzQYM4MLmE1mNV6w5qUKm//Ce9yy15PKEkNvUrepd4O/JOz7EZ5KCN1M5+IKilp65IpD9jW6tvd9feD25sLdXZzxZ7SaMcXl5aKe8sib56zEKz6bwDVdRLVzAclwglgiGWtliUVaco7t2nlzbMpoHSDX+6+wIg7Z6gqv1QWF1jJerF4vGIaw6rnpCwQZCqis4oCuCiJWIqZ4vp2qbu8sYZASrQktsj50i7x1GtIOnJQ/2ff9lrfiYzwhYZNxUVImCSI9at4HvZj8AQKURd/Wa+nEPFnqDYbMaeG2M6vCwglTNPKyvYVCJb3TdT2jAzRF90WHNxLfoFXbdr9/Y3YZFuPM2OwoQ+xjz3Z3Vzf3TN4+no91t6KT4ClXJ38O9ZarthEcLo/xbZmlbl5C3PBdjHl+Qse5utS
+sidebar_class_name: "post api-method"
+info_path: cdk-erigon/json-rpc/eth/ethereum-json-rpc-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"eth_getBalance"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/eth_getBalance"}
+  context={"endpoint"}
+>
+
+</MethodEndpoint>
+
+
+
+eth_getBalance
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"jsonrpc":{"type":"string","example":"2.0"},"method":{"type":"string","example":"eth_getBalance"},"params":{"type":"array","items":{},"example":["0xc94770007dda54cF92009BFF0dE90c06F603a09f","latest"]},"id":{"type":"integer","example":1}}}}}}}
+>
+
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Returns the balance of the account at the specified address","content":{"application/json":{"schema":{"type":"object"}}}}}}
+>
+
+</StatusCodes>

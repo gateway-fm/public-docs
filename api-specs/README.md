@@ -1,11 +1,11 @@
 # API Specifications
 
-This directory contains OpenAPI specifications for the various JSON-RPC APIs supported by CDK-Erigon.
+This directory contains OpenAPI specifications for the various json-rpc APIs supported by cdk-erigon.
 
 ## Overview
 
-- `cdk-erigon.yaml`: Ethereum JSON-RPC API methods
-- `zkevm-methods.yaml`: Polygon zkEVM-specific JSON-RPC API methods
+- `cdk-erigon.yaml`: Ethereum json-rpc API methods
+- `zkevm-methods.yaml`: Polygon zkEVM-specific json-rpc API methods
 - `txpool.yaml`: Transaction pool API methods
 
 ## Auto generating Documentation
@@ -40,7 +40,7 @@ If you reference documentation files in the sidebar before generating them, you 
    ```typescript
    newNamespace: {
      specPath: "api-specs/new-namespace.yaml",
-     outputDir: "docs/CDK-Erigon/JSON-RPC/new-namespace",
+     outputDir: "docs/cdk-erigon/json-rpc/new-namespace",
      sidebarOptions: {
        groupPathsBy: "tag",
      },
@@ -49,7 +49,7 @@ If you reference documentation files in the sidebar before generating them, you 
 
 3. **Create a sidebar file**:
 
-   - Create a new file at `docs/CDK-Erigon/JSON-RPC/new-namespace/sidebar.ts`
+   - Create a new file at `docs/cdk-erigon/json-rpc/new-namespace/sidebar.ts`
    - Define the sidebar structure following the pattern in other sidebars
 
    ```typescript
@@ -59,7 +59,7 @@ If you reference documentation files in the sidebar before generating them, you 
      apisidebar: [
        {
          type: "doc",
-         id: "CDK-Erigon/JSON-RPC/new-namespace/new-namespace-json-rpc-api",
+         id: "cdk-erigon/json-rpc/new-namespace/new-namespace-json-rpc-api",
        },
        // Add categories for the API methods grouped by tag
      ],
@@ -73,9 +73,9 @@ If you reference documentation files in the sidebar before generating them, you 
    - Open `sidebars.ts` in the root directory
    - Import your new sidebar:
      ```typescript
-     import newNamespaceSidebar from "./docs/CDK-Erigon/JSON-RPC/new-namespace/sidebar";
+     import newNamespaceSidebar from "./docs/cdk-erigon/json-rpc/new-namespace/sidebar";
      ```
-   - Add it to the JSON-RPC section:
+   - Add it to the json-rpc section:
      ```typescript
      {
        type: 'category',
@@ -83,7 +83,7 @@ If you reference documentation files in the sidebar before generating them, you 
        collapsed: true,
        link: {
          type: 'doc',
-         id: 'CDK-Erigon/JSON-RPC/new-namespace/new-namespace-json-rpc-api',
+         id: 'cdk-erigon/json-rpc/new-namespace/new-namespace-json-rpc-api',
        },
        items: newNamespaceSidebar,
      },

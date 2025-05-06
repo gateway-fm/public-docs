@@ -1,0 +1,68 @@
+---
+id: eth-send-raw-transaction
+title: "eth_sendRawTransaction"
+description: "eth_sendRawTransaction"
+sidebar_label: "eth_sendRawTransaction"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1lFFT2zAMgP+Kz8+lDR2lrG+M44E9bBx0T4zbKbHaBBLbs9WWXq//fZJDS+itPOxueUhsRZIl+ZM2mmAe9eRBTwPYCAVVzkb92NPOYwDZ3Rg90Ujlr4jW3MGqo6h7OuDvBUb64sxaTzZpWwVkEwoL7OnCWUJL8gu8r6siuRw8RTZmWSxKbEBWtPbI57j8CQtivz5IAFRhlL+iH3zRUYwUKjtnRXyBxtciGvYzve3phmN15mPVI+mwtYcATexYQwiwZuOKMMm3HT8POnsxZ+d4Ycz5uBiZT8Oc14eCbHSR5xeYfx5nF+Nslo2HZ2ej8/HomFw/8hlVN4OKizjH0E3hdJseuYDo+craOg2zTD4GYxEqn3Ka6PtF3lQUFSgf8CRWc4tG0VvaauaCyoMDU0AkRU5RieqaXwEXjbJIKxee9T9f5mug74M6CtTu+rR3MYEAVPJucNQgYlhiEIY3ehFq1i2JfJwMBkxMPxIswXLx+nMgXMG6P2v0lvmWqO/e4L3eFbYDWyKqE9HREHbQ/C8eWhxOBQs7c6nCFSWQ97f09f77t5O72yt1eXvDEUlF2kJzDimLAyYIrIFg1F8dqDblmMgQ+IKkaudqVVH5no68dsVzUUJl+z/ttMSIe2Ooa7dSBpdYSy9HIYvrHdYdI2WAoKekql0kY09xfPuj23NjA4GUQCiyyOelhmVMGkgAWmg+aO6DEuwpJXyhga85GHGXCNq8UvdwzBffSCl4ssZmk0PEH6HebkWcEmQ5L5cQKsjTnJCOLhEM97Bg+oysoq/adjqZShyiXi/SwDlsrW1vZ3FZFOjpQ93HDq+33++nrJy/zubGGbEJsJK5ze+J1jLn25Evw1tkG11zvyxgLrqtT3n+ALPAGUc=
+sidebar_class_name: "post api-method"
+info_path: cdk-erigon/json-rpc/eth/ethereum-json-rpc-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"eth_sendRawTransaction"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/eth_sendRawTransaction"}
+  context={"endpoint"}
+>
+
+</MethodEndpoint>
+
+
+
+eth_sendRawTransaction
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"jsonrpc":{"type":"string","example":"2.0"},"method":{"type":"string","example":"eth_sendRawTransaction"},"params":{"type":"array","items":{},"example":["0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675"]},"id":{"type":"integer","example":1}}}}}}}
+>
+
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Submits a pre-signed transaction for broadcast to the Ethereum network","content":{"application/json":{"schema":{"type":"object"}}}}}}
+>
+
+</StatusCodes>

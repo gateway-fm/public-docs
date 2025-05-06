@@ -43,17 +43,17 @@ This behavior depends on the network and transaction details. Specific cases req
 
 <details>
 
-<summary>Is EIP-1559 supported on CDK-Erigon?</summary>
+<summary>Is EIP-1559 supported on cdk-erigon?</summary>
 
-No, EIP-1559 is not supported on CDK-Erigon.
+No, EIP-1559 is not supported on cdk-erigon.
 
 </details>
 
 <details>
 
-<summary>Does CDK-Erigon support State Override?</summary>
+<summary>Does cdk-erigon support State Override?</summary>
 
-Yes, CDK-Erigon supports State Override functionality.
+Yes, cdk-erigon supports State Override functionality.
 
 _State Override Functionality refers to the ability to temporarily modify the state of the Ethereum Virtual Machine (EVM) for testing or debugging purposes without permanently altering the blockchain's actual state._
 
@@ -61,9 +61,9 @@ _State Override Functionality refers to the ability to temporarily modify the st
 
 <details>
 
-<summary>Which Ethereum Virtual Machine (EVM) version is supported on CDK-Erigon?</summary>
+<summary>Which Ethereum Virtual Machine (EVM) version is supported on cdk-erigon?</summary>
 
-CDK-Erigon supports compiling contracts using the Shanghai EVM version. However, certain opcodes are not supported. For more information on the capabilities and differences between zkEVM and standard EVM, refer to the official \[Polygon zkEVM Documentation]\(https://docs.polygon.technology/zkEVM/architecture/protocol/etrog-upgrade/#supported-opcodes).
+cdk-erigon supports compiling contracts using the Shanghai EVM version. However, certain opcodes are not supported. For more information on the capabilities and differences between zkEVM and standard EVM, refer to the official \[Polygon zkEVM Documentation]\(https://docs.polygon.technology/zkEVM/architecture/protocol/etrog-upgrade/#supported-opcodes).
 
 </details>
 
@@ -79,7 +79,7 @@ Transactions may fail due to counter overflows or insufficient allowances, but r
 
 <details>
 
-<summary>How can I diagnose delayed or stuck transactions in CDK-Erigon?</summary>
+<summary>How can I diagnose delayed or stuck transactions in cdk-erigon?</summary>
 
 If transactions appear delayed or stuck:
 
@@ -104,22 +104,22 @@ Gas prices are mirrored from L1 and cached for 3 seconds. They can be adjusted w
 
 <details>
 
-<summary>What happens if I reduce block times in CDK-Erigon?</summary>
+<summary>What happens if I reduce block times in cdk-erigon?</summary>
 
 Reducing block times results in:
 
 * **Higher throughput**: More blocks are produced per minute, allowing more transactions.
 * **Higher L1 posting costs**: More frequent batches are sent to L1, increasing gas fees.
 
-While CDK-Erigon supports reducing block times, ensure it aligns with your network’s cost and activity levels.
+While cdk-erigon supports reducing block times, ensure it aligns with your network’s cost and activity levels.
 
 </details>
 
 <details>
 
-<summary>What is the gas limit per block in CDK-Erigon?</summary>
+<summary>What is the gas limit per block in cdk-erigon?</summary>
 
-There is no explicit gas limit per block in CDK-Erigon. Instead, \*\*ZK counters\*\* act as the limiting factor for block execution.
+There is no explicit gas limit per block in cdk-erigon. Instead, \*\*ZK counters\*\* act as the limiting factor for block execution.
 
 * **How to check?** Use the `zkevm_estimateCounters` RPC method to estimate counter usage for your transactions, similar to `estimateGas`.
 
@@ -217,14 +217,14 @@ On the Erigon stack, the ZK counter limit is expected to increase to about 130-1
 
 <details>
 
-<summary>Why is the block speed restricting transaction throughput in CDK-Erigon?</summary>
+<summary>Why is the block speed restricting transaction throughput in cdk-erigon?</summary>
 
 The current transaction throughput is influenced by:
 
 * **ZK counter limits**: Blocks are constrained by counter usage, not gas.
-* **Block times**: Block speeds can be adjusted in CDK-Erigon to increase throughput. For instance, block times can be reduced to under **1 second** and tested at **250ms**.
+* **Block times**: Block speeds can be adjusted in cdk-erigon to increase throughput. For instance, block times can be reduced to under **1 second** and tested at **250ms**.
 
-**Elastic block times** in CDK-Erigon further optimize throughput:
+**Elastic block times** in cdk-erigon further optimize throughput:
 
 * Block times **increase** during inactivity to reduce costs.
 * Block times **decrease** when there is a transaction queue to improve throughput.
@@ -233,17 +233,17 @@ The current transaction throughput is influenced by:
 
 <details>
 
-<summary>Are orphan blocks a concern in CDK-Erigon?</summary>
+<summary>Are orphan blocks a concern in cdk-erigon?</summary>
 
-No, CDK-Erigon does not produce orphan blocks. The zero-knowledge proofs ensure all blocks are valid and finalized, eliminating the concept of orphaned blocks.
+No, cdk-erigon does not produce orphan blocks. The zero-knowledge proofs ensure all blocks are valid and finalized, eliminating the concept of orphaned blocks.
 
 </details>
 
 <details>
 
-<summary>Why is the proof generation time slower on ForkId 12 in CDK-Erigon?</summary>
+<summary>Why is the proof generation time slower on ForkId 12 in cdk-erigon?</summary>
 
-In CDK-Erigon, proof generation time depends on the \*\*ZK counters\*\*:
+In cdk-erigon, proof generation time depends on the \*\*ZK counters\*\*:
 
 * ForkId 12 introduces increased counter capacity, which allows for more complex blocks but also leads to **longer proof generation times**.
 * This is an expected behavior due to the additional counter load in ForkId 12.
@@ -252,7 +252,7 @@ In CDK-Erigon, proof generation time depends on the \*\*ZK counters\*\*:
 
 <details>
 
-<summary>Can faster block times in CDK-Erigon increase costs?</summary>
+<summary>Can faster block times in cdk-erigon increase costs?</summary>
 
 Yes. Faster block production leads to:
 
@@ -268,9 +268,9 @@ To manage this:
 
 <details>
 
-<summary>What is the role of CDK-Erigon compared to the legacy stack?</summary>
+<summary>What is the role of cdk-erigon compared to the legacy stack?</summary>
 
-CDK-Erigon is the more modern and scalable implementation of Polygon CDK. It provides:
+cdk-erigon is the more modern and scalable implementation of Polygon CDK. It provides:
 
 * Greater confidence in **block speed optimizations**.
 * Support for features like **elastic block times** and **ZK counter management**.
@@ -280,17 +280,17 @@ CDK-Erigon is the more modern and scalable implementation of Polygon CDK. It pro
 
 <details>
 
-<summary>Differences between CDK-Erigon and OP for rollups</summary>
+<summary>Differences between cdk-erigon and OP for rollups</summary>
 
-📌 **Note:** If integration with AggLayer is a requirement, CDK-Erigon is currently the preferred choice. If extensive precompile support is critical, OP Stack may need further evaluation.
+📌 **Note:** If integration with AggLayer is a requirement, cdk-erigon is currently the preferred choice. If extensive precompile support is critical, OP Stack may need further evaluation.
 
 </details>
 
 <details>
 
-<summary>What Precompiles does CDK-Erigon support?</summary>
+<summary>What Precompiles does cdk-erigon support?</summary>
 
-CDK-Erigon supports most Ethereum precompiled contracts, except RIPEMD-160 and BLAKE2F. Below is a comparison of precompile support across different forks:
+cdk-erigon supports most Ethereum precompiled contracts, except RIPEMD-160 and BLAKE2F. Below is a comparison of precompile support across different forks:
 
 </details>
 
@@ -298,7 +298,7 @@ CDK-Erigon supports most Ethereum precompiled contracts, except RIPEMD-160 and B
 
 <details>
 
-<summary>How can I optimize throughput and block speed in CDK-Erigon?</summary>
+<summary>How can I optimize throughput and block speed in cdk-erigon?</summary>
 
 \- **Lower block times:**
 
