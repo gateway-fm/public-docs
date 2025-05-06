@@ -45,11 +45,14 @@ export default function Page(): ReactNode {
                   Built for Performance and Reliability
                 </Heading>
                 <p className={styles.sectionDescription}>
-                  CDK-Erigon is a high-performance, enterprise-grade node implementation
-                  specifically optimized for the Polygon zkEVM protocol networks. Built on the
-                  robust Erigon architecture and maintained by Gateway.fm, it delivers unparalleled
-                  efficiency, reliability, and synchronization speeds for your blockchain
-                  infrastructure needs.
+                  Our RPC service provides a high-performance, reliable, and scalable solution for
+                  interacting with blockchain networks. Designed to support a wide range of
+                  blockchain protocols, our RPC endpoints offer seamless connectivity and
+                  comprehensive access to blockchain data and functionalities. With our service,
+                  developers can efficiently build and deploy decentralized applications, ensuring
+                  optimal performance and security. Our infrastructure is built to handle high
+                  throughput and low latency, making it ideal for both enterprise and individual
+                  developers looking to leverage blockchain technology.
                 </p>
               </div>
             </div>
