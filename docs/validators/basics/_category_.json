@@ -2,6 +2,7 @@
   "label": "Basics",
   "position": 1,
   "link": {
-    "type": "generated-index"
+    "type": "generated-index",
+    "description": "Basic validators are the simplest validators. They are used to validate simple data types such as strings, numbers, and booleans. They can also be used to validate more complex data types such as arrays and objects."
   }
 }

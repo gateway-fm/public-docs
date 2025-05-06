@@ -3,8 +3,6 @@ title: Server Migration
 sidebar_label: Server Migration
 ---
 
-## Migration
-
 Migrating validator nodes to a new server or infrastructure can be a complex process, but with careful planning and execution, it can be done smoothly. Here are some key considerations and steps to ensure a successful migration:
 
 ### Planning the Migration
