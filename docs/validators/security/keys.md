@@ -31,8 +31,8 @@ These are the keys to an account where the transaction fees are collected.
 
 ### 3rd Party Custody
 
-#### CoinCover
+- **CoinCover**
 
-#### Copper
+- **Copper**
 
-#### Balance
+- **Balance**
