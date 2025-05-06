@@ -14,26 +14,26 @@ type FeatureItem = {
 const FeatureList: FeatureItem[] = [
   {
     title: "Basics",
-    description: <>Basics of the validators and staking.</>,
+    description: <>Learn the fundamentals of validators and the staking process in blockchain networks.</>,
     link: "/category/validators/",
     linkText: "Learn More",
   },
   {
     title: "High Availability",
-    description: <>How to deploy and manage your validators in high availability mode.</>,
+    description: <>Guidelines for deploying and managing validators to ensure high availability and reliability.</>,
     link: "/category/high-availability",
     linkText: "Deployment Guide",
   },
   {
     title: "Nodes",
-    description: <>Learn about diversity of the clients.</>,
+    description: <>Explore the variety of client options available for validator nodes and their features.</>,
     link: "/category/validator-nodes",
     linkText: "View Options",
   },
   {
     title: "Security",
     description: (
-      <>How to mange your validator nodes securely and how to protect your private keys.</>
+      <>Best practices for managing validator nodes securely and protecting private keys from threats.</>
     ),
     link: "/category/security",
     linkText: "Best Practices",
