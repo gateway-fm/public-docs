@@ -21,13 +21,13 @@ const FeatureList: FeatureItem[] = [
   {
     title: "High Availability",
     description: <>How to deploy and manage your validators in high availability mode.</>,
-    link: "/validators/high-availability",
+    link: "/category/high-availability",
     linkText: "Deployment Guide",
   },
   {
     title: "Nodes",
     description: <>Learn about diversity of the clients.</>,
-    link: "/validators/nodes",
+    link: "/category/validator-nodes",
     linkText: "View Options",
   },
   {
@@ -35,7 +35,7 @@ const FeatureList: FeatureItem[] = [
     description: (
       <>How to mange your validator nodes securely and how to protect your private keys.</>
     ),
-    link: "/validators/security",
+    link: "/category/security",
     linkText: "Best Practices",
   },
 ];
