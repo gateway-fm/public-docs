@@ -5,29 +5,28 @@ sidebar_position: 1
 
 # The Merge
 
-The Merge is the process of switching Ethereum from Proof-Of-Work to
-Proof-Of-Stake consensus mechanism.
+The Merge is the process of transitioning Ethereum from a Proof-Of-Work (PoW) to a Proof-Of-Stake (PoS) consensus mechanism. This significant upgrade aims to improve the network's scalability, security, and sustainability.
 
-It is called like that because it merges the existing beacon chain (previously
-called eth 2.0) with the mainnet.
+## What is The Merge?
 
-It is technically achieved through a special protocol between two nodes, one
-beacon node (called **Consensus Layer**) and one eth1 node (called **Execution
-Layer**) and moving responsibilities for consensus, block production, fork
-choice rules to the Consensus Layer.
+The Merge refers to the integration of the existing Ethereum mainnet with the Beacon Chain, which is the PoS blockchain. This integration allows Ethereum to transition from PoW, where miners validate transactions, to PoS, where validators take on this role.
 
-On the other hand, Consensus Layer cannot by itself, perform block proposals and even attesting to the blocks.
-It uses Execution Layer to check the block validity as well as execute
-transactions and propose new block contents.
+## Technical Details
 
-For a staker it means that instead of one node, you need to run two nodes
-side-by-side, one Consensus Layer, one Execution Layer.
+The Merge is technically achieved through a special protocol between two nodes: the **Consensus Layer** (formerly known as the Beacon Chain) and the **Execution Layer** (formerly known as eth1). The Consensus Layer handles consensus, block production, and fork choice rules, while the Execution Layer is responsible for executing transactions and maintaining the blockchain state.
 
-You need to run them in one-to-one relationship. Running multiple Consensus Layers per one Execution Layer is forbidden by the
-specification (TODO: link). Running multiple Execution Layers per a Consensus
-Layer is technically not forbidden, but this configuration is untested and not
-recommended.
+## Implications for Stakers
 
-See also:
+For stakers, The Merge means running two nodes side-by-side: one for the Consensus Layer and one for the Execution Layer. These nodes must be run in a one-to-one relationship. Running multiple Consensus Layers per Execution Layer is not allowed by the specification, and running multiple Execution Layers per Consensus Layer is untested and not recommended.
+
+## Benefits of The Merge
+
+- **Energy Efficiency**: PoS significantly reduces the energy consumption of the Ethereum network compared to PoW.
+- **Security**: PoS enhances network security by making it more costly and difficult to attack the network.
+- **Scalability**: The Merge lays the groundwork for future scalability upgrades, such as sharding, which will further increase the network's capacity.
+
+## Further Reading
 
 - [Nodes](/category/validator-nodes/)
+- [Ethereum Foundation Blog on The Merge](https://blog.ethereum.org/tag/the-merge)
+- [Ethereum 2.0 Specifications](https://github.com/ethereum/eth2.0-specs)
