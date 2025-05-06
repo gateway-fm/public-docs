@@ -28,5 +28,5 @@ For stakers, The Merge means running two nodes side-by-side: one for the Consens
 ## Further Reading
 
 - [Nodes](/category/validator-nodes/)
-- [Ethereum Foundation Blog on The Merge](https://blog.ethereum.org/tag/the-merge)
+- [Ethereum Foundation Blog on The Merge](https://ethereum.org/en/roadmap/merge/)
 - [Ethereum 2.0 Specifications](https://github.com/ethereum/eth2.0-specs)
