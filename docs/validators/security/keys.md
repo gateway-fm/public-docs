@@ -3,8 +3,6 @@ title: Key Management
 sidebar_label: Key Management
 ---
 
-# Key Management
-
 ## Types Of Keys
 
 In staking, there are up to 4 types of keys involved. In theory they all could be independent, but in practice you can reuse the same keys for **Deposit Keys**, **Withdrawal Keys** and **Fee Recipient Keys**.
