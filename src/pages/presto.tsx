@@ -38,16 +38,16 @@ export default function Page(): ReactNode {
           <div className="container">
             <div className="row">
               <div className="col col--10 col--offset-1">
-                {/* <Heading as="h2" className={styles.sectionTitle}>
+                <Heading as="h2" className={styles.sectionTitle}>
                   Built for Performance and Reliability
-                </Heading> */}
-                {/* <p className={styles.sectionDescription}>
+                </Heading>
+                <p className={styles.sectionDescription}>
                   CDK-Erigon is a high-performance, enterprise-grade node implementation
                   specifically optimized for the Polygon zkEVM protocol networks. Built on the
                   robust Erigon architecture and maintained by Gateway.fm, it delivers unparalleled
                   efficiency, reliability, and synchronization speeds for your blockchain
                   infrastructure needs.
-                </p> */}
+                </p>
               </div>
             </div>
           </div>
