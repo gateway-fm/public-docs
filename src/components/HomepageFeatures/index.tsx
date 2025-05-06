@@ -13,7 +13,7 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: "cdk-erigon",
+    title: "CDK-Erigon Overview",
     description: (
       <>
         A high-performance, enterprise-grade node implementation optimized for the Polygon zkEVM
@@ -27,7 +27,7 @@ const FeatureList: FeatureItem[] = [
     title: "Deploy Testnet",
     description: (
       <>
-        Get started with testnet deployment and configure your cdk-erigon node to connect to the
+        Get started with testnet deployment and configure your CDK-Erigon node to connect to the
         network.
       </>
     ),
@@ -37,27 +37,27 @@ const FeatureList: FeatureItem[] = [
   {
     title: "Configuration Options",
     description: (
-      <>Explore the various configuration options available for customizing your cdk-erigon node.</>
+      <>Explore the various configuration options available for customizing your CDK-Erigon node.</>
     ),
     link: "/cdk-erigon/configuration-options",
     linkText: "View Options",
   },
   {
-    title: "Ethereum json-rpc API",
+    title: "Ethereum JSON-RPC API",
     description: (
       <>
-        Standard Ethereum json-rpc API methods for interacting with the Ethereum blockchain through
-        your cdk-erigon node.
+        Standard Ethereum JSON-RPC API methods for interacting with the Ethereum blockchain through
+        your CDK-Erigon node.
       </>
     ),
     link: "/cdk-erigon/json-rpc/eth/ethereum-json-rpc-api",
     linkText: "API Reference",
   },
   {
-    title: "zkEVM json-rpc API",
+    title: "zkEVM JSON-RPC API",
     description: (
       <>
-        Polygon zkEVM-specific json-rpc API methods for tracking the status of transactions in the
+        Polygon zkEVM-specific JSON-RPC API methods for tracking the status of transactions in the
         zkEVM consensus process.
       </>
     ),

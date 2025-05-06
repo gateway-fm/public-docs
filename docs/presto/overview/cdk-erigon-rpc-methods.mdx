@@ -4,13 +4,15 @@ title: CDK Erigon RPC Methods
 
 # 🛟 CDK Erigon RPC Methods
 
-## cdk-erigon RPC Methods
+## CDK-Erigon RPC Methods
 
 ### Transaction Pool (`txpool`)
 
 <details>
 
-<summary><strong>txpool_content</strong></summary>
+<summary>
+  <strong>txpool_content</strong>
+</summary>
 
 #### Description:
 
@@ -24,15 +26,15 @@ _None_
 
 Returns an object containing:
 
-* **pending** – A list of transactions waiting to be included in a block.
-* **queued** – A list of transactions that are queued due to nonce gaps.
+- **pending** – A list of transactions waiting to be included in a block.
+- **queued** – A list of transactions that are queued due to nonce gaps.
 
 #### Example:
 
 ```json
 {
-  "pending": { "0xSenderAddress": [ { "to": "0xReceiver", "value": "0x10" } ] },
-  "queued": { "0xSenderAddress": [ { "to": "0xReceiver", "value": "0x20" } ] }
+  "pending": { "0xSenderAddress": [{ "to": "0xReceiver", "value": "0x10" }] },
+  "queued": { "0xSenderAddress": [{ "to": "0xReceiver", "value": "0x20" }] }
 }
 ```
 
@@ -40,7 +42,9 @@ Returns an object containing:
 
 <details>
 
-<summary><strong>txpool_contentFrom</strong></summary>
+<summary>
+  <strong>txpool_contentFrom</strong>
+</summary>
 
 #### Description:
 
@@ -48,7 +52,7 @@ Fetches all pending and queued transactions from a specific sender.
 
 #### Parameters:
 
-* `address` _(string)_: The sender’s Ethereum address.
+- `address` _(string)_: The sender’s Ethereum address.
 
 #### Response:
 
@@ -67,7 +71,9 @@ Returns the list of transactions originating from the specified sender.
 
 <details>
 
-<summary><strong>txpool_limbo</strong></summary>
+<summary>
+  <strong>txpool_limbo</strong>
+</summary>
 
 #### Description:
 
@@ -95,7 +101,9 @@ Returns an array of transactions that are unprocessable.
 
 <details>
 
-<summary><strong>zkevm_batchNumber</strong></summary>
+<summary>
+  <strong>zkevm_batchNumber</strong>
+</summary>
 
 #### Description:
 
@@ -107,7 +115,7 @@ _None_
 
 #### Response:
 
-* `batchNumber` _(integer)_: The latest verified batch.
+- `batchNumber` _(integer)_: The latest verified batch.
 
 #### Example:
 
@@ -121,7 +129,9 @@ _None_
 
 <details>
 
-<summary><strong>zkevm_batchNumberByBlockNumber</strong></summary>
+<summary>
+  <strong>zkevm_batchNumberByBlockNumber</strong>
+</summary>
 
 #### Description:
 
@@ -129,11 +139,11 @@ Fetches the batch number corresponding to a specific block number.
 
 #### Parameters:
 
-* `blockNumber` _(integer)_: The L2 block number.
+- `blockNumber` _(integer)_: The L2 block number.
 
 #### Response:
 
-* `batchNumber` _(integer)_: The batch associated with the block.
+- `batchNumber` _(integer)_: The batch associated with the block.
 
 #### Example:
 
@@ -147,7 +157,9 @@ Fetches the batch number corresponding to a specific block number.
 
 <details>
 
-<summary><strong>zkevm_consolidatedBlockNumber</strong></summary>
+<summary>
+  <strong>zkevm_consolidatedBlockNumber</strong>
+</summary>
 
 #### Description:
 
@@ -159,7 +171,7 @@ _None_
 
 #### Response:
 
-* `blockNumber` _(integer)_: The latest consolidated L2 block.
+- `blockNumber` _(integer)_: The latest consolidated L2 block.
 
 #### Example:
 
@@ -173,7 +185,9 @@ _None_
 
 <details>
 
-<summary><strong>zkevm_estimateCounters</strong></summary>
+<summary>
+  <strong>zkevm_estimateCounters</strong>
+</summary>
 
 #### Description:
 
@@ -181,11 +195,11 @@ Estimates the counter usage for a given transaction, similar to `estimateGas` bu
 
 #### Parameters:
 
-* `transaction` _(object)_: The transaction object to analyze.
+- `transaction` _(object)_: The transaction object to analyze.
 
 #### Response:
 
-* `counterEstimate` _(integer)_: Estimated zk-counter usage.
+- `counterEstimate` _(integer)_: Estimated zk-counter usage.
 
 #### Example:
 
@@ -199,7 +213,9 @@ Estimates the counter usage for a given transaction, similar to `estimateGas` bu
 
 <details>
 
-<summary><strong>zkevm_getBatchByNumber</strong></summary>
+<summary>
+  <strong>zkevm_getBatchByNumber</strong>
+</summary>
 
 #### Description:
 
@@ -207,7 +223,7 @@ Returns details about a specific batch by its number.
 
 #### Parameters:
 
-* `batchNumber` _(integer)_: The batch ID to fetch.
+- `batchNumber` _(integer)_: The batch ID to fetch.
 
 #### Response:
 
@@ -229,7 +245,9 @@ Batch details, including block range, state root, and L1 commitment status.
 
 <details>
 
-<summary><strong>zkevm_getBatchCountersByNumber</strong></summary>
+<summary>
+  <strong>zkevm_getBatchCountersByNumber</strong>
+</summary>
 
 #### Description:
 
@@ -237,7 +255,7 @@ Retrieves the counter usage details of a specific batch.
 
 #### Parameters:
 
-* `batchNumber` _(integer)_: The batch ID.
+- `batchNumber` _(integer)_: The batch ID.
 
 #### Response:
 
@@ -258,7 +276,9 @@ A list of counter values for that batch.
 
 <details>
 
-<summary><strong>zkevm_getBatchWitness</strong></summary>
+<summary>
+  <strong>zkevm_getBatchWitness</strong>
+</summary>
 
 #### Description:
 
@@ -266,7 +286,7 @@ Returns the witness data used to generate a zk-proof for a batch.
 
 #### Parameters:
 
-* `batchNumber` _(integer)_: The batch ID.
+- `batchNumber` _(integer)_: The batch ID.
 
 #### Response:
 
@@ -284,7 +304,9 @@ A large witness dataset used in zk-proof computation.
 
 <details>
 
-<summary><strong>zkevm_getExitRootTable</strong></summary>
+<summary>
+  <strong>zkevm_getExitRootTable</strong>
+</summary>
 
 #### Description:
 
@@ -313,7 +335,9 @@ A mapping of all exit roots across different rollups.
 
 <details>
 
-<summary><strong>zkevm_isBlockConsolidated</strong></summary>
+<summary>
+  <strong>zkevm_isBlockConsolidated</strong>
+</summary>
 
 #### Description:
 
@@ -321,11 +345,11 @@ Checks if an L2 block has been consolidated into a batch.
 
 #### Parameters:
 
-* `blockNumber` _(integer)_: The L2 block ID.
+- `blockNumber` _(integer)_: The L2 block ID.
 
 #### Response:
 
-* `boolean` _(true/false)_: Whether the block is consolidated.
+- `boolean` _(true/false)_: Whether the block is consolidated.
 
 #### Example:
 
@@ -339,7 +363,9 @@ Checks if an L2 block has been consolidated into a batch.
 
 <details>
 
-<summary><strong>zkevm_verifiedBatchNumber</strong></summary>
+<summary>
+  <strong>zkevm_verifiedBatchNumber</strong>
+</summary>
 
 #### Description:
 
@@ -351,7 +377,7 @@ _None_
 
 #### Response:
 
-* `batchNumber` _(integer)_: The latest verified batch.
+- `batchNumber` _(integer)_: The latest verified batch.
 
 #### Example:
 
@@ -377,8 +403,8 @@ _None_
 
 ### Notes on Usage
 
-* **State Verification:** Some calls return **trusted** vs. **verified** results, meaning finality may depend on L1 settlement.
-* **Performance Considerations:** Calls returning large datasets (e.g., `getWitness`) may take longer to execute.
-* **Gas Considerations:** `zkevm_estimateCounters` helps optimize transaction gas usage in zkEVM environments.
+- **State Verification:** Some calls return **trusted** vs. **verified** results, meaning finality may depend on L1 settlement.
+- **Performance Considerations:** Calls returning large datasets (e.g., `getWitness`) may take longer to execute.
+- **Gas Considerations:** `zkevm_estimateCounters` helps optimize transaction gas usage in zkEVM environments.
 
 For more details, refer to the **Polygon zkEVM API Documentation**: [Polygon zkEVM Docs](https://docs.polygon.technology/zkEVM/architecture/protocol/etrog-upgrade/#supported-opcodes).

@@ -4,7 +4,7 @@ This directory contains OpenAPI specifications for the various json-rpc APIs sup
 
 ## Overview
 
-- `cdk-erigon.yaml`: Ethereum json-rpc API methods
+- `cdk-erigon.yaml`: Ethereum JSON-RPC API methods
 - `zkevm-methods.yaml`: Polygon zkEVM-specific json-rpc API methods
 - `txpool.yaml`: Transaction pool API methods
 

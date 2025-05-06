@@ -9,7 +9,7 @@ This guide will help you quickly setup a local testing environment. To do this w
 
 ## What is Kurtosis-CDK?
 
-Kurtosis-CDK is an open-source tool that leverages Kurtosis to deploy a cdk-erigon based stack. This setup allows you to deploy and interact with a local CDK network, specifically configured for a validium setup.
+Kurtosis-CDK is an open-source tool that leverages Kurtosis to deploy a CDK-Erigon based stack. This setup allows you to deploy and interact with a local CDK network, specifically configured for a validium setup.
 
 ## What is a Validium Setup?
 
@@ -204,5 +204,5 @@ Once your network is running, you can interact with it using any Ethereum json-r
 ## Resources
 
 - [Kurtosis Documentation](https://docs.kurtosis.com/)
-- [cdk-erigon Repository](https://github.com/0xPolygon/cdk-erigon)
+- [CDK-Erigon Repository](https://github.com/0xPolygon/cdk-erigon)
 - [Kurtosis-CDK Repository](https://github.com/0xPolygon/kurtosis-cdk)

@@ -74,7 +74,7 @@ export default function Home(): ReactNode {
           <div className="container">
             <div className="row">
               <ProductCard
-                title="CDK-Erigon"
+                title="cdk-erigon"
                 description="High-performance node implementation optimized for the Polygon zkEVM protocol networks."
                 link="/cdk-erigon"
                 linkText="Documentation"

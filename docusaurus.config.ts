@@ -109,7 +109,7 @@ const config: Config = {
         },
         {
           to: '/cdk-erigon',
-          label: 'cdk-erigon',
+          label: 'CDK-Erigon',
           position: 'left',
         },
         {
@@ -150,7 +150,7 @@ const config: Config = {
               to: '/catalog/validators',
             },
             {
-              label: 'cdk-erigon',
+              label: 'CDK-Erigon',
               to: '/cdk-erigon/what-is-cdk-erigon',
             },
             {

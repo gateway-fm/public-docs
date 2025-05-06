@@ -13,7 +13,7 @@ CDK-Erigon supports several operational modes, each with different security and 
 
 ### Validium Mode
 
-[Validium](https://wiki.polygon.technology/docs/cdk/validium-vs-rollup/) is the primary mode of operation for CDK-Erigon, offering optimal cost and performance with strong security guarantees.
+[Validium](https://wiki.polygon.technology/docs/cdk/validium-vs-rollup/) is the primary mode of operation for cdk-erigon, offering optimal cost and performance with strong security guarantees.
 
 In Validium mode, transaction data is kept off-chain while state validity is proven on-chain through zero-knowledge proofs. This significantly reduces gas costs compared to rollups while maintaining security.
 
@@ -22,11 +22,12 @@ In Validium mode, transaction data is kept off-chain while state validity is pro
 In validium configurations, the approach to data availability (DA) is a critical design choice:
 
 - **Local DA (Recommended)**: Stores transaction data locally on sequencer and/or validator nodes. This approach provides:
+
   - Lowest operational costs as data isn't stored on L1 or external DA solutions
   - Full control over your data storage infrastructure
   - Highest performance with minimal latency
   - Suitable for enterprise or application-specific chains
-  
+
 - **Alternative DA Solutions**: CDK-Erigon can also be integrated with various external DA solutions:
   - **Celestia**: A modular data availability layer specifically designed for blockchain systems
   - **Avail**: A data availability-focused blockchain built to serve as a secure base layer
@@ -112,16 +113,15 @@ CDK-Erigon supports two different state storage implementations, each offering d
 
 ## Configuration Matrix
 
-| Feature | Validium+PP | Validium+FEP | Rollup | Sovereign Type1 |
-|---------|------------|-------------|--------|-----------------|
-| Data Availability | Off-chain | Off-chain | On-chain (L1) | Custom |
-| Proof System | Pessimistic | Full Execution | Full Execution | Pessimistic |
-| Cost Efficiency | Highest | Medium | Lowest | Custom |
-| Security Level | High | Very High | Highest | Customizable |
-| Supported State Trie | Type1 & Type2 | Type1 & Type2 (Berlin) | Type1 & Type2 | Type1 |
-| Hardfork Support | Latest (Pectra) | Latest with Type1, Berlin with Type2 | Latest | Latest (Pectra) |
+| Feature              | Validium+PP     | Validium+FEP                         | Rollup         | Sovereign Type1 |
+| -------------------- | --------------- | ------------------------------------ | -------------- | --------------- |
+| Data Availability    | Off-chain       | Off-chain                            | On-chain (L1)  | Custom          |
+| Proof System         | Pessimistic     | Full Execution                       | Full Execution | Pessimistic     |
+| Cost Efficiency      | Highest         | Medium                               | Lowest         | Custom          |
+| Security Level       | High            | Very High                            | Highest        | Customizable    |
+| Supported State Trie | Type1 & Type2   | Type1 & Type2 (Berlin)               | Type1 & Type2  | Type1           |
+| Hardfork Support     | Latest (Pectra) | Latest with Type1, Berlin with Type2 | Latest         | Latest (Pectra) |
 
 For detailed configuration options and parameters, refer to the [CDK-Erigon GitHub repository](https://github.com/gateway-fm/cdk-erigon).
 
 These configuration options allow for deploying CDK-Erigon in various scenarios, balancing between performance, cost, and security requirements.
-

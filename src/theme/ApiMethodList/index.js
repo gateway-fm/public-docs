@@ -5,8 +5,8 @@ import styles from "./styles.module.css";
 export default function ApiMethodList({ apiName }) {
   const apiMappings = {
     eth: {
-      title: "Ethereum json-rpc API",
-      description: "Standard Ethereum json-rpc API methods",
+      title: "Ethereum JSON-RPC API",
+      description: "Standard Ethereum JSON-RPC API methods",
       basePath: "/cdk-erigon/json-rpc/eth",
       categories: [
         {
@@ -177,7 +177,7 @@ export default function ApiMethodList({ apiName }) {
       ],
     },
     txpool: {
-      title: "Txpool json-rpc API",
+      title: "Txpool JSON-RPC API",
       description: "Methods for interacting with the transaction pool",
       basePath: "/cdk-erigon/json-rpc/txpool",
       categories: [
@@ -204,7 +204,7 @@ export default function ApiMethodList({ apiName }) {
       ],
     },
     zkevm: {
-      title: "zkEVM json-rpc API",
+      title: "zkEVM JSON-RPC API",
       description: "Methods for interacting with zkEVM nodes",
       basePath: "/cdk-erigon/json-rpc/zkevm",
       categories: [

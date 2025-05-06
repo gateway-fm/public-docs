@@ -9,11 +9,11 @@ Gateway provides cutting-edge infrastructure for Web3 builders, with a focus on 
 
 ## cdk-erigon: Our High-Performance Node
 
-cdk-erigon is a high-performance fork of [Erigon Ethereum client](https://github.com/erigontech/erigon), for syncing Polygon zkEVM protocol networks. Built with speed and efficiency in mind, it delivers exceptional performance as a sequencer and RPC node.
+CDK-Erigon is a high-performance fork of [Erigon Ethereum client](https://github.com/erigontech/erigon), for syncing Polygon zkEVM protocol networks. Built with speed and efficiency in mind, it delivers exceptional performance as a sequencer and RPC node.
 
 ### Background
 
-Developed by the Gateway R&D team over an 18-month period, cdk-erigon represents a significant engineering effort focused on performance optimization and usability improvements. The node implementation serves as the backbone for Gateway's L2 deployment offerings, and is the default node of choice in our [Presto platform](https://gateway.fm/presto).
+Developed by the Gateway R&D team over an 18-month period, CDK-Erigon represents a significant engineering effort focused on performance optimization and usability improvements. The node implementation serves as the backbone for Gateway's L2 deployment offerings, and is the default node of choice in our [Presto platform](https://gateway.fm/presto).
 
 ### Key Performance Features
 

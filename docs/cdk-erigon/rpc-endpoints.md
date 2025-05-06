@@ -5,19 +5,19 @@ title: RPC Endpoints
 
 # RPC Endpoints
 
-cdk-erigon provides json-rpc API endpoints for interacting with RPC nodes. These APIs are divided into namespaces:
+CDK-Erigon provides json-rpc API endpoints for interacting with RPC nodes. These APIs are divided into namespaces:
 
-## Ethereum json-rpc API
+## Ethereum JSON-RPC API
 
-The standard Ethereum json-rpc API methods allow applications to interact with the blockchain in the same way they would with any Ethereum-compatible network.
+The standard Ethereum JSON-RPC API methods allow applications to interact with the blockchain in the same way they would with any Ethereum-compatible network.
 
-[Explore Ethereum json-rpc API →](/cdk-erigon/json-rpc/eth/ethereum-json-rpc-api)
+[Explore Ethereum JSON-RPC API →](/cdk-erigon/json-rpc/eth/ethereum-json-rpc-api)
 
-## zkEVM json-rpc API
+## zkEVM JSON-RPC API
 
 The zkEVM-specific json-rpc API provides methods unique to the Polygon zkEVM implementation, including batch management, verification status, and other zkEVM-specific functionality.
 
-[Explore zkEVM json-rpc API →](/cdk-erigon/json-rpc/zkevm/polygon-zkevm-node-api)
+[Explore zkEVM JSON-RPC API →](/cdk-erigon/json-rpc/zkevm/polygon-zkevm-node-api)
 
 ## Network Information
 

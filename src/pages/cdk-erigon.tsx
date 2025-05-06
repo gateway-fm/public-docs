@@ -14,7 +14,7 @@ function HomepageHeader() {
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
       <div className="container">
         <Heading as="h1" className="hero__title">
-          cdk-erigon Documentation
+          CDK-Erigon Documentation
         </Heading>
         <p className="hero__subtitle">
           Welcome to the Ethereum Validator Knowledge Base, where you can find resources about
@@ -41,7 +41,7 @@ export default function Page(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`cdk-erigon Documentation | Gateway.fm`}
+      title={`CDK-Erigon Documentation | Gateway.fm`}
       description="High-performance node implementation for Polygon zkEVM protocol networks"
     >
       <HomepageHeader />
@@ -54,7 +54,7 @@ export default function Page(): ReactNode {
                   Built for Performance and Reliability
                 </Heading>
                 <p className={styles.sectionDescription}>
-                  cdk-erigon is a high-performance, enterprise-grade node implementation
+                  CDK-Erigon is a high-performance, enterprise-grade node implementation
                   specifically optimized for the Polygon zkEVM protocol networks. Built on the
                   robust Erigon architecture and maintained by Gateway.fm, it delivers unparalleled
                   efficiency, reliability, and synchronization speeds for your blockchain

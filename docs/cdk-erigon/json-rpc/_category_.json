@@ -1,0 +1,8 @@
+{
+  "label": "JSON-RPC",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "JSON-RPC methods for CDK-Erigon."
+  }
+}
