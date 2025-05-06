@@ -39,7 +39,7 @@ only contains block signing keys.
 If we take [Slashing and Penalties](../basics/slashing-and-penalties.md) into account, we
 can come to a following setup.
 
-- Consensus Layer + Executuion Layers -- use redundancy. Many validator
+- Consensus Layer + Execution Layers -- use redundancy. Many validator
   clients (Vouch, Lighthouse, see [Validator Clients](/category/validator-clients/))
   allow to follow multiple nodes at the same time.
 

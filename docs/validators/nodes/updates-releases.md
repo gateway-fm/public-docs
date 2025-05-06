@@ -1,5 +1,5 @@
 ---
-title: Keep software update to date
+title: Keep software up to date
 sidebar_position: 1
 ---
 
