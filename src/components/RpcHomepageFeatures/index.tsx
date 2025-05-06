@@ -14,31 +14,31 @@ type FeatureItem = {
 const FeatureList: FeatureItem[] = [
   {
     title: "Ethereum",
-    description: <>Ethereum RPC</>,
+    description: <>Ethereum RPC provides a standard interface for interacting with Ethereum nodes.</>,
     link: "/category/rpc/",
     linkText: "Learn More",
   },
   {
     title: "Fantom",
-    description: <>Fantom RPC.</>,
+    description: <>Fantom RPC offers a reliable connection to the Fantom blockchain network.</>,
     link: "/rpc/fantom",
     linkText: "Deployment Guide",
   },
   {
     title: "Gnosis",
-    description: <>Gnosis.</>,
+    description: <>Gnosis RPC enables seamless access to the Gnosis blockchain services.</>,
     link: "/rpc/gnosis",
     linkText: "Gnosis",
   },
   {
     title: "Lukso",
-    description: <>Lukso .</>,
+    description: <>Lukso RPC facilitates interactions with the Lukso blockchain ecosystem.</>,
     link: "/rpc/lukso",
     linkText: "Lukso",
   },
   {
     title: "Soroban",
-    description: <>Soroban.</>,
+    description: <>Soroban RPC provides tools for engaging with the Soroban blockchain platform.</>,
     link: "/rpc/soroban",
     linkText: "Soroban",
   },
