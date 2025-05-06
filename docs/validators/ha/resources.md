@@ -5,44 +5,31 @@ sidebar_label: Resource Scaling
 
 # Resource Scaling
 
-## Resource usage
+Efficient resource scaling is essential for maintaining the performance and reliability of validator nodes. This guide provides insights into managing various resources effectively.
 
-Node resource usage.
+## Disk & Storage
 
-## Validators
-
-## Disks & Storage
-
-It is advised to use SSD disks for validators. NVMe are more expensive and unless you want to push the node to its limits, they make very little difference.
-
-Free disk space should be monitored at all times (see [Monitoring](monitoring.md) for more info). Nodes use embedded databases that grow even when they prune unnecessary data due to DB fragmentation, etc.
-
-Make sure that you have about 20% free disk space at all times.
-
-Every once in a while you might need to expand the disk. Many cloud solutions offer expanding data disk.
-
-One important thing for expanding data disks for all nodes, is make sure that the node shutdown was clean (doesn’t matter if that Consensus or Execution layer).
-
-That means sending the shutdown signal to the node and waiting for it to stop and flush all data to the disk. Most of the nodes (Erigon is notable exception) use a non-transactional DBs to store data and this data could get easily corrupted.
+- **Disk Type**: Use SSDs for validators. NVMe drives offer higher performance but are more costly and may not be necessary unless pushing node limits.
+- **Monitoring**: Continuously monitor disk space (see [Monitoring](monitoring.md)). Nodes use databases that grow due to fragmentation, even when pruning data.
+- **Free Space**: Maintain at least 20% free disk space to ensure smooth operations.
+- **Disk Expansion**: Expand disks as needed. Ensure a clean shutdown of nodes before expansion to prevent data corruption, especially for non-transactional databases.
 
 ## Network
 
-Having a good network of peers makes sure that your node’s participation rate is high, on all parameters. HEAD (voting on the chain head) is especially sensitive to the network.
-
-Ideally you want a symmetric network with good throughout (100mb/s+) with proper external IP access, so you can handle 100-200 peers per node. The more peers you have, the higher will be traffic, but the more chances will be that your attestations will be included in time, and ultimately, that leads to more rewards.
+- **Peer Connectivity**: A robust network of peers ensures high participation rates. Aim for a symmetric network with good throughput (100mb/s+) and proper external IP access.
+- **Peer Count**: Handle 100-200 peers per node to increase the likelihood of timely attestation inclusion, leading to higher rewards.
 
 ## CPU
 
-Both [Nodes](/category/validator-clients/) and [validator clients](/category/validator-clients/) require significant CPU resources. Nodes needs to be able to sync, verify consensus, build blocks (unless you use [MEV-Boost](../mev.md) and propagate validator duties into the network. Validator clients need to be generating signatures, signing block payloads for, usually, multiple validators at a time.
-
-It is not recommended to go below 16Ghz for every piece of the setup: CL, EL, Validator Client.
+- **Resource Requirements**: Both nodes and validator clients require significant CPU resources for syncing, consensus verification, and block building.
+- **Minimum Specs**: Do not go below 16GHz for each component: CL, EL, and Validator Client.
 
 ## Uptime & Failover
 
-Even though uptime requirements are quite generous ([Slashing And Penalties](../basics/slashing-and-penalties.md)), to keep the maximum performance it is important that your validators are as close to 100% uptime as possible.
+- **Uptime Importance**: Maximize uptime to ensure optimal performance, despite generous requirements ([Slashing And Penalties](../basics/slashing-and-penalties.md)).
+- **Redundancy**: Some [validator clients](/category/validator-clients/) support redundant setups, monitoring multiple nodes simultaneously.
+- **Failover**: Refer to the [HA section](/category/high-availability/) for detailed failover strategies.
 
-Some [validator clients](/category/validator-clients/) allow for redundant setup, looking at multiple nodes at one time.
+## Further Reading
 
-See [HA section](/category/high-availability/) for more information on failover.
-
-## Read More
+Explore additional resources to enhance your understanding of resource scaling and management.
