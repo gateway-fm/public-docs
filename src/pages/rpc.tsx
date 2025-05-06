@@ -45,14 +45,10 @@ export default function Page(): ReactNode {
                   Built for Performance and Reliability
                 </Heading>
                 <p className={styles.sectionDescription}>
-                  Our RPC service provides a high-performance, reliable, and scalable solution for
-                  interacting with blockchain networks. Designed to support a wide range of
-                  blockchain protocols, our RPC endpoints offer seamless connectivity and
-                  comprehensive access to blockchain data and functionalities. With our service,
-                  developers can efficiently build and deploy decentralized applications, ensuring
-                  optimal performance and security. Our infrastructure is built to handle high
-                  throughput and low latency, making it ideal for both enterprise and individual
-                  developers looking to leverage blockchain technology.
+                  Experience lightning-fast, reliable blockchain interactions with our RPC service.
+                  Perfect for developers aiming to build and deploy decentralized apps with ease.
+                  Our robust infrastructure ensures high performance and security, making it the
+                  go-to choice for both enterprises and solo developers.
                 </p>
               </div>
             </div>
