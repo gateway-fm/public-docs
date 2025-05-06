@@ -41,6 +41,16 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  jsonrpc:
+                    type: string
+                    example: "2.0"
+                  id:
+                    type: integer
+                    example: 1
+                  result:
+                    type: string
+                    example: "0x2787ca"
   /eth_call:
     post:
       tags:
@@ -82,6 +92,16 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  jsonrpc:
+                    type: string
+                    example: "2.0"
+                  id:
+                    type: integer
+                    example: 1
+                  result:
+                    type: string
+                    example: "0x0"
   /eth_chainId:
     post:
       tags:
@@ -115,6 +135,16 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  jsonrpc:
+                    type: string
+                    example: "2.0"
+                  id:
+                    type: integer
+                    example: 1
+                  result:
+                    type: string
+                    example: "0x303f84e"
   /eth_estimateGas:
     post:
       tags:
@@ -188,6 +218,36 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  jsonrpc:
+                    type: string
+                    example: "2.0"
+                  id:
+                    type: integer
+                    example: 1
+                  result:
+                    type: object
+                    properties:
+                      oldestBlock:
+                        type: string
+                        example: "0x2784af"
+                      reward:
+                        type: array
+                        items:
+                          type: array
+                          items:
+                            type: string
+                        example: [["0x0","0x0"],["0x0","0x0"],["0x0","0x0"],["0x0","0x0"]]
+                      baseFeePerGas:
+                        type: array
+                        items:
+                          type: string
+                        example: ["0x0","0x0","0x0","0x0","0x0"]
+                      gasUsedRatio:
+                        type: array
+                        items:
+                          type: number
+                        example: [0,0,0,0]
   /eth_gasPrice:
     post:
       tags:
@@ -221,6 +281,16 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  jsonrpc:
+                    type: string
+                    example: "2.0"
+                  id:
+                    type: integer
+                    example: 1
+                  result:
+                    type: string
+                    example: "0xf87a13b00"
   /eth_getBalance:
     post:
       tags:
@@ -277,7 +347,7 @@ paths:
                   type: array
                   items: {}
                   example:
-                    ["0xb3b20624f8f0f86eb50dd04688409e5cea4bd02d700bf6e79e9384d47d6a5a35", false]
+                    ["0x21f312398a349b478a2360ecd0d53b5348a44f6fe45d95d7f65f02b182704d9f", false]
                 id:
                   type: integer
                   example: 1
@@ -288,6 +358,78 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  jsonrpc:
+                    type: string
+                    example: "2.0"
+                  id:
+                    type: integer
+                    example: 1
+                  result:
+                    type: object
+                    properties:
+                      difficulty:
+                        type: string
+                        example: "0x0"
+                      extraData:
+                        type: string
+                        example: "0x"
+                      gasLimit:
+                        type: string
+                        example: "0x4000000000000"
+                      gasUsed:
+                        type: string
+                        example: "0x0"
+                      hash:
+                        type: string
+                        example: "0x21f312398a349b478a2360ecd0d53b5348a44f6fe45d95d7f65f02b182704d9f"
+                      logsBloom:
+                        type: string
+                        example: "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+                      miner:
+                        type: string
+                        example: "0x12046f2df70c8c6bda6d15ce1a902a4bc1199626"
+                      mixHash:
+                        type: string
+                        example: "0x0000000000000000000000000000000000000000000000000000000000000000"
+                      nonce:
+                        type: string
+                        example: "0x0000000000000000"
+                      number:
+                        type: string
+                        example: "0x2787e3"
+                      parentHash:
+                        type: string
+                        example: "0x2da5ea46933ee971be8ca2f40406de01760cbd2586560c6b6f5e321a3c71050f"
+                      receiptsRoot:
+                        type: string
+                        example: "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421"
+                      sha3Uncles:
+                        type: string
+                        example: "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347"
+                      size:
+                        type: string
+                        example: "0x203"
+                      stateRoot:
+                        type: string
+                        example: "0xeae0b42a15f7a6e05ce56da2b209eb150878dc721048a003c813f652232e5b7c"
+                      timestamp:
+                        type: string
+                        example: "0x6819d539"
+                      totalDifficulty:
+                        type: string
+                        example: "0x0"
+                      transactions:
+                        type: array
+                        items: {}
+                        example: []
+                      transactionsRoot:
+                        type: string
+                        example: "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421"
+                      uncles:
+                        type: array
+                        items: {}
+                        example: []
   /eth_getBlockByNumber:
     post:
       tags:
@@ -321,670 +463,75 @@ paths:
             application/json:
               schema:
                 type: object
-  /eth_getBlockTransactionCountByHash:
-    post:
-      tags:
-        - Block Information
-      summary: eth_getBlockTransactionCountByHash
-      operationId: eth_getBlockTransactionCountByHash
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                jsonrpc:
-                  type: string
-                  example: "2.0"
-                method:
-                  type: string
-                  example: "eth_getBlockTransactionCountByHash"
-                params:
-                  type: array
-                  items: {}
-                  example: ["0xb3b20624f8f0f86eb50dd04688409e5cea4bd02d700bf6e79e9384d47d6a5a35"]
-                id:
-                  type: integer
-                  example: 1
-      responses:
-        "200":
-          description: Returns the number of transactions in a block matching the given block hash
-          content:
-            application/json:
-              schema:
-                type: object
-  /eth_getBlockTransactionCountByNumber:
-    post:
-      tags:
-        - Block Information
-      summary: eth_getBlockTransactionCountByNumber
-      operationId: eth_getBlockTransactionCountByNumber
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                jsonrpc:
-                  type: string
-                  example: "2.0"
-                method:
-                  type: string
-                  example: "eth_getBlockTransactionCountByNumber"
-                params:
-                  type: array
-                  items: {}
-                  example: ["0x1b4"]
-                id:
-                  type: integer
-                  example: 1
-      responses:
-        "200":
-          description: Returns the number of transactions in a block matching the given block number
-          content:
-            application/json:
-              schema:
-                type: object
-  /eth_getCode:
-    post:
-      tags:
-        - State Queries
-      summary: eth_getCode
-      operationId: eth_getCode
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                jsonrpc:
-                  type: string
-                  example: "2.0"
-                method:
-                  type: string
-                  example: "eth_getCode"
-                params:
-                  type: array
-                  items: {}
-                  example: ["0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b", "0x2"]
-                id:
-                  type: integer
-                  example: 1
-      responses:
-        "200":
-          description: Returns the compiled smart contract code at the specified address
-          content:
-            application/json:
-              schema:
-                type: object
-  /eth_getFilterChanges:
-    post:
-      tags:
-        - Filters
-      summary: eth_getFilterChanges
-      operationId: eth_getFilterChanges
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                jsonrpc:
-                  type: string
-                  example: "2.0"
-                method:
-                  type: string
-                  example: "eth_getFilterChanges"
-                params:
-                  type: array
-                  items: {}
-                  example: ["0x16"]
-                id:
-                  type: integer
-                  example: 1
-      responses:
-        "200":
-          description: Returns an array of logs which occurred since the last poll
-          content:
-            application/json:
-              schema:
-                type: object
-  /eth_getLogs:
-    post:
-      tags:
-        - Filters
-      summary: eth_getLogs
-      operationId: eth_getLogs
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                jsonrpc:
-                  type: string
-                  example: "2.0"
-                method:
-                  type: string
-                  example: "eth_getLogs"
-                params:
-                  type: array
-                  items: {}
-                  example:
-                    [
-                      {
-                        "fromBlock": "0x1",
-                        "toBlock": "0x2",
-                        "address": "0x8888f1f195afa192cfee860698584c030f4c9db1",
-                        "topics":
-                          ["0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b"],
-                      },
-                    ]
-                id:
-                  type: integer
-                  example: 1
-      responses:
-        "200":
-          description: Returns an array of logs matching the given filter object
-          content:
-            application/json:
-              schema:
-                type: object
-  /eth_getStorageAt:
-    post:
-      tags:
-        - State Queries
-      summary: eth_getStorageAt
-      operationId: eth_getStorageAt
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                jsonrpc:
-                  type: string
-                  example: "2.0"
-                method:
-                  type: string
-                  example: "eth_getStorageAt"
-                params:
-                  type: array
-                  items: {}
-                  example: ["0x295a70b2de5e3953354a6a8344e616ed314d7251", "0x0", "latest"]
-                id:
-                  type: integer
-                  example: 1
-      responses:
-        "200":
-          description: Returns the value from a storage position at a given address
-          content:
-            application/json:
-              schema:
-                type: object
-  /eth_getTransactionByBlockHashAndIndex:
-    post:
-      tags:
-        - Transaction Information
-      summary: eth_getTransactionByBlockHashAndIndex
-      operationId: eth_getTransactionByBlockHashAndIndex
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                jsonrpc:
-                  type: string
-                  example: "2.0"
-                method:
-                  type: string
-                  example: "eth_getTransactionByBlockHashAndIndex"
-                params:
-                  type: array
-                  items: {}
-                  example:
-                    ["0xb3b20624f8f0f86eb50dd04688409e5cea4bd02d700bf6e79e9384d47d6a5a35", "0x0"]
-                id:
-                  type: integer
-                  example: 1
-      responses:
-        "200":
-          description: Returns information about a transaction by block hash and transaction index position
-          content:
-            application/json:
-              schema:
-                type: object
-  /eth_getTransactionByBlockNumberAndIndex:
-    post:
-      tags:
-        - Transaction Information
-      summary: eth_getTransactionByBlockNumberAndIndex
-      operationId: eth_getTransactionByBlockNumberAndIndex
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                jsonrpc:
-                  type: string
-                  example: "2.0"
-                method:
-                  type: string
-                  example: "eth_getTransactionByBlockNumberAndIndex"
-                params:
-                  type: array
-                  items: {}
-                  example: ["0x29c", "0x0"]
-                id:
-                  type: integer
-                  example: 1
-      responses:
-        "200":
-          description: Returns information about a transaction by block number and transaction index position
-          content:
-            application/json:
-              schema:
-                type: object
-  /eth_getTransactionByHash:
-    post:
-      tags:
-        - Transaction Information
-      summary: eth_getTransactionByHash
-      operationId: eth_getTransactionByHash
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                jsonrpc:
-                  type: string
-                  example: "2.0"
-                method:
-                  type: string
-                  example: "eth_getTransactionByHash"
-                params:
-                  type: array
-                  items: {}
-                  example: ["0x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b"]
-                id:
-                  type: integer
-                  example: 1
-      responses:
-        "200":
-          description: Returns information about a transaction by transaction hash
-          content:
-            application/json:
-              schema:
-                type: object
-  /eth_getTransactionCount:
-    post:
-      tags:
-        - State Queries
-      summary: eth_getTransactionCount
-      operationId: eth_getTransactionCount
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                jsonrpc:
-                  type: string
-                  example: "2.0"
-                method:
-                  type: string
-                  example: "eth_getTransactionCount"
-                params:
-                  type: array
-                  items: {}
-                  example: ["0xc94770007dda54cF92009BFF0dE90c06F603a09f", "latest"]
-                id:
-                  type: integer
-                  example: 1
-      responses:
-        "200":
-          description: Returns the number of transactions sent from an address (nonce)
-          content:
-            application/json:
-              schema:
-                type: object
-  /eth_getTransactionReceipt:
-    post:
-      tags:
-        - Transaction Information
-      summary: eth_getTransactionReceipt
-      operationId: eth_getTransactionReceipt
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                jsonrpc:
-                  type: string
-                  example: "2.0"
-                method:
-                  type: string
-                  example: "eth_getTransactionReceipt"
-                params:
-                  type: array
-                  items: {}
-                  example: ["0x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b"]
-                id:
-                  type: integer
-                  example: 1
-      responses:
-        "200":
-          description: Returns the receipt of a transaction by transaction hash
-          content:
-            application/json:
-              schema:
-                type: object
-  /eth_maxPriorityFeePerGas:
-    post:
-      tags:
-        - Transactions
-      summary: eth_maxPriorityFeePerGas
-      operationId: eth_maxPriorityFeePerGas
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                jsonrpc:
-                  type: string
-                  example: "2.0"
-                method:
-                  type: string
-                  example: "eth_maxPriorityFeePerGas"
-                params:
-                  type: array
-                  items: {}
-                  example: []
-                id:
-                  type: integer
-                  example: 1
-      responses:
-        "200":
-          description: Returns an estimate of the max priority fee per gas
-          content:
-            application/json:
-              schema:
-                type: object
-  /eth_newBlockFilter:
-    post:
-      tags:
-        - Filters
-      summary: eth_newBlockFilter
-      operationId: eth_newBlockFilter
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                jsonrpc:
-                  type: string
-                  example: "2.0"
-                method:
-                  type: string
-                  example: "eth_newBlockFilter"
-                params:
-                  type: array
-                  items: {}
-                  example: []
-                id:
-                  type: integer
-                  example: 1
-      responses:
-        "200":
-          description: Creates a filter in the node to notify when a new block arrives
-          content:
-            application/json:
-              schema:
-                type: object
-  /eth_newFilter:
-    post:
-      tags:
-        - Filters
-      summary: eth_newFilter
-      operationId: eth_newFilter
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                jsonrpc:
-                  type: string
-                  example: "2.0"
-                method:
-                  type: string
-                  example: "eth_newFilter"
-                params:
-                  type: array
-                  items: {}
-                  example:
-                    [
-                      {
-                        "fromBlock": "0x1",
-                        "toBlock": "0x2",
-                        "address": "0x8888f1f195afa192cfee860698584c030f4c9db1",
-                        "topics":
-                          ["0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b"],
-                      },
-                    ]
-                id:
-                  type: integer
-                  example: 1
-      responses:
-        "200":
-          description: Creates a filter object based on filter options to notify when state changes
-          content:
-            application/json:
-              schema:
-                type: object
-  /eth_newPendingTransactionFilter:
-    post:
-      tags:
-        - Filters
-      summary: eth_newPendingTransactionFilter
-      operationId: eth_newPendingTransactionFilter
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                jsonrpc:
-                  type: string
-                  example: "2.0"
-                method:
-                  type: string
-                  example: "eth_newPendingTransactionFilter"
-                params:
-                  type: array
-                  items: {}
-                  example: []
-                id:
-                  type: integer
-                  example: 1
-      responses:
-        "200":
-          description: Creates a filter to notify when new pending transactions arrive
-          content:
-            application/json:
-              schema:
-                type: object
-  /eth_sendRawTransaction:
-    post:
-      tags:
-        - Transactions
-      summary: eth_sendRawTransaction
-      operationId: eth_sendRawTransaction
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                jsonrpc:
-                  type: string
-                  example: "2.0"
-                method:
-                  type: string
-                  example: "eth_sendRawTransaction"
-                params:
-                  type: array
-                  items: {}
-                  example:
-                    [
-                      "0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675",
-                    ]
-                id:
-                  type: integer
-                  example: 1
-      responses:
-        "200":
-          description: Submits a pre-signed transaction for broadcast to the Ethereum network
-          content:
-            application/json:
-              schema:
-                type: object
-  /eth_syncing:
-    post:
-      tags:
-        - Chain State
-      summary: eth_syncing
-      operationId: eth_syncing
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                jsonrpc:
-                  type: string
-                  example: "2.0"
-                method:
-                  type: string
-                  example: "eth_syncing"
-                params:
-                  type: array
-                  items: {}
-                  example: []
-                id:
-                  type: integer
-                  example: 1
-      responses:
-        "200":
-          description: Returns an object with data about the sync status or false
-          content:
-            application/json:
-              schema:
-                type: object
-  /eth_uninstallFilter:
-    post:
-      tags:
-        - Filters
-      summary: eth_uninstallFilter
-      operationId: eth_uninstallFilter
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                jsonrpc:
-                  type: string
-                  example: "2.0"
-                method:
-                  type: string
-                  example: "eth_uninstallFilter"
-                params:
-                  type: array
-                  items: {}
-                  example: ["0x16"]
-                id:
-                  type: integer
-                  example: 1
-      responses:
-        "200":
-          description: Uninstalls a filter with the given ID
-          content:
-            application/json:
-              schema:
-                type: object
-  /web3_clientVersion:
-    post:
-      tags:
-        - Web3
-      summary: web3_clientVersion
-      operationId: web3_clientVersion
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                jsonrpc:
-                  type: string
-                  example: "2.0"
-                method:
-                  type: string
-                  example: "web3_clientVersion"
-                params:
-                  type: array
-                  items: {}
-                  example: []
-                id:
-                  type: integer
-                  example: 1
-      responses:
-        "200":
-          description: Returns the current client version of the node
-          content:
-            application/json:
-              schema:
-                type: object
-tags:
-  - name: Chain State
-    description: Methods related to the blockchain state and network information
-  - name: State Queries
-    description: Methods for querying the state of accounts and contracts
-  - name: Block Information
-    description: Methods for retrieving block data and block-related information
-  - name: Transaction Information
-    description: Methods for retrieving transaction data and receipts
-  - name: Transactions
-    description: Methods for creating and sending transactions
-  - name: Filters
-    description: Methods for creating and managing event filters
-  - name: Web3
-    description: Basic web3 utility methods
-x-readme:
-  explorer-enabled: true
-  proxy-enabled: true
+                properties:
+                  jsonrpc:
+                    type: string
+                    example: "2.0"
+                  id:
+                    type: integer
+                    example: 1
+                  result:
+                    type: object
+                    properties:
+                      difficulty:
+                        type: string
+                        example: "0x0"
+                      extraData:
+                        type: string
+                        example: "0x"
+                      gasLimit:
+                        type: string
+                        example: "0x4000000000000"
+                      gasUsed:
+                        type: string
+                        example: "0x0"
+                      hash:
+                        type: string
+                        example: "0x21f312398a349b478a2360ecd0d53b5348a44f6fe45d95d7f65f02b182704d9f"
+                      logsBloom:
+                        type: string
+                        example: "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+                      miner:
+                        type: string
+                        example: "0x12046f2df70c8c6bda6d15ce1a902a4bc1199626"
+                      mixHash:
+                        type: string
+                        example: "0x0000000000000000000000000000000000000000000000000000000000000000"
+                      nonce:
+                        type: string
+                        example: "0x0000000000000000"
+                      number:
+                        type: string
+                        example: "0x2787e3"
+                      parentHash:
+                        type: string
+                        example: "0x2da5ea46933ee971be8ca2f40406de01760cbd2586560c6b6f5e321a3c71050f"
+                      receiptsRoot:
+                        type: string
+                        example: "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421"
+                      sha3Uncles:
+                        type: string
+                        example: "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347"
+                      size:
+                        type: string
+                        example: "0x203"
+                      stateRoot:
+                        type: string
+                        example: "0xeae0b42a15f7a6e05ce56da2b209eb150878dc721048a003c813f652232e5b7c"
+                      timestamp:
+                        type: string
+                        example: "0x6819d539"
+                      totalDifficulty:
+                        type: string
+                        example: "0x0"
+                      transactions:
+                        type: array
+                        items: {}
+                        example: []
+                      transactionsRoot:
+                        type: string
+                        example: "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421"
+                      uncles:
+                        type: array
+                        items: {}
+                        example: []
