@@ -5,7 +5,7 @@ sidebar_label: MEV & PBS
 
 # MEV & PBS
 
-PBS means "proposal-builder separation", that means that you allow a 3rd party
+PBS means "proposal-builder separation", which means that you allow a 3rd party
 to construct an optimal block for your validator and use it for a slot.
 
 In this setup, you validator is the block **proposal**, and this 3rd party is

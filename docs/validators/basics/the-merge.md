@@ -5,7 +5,7 @@ sidebar_position: 1
 
 # The Merge
 
-The merge is the process of switching Ethereum from Proof-Of-Work to
+The Merge is the process of switching Ethereum from Proof-Of-Work to
 Proof-Of-Stake consensus mechanism.
 
 It is called like that because it merges the existing beacon chain (previously

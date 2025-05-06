@@ -17,7 +17,7 @@ multiple copies of a service at the same time.
 
 That happens, when one region or one copy of the environment goes down, all the
 traffic gets automatically redistributed to another copy. The difference
-between failover and redundant setup is subtle but could be said as, "in
+between failover and a redundant setup is subtle but could be said as, "in
 redundant setup, multiple copies are used during normal functioning of the
 system; in the failover setup copies are only used when the main one goes
 down."

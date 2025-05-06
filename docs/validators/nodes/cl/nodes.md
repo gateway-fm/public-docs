@@ -6,11 +6,7 @@ sidebar_label: CL Nodes
 # CL Nodes
 
 - Lighthouse
-
 - Lodestar
-
 - Nimbus
-
 - Prysm
-
 - Teku

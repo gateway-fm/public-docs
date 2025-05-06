@@ -7,5 +7,5 @@ Each [beacon node](../nodes/cl) team has a validator client.
 * Nimbus
 * Teku
 
-Since the separate validator clients are using [standard APIs](https://ethereum.github.io/beacon-APIs/), you don't have to match them with the beacon nodes. For example, Lighthouse's validator client can easily be used with Prysm, etc.
+Since the separate validator clients use [standard APIs](https://ethereum.github.io/beacon-APIs/), you don't have to match them with the beacon nodes. For example, Lighthouse's validator client can easily be used with Prysm, etc.
 

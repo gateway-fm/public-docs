@@ -11,17 +11,17 @@ Ethereum has multiple nodes, both CL and EL, that are produced by different
 vendors, using different technologies (see also [Nodes](/category/validator-nodes/)). That helps
 
 For a staker, if it runs exclusively one type of nodes, it might cause
-a problems of either
+problems of either
 
 - participation in the network being finalized on a wrong block;
 - having all nodes disagreeing with the rest of the network, causing downtime
   or slashing (see also [Slashing And Penalties](../basics/slashing-and-penalties.md))
 
-So, running diverse set of nodes is important for both health of Ethereum and
+So, running a diverse set of nodes is important for both the health of Ethereum and
 also for mitigating risk of the staker itself.
 
 Use [Client Diversity Dashboard](TODO: link?) to see which nodes to pick, and
-make sure that you have a diverse enough set of nodes.
+ensure that you have a diverse enough set of nodes.
 
 ## Read More
 

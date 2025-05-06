@@ -7,5 +7,5 @@ sidebar_label: Server Migration
 
 How to best migrate? What needs to be backed up?
 What needs to come with you to the new system?
-How to check you are really offline?
+How to check if you are really offline?
 Best practice for rolling migrations?

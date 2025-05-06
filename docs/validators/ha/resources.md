@@ -15,7 +15,7 @@ Node resource usage.
 
 It is advised to use SSD disks for validators. NVMe are more expensive and unless you want to push the node to its limits, they make very little difference.
 
-Free disk space should be monitored at all times (see [Monitoring](monitoring.md) for more info). Nodes use embedded databases that grow even when they prune unnecessary data, due to DB fragmentation, etc.
+Free disk space should be monitored at all times (see [Monitoring](monitoring.md) for more info). Nodes use embedded databases that grow even when they prune unnecessary data due to DB fragmentation, etc.
 
 Make sure that you have about 20% free disk space at all times.
 

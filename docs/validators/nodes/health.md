@@ -18,7 +18,7 @@ It is usually the most basic check and only tells you that software is up and ru
 Here are a few common symptoms and their causes.
 
 Some of the following symptoms are urgent, which means it has been fixed immediately. Some will only show that the system is degrading but it will
-It's important to be able to check a node health
+It's important to be able to check a node's health
 How to check if a node is healthy
 To serve as a validator, both CL and EL need to be up to date with the
 network. There are a couple of techniques of how to check that.

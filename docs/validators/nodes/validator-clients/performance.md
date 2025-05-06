@@ -2,7 +2,7 @@
 
 ### Participation Rate
 
-TBD
+To Be Determined
 
 ### Block Proposal
 

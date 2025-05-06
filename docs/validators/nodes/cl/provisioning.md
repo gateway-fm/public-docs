@@ -10,7 +10,7 @@ of data folder is a bad practice. Multiple nodes might end up with the same
 node ID, and that will bring issues during peers discovery (only one node with
 a certain ID could be connected to the peers).
 
-Good news, is that all CL nodes have a cross-compatible way of syncing quickly:
+The good news is that all CL nodes have a cross-compatible way of syncing quickly:
 **checkpoint sync**. What it does, is it takes the latest blockchain state from
 another node (or a file) and applies it w/o doing all the necessary checks.
 **Only use trusted source nodes for Checkpoint sync!**.
@@ -23,7 +23,7 @@ another node (or a file) and applies it w/o doing all the necessary checks.
 
 **Your Own Checkpoint Sync**
 
-You can checkpoint-sync from any up-to-date CL node, that has beacon API enabled.
+You can checkpoint-sync from any up-to-date CL node that has the beacon API enabled.
 
 [samcm/checkpointz](https://github.com/samcm/checkpointz) is a tool that allows you to setup your own checkpoint sync endpoint and make it public if needed.
 

@@ -4,7 +4,7 @@ The validator client is the software that runs on top of a beacon node and
 attests to the existing chain as well as produces blocks. It is similar to
 a mining software for the old POW version of ETH.
 
-Validator client != validator. Validator is a pair of (pubk, pk) that is used
+Validator client != validator. A validator is a pair of (pubk, pk) that is used
 to sign attestations and blocks. 
 
 Each validator client could handle multiple validators. 

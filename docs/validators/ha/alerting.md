@@ -6,7 +6,7 @@ sidebar_label: Alerting & Incident Response
 # Alerting & Incident Response
 
 Alerting should be very specific. It’s easy to just set thresholds to every possible monitored metric and add alarm to it.
-But that could lead to fatigue, distractions and also ignoring alerts, see [this article](https://www.atlassian.com/incident-management/on-call/alert-fatigue) for more details.
+But that could lead to fatigue, distractions, and also ignoring alerts. See [this article](https://www.atlassian.com/incident-management/on-call/alert-fatigue) for more details.
 
 Alerts should never be ignored, even if you think you have an idea what caused them.
 
@@ -26,7 +26,7 @@ There is a practice in every cloud service, called “being on-call”. That mea
 
 That means being ready to act in the middle of the night, in the weekends, etc. That is a tedious and tiring position to be in, so it is better to rotate people often on that.
 
-An example of the on-call policy could be found in this [GitLab On-Call Handbook](https://about.gitlab.com/handbook/on-call/).
+An example of an on-call policy can be found in this [GitLab On-Call Handbook](https://about.gitlab.com/handbook/on-call/).
 
 ## Incident Response
 
