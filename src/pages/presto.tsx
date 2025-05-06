@@ -42,11 +42,12 @@ export default function Page(): ReactNode {
                   Built for Performance and Reliability
                 </Heading>
                 <p className={styles.sectionDescription}>
-                  CDK-Erigon is a high-performance, enterprise-grade node implementation
-                  specifically optimized for the Polygon zkEVM protocol networks. Built on the
-                  robust Erigon architecture and maintained by Gateway.fm, it delivers unparalleled
-                  efficiency, reliability, and synchronization speeds for your blockchain
-                  infrastructure needs.
+                  Presto is a cutting-edge platform designed specifically for web3 applications. It
+                  serves as a comprehensive solution that enables developers to quickly and
+                  effortlessly deploy their very own zkEVM Rollup, a powerful scaling solution on
+                  the Ethereum network. With Presto, developers can take full advantage of the
+                  benefits offered by zkEVM Rollup technology, such as enhanced scalability, reduced
+                  transaction costs, and improved transaction speeds.
                 </p>
               </div>
             </div>
