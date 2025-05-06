@@ -14,37 +14,37 @@ type FeatureItem = {
 const FeatureList: FeatureItem[] = [
   {
     title: "Fundamentals",
-    description: <>Basics about Presto product.</>,
+    description: <>Learn the fundamental aspects of the Presto product, including its core features and benefits.</>,
     link: "/category/fundamentals/",
     linkText: "Learn More",
   },
   {
     title: "Overview of Presto",
-    description: <>.</>,
+    description: <>Get an overview of Presto, its capabilities, and how it can enhance your blockchain projects.</>,
     link: "/category/overview/",
     linkText: "Learn More",
   },
   {
     title: "For Developers",
-    description: <>.</>,
+    description: <>Explore features designed specifically for developers to integrate and utilize Presto effectively.</>,
     link: "/category/features-for-developers/",
     linkText: "Learn More",
   },
   {
     title: "For Enterprise Customers",
-    description: <>.</>,
+    description: <>Discover tailored solutions and services available for enterprise customers using Presto.</>,
     link: "/category/for-enterprise-customers/",
     linkText: "Learn More",
   },
   {
     title: "Pricing and Trials",
-    description: <>.</>,
+    description: <>Find out about the pricing plans and trial options available for Presto users.</>,
     link: "/category/pricing-and-trial/",
     linkText: "Check it out",
   },
   {
     title: "Stavanger Testnet",
-    description: <>.</>,
+    description: <>Learn about the Stavanger Testnet and how it can be used for testing and development.</>,
     link: "/category/stavanger-testnet/",
     linkText: "Try it out",
   },
