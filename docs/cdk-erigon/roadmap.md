@@ -9,7 +9,7 @@ title: Roadmap
 
 - Enterprise security verification
 - Stability and performance release (v2.63.0)
-  - Brings up to 30Mgas/s continuous operation with burst much higher (on Gateway Presto)
+  - Brings up to 70Mgas/s continuous operation with burst much higher (on Gateway Presto)
 - Ethereum EIP support up to and including Pectra hardfork
 - Sovereign Type 1
   - PMT
