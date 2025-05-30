@@ -83,6 +83,42 @@ Sovereign Type1 is a configuration that offers complete chain independence while
 
 **Use case**: Ideal for projects requiring a dedicated blockchain with custom tokenomics, governance, or specialized performance characteristics while maintaining interoperability with the broader ecosystem.
 
+**Configuration**
+
+You can configure the node for sovereign type1 mode through a set of flags and chain config on the chainspec.
+
+**Flags**
+
+- `zkevm.initial-commitment: "pmt"` 
+
+Configures the node to use Patricia Merkle Trie (PMT) as the commitment trie. *Witness generation is disabled for PMT*
+
+- `zkevm.honour-chainspec: true`
+
+Will not override the chainspec with any block times when in normalcy mode. This is important if you want to turn on certain forks but stay in normalcy.
+
+**Chain Config**
+
+- `"normalcyBlock": 0`
+
+Enable normalcy mode. Normalcy mode modifies the node to give it Ethereum compliance with no ZK modifications. This will use the Ethereum EVM with no ZKEVM modifications. It will also turn off ZK counters.
+
+**Transaction Types**
+
+When in Sovereign Type1 mode the node supports more transaction types than the default legacy type given the node is configured for the hardfork.
+
+- [x] Legacy Transaction (Type 0)
+- [x] Access List Transaction (Type 1)
+- [x] Dynamic Fee Transaction (Type 2)
+- [ ] Blob Transaction (Type 3) *Blob transactions are not supported on L2*
+- [x] Set Code Transaction (Type 4)
+
+**EVM**
+
+When in normalcy mode the node will operate in compliance with Ethereum. This means that the EVM is the Ethereum EVM with all the OP codes and precompiles. 
+
+There is one hard modification to the EVM on all modes of operation. The OP code `SELFDESTRUCT` is modified to instead perform `SENDALL` which will transfer the funds to the recipient but not destroy the contract code.
+
 ## State Trie Types
 
 CDK-Erigon supports two different state storage implementations, each offering different tradeoffs between compatibility and performance.
