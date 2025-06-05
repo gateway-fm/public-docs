@@ -19,22 +19,10 @@ const FeatureList: FeatureItem[] = [
     linkText: "Learn More",
   },
   {
-    title: "Fantom",
-    description: <>Fantom RPC offers a reliable connection to the Fantom blockchain network.</>,
-    link: "/rpc/fantom",
-    linkText: "Deployment Guide",
-  },
-  {
     title: "Gnosis",
     description: <>Gnosis RPC enables seamless access to the Gnosis blockchain services.</>,
     link: "/rpc/gnosis",
     linkText: "Gnosis",
-  },
-  {
-    title: "Lukso",
-    description: <>Lukso RPC facilitates interactions with the Lukso blockchain ecosystem.</>,
-    link: "/rpc/lukso",
-    linkText: "Lukso",
   },
   {
     title: "Soroban",
