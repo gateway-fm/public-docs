@@ -1,62 +1,61 @@
-# Manually Running a cdk-erigon **Validium** Testnet Against Sepolia
+# Manually Running a cdk-erigon **zkEVM** Testnet Against Sepolia
 
-This guide outlines the steps to manually deploy and run a Polygon CDK L2 **Validium** chain using `cdk-erigon` as the execution client, anchored to the Sepolia L1 testnet, and utilizing a Data Availability Committee (DAC).
+This guide outlines the steps to manually deploy and run a Polygon CDK L2 **zkEVM** chain using `cdk-erigon` as the execution client, anchored to the Sepolia L1 testnet, and utilizing a Data Availability Committee (DAC).
 
 ## Introduction
 
-The goal is to set up a functional L2 **Validium** network with `cdk-erigon` as the sequencer and execution environment. Transaction data will be managed by a DAC, with attestations anchored to Sepolia L1 for data availability guarantees. This involves deploying L1 contracts (including those specific to Validium and DAC management from the `cdk-validium-contracts` repository, and `PolygonRollupManager` from `zkevm-contracts`), configuring and running DAC nodes, and then setting up the L2 components (`cdk-erigon`, `cdk-node`).
+The goal is to set up a functional L2 **zkEVM** network with `cdk-erigon` as the sequencer and execution environment. Transaction data will be managed by a DAC, with attestations anchored to Sepolia L1 for data availability guarantees. This involves deploying L1 contracts (including those specific to Validium and DAC management from the `zkevm-contracts` repository, and `PolygonRollupManager` from `zkevm-contracts`), configuring and running DAC nodes, and then setting up the L2 components (`cdk-erigon`, `cdk-node`).
 
 ## Prerequisites
 
 ### Software:
 *   **Git**: For cloning repositories, and Foundry installation.
 *   **Go**: Version 1.21+ (for `cdk-erigon`, `cdk-node`, DAC nodes).
-*   **Node.js & npm**: For L1 contract deployment tools (Hardhat). The `cdk-validium-contracts` repository specifies Node.js v16.x, while `zkevm-contracts` is more flexible. Using a Node Version Manager (nvm) is recommended (ensure v16.x is active for `cdk-validium-contracts` steps).
-*   **Git**: For cloning repositories.
+*   **Node.js & npm**: For L1 contract deployment tools (Hardhat). The `zkevm-contracts` repository specifies Node.js v16.x, while `zkevm-contracts` is more flexible. Using a Node Version Manager (nvm) is recommended (ensure v16.x is active for `zkevm-contracts` steps).
 *   **Docker**: (Recommended) For running components in isolated environments.
 *   **Build Essentials**: `make`, C++ compiler (like `g++`). For Debian/Ubuntu, you can install these with `sudo apt-get update && sudo apt-get install build-essential g++`. For `cdk-erigon` dependencies, you\'ll also need `libgmp-dev` and `libomp-dev`.
 *   **Ethereum Tools**: `cast` (from Foundry) or `curl` for interacting with RPC endpoints.
 
 ### L1 Setup (Sepolia):
-*   **Sepolia RPC Endpoint**: A reliable Sepolia RPC URL (e.g., from Alchemy, Infura, PublicNode, or your own node).
-*   **Funded Sepolia Account**: An Ethereum account (EOA) with sufficient Sepolia ETH to deploy L1 contracts and pay for transaction fees. You will need its private key.
+*   **Sepolia RPC Endpoint**: A reliable Sepolia RPC URL (e.g. Alchemy, Infura or [run your own local Sepolia node](https://docs.erigon.tech/nodes/ethereum)).
+*   **Funded Sepolia Account**: An Ethereum account (EOA) with sufficient Sepolia ETH from a [Faucet](https://docs.metamask.io/developer-tools/faucet/) to deploy L1 contracts and pay for transaction fees. You will need its private key.
 
 ## Phase 1: L1 Contract Deployment (on Sepolia)
 
-The L2 Validium chain requires a set of smart contracts deployed on L1 (Sepolia). The primary contracts for the Validium functionality (`CDKValidium`, `CDKDataCommittee`, Validium-specific Bridge & Global Exit Root, and Verifier) as well as the L2 genesis configuration will be generated and deployed using the `0xPolygon/cdk-validium-contracts` repository. The `PolygonRollupManager` will be deployed using the `0xPolygonHermez/zkevm-contracts` repository and configured with the outputs from `cdk-validium-contracts`.
+The L2 Validium chain requires a set of smart contracts deployed on L1 (Sepolia). The primary contracts for the Validium functionality (`PolygonZKEVM`, `PolygonDataCommittee.sol`, PolygonZkEVM-specific Bridge & Global Exit Root, and Verifier) as well as the L2 genesis configuration will be generated and deployed using the `gateway-fm/zkevm-contracts` repository. The `PolygonRollupManager` will be deployed using the `0xPolygonHermez/zkevm-contracts` repository and configured with the outputs from `zkevm-contracts`.
 
-### Part 1.A: Setup, Generate L2 Genesis, and Deploy Validium Suite from `cdk-validium-contracts`
+### Part 1.A: Setup, Generate L2 Genesis, and Deploy Validium Suite from `zkevm-contracts`
 
-1.  **Clone and Prepare `cdk-validium-contracts` Repository (on VM):**
+1.  **Clone and Prepare `zkevm-contracts` Repository (on VM):**
     ```bash
     # Navigate to your main CDK setup directory, e.g., ~/cdk-testnet-setup/
     cd ~/cdk-testnet-setup/ 
-    git clone https://github.com/0xPolygon/cdk-validium-contracts.git cdk-validium-contracts
-    cd cdk-validium-contracts
+    git clone https://github.com/gateway-fm/zkevm-contracts.git
+    cd zkevm-contracts
     # Ensure you are using a compatible Node.js version (e.g., v16.x via nvm)
     # nvm use 16 
     npm install 
     ```
-    *   This repository contains `CDKValidium.sol`, `CDKDataCommittee.sol`, Validium-specific versions of `PolygonZkEVMBridge.sol` and `PolygonZkEVMGlobalExitRoot.sol`, `FflonkVerifier.sol`, and their deployment/genesis scripts.
+    *   This repository contains `PolygonZkEVM.sol`, `PolygonDataCommittee.sol`, Validium-specific versions of `PolygonZkEVMBridge.sol` and `PolygonZkEVMGlobalExitRoot.sol`, `FflonkVerifier.sol`, and their deployment/genesis scripts.
 
-2.  **Configure Hardhat and Environment for `cdk-validium-contracts` (on VM):**
-    *   **Create `.env` file** in `~/cdk-testnet-setup/cdk-validium-contracts/` with your Sepolia provider URL
+2.  **Configure Hardhat and Environment for `zkevm-contracts` (on VM):**
+    *   **Create `.env` file** in `~/cdk-testnet-setup/zkevm-contracts/` with your Sepolia provider URL
         ```env
-        # ~/cdk-testnet-setup/cdk-validium-contracts/.env
+        # ~/cdk-testnet-setup/zkevm-contracts/.env
         SEPOLIA_PROVIDER_URL=https://ethereum-sepolia-rpc.publicnode.com 
         # INFURA_PROJECT_ID=your_infura_id (if your provider URL template in hardhat.config.js needs it)
         ```
-    *   **If you aren't using Infura, update `hardhat.config.js`** in `~/cdk-testnet-setup/cdk-validium-contracts/` to ensure the `sepolia` network configuration correctly uses `process.env.SEPOLIA_PROVIDER_URL`.
+    *   **If you aren't using Infura, update `hardhat.config.js`** in `~/cdk-testnet-setup/zkevm-contracts/` to ensure the `sepolia` network configuration correctly uses `process.env.SEPOLIA_PROVIDER_URL`.
     *   **For testing you can also add `MNEMONIC` to this file, and addresses will be derived, however this is not recommended for obvious reasons.**
 
-3.  **Configure `deployment/deploy_parameters.json` in `cdk-validium-contracts` (on VM):**
-    *   Navigate to `~/cdk-testnet-setup/cdk-validium-contracts/deployment/`.
+3.  **Configure `deployment/deploy_parameters.json` in `zkevm-contracts` (on VM):**
+    *   Navigate to `~/cdk-testnet-setup/zkevm-contracts/deployment/`.
     *   Copy `deploy_parameters.json.example` to `deploy_parameters.json`.
     *   Edit `deploy_parameters.json` (set `"deployerPvtKey"`, your EOA for admin roles, L2 `"chainID"`, `"forkID"`, `"maticTokenAddress":"0x0...0"`, `"realVerifier": true`, `"setupEmptyCommittee": false`, etc.).
     *   You need 8 addresses (and private keys):
-        - `Deployer` (`deployerPvtkey`, `cdkValidiumDeployerAddress`)
-        - `Initial CDK Validium Deployer Owner` (`initialCDKValidiumDeployerOwner`)
-        - `CDK Validium Owner` (`cdkValidiumOwner`)
+        - `Deployer` (`deployerPvtkey`, `PolygonZkEVMDeployerAddress`)
+        - `Initial Polygon zkEVM Deployer Owner` (`initialPolygonZkEVMDeployerOwner`)
+        - `Polygon zkEVM Owner` (`cdkValidiumOwner`)
         - `Matic Token` (`maticTokenAddress`)
         - `Timelock` (`timelockAddress`)
         - `Admin` (`admin`)
@@ -72,37 +71,37 @@ The L2 Validium chain requires a set of smart contracts deployed on L1 (Sepolia)
     *   **If you are not using Infura, edit the `deployment/testnet/prepareTestnet.js` to use `process.env.SEPOLIA_PROVIDER_URL` instead of the Infura URL
     *   ** Run the script**
         ```bash
-        npm prepare:testnet:CDKValidium:sepolia
+        npm prepare:testnet:PolygonZkEVM:sepolia
         ```
     *   ** Successful output will show 
 
-5. **Run `deploy:CDKValidium:sepolia`
+5. **Run `deploy:PolygonZkEVM:sepolia`
 
-4.  **Run Deployment Scripts from `cdk-validium-contracts` (on VM):**
-    *   Ensure you are in the `~/cdk-testnet-setup/cdk-validium-contracts/` directory.
-    *   **Generate L2 Genesis for Validium:**
+4.  **Run Deployment Scripts from `zkevm-contracts` (on VM):**
+    *   Ensure you are in the `~/cdk-testnet-setup/zkevm-contracts/` directory.
+    *   **Generate L2 Genesis for zkEVM:**
         ```bash
         # This script runs on a local Hardhat network by default to generate genesis.json
         npx hardhat run deployment/1_createGenesis.js 
         ```
-        This script creates `deployment/genesis.json` which defines the L2 genesis state for the Validium chain. This file (and its `root` hash) will be crucial.
-    *   **Deploy CDKValidiumDeployer:**
+        This script creates `deployment/genesis.json` which defines the L2 genesis state for the zkEVM chain. This file (and its `root` hash) will be crucial.
+    *   **Deploy PolygonZkEVMDeployer:**
         ```bash
-        npx hardhat run deployment/2_deployCDKValidiumDeployer.js --network sepolia
+        npx hardhat run deployment/2_deployPolygonZkEVMDeployer.js --network sepolia
         ```
-        This script deploys `CDKValidiumDeployer.sol` and updates `deployment/deploy_parameters.json` with its address. Verify this update.
-    *   **Deploy Core Validium Contracts:**
+        This script deploys `PolygonZkEVMDeployer.sol` and updates `deployment/deploy_parameters.json` with its address. Verify this update.
+    *   **Deploy Core zkEVM Contracts:**
         ```bash
         # Make sure .openzeppelin/sepolia.json does NOT exist before running if you had previous failed attempts
         # rm -f .openzeppelin/sepolia.json 
         npx hardhat run deployment/3_deployContracts.js --network sepolia
         ```
-        This script deploys `CDKDataCommittee.sol`, `CDKValidium.sol`, the Validium-specific Bridge, Global Exit Root, and `FflonkVerifier.sol`. It requires `deployment/genesis.json` (created by `1_createGenesis.js`) and creates `deployment/deploy_output.json` with contract addresses.
+        This script deploys `PolygonDataCommittee.sol`, `PolygonZkEVM.sol`, the Validium-specific Bridge, Global Exit Root, and `FflonkVerifier.sol`. It requires `deployment/genesis.json` (created by `1_createGenesis.js`) and creates `deployment/deploy_output.json` with contract addresses.
 
-5.  **Collect Deployed Addresses and L2 Genesis Info from `cdk-validium-contracts`:**
-    *   The L2 genesis file is `~/cdk-testnet-setup/cdk-validium-contracts/deployment/genesis.json`. This will be used for `cdk-erigon` L2 node configuration.
-    *   Open `~/cdk-testnet-setup/cdk-validium-contracts/deployment/deploy_output.json`.
-    *   Note down addresses for: `cdkDataCommitteeAddress`, `cdkValidiumAddress`, `bridgeAddress` (Validium Bridge), `polygonZkEVMGlobalExitRootAddress` (Validium GER), `verifierAddress` (`FflonkVerifier.sol`), `proxyAdminAddress`.
+5.  **Collect Deployed Addresses and L2 Genesis Info from `zkevmm-contracts`:**
+    *   The L2 genesis file is `~/cdk-testnet-setup/zkevm-contracts/deployment/genesis.json`. This will be used for `cdk-erigon` L2 node configuration.
+    *   Open `~/cdk-testnet-setup/zkevm-contracts/deployment/deploy_output.json`.
+    *   Note down addresses for: `PolygonDataCommitteeAddress`, `PolygonZkEVMAddress`, `bridgeAddress` (Validium Bridge), `polygonZkEVMGlobalExitRootAddress` (Validium GER), `verifierAddress` (`FflonkVerifier.sol`), `proxyAdminAddress`.
 
 ### Part 1.B: Setup and Deploy `PolygonRollupManager` from `zkevm-contracts`
 
