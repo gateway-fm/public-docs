@@ -51,7 +51,7 @@ The L2 Validium chain requires a set of smart contracts deployed on L1 (Sepolia)
 3.  **Configure `deployment/deploy_parameters.json` in `zkevm-contracts` (on VM):**
     *   Navigate to `~/cdk-testnet-setup/zkevm-contracts/deployment/`.
     *   Copy `deploy_parameters.json.example` to `deploy_parameters.json`.
-    *   Edit `deploy_parameters.json` (set `"deployerPvtKey"`, your EOA for admin roles, L2 `"chainID"`, `"forkID"`, `"maticTokenAddress":"0x0...0"`, `"realVerifier": true`, `"setupEmptyCommittee": false`, etc.).
+    *   Edit `deploy_parameters.json` (set `"deployerPvtKey"`, your EOA for admin roles, L2 `"chainID"`, `"forkID"`, `"maticTokenAddress":"0x0...0"`, `"realVerifier": true`, `"setupEmptyCgit add .ommittee": false`, etc.).
     *   You need 8 addresses (and private keys):
         - `Deployer` (`deployerPvtkey`, `PolygonZkEVMDeployerAddress`)
         - `Initial Polygon zkEVM Deployer Owner` (`initialPolygonZkEVMDeployerOwner`)
