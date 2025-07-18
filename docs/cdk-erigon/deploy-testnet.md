@@ -2,6 +2,10 @@
 
 This guide outlines the steps to manually deploy and run a Polygon CDK L2 **zkEVM** chain using `cdk-erigon` as the execution client, anchored to the Sepolia L1 testnet, and utilizing a Data Availability Committee (DAC).
 
+:::note
+- Report any content issues on our docs repo: https://github.com/gateway-fm/public-docs
+:::
+
 ## Introduction
 
 The goal is to set up a functional L2 **zkEVM** network with `cdk-erigon` as the sequencer and execution environment. Transaction data will be managed by a DAC, with attestations anchored to Sepolia L1 for data availability guarantees. This involves deploying L1 contracts (including those specific to Validium and DAC management from the `zkevm-contracts` repository, and `PolygonRollupManager` from `zkevm-contracts`), configuring and running DAC nodes, and then setting up the L2 components (`cdk-erigon`, `cdk-node`).
@@ -9,7 +13,7 @@ The goal is to set up a functional L2 **zkEVM** network with `cdk-erigon` as the
 ## Prerequisites
 
 ### Software:
-*   **Git**: For cloning repositories, and Foundry installation.
+*   **Git**: For cloning repositories, and package installation.
 *   **Go**: Version 1.21+ (for `cdk-erigon`, `cdk-node`, DAC nodes).
 *   **Node.js & npm**: For L1 contract deployment tools (Hardhat). The `zkevm-contracts` repository specifies Node.js v16.x, while `zkevm-contracts` is more flexible. Using a Node Version Manager (nvm) is recommended (ensure v16.x is active for `zkevm-contracts` steps).
 *   **Docker**: (Recommended) For running components in isolated environments.
@@ -17,7 +21,7 @@ The goal is to set up a functional L2 **zkEVM** network with `cdk-erigon` as the
 *   **Ethereum Tools**: `cast` (from Foundry) or `curl` for interacting with RPC endpoints.
 
 ### L1 Setup (Sepolia):
-*   **Sepolia RPC Endpoint**: A reliable Sepolia RPC URL (e.g. Alchemy, Infura or [run your own local Sepolia node](https://docs.erigon.tech/nodes/ethereum)).
+*   **Sepolia RPC Endpoint**: OurCustom RPC provider with gas fee configuration or [run your own local Sepolia node](https://docs.erigon.tech/nodes/ethereum)).
 *   **Funded Sepolia Account**: An Ethereum account (EOA) with sufficient Sepolia ETH from a [Faucet](https://docs.metamask.io/developer-tools/faucet/) to deploy L1 contracts and pay for transaction fees. You will need its private key.
 
 ## Phase 1: L1 Contract Deployment (on Sepolia)
@@ -55,7 +59,7 @@ The L2 Validium chain requires a set of smart contracts deployed on L1 (Sepolia)
     *   You need 8 addresses (and private keys):
         - `Deployer` (`deployerPvtkey`, `PolygonZkEVMDeployerAddress`)
         - `Initial Polygon zkEVM Deployer Owner` (`initialPolygonZkEVMDeployerOwner`)
-        - `Polygon zkEVM Owner` (`cdkValidiumOwner`)
+        - `Polygon zkEVM Owner` (`zkEVMOwner`)
         - `Matic Token` (`maticTokenAddress`)
         - `Timelock` (`timelockAddress`)
         - `Admin` (`admin`)
@@ -120,16 +124,16 @@ The L2 Validium chain requires a set of smart contracts deployed on L1 (Sepolia)
     *   `"polTokenAddress"`: `"0x0000000000000000000000000000000000000000"`.
 
 3.  **Configure `deployment/v2/create_rollup_parameters.json` in `zkevm-contracts` (on VM):**
-    *   `"chainID"`: Your L2 Chain ID (e.g., `20240517` - must match value in `cdk-validium-contracts/deployment/deploy_parameters.json`).
-    *   `"forkID"`: (e.g., `13` - must match).
+    *   `"chainID"`: Your L2 Chain ID (e.g., `20240517` - must match value in `zkevm-contracts/deployment/deploy_parameters.json`).
+    *   `"forkID"`: (e.g., `11` - must match).
     *   `"adminZkEVM"`, `"trustedSequencer"`: Your EOA.
     *   `"useValidium"`: `true`.
-    *   `"cdkValidiumAddress"`: Address from `cdk-validium-contracts/deployment/deploy_output.json`.
-    *   `"cdkDataCommitteeAddress"`: Address from `cdk-validium-contracts/deployment/deploy_output.json`.
-    *   `"bridgeAddress"`: Validium Bridge address from `cdk-validium-contracts/deployment/deploy_output.json`.
-    *   `"globalExitRootAddress"`: Validium GER address from `cdk-validium-contracts/deployment/deploy_output.json`.
-    *   `"maticAddress"`: Verifier address (`FflonkVerifier`) from `cdk-validium-contracts/deployment/deploy_output.json`.
-    *   `"genesisRoot"`: The `"root"` hash from `~/cdk-testnet-setup/cdk-validium-contracts/deployment/genesis.json`.
+    *   `"cdkValidiumAddress"`: Address from `zkevm-contracts/deployment/deploy_output.json`.
+    *   `"cdkDataCommitteeAddress"`: Address from `zkevm-contracts/deployment/deploy_output.json`.
+    *   `"bridgeAddress"`: Validium Bridge address from `zkevm-contracts/deployment/deploy_output.json`.
+    *   `"globalExitRootAddress"`: Validium GER address from `zkevm-contracts/deployment/deploy_output.json`.
+    *   `"maticAddress"`: Verifier address (`FflonkVerifier`) from `zkevm-contracts/deployment/deploy_output.json`.
+    *   `"genesisRoot"`: The `"root"` hash from `~/cdk-testnet-setup/zkevm-contracts/deployment/genesis.json`.
     *   `"gasTokenAddress"`: `"0x0000000000000000000000000000000000000000"`.
 
 4.  **Run Deployment Scripts from `zkevm-contracts` (on VM):**
@@ -155,14 +159,14 @@ The L2 Validium chain requires a set of smart contracts deployed on L1 (Sepolia)
         npx hardhat run deployment/v2/4_createRollup.ts --network sepolia
         ```
         This script reads `create_rollup_parameters.json` and links `PolygonRollupManager` with the deployed Validium contracts.
-    *   **(Note: `1_createGenesis.ts` from `zkevm-contracts` is now considered redundant as the definitive L2 genesis (root hash and allocs) should come from `cdk-validium-contracts/deployment/genesis.json`.)**
+    *   **(Note: `1_createGenesis.ts` from `zkevm-contracts` is now considered redundant as the definitive L2 genesis (root hash and allocs) should come from `zkevm-contracts/deployment/genesis.json`.)**
 
 ### Part 1.C: Consolidated L1 Contract Addresses
 
 (List of contracts remains similar, but source and genesis file are now clearer)
 
 ---
-(Rest of the guide for Phase 2 onwards will need to be updated to use addresses and the genesis file from `cdk-validium-contracts` for cdk-erigon setup.)
+(Rest of the guide for Phase 2 onwards will need to be updated to use addresses and the genesis file from `zkevm-contracts` for cdk-erigon setup.)
 
 This revised structure should be more accurate. The main remaining challenge is ensuring `3_deployContracts.ts` in `zkevm-contracts` can be controlled to only deploy `PolygonRollupManager` without conflicts if its verifier/bridge/GER are not needed.
 
@@ -593,14 +597,7 @@ Connecting to the AggLayer is a significant step and will require diligence, adh
 
 ## Gateway.fm Support and Services
 
-Running and customizing a Polygon CDK stack can be complex. Gateway.fm offers a range of services to support your journey:
-
-*   **Community Support**: For general questions and community-driven support, you can raise issues in our relevant public GitHub repositories (please check the specific component's repository for issue tracking).
-*   **Formal Support Packages**: For dedicated, SLA-backed support, Gateway.fm provides formal support packages tailored to your needs, ensuring you have expert assistance when you need it most.
-*   **Managed Presto Platform**: If you prefer a hands-off approach, Gateway.fm can run and manage your entire CDK stack (including `cdk-erigon` based chains) on your behalf through our robust Presto platform.
-*   **Customization and R&D**: The Gateway.fm R&D team can help you customize the CDK stack to your specific requirements. This includes, but is not limited to, migrating existing chains from other stacks to `cdk-erigon`, developing custom features, and optimizing performance.
-
-To learn more about how Gateway.fm can help you, please visit our website: [https://gateway.fm](https://gateway.fm) or reach out to us through our contact channels listed there.
+This section has moved! For information about Gateway.fm's support, managed services, and customization offerings for Polygon CDK and cdk-erigon, see [Gateway.fm Support and Services](gatewayfm-support.md).
 
 ## Troubleshooting and Key Learnings from Manual Setup
 
