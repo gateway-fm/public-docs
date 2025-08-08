@@ -1,6 +1,6 @@
-# Manually Running a cdk-erigon **zkEVM** Testnet Against Sepolia
+# Manually Running a CDK-Erigon **zkEVM** Testnet Against Sepolia
 
-This guide outlines the steps to manually deploy and run a Polygon CDK L2 **zkEVM** chain using `cdk-erigon` as the execution client, anchored to the Sepolia L1 testnet, and utilizing a Data Availability Committee (DAC).
+This guide outlines the steps to manually deploy and run a Polygon CDK L2 zkEVM chain using `cdk-erigon` as the execution client, anchored to the Sepolia L1 testnet, and utilizing a Data Availability Committee (DAC).
 
 :::note
 - Report any content issues on our docs repo: https://github.com/gateway-fm/public-docs
@@ -595,10 +595,6 @@ Connecting to the AggLayer is a significant step and will require diligence, adh
 
 ---
 
-## Gateway.fm Support and Services
-
-This section has moved! For information about Gateway.fm's support, managed services, and customization offerings for Polygon CDK and cdk-erigon, see [Gateway.fm Support and Services](gatewayfm-support.md).
-
 ## Troubleshooting and Key Learnings from Manual Setup
 
 Setting up the L1 contracts for a Polygon CDK L2 chain manually involves several steps where issues can arise. Here's a summary of key learnings and troubleshooting tips based on a detailed deployment to Sepolia:
@@ -675,3 +671,337 @@ Setting up the L1 contracts for a Polygon CDK L2 chain manually involves several
     *   All modifications to JSON configuration files and TypeScript deployment scripts must be performed directly on the VM in the `~/cdk-testnet-setup/zkevm-contracts/deployment/v2/` (or appropriate subdirectories). Verify changes with `cat` or an editor on the VM.
 
 By paying close attention to these areas, the complex L1 contract deployment process can be navigated successfully.
+
+## EIP-155 Compliance Issues for Live Testnet Deployments
+
+When deploying to live testnets like Sepolia, EIP-155 compliance is crucial for transaction acceptance. Here are the key considerations and solutions:
+
+### Common EIP-155 Compliance Issues
+
+1. **Legacy Transaction Format Errors**
+   - **Error**: "legacy pre-eip-155 transactions not supported"
+   - **Cause**: Transactions being sent without proper chain ID specification
+   - **Solution**: Ensure all deployment scripts use EIP-155 compliant transaction formats
+
+2. **Chain ID Mismatch**
+   - **Error**: "invalid chain id" or transaction rejection
+   - **Cause**: Hardhat configuration or deployment scripts not specifying the correct chain ID
+   - **Solution**: Verify chain ID configuration in `hardhat.config.ts` and deployment scripts
+
+### Required Configuration Changes
+
+**Update `hardhat.config.ts` in `zkevm-contracts`:**
+```typescript
+import { HardhatUserConfig } from "hardhat/config";
+import "@nomicfoundation/hardhat-toolbox";
+
+const config: HardhatUserConfig = {
+  solidity: "0.8.20",
+  networks: {
+    sepolia: {
+      url: process.env.SEPOLIA_PROVIDER_URL || "",
+      chainId: 11155111, // Explicitly set Sepolia chain ID
+      accounts: process.env.CDK_L1_PRIVATE_KEY ? [process.env.CDK_L1_PRIVATE_KEY] : [],
+    },
+  },
+};
+
+export default config;
+```
+
+**Modify Deployment Scripts for EIP-155 Compliance:**
+```typescript
+// In deployment scripts (e.g., 2_deployPolygonZKEVMDeployer.ts, 3_deployContracts.ts)
+const provider = ethers.provider;
+const deployer = new ethers.Wallet(process.env.CDK_L1_PRIVATE_KEY!, provider);
+
+// Ensure the signer is properly configured with the network
+const signer = deployer.connect(provider);
+
+// When deploying contracts, use the signer directly
+const contractFactory = new ethers.ContractFactory(abi, bytecode, signer);
+const contract = await contractFactory.deploy(...args);
+```
+
+### Verification Steps
+
+1. **Check Transaction Format:**
+   ```bash
+   # Use cast to verify transaction format
+   cast tx <TX_HASH> --rpc-url <SEPOLIA_RPC_URL>
+   ```
+
+2. **Verify Chain ID in Transactions:**
+   - All transactions should include the correct chain ID (11155111 for Sepolia)
+   - No transactions should be sent with chain ID 0 or missing chain ID
+
+3. **Monitor Deployment Logs:**
+   - Look for any warnings about legacy transaction formats
+   - Ensure all transactions are confirmed with proper gas estimation
+
+## How to Handle Keyless Deployment Failures
+
+Keyless deployment failures can occur due to various issues with private key management and account configuration.
+
+### Common Keyless Deployment Issues
+
+1. **Environment Variable Not Set**
+   - **Error**: "CDK_L1_PRIVATE_KEY environment variable is not set"
+   - **Solution**: Ensure the private key is properly exported
+   ```bash
+   export CDK_L1_PRIVATE_KEY="0xYOUR_PRIVATE_KEY_HERE"
+   ```
+
+2. **Incorrect Private Key Format**
+   - **Error**: "invalid private key" or "invalid hex string"
+   - **Solution**: Ensure private key starts with "0x" and is 64 characters long
+   ```bash
+   # Correct format
+   export CDK_L1_PRIVATE_KEY="0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef"
+   ```
+
+3. **Account Mismatch**
+   - **Error**: "insufficient funds" for unexpected address
+   - **Solution**: Verify the private key corresponds to the funded account
+   ```bash
+   # Verify account address
+   cast wallet address $CDK_L1_PRIVATE_KEY
+   ```
+
+### Recovery Procedures
+
+1. **Verify Account Funding:**
+   ```bash
+   # Check balance of the deployer account
+   cast balance $(cast wallet address $CDK_L1_PRIVATE_KEY) --rpc-url $SEPOLIA_PROVIDER_URL
+   ```
+
+2. **Reset Deployment State:**
+   ```bash
+   # Remove OpenZeppelin state file
+   rm -f .openzeppelin/sepolia.json
+   
+   # Update salt in deploy_parameters.json
+   # Change salt value to force new contract addresses
+   ```
+
+3. **Re-run Deployment with Correct Configuration:**
+   ```bash
+   # Ensure environment variables are set
+   export CDK_L1_PRIVATE_KEY="0xYOUR_PRIVATE_KEY"
+   export SEPOLIA_PROVIDER_URL="https://your-sepolia-rpc-url"
+   
+   # Re-run deployment scripts
+   npx hardhat run deployment/2_deployPolygonZKEVMDeployer.ts --network sepolia
+   ```
+
+## Verification Steps to Confirm Successful Contract Deployment
+
+After deployment, verify that all contracts are correctly deployed and configured.
+
+### Contract Address Verification
+
+1. **Check Deployment Output Files:**
+   ```bash
+   # Verify deploy_output.json exists and contains addresses
+   cat deployment/deploy_output.json
+   
+   # Verify v2 deploy_output.json for PolygonRollupManager
+   cat deployment/v2/deploy_output.json
+   ```
+
+2. **Verify Contract Code on Sepolia:**
+   ```bash
+   # Check if contracts are deployed and have code
+   cast code <CONTRACT_ADDRESS> --rpc-url $SEPOLIA_PROVIDER_URL
+   ```
+
+3. **Verify Contract Ownership:**
+   ```bash
+   # Check admin roles and ownership
+   cast call <CONTRACT_ADDRESS> "owner()" --rpc-url $SEPOLIA_PROVIDER_URL
+   cast call <CONTRACT_ADDRESS> "DEFAULT_ADMIN_ROLE()" --rpc-url $SEPOLIA_PROVIDER_URL
+   ```
+
+### Configuration Verification
+
+1. **Verify Genesis File:**
+   ```bash
+   # Check genesis.json exists and has valid structure
+   cat deployment/genesis.json | jq '.root'
+   ```
+
+2. **Verify Rollup Configuration:**
+   ```bash
+   # Check if rollup is properly registered
+   cast call <POLYGON_ROLLUP_MANAGER_ADDRESS> "getRollup(uint256)" <YOUR_CHAIN_ID> --rpc-url $SEPOLIA_PROVIDER_URL
+   ```
+
+3. **Verify Contract Interactions:**
+   ```bash
+   # Test basic contract functions
+   cast call <POLYGON_ZKEVM_ADDRESS> "getLastVerifiedBatch()" --rpc-url $SEPOLIA_PROVIDER_URL
+   ```
+
+### Network Configuration Verification
+
+1. **Verify Chain ID Consistency:**
+   - Ensure chain ID in `deploy_parameters.json` matches `create_rollup_parameters.json`
+   - Verify chain ID in L2 configuration files
+
+2. **Verify Fork ID Consistency:**
+   - Ensure fork ID matches CDK version matrix
+   - Verify fork ID in all configuration files
+
+3. **Verify Contract Addresses in L2 Config:**
+   - Ensure all L1 contract addresses are correctly referenced in `cdk-erigon` configuration
+   - Verify bridge, GER, and DAC addresses are correct
+
+## Troubleshooting for Silent Deployment Failures
+
+Silent deployment failures can be particularly challenging as they don't provide clear error messages.
+
+### Common Silent Failure Scenarios
+
+1. **Transaction Mined but Contract Not Deployed**
+   - **Symptoms**: Transaction shows as successful but contract address has no code
+   - **Causes**: Insufficient gas, contract constructor failure, or deployment script error
+   - **Diagnosis**: Check transaction logs and gas usage
+   ```bash
+   # Check transaction details
+   cast tx <TX_HASH> --rpc-url $SEPOLIA_PROVIDER_URL
+   
+   # Check gas used vs gas limit
+   cast receipt <TX_HASH> --rpc-url $SEPOLIA_PROVIDER_URL
+   ```
+
+2. **Deployment Script Completes Without Error but Contracts Missing**
+   - **Symptoms**: Script runs successfully but `deploy_output.json` is empty or missing
+   - **Causes**: Script logic error, file write permissions, or silent exceptions
+   - **Diagnosis**: Add logging to deployment scripts
+   ```typescript
+   // Add to deployment scripts
+   console.log("Deploying contract...");
+   const contract = await ContractFactory.deploy(...args);
+   console.log("Contract deployed at:", contract.address);
+   ```
+
+3. **Configuration Files Not Updated**
+   - **Symptoms**: Scripts run but configuration files unchanged
+   - **Causes**: File path issues, write permissions, or script logic errors
+   - **Diagnosis**: Check file paths and permissions
+   ```bash
+   # Check file permissions
+   ls -la deployment/
+   
+   # Verify file contents after deployment
+   cat deployment/deploy_output.json
+   ```
+
+### Advanced Troubleshooting Techniques
+
+1. **Enable Detailed Logging:**
+   ```bash
+   # Set Hardhat logging to debug
+   export HARDHAT_LOG_LEVEL=debug
+   
+   # Run deployment with verbose output
+   npx hardhat run deployment/3_deployContracts.ts --network sepolia --verbose
+   ```
+
+2. **Check Transaction Status:**
+   ```bash
+   # Monitor transaction status
+   cast tx <TX_HASH> --rpc-url $SEPOLIA_PROVIDER_URL
+   
+   # Check for failed transactions
+   cast receipt <TX_HASH> --rpc-url $SEPOLIA_PROVIDER_URL | jq '.status'
+   ```
+
+3. **Verify Contract Bytecode:**
+   ```bash
+   # Check if deployed contract has correct bytecode
+   cast code <CONTRACT_ADDRESS> --rpc-url $SEPOLIA_PROVIDER_URL | head -c 100
+   ```
+
+4. **Check for Reverted Transactions:**
+   ```bash
+   # Look for transactions that reverted
+   cast tx <TX_HASH> --rpc-url $SEPOLIA_PROVIDER_URL | jq '.gasUsed, .status'
+   ```
+
+### Recovery from Silent Failures
+
+1. **Clean Slate Approach:**
+   ```bash
+   # Remove all state files
+   rm -f .openzeppelin/sepolia.json
+   rm -f deployment/deploy_output.json
+   rm -f deployment/v2/deploy_output.json
+   
+   # Update salt to force new addresses
+   # Edit deploy_parameters.json and create_rollup_parameters.json
+   ```
+
+2. **Incremental Deployment:**
+   ```bash
+   # Deploy contracts one by one with verification
+   npx hardhat run deployment/2_deployPolygonZKEVMDeployer.ts --network sepolia
+   # Verify deployment
+   cast code <DEPLOYER_ADDRESS> --rpc-url $SEPOLIA_PROVIDER_URL
+   
+   # Continue with next script
+   npx hardhat run deployment/3_deployContracts.ts --network sepolia
+   ```
+
+3. **Manual Contract Verification:**
+   ```bash
+   # Verify each contract manually
+   for contract in $CONTRACT_ADDRESSES; do
+     echo "Checking contract: $contract"
+     cast code $contract --rpc-url $SEPOLIA_PROVIDER_URL
+   done
+   ```
+
+### Prevention Strategies
+
+1. **Pre-deployment Checks:**
+   ```bash
+   # Verify environment setup
+   echo "Private key: ${CDK_L1_PRIVATE_KEY:0:10}..."
+   echo "Provider URL: $SEPOLIA_PROVIDER_URL"
+   echo "Account balance: $(cast balance $(cast wallet address $CDK_L1_PRIVATE_KEY) --rpc-url $SEPOLIA_PROVIDER_URL)"
+   ```
+
+2. **Post-deployment Verification:**
+   ```bash
+   # Automated verification script
+   #!/bin/bash
+   for contract in $CONTRACT_ADDRESSES; do
+     if [ "$(cast code $contract --rpc-url $SEPOLIA_PROVIDER_URL)" = "0x" ]; then
+       echo "ERROR: Contract $contract has no code"
+       exit 1
+     fi
+   done
+   echo "All contracts deployed successfully"
+   ```
+
+3. **Configuration Validation:**
+   ```bash
+   # Validate JSON configuration files
+   jq '.' deployment/deploy_parameters.json > /dev/null
+   jq '.' deployment/v2/create_rollup_parameters.json > /dev/null
+   ```
+
+By following these verification and troubleshooting procedures, you can identify and resolve deployment issues more effectively, ensuring a successful CDK-Erigon testnet deployment.
+
+## Gateway.fm Support and Services
+
+Running and customizing a Polygon CDK stack can be complex. Gateway.fm offers a range of services to support your journey:
+
+*   **Community Support**: For general questions and community-driven support, you can raise issues in our relevant public GitHub repositories (please check the specific component's repository for issue tracking).
+*   **Formal Support Packages**: For dedicated, SLA-backed support, Gateway.fm provides formal support packages tailored to your needs, ensuring you have expert assistance when you need it most.
+*   **Managed Presto Platform**: If you prefer a hands-off approach, Gateway.fm can run and manage your entire CDK stack (including `cdk-erigon` based chains) on your behalf through our robust Presto platform.
+*   **Customization and R&D**: The Gateway.fm R&D team can help you customize the CDK stack to your specific requirements. This includes, but is not limited to, migrating existing chains from other stacks to `cdk-erigon`, developing custom features, and optimizing performance.
+
+To learn more about how Gateway.fm can help you, please visit our website: [https://gateway.fm](https://gateway.fm) or reach out to us through our contact channels listed there.
