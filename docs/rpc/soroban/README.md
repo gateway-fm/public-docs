@@ -17,3 +17,10 @@ https://developers.stellar.org/docs/data/apis/rpc/api-reference/methods
 
 - Mainnet: https://rpc.mainnet.stellar.gateway.fm
 - Testnet: https://rpc.testnet.stellar.gateway.fm
+
+## Access
+
+Create and manage API keys via the Gateway.fm admin portal:
+https://admin.gateway.fm
+
+Authenticated requests with an API key enjoy double the default rate limits!
