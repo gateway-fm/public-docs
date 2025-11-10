@@ -1,13 +1,19 @@
 ---
-description: SOROBAN RPC
+description: Stellar RPC
 ---
 
-# SOROBAN API
+# Stellar RPC
 
-Here you will find link to official [Soroban documentation](https://soroban.stellar.org/docs): 
+Gateway.fm operates fully managed Stellar RPC endpoints across both mainnet and testnet networks. 
+Additionally, the mainnet endpoint provides complete historical ledger access.
 
-Gateway.fm is providing public Soroban RPC:
+Use the official Stellar RPC documentation for protocol details:
+https://developers.stellar.org/docs/data/apis/rpc
 
-https://soroban-rpc.futurenet.stellar.gateway.fm
+For the method reference, see:
+https://developers.stellar.org/docs/data/apis/rpc/api-reference/methods
 
-https://soroban-rpc.testnet.stellar.gateway.fm 
+## Endpoints
+
+- Mainnet: https://rpc.mainnet.stellar.gateway.fm
+- Testnet: https://rpc.testnet.stellar.gateway.fm
