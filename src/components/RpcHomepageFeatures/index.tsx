@@ -25,10 +25,10 @@ const FeatureList: FeatureItem[] = [
     linkText: "Gnosis",
   },
   {
-    title: "Soroban",
-    description: <>Soroban RPC provides tools for engaging with the Soroban blockchain platform.</>,
-    link: "/rpc/soroban",
-    linkText: "Soroban",
+    title: "Stellar",
+    description: <>Stellar RPC provides tools for engaging with the Stellar blockchain platform.</>,
+    link: "/rpc/stellar",
+    linkText: "Stellar",
   },
 ];
 
