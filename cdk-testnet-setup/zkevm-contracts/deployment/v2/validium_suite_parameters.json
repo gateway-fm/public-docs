@@ -1,0 +1,30 @@
+{
+    "cdkValidiumDeployerOwner": "0x23ace1f3732fADa37cC265FF8bb3D85F2032CE2B",
+    "cdkValidiumDeployerSalt": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "cdkValidiumDeployerAddress": "",
+    "dataCommitteeAdmin": "0x23ace1f3732fADa37cC265FF8bb3D85F2032CE2B",
+    "dataCommitteeInitialMembers": ["0x23ace1f3732fADa37cC265FF8bb3D85F2032CE2B"],
+    "dataCommitteeThreshold": 1,
+    "dataCommitteeSalt": "0x0000000000000000000000000000000000000000000000000000000000000001",
+    "dataCommitteeAddress": "",
+    "cdkValidiumAdmin": "0x23ace1f3732fADa37cC265FF8bb3D85F2032CE2B",
+    "cdkValidiumChainId": 20240517,
+    "cdkValidiumTrustedSequencer": "0x23ace1f3732fADa37cC265FF8bb3D85F2032CE2B",
+    "cdkValidiumPendingStateTimeout": 0,
+    "cdkValidiumHalflifeMicroseconds": 0,
+    "cdkValidiumForceBatchAddress": "0x0000000000000000000000000000000000000000",
+    "cdkValidiumVerifyAddresses": {
+        "bridgeAddress": "",
+        "polygonZkEVMAddress": "",
+        "globalExitRootAddress": ""
+    },
+    "cdkValidiumSalt": "0x0000000000000000000000000000000000000000000000000000000000000002",
+    "cdkValidiumAddress": "",
+    "validiumBridgeAdmin": "0x23ace1f3732fADa37cC265FF8bb3D85F2032CE2B",
+    "validiumBridgeNetworkIDMainnet": 0,
+    "validiumBridgeSalt": "0x0000000000000000000000000000000000000000000000000000000000000003",
+    "validiumBridgeAddress": "",
+    "validiumGerAdmin": "0x23ace1f3732fADa37cC265FF8bb3D85F2032CE2B",
+    "validiumGerSalt": "0x0000000000000000000000000000000000000000000000000000000000000004",
+    "validiumGlobalExitRootAddress": ""
+} 
