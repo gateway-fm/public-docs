@@ -21,7 +21,8 @@ There are multiple type of settings.
 
 Section (1) is Hard Settings. These needs to be decided before the rollup is launched.
 
-Some of this options are available for self-serve, when you configure a rollup through Presto UI ([presto.gateway.fm](https://presto.gateway.fm)); others are available at request to the Gateway team.
+Some of this options are available for seamless
+, when you configure a rollup through Presto UI ([presto.gateway.fm](https://presto.gateway.fm)); others are available at request to the Gateway team.
 
 We are always working to bring more options towards the UI.
 
@@ -42,7 +43,6 @@ Choose the root chain where proofs and DA (for rollups only) will be settled upo
 **Options**:
 
 * **Ethereum.** ✅ out of the box; 💻 fully automated & available in the UI.
-* **Gnosis Chain.** ✅ out of the box; 💻 fully automated & available in the UI.
 * **Custom EVM chain.** We can setup Presto as L2 or L3 on top of any EVM chain that supports necessary opcodes (that excludes some zkEVMs is possible on most L2s like OP or ARB). 👷‍♂️ manual; needs to be discussed with Gateway.
 
 ### 1.2. 💎 Data Availability
@@ -69,7 +69,7 @@ Select which token to use to pay for Gas in L2. This technically means, which to
 
 **Options:**
 
-* _**Default Gas Token.**_ ✅ out of the box; 💻 fully automated & available in the UI. \*\*\*\*\*\*use the same gas token as the rootchain/L1: for Ethereum it will be ETH; for Gnosis Chain xDai, etc.
+* _**Default Gas Token.**_ ✅ out of the box; 💻  fully automated & available in the UI. \*\*\*\*\*\*use the same gas token as the rootchain/L1: for Ethereum it will be ETH; for etc.
 * **Custom Gas Token** 👷‍♂️ manual; needs to be discussed with Gateway. \*\*\*\*Select any ERC20 token on L1 to serve as a gas token for L2. This also means that costs of L1 transactions for DA and Proofs are fully covered by the rollup operator.
 
 ### 1.4. 💎 Gas Fees
@@ -286,16 +286,6 @@ Debugging tools, state of the art
 **Pre-bundled:** 🔴 no
 
 **Price:** commercial
-
-👷‍♂️ manual; needs to be discussed with Gateway.
-
-### 3.7. Gnosis Safe
-
-**Available in the Presto UI**: 🔴 no (coming soon)
-
-**Pre-bundled:** 🔴 no (coming soon)
-
-**Price:** free
 
 👷‍♂️ manual; needs to be discussed with Gateway.
 
