@@ -12,8 +12,8 @@ This FAQ explains how Gateway’s Rollup-as-a-Service (RaaS) is designed to avoi
 
 No. Gateway’s deployments use open-source rollup components and public blockchain infrastructure such that a customer can:
 
-- migrate to another provider,
-- operate the network in-house, or
+- migrate to another provider
+- operate the network in-house or
 without needing proprietary Gateway software for the chain to exist.
 
 </details>
@@ -85,7 +85,7 @@ Gateway may deploy/operate third-party open-source components as part of the sta
 - **Polygon AggKit / bridge components**
 - **Blockscout** (block explorer)
 
-## C) Gateway proprietary components (operational enhancements — not transferable)
+## C) Gateway proprietary components (operational enhancements and proxy-stack — not transferable)
 
 These are not required for the chain to exist, but improve security, stability, and observability:
 - **Gateway RPC load-balancing stack**
@@ -134,7 +134,7 @@ Below is a **reference architecture** for a typical Gateway rollup deployment. T
 - **Public blockchain dependencies** (e.g., Ethereum, AggLayer components) are not “owned” by any provider and remain accessible regardless of who operates your infrastructure
 
 ### Not transferable (yellow) — examples from the diagram
-- **ateway RPC Load Balancer**
+- **Gateway RPC Load Balancer**
 - **Ingress layer** (Gateway-managed traffic entry and associated infra setup)
 - **Presto operational layer** (Dashboard, Analytics, Support workflows, 24/7 monitoring & alerting as operated by Gateway)
 - **Gateway-operated “pooling/orchestration” infra patterns** around RPC fleets (the *nodes* are transferable; the Gateway-managed pooling/orchestration layer and environment setup is not)
