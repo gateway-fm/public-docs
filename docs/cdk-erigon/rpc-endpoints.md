@@ -45,3 +45,7 @@ When exposing RPC endpoints, consider these security best practices:
 2. Implement authentication mechanisms (API keys or JWT tokens)
 3. Configure firewalls to restrict access to trusted IPs
 4. Limit exposed API methods to only what is necessary
+
+## Archival RPC by default
+
+ All rollup RPC nodes operated by Gateway are archival. This means the standard RPC endpoint we provide is an archival endpoint (historical state is retained and queryable).
