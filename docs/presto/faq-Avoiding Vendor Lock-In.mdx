@@ -165,6 +165,7 @@ However, **planning and preparation** (runbooks, approvals, security checks, reh
 
 <details>
 <summary><strong>How long do you retain data after shutdown?</strong></summary>
+
 A common baseline is:
 
 - **Up to 1 month after stopping the network**, if requested by the customer in the termination notice.
@@ -177,6 +178,7 @@ Longer retention windows are typically negotiable (storage footprint, compliance
 
 <details>
 <summary><strong>What happens if Gateway stops operating the infrastructure?</strong></summary>
+
 If Gateway-operated infrastructure goes offline:
 
 - the network **stops producing new blocks** until the infrastructure is restored or replaced.
@@ -190,6 +192,7 @@ If all resources (servers and data volumes) were deleted without appropriate han
 
 <details>
 <summary><strong>Is there a recovery process for the network and assets?</strong></summary>
+
 Yes. A typical recovery approach relies on redundancy:
 
 - multiple nodes maintain replicas of the sequencer/node data,
@@ -202,6 +205,7 @@ Yes. A typical recovery approach relies on redundancy:
 
 <details>
 <summary><strong>Can we recover and operate independently without Gateway support?</strong></summary>
+
 In many cases, yes—provided the customer has the necessary data and operational access.
 
 **Optional resiliency path (if enabled): Blob-DA add-on**
@@ -214,13 +218,13 @@ If the customer operates their own nodes and/or a Blob-DA + database backup setu
 
 Gateway support is **not strictly required**, but often preferred for faster turnaround and reduced operational risk.
 
-
 </details>
 
 ---
 
 <details>
 <summary><strong>Summary</strong></summary>
+
 ## Summary: what “no vendor lock-in” means with Gateway RaaS
 
 - **Your rollup’s core stack is transferable** (open-source + portable state/config).
